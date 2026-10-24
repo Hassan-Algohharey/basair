@@ -1,0 +1,37 @@
+<resources>
+    <string name="audio_title">الكتب المسموعة</string>
+    <string name="audio_intro">قراءات متون من دار الإسلام، بمصادرها وشروط استخدامها.</string>
+    <string name="audio_reading_notice">هذه قراءات للكتب؛ شروح الكتب متاحة في قسم الشيوخ والدروس. التسجيلات بالعربية.</string>
+    <string name="audio_results">القراءات المتاحة: %1$d</string>
+    <string name="audio_search">البحث عن كتاب أو قارئ</string>
+    <string name="audio_clear_book">قراءات %1$s — عرض كل الكتب</string>
+    <string name="audio_reader">القارئ: %1$s</string>
+    <string name="audio_author">المؤلف: %1$s</string>
+    <string name="audio_select">اختيار القراءة والمشغل</string>
+    <string name="audio_local">نسخة محفوظة متاحة دون اتصال</string>
+    <string name="audio_online">بث عبر الإنترنت؛ يستهلك بيانات الاتصال</string>
+    <string name="audio_connection_error">تعذر الاتصال بالمشغل. أعد فتح هذا القسم للمحاولة.</string>
+    <string name="audio_play_error">تعذر التشغيل. تحقق من الاتصال ثم اضغط تشغيل للمحاولة.</string>
+    <string name="audio_buffering">جارٍ تجهيز الصوت…</string>
+    <string name="audio_position">موضع الاستماع: %1$s / %2$s</string>
+    <string name="audio_back15">رجوع 15ث</string>
+    <string name="audio_forward15">تقديم 15ث</string>
+    <string name="audio_play">تشغيل</string>
+    <string name="audio_pause">إيقاف مؤقت</string>
+    <string name="audio_stop">إيقاف المشغل</string>
+    <string name="audio_other_playing">المشغل يحتفظ حاليًا بقراءة أخرى: %1$s</string>
+    <string name="audio_speed">سرعة الاستماع</string>
+    <string name="audio_source_credit">المصدر والحقوق: دار الإسلام — IslamHouse</string>
+    <string name="audio_source">صفحة المصدر</string>
+    <string name="audio_rights">شروط الاستخدام</string>
+    <string name="audio_download_size">حجم التسجيل: %1$s ميجابايت</string>
+    <string name="audio_wifi_only">التنزيل عبر Wi-Fi فقط</string>
+    <string name="audio_download_error">تعذر التنزيل. تحقق من الاتصال ومساحة الجهاز وإعداد Wi-Fi ثم حاول مجددًا.</string>
+    <string name="audio_download_progress">التنزيل: %1$d%%</string>
+    <string name="audio_cancel_download">إلغاء التنزيل</string>
+    <string name="audio_download">تنزيل للاستماع دون اتصال</string>
+    <string name="audio_resume_download">استئناف التنزيل</string>
+    <string name="audio_delete_download">حذف التنزيل</string>
+    <string name="audio_download_note">ابقَ في الشاشة حتى اكتمال التنزيل، ويمكنك إلغاؤه واستئنافه لاحقًا. أوقف المشغل قبل حذف ملفه. حذف الملف لا يمسح موضع الاستماع.</string>
+    <string name="audio_book_button">استمع إلى الكتاب</string>
+</resources>

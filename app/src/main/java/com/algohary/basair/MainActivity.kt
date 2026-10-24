@@ -56,6 +56,14 @@ internal val Line = Color(0xFFE2E6DC)
 internal val SoftGreen = Color(0xFFE8EFE7)
 
 class MainActivity : ComponentActivity() {
+    private var audioRequest by mutableIntStateOf(0)
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        if (intent.getBooleanExtra("open_audio", false)) { audioRequest++; intent.removeExtra("open_audio") }
+    }
+
     override fun attachBaseContext(newBase: Context) {
         val stored = newBase.getSharedPreferences("basair", Context.MODE_PRIVATE).getString("language", null)
         val language = stored?.takeIf { it in setOf("ar", "en") }
@@ -69,6 +77,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (intent.getBooleanExtra("open_audio", false)) { audioRequest++; intent.removeExtra("open_audio") }
         enableEdgeToEdge()
         setContent {
             val direction = if (resources.configuration.locales[0].language == "en") LayoutDirection.Ltr else LayoutDirection.Rtl
@@ -78,7 +87,7 @@ class MainActivity : ComponentActivity() {
                     background = Paper, onBackground = Ink, surface = Paper, onSurface = Ink,
                     secondaryContainer = SoftGreen, onSecondaryContainer = Ink,
                     surfaceVariant = SoftGreen, onSurfaceVariant = Ink, outline = Muted, outlineVariant = Line
-                )) { BasairApp() }
+                )) { BasairApp(audioRequest) }
             }
         }
     }
@@ -92,7 +101,7 @@ private fun destinations(context: Context) = listOf(
 )
 
 @Composable
-private fun BasairApp() {
+private fun BasairApp(audioRequest: Int) {
     val context = LocalContext.current
     val preferences = remember { context.getSharedPreferences("basair", Context.MODE_PRIVATE) }
     var saved by remember { mutableStateOf(preferences.getStringSet("saved", emptySet())!!.toSet()) }
@@ -111,6 +120,18 @@ private fun BasairApp() {
     var query by rememberSaveable { mutableStateOf("") }
     val comparisonState = rememberSaveableStateHolder()
     val mediaState = rememberSaveableStateHolder()
+    val audioState = rememberSaveableStateHolder()
+    var audioQuery by rememberSaveable { mutableStateOf("") }
+    var audioBook by rememberSaveable { mutableStateOf<String?>(null) }
+    val openAudio: (String, String?) -> Unit = { search, book ->
+        audioState.removeState("audio"); audioQuery = search; audioBook = book; bookId = null; route = "audio"
+    }
+    LaunchedEffect(audioRequest) {
+        if (audioRequest > 0) {
+            bookId = null; referenceVolume = null; noteReference = null
+            audioState.removeState("audio"); audioQuery = ""; audioBook = null; route = "audio"
+        }
+    }
     var mediaQuery by rememberSaveable { mutableStateOf("") }
     var mediaBook by rememberSaveable { mutableStateOf<String?>(null) }
     var mediaFavorites by rememberSaveable { mutableStateOf(false) }
@@ -157,7 +178,8 @@ private fun BasairApp() {
     if (readingBook != null) {
         key(readingBook.id) { PdfBookReader(readingBook, readingBook.id in saved,
             { bookId = null }, { toggleSave(readingBook.id) }, initialPage = notePage,
-            onExplanations = if (MediaCatalog.items.any { readingBook.id in it.bookIds }) ({ openMedia("", readingBook.id, false) }) else null) }
+            onExplanations = if (MediaCatalog.items.any { readingBook.id in it.bookIds }) ({ openMedia("", readingBook.id, false) }) else null,
+            onAudio = if (AudiobookCatalog.recordings.any { readingBook.id in it.bookIds }) ({ openAudio("", readingBook.id) }) else null) }
         return
     }
     Scaffold(containerColor = Paper, bottomBar = {
@@ -174,11 +196,12 @@ private fun BasairApp() {
     }) { padding ->
         Box(Modifier.fillMaxSize().padding(padding)) {
             when (route) {
-                "home" -> HomeScreen(visitSubject, { navigate("search") }, { navigate("compare") }, openBook, { navigate("notes") }, { navigate("quran") }, { openMedia("", null, false) })
+                "home" -> HomeScreen(visitSubject, { navigate("search") }, { navigate("compare") }, openBook, { navigate("notes") }, { navigate("quran") }, { openMedia("", null, false) }, { openAudio("", null) })
                 "library", "search" -> CatalogScreen(route == "search", query, { query = it }, subject,
                     { subject = it; school = null; topic = null }, openBook, saved, toggleSave, openComparison,
                     school, { school = it }, topic, { topic = it },
-                    { referencePage = it.pdfPage; referenceVolume = it.volume }, { navigate("quran") }, { openMedia(query, null, false) })
+                    { referencePage = it.pdfPage; referenceVolume = it.volume }, { navigate("quran") }, { openMedia(query, null, false) }, { openAudio(query, it) })
+                "audio" -> audioState.SaveableStateProvider("audio") { key(audioRequest) { AudiobookFeature(audioQuery, audioBook, openBook) } }
                 "media" -> mediaState.SaveableStateProvider("media") { MediaFeature(mediaQuery, mediaBook, mediaFavorites, openBook) }
                 "compare" -> comparisonState.SaveableStateProvider("comparison") {
                     ComparisonScreen(comparisonId, { comparisonId = it }, savedComparisons, toggleComparison,
@@ -200,11 +223,12 @@ private fun BasairApp() {
 }
 
 @Composable
-private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onCompare: () -> Unit, onBook: (String) -> Unit, onNotes: () -> Unit, onQuran: () -> Unit, onMedia: () -> Unit) {
+private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onCompare: () -> Unit, onBook: (String) -> Unit, onNotes: () -> Unit, onQuran: () -> Unit, onMedia: () -> Unit, onAudio: () -> Unit) {
     val context = LocalContext.current
     LazyColumn(contentPadding = PaddingValues(22.dp), verticalArrangement = Arrangement.spacedBy(22.dp)) {
         item { LanguageSettings() }
         item { QuranEntry(onQuran) }
+        item { AudiobookEntry(onAudio) }
         item { MediaEntry(onMedia) }
         item { OutlinedButton(onClick = onNotes) { Text(context.getString(R.string.notes_title)) } }
         item {
@@ -281,11 +305,14 @@ private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onComp
 @Composable
 private fun CatalogScreen(searchMode: Boolean, query: String, onQuery: (String) -> Unit, subject: String?,
     onSubject: (String?) -> Unit, onBook: (String) -> Unit, saved: Set<String>, onSave: (String) -> Unit, onCompare: (String) -> Unit,
-    school: String?, onSchool: (String?) -> Unit, topic: String?, onTopic: (String?) -> Unit, onReference: (Reference) -> Unit, onQuran: () -> Unit, onMedia: () -> Unit) {
+    school: String?, onSchool: (String?) -> Unit, topic: String?, onTopic: (String?) -> Unit, onReference: (Reference) -> Unit, onQuran: () -> Unit, onMedia: () -> Unit, onAudio: (String?) -> Unit) {
     val context = LocalContext.current
     val results = remember(query, subject, school, topic) { Catalog.search(query, subject, school, topic) }
     val comparisons = remember(query, subject, school, topic, searchMode) {
         if (searchMode && school == null && topic == null) Catalog.searchComparisons(query, subject) else emptyList()
+    }
+    val audioResults = searchAudiobooks(query).filter { recording ->
+        recording.bookIds.any { id -> Catalog.books.any { book -> book.id == id && book.matchesOrganization(subject, school, topic) } }
     }
     val mediaMatches = if (subject == null && school == null && topic == null)
         filteredMediaItems(MediaUiState(scholars = MediaCatalog.scholars, items = MediaCatalog.items, query = query, series = MediaCatalog.series,
@@ -313,6 +340,7 @@ private fun CatalogScreen(searchMode: Boolean, query: String, onQuery: (String) 
             }
         }
         if (showQuran) item { QuranEntry(onQuran) }
+        if (audioResults.isNotEmpty()) item { AudiobookEntry({ onAudio(audioResults.singleOrNull()?.bookIds?.firstOrNull()) }, audioResults.size) }
         if (mediaMatches > 0) item { MediaEntry(onMedia, mediaMatches) }
         if (subject == "fiqh") item { SchoolSelector(school, onSchool) }
         subject?.let { selectedSubject -> Catalog.books.filter { it.subject == selectedSubject }.flatMap { it.topics }.distinct() }?.let { filters ->
@@ -331,7 +359,7 @@ private fun CatalogScreen(searchMode: Boolean, query: String, onQuery: (String) 
             Notice(context.getString(R.string.ui_biographies_of_the_four_imams_companions_and_successors_only_volumes_1_a))
         }
         item { Text(context.getString(R.string.ui_results_1, results.size) + if (searchMode) context.getString(R.string.ui_1_comparisons, comparisons.size) else context.getString(R.string.ui_books_and_volumes), color = Muted, fontSize = 12.sp) }
-        if (results.isEmpty() && comparisons.isEmpty() && !showQuran && mediaMatches == 0 && !(subject == "fiqh" && (school == null || school == "shared") && matchingReferenceVolumes(query, topic).isNotEmpty())) item {
+        if (results.isEmpty() && comparisons.isEmpty() && !showQuran && mediaMatches == 0 && audioResults.isEmpty() && !(subject == "fiqh" && (school == null || school == "shared") && matchingReferenceVolumes(query, topic).isNotEmpty())) item {
             if (school != null && school != "shared") SchoolEmptyState { onSchool("shared") }
             else EmptyState(context.getString(R.string.ui_no_results), context.getString(R.string.ui_try_a_shorter_query_or_select_all_subjects), context.getString(R.string.ui_reset_search)) { onQuery(""); onSubject(null); onSchool(null); onTopic(null) }
         }

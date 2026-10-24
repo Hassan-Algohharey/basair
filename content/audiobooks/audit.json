@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-24",
+  "scope": "تحقق من صفحات المصدر وأسماء القراء والعناوين وإذن النشر، ومن ترويسات أول ووسط وآخر الملفين بطلبات Range صغيرة. لا مراجعة سماعية كاملة، ولا اعتماد مطابقة طبعة المكتبة.",
+  "rightsDecision": {
+    "licenseUrl": "https://d1.islamhouse.com/html/faq.htm",
+    "sourcePageSha256": "45cad70918c23a3eb26566f2be776c7df34936ed114070b2144a3b0bdb89dabf",
+    "sourcePageBytes": 97292,
+    "policySections": [
+      "هل تنشرون إنتاجات الآخرين؟ وهل حقوق إنتاجاتكم مفتوحة؟",
+      "هل يحق لي المتاجرة بالمواد التي تنشرونها؟"
+    ],
+    "permissionSummary": "تصرح السياسة بجواز الاستفادة والنشر بمختلف الوسائل مع نسبة المصدر وعدم تغيير المحتوى العلمي. وتشترط التباحث مع مصدر المادة الآخر قبل المتاجرة؛ لذا لا ترخيص تجاري مثبت لهذين التسجيلين.",
+    "allowed": [
+      "noncommercial in-app streaming",
+      "background playback of the same recording",
+      "private optional download with attribution"
+    ],
+    "notEstablished": [
+      "commercial exploitation",
+      "edition or page matching",
+      "independent full listening verification"
+    ],
+    "fileModification": false,
+    "rehosting": false
+  },
+  "recordings": [
+    {
+      "recordingId": "tahawiyyah-salamah",
+      "sourceUrl": "https://islamhouse.com/ar/audios/120382/",
+      "sourceHttpStatus": 200,
+      "sourcePageSha256": "0e1d043c3b7795e42ab368b76b95788f5be08ca61b1ae6fdfdad6ec7aab14abd",
+      "sourcePageBytes": 88225,
+      "sourceAttachmentTitle": "العقيدة الطحاوية، قراءة: ياسر سلامة",
+      "classification": "قراءة متن؛ استُبعدت مرفقات الشروح والقراءة مع التعليق.",
+      "bookLink": {
+        "bookId": "tahawiyyah",
+        "relationship": "نفس عنوان المتن؛ لا دعوى تطابق الطبعة أو صفحاتها."
+      },
+      "audioProbe": {
+        "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain_01/Almtoon_Al3lmeeh/Al3qedh_AlT7aweh/ar_Al3qedh_AlT7aweh_Salamah.mp3",
+        "finalUrl": "https://d1.islamhouse.com/data/ar/ih_sounds/chain_01/Almtoon_Al3lmeeh/Al3qedh_AlT7aweh/ar_Al3qedh_AlT7aweh_Salamah.mp3",
+        "requestRange": "bytes=0-4095",
+        "status": 206,
+        "contentType": "audio/mpeg",
+        "contentRange": "bytes 0-4095/6961907",
+        "contentLength": 4096,
+        "totalBytes": 6961907,
+        "etag": "\"4a59d799-6a3af3\"",
+        "sampleSha256": "01d4161228cf37df6500956e94794cec3414595644b6fa91bfe7c1bb59aec295",
+        "sampleBytes": 4096,
+        "first16Hex": "49443303000000010f7647454f420000",
+        "additionalRanges": [
+          {
+            "requested": "bytes=3480953-3485048",
+            "status": 206,
+            "contentRange": "bytes 3480953-3485048/6961907",
+            "contentType": "audio/mpeg",
+            "sampleBytes": 4096,
+            "sampleSha256": "58de7e709e9bc527283fb80721a3d45f1d860bf957bf0e14eebbc08e518bd102"
+          },
+          {
+            "requested": "bytes=6957811-6961906",
+            "status": 206,
+            "contentRange": "bytes 6957811-6961906/6961907",
+            "contentType": "audio/mpeg",
+            "sampleBytes": 4096,
+            "sampleSha256": "ef338bb72cace4f59f82d7eb68c283d475b300a92325e1f96c12db8c69d6ef66"
+          }
+        ]
+      },
+      "wholeRecordingSha256": null,
+      "wholeRecordingDownloadedDuringSourceAudit": false
+    },
+    {
+      "recordingId": "nawawi-fifty-alansari",
+      "sourceUrl": "https://islamhouse.com/ar/audios/4458",
+      "sourceHttpStatus": 200,
+      "sourcePageSha256": "90e99ee8fbbc209f5e9cf6a7fc113c8b51ad7b684a98b57ab6a63905b173cad7",
+      "sourcePageBytes": 128139,
+      "sourceAttachmentTitle": "الأربعون النووية مع زيادة ابن رجب، قراءة: إبراهيم الأنصاري",
+      "classification": "قراءة متن؛ استُبعدت مرفقات الشروح والقراءة مع التعليق.",
+      "bookLink": {
+        "bookId": "nawawi-fifty",
+        "relationship": "نفس عنوان المتن؛ لا دعوى تطابق الطبعة أو صفحاتها."
+      },
+      "audioProbe": {
+        "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain_01/Almtoon_Al3lmeeh/AlArb3un_AlNuweh/ar_AlArb3un_AlNuweh_AlAnsaree.mp3",
+        "finalUrl": "https://d1.islamhouse.com/data/ar/ih_sounds/chain_01/Almtoon_Al3lmeeh/AlArb3un_AlNuweh/ar_AlArb3un_AlNuweh_AlAnsaree.mp3",
+        "requestRange": "bytes=0-4095",
+        "status": 206,
+        "contentType": "audio/mpeg",
+        "contentRange": "bytes 0-4095/102609502",
+        "contentLength": 4096,
+        "totalBytes": 102609502,
+        "etag": "\"571fa4ce-61db25e\"",
+        "sampleSha256": "b891073e377981d46b6ae2791b2f9926349cd8390783bea1c7aa52f71272b266",
+        "sampleBytes": 4096,
+        "first16Hex": "49443303000000026e54544c454e0000",
+        "additionalRanges": [
+          {
+            "requested": "bytes=51304751-51308846",
+            "status": 206,
+            "contentRange": "bytes 51304751-51308846/102609502",
+            "contentType": "audio/mpeg",
+            "sampleBytes": 4096,
+            "sampleSha256": "1b4551a9d1af39cf0551043f936562700dde041fab267107a067ab25c0fe81a7"
+          },
+          {
+            "requested": "bytes=102605406-102609501",
+            "status": 206,
+            "contentRange": "bytes 102605406-102609501/102609502",
+            "contentType": "audio/mpeg",
+            "sampleBytes": 4096,
+            "sampleSha256": "2c4f50794954f563e435229eaec6ef2901c0f48fe78ee8cf2e80d762066d07b6"
+          }
+        ]
+      },
+      "wholeRecordingSha256": null,
+      "wholeRecordingDownloadedDuringSourceAudit": false
+    }
+  ]
+}

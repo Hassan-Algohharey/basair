@@ -35,6 +35,17 @@ with zipfile.ZipFile(apk) as archive:
             assert len(raw) == spec['bytes'] and hashlib.sha256(raw).hexdigest() == spec['sha256']
         for key in ('fontAsset', 'tafsirFontAsset'):
             assert archive.read(asset_prefix + quran[key]) == (root / 'app/src/main/assets' / quran[key]).read_bytes()
+    audio_catalog = root / 'content/audiobooks/catalog.json'
+    if audio_catalog.exists():
+        recordings = json.loads(audio_catalog.read_text('utf-8'))['recordings']
+        dex = b''.join(archive.read(name) for name in archive.namelist() if name.endswith('.dex'))
+        for recording in recordings:
+            assert recording['id'].encode() in dex
+            assert recording['licenseUrl'].encode() in dex
+            for track in recording['tracks']:
+                assert track['id'].encode() in dex and track['url'].encode() in dex
+        license_path = 'licenses/androidx-media3-LICENSE.txt'
+        assert archive.read(asset_prefix + license_path) == (root / 'app/src/main/assets' / license_path).read_bytes()
 print(json.dumps({'apk': str(apk), 'bundledPdfs': 0, 'catalogBooks': len(books), 'pages': sum(b['pages'] for b in books),
                   'bytes': apk.stat().st_size, 'sha256': hashlib.sha256(apk.read_bytes()).hexdigest(),
                   'result': 'PASS: no PDFs bundled; all hosted original/page hashes and catalog match.'}, ensure_ascii=False))

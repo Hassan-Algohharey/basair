@@ -1,5 +1,5 @@
 بصائر | Basair — سياسة الخصوصية
-تاريخ السريان: 24 أكتوبر 2026
+تاريخ السريان: 25 أكتوبر 2026
 التطبيق: com.algohary.basair — المطوّر: Smart_Grow
 
 جمع البيانات ومشاركتها
@@ -33,7 +33,7 @@
 تُحدّث هذه السياسة وتاريخها عند تغير ممارسات التطبيق. للخصوصية والدعم وحقوق المحتوى: smartgrow75@gmail.com. إذا أرسلت بريدًا، تستخدم المعلومات التي تختار مشاركتها لمعالجة طلبك عبر خدمة البريد.
 
 Privacy Policy — Basair
-Effective: 24 October 2026
+Effective: 25 October 2026
 Android package: com.algohary.basair. Developer: Smart_Grow.
 
 Data collection and sharing
@@ -77,3 +77,13 @@ The lesson index, search and favourites operate locally and are not sent to sour
 
 Lesson continuation — from version 0.11.0
 The identifier of the last material you choose to open externally is stored only on your device so you can return to it after restarting. External playback position is not recorded. Clear this record in the lesson directory, or remove all local data by clearing app storage or uninstalling. Series and topic filters and search operate locally. Search terms, favourites and the last-material record are not sent to recording sources.
+
+الكتب المسموعة — من الإصدار 0.12.0
+يبدأ بث الصوت أو تنزيله بطلبك من d1.islamhouse.com عبر HTTPS. قد يتلقى المصدر عنوان IP ومعلومات الاتصال وطلبات أجزاء من الملف اللازمة للتنقل والاستئناف وفق سياسته. لا يرسل التطبيق سجلًا منفصلًا لمحفوظاتك أو كلمات البحث أو ملاحظاتك إلى المصدر.
+تخزن مواضع الاستماع ومدد الملفات وآخر ملف لكل قراءة وسرعة التشغيل وإعداد التنزيل محليًا. نسخ الصوت المكتملة والجزئية تحفظ داخل مساحة التطبيق الخاصة، ولا يعاد رفعها أو إتاحتها لتطبيقات أخرى. يمكن حذف التنزيل من شاشة الصوت مع إبقاء موضع الاستماع؛ مسح بيانات التطبيق أو إزالته يحذف هذه البيانات والملفات كلها.
+يستخدم تشغيل الخلفية خدمة وسائط بإشعار Android وأذونات FOREGROUND_SERVICE وFOREGROUND_SERVICE_MEDIA_PLAYBACK وWAKE_LOCK. لا يطلب تسجيل الصوت أو الميكروفون أو الوصول العام للملفات. يمكنك إيقاف الصوت من التطبيق أو تحكم النظام. فلاتر «قراءة المحفوظ فقط» للكتب أو القرآن لا تتحكم في البث الصوتي؛ البث الصوتي يبدأ بزر تشغيل، ويستخدم نسخة الصوت المحفوظة المكتملة عند توفرها. تنزيل الصوت عبر Wi-Fi غير محتسب افتراضيًا ويمكن تغيير هذا الخيار.
+
+Audiobooks — from version 0.12.0
+Audio streaming and downloads start at your request from d1.islamhouse.com over HTTPS. The provider may receive your IP address, connection information and file-range requests used for seeking and resuming, under its policies. Basair does not send a separate saved-item history, search terms or notes to the provider.
+Listening positions, durations, last track per reading, speed and download setting are stored locally. Complete and partial audio copies remain in private app storage and are not uploaded or exposed to other apps. Delete downloads in the audio screen while keeping listening positions; clearing app storage or uninstalling removes all these local records and files.
+Background audio uses an Android media notification and FOREGROUND_SERVICE, FOREGROUND_SERVICE_MEDIA_PLAYBACK and WAKE_LOCK permissions. No microphone, recording or general file-access permission is requested. Stop audio in the app or system controls. Book and Quran saved-only filters do not control audio streaming. Audio starts with Play and uses a complete local audio copy when available. Audio downloads use unmetered Wi-Fi by default; you can change this setting.

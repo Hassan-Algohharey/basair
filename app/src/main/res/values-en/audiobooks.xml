@@ -1,0 +1,37 @@
+<resources>
+    <string name="audio_title">Audiobooks</string>
+    <string name="audio_intro">Readings of original texts from IslamHouse, with sources and usage terms.</string>
+    <string name="audio_reading_notice">These are book readings. Commentaries are in Scholars and lessons. Recordings are in Arabic.</string>
+    <string name="audio_results">Available readings: %1$d</string>
+    <string name="audio_search">Search books or readers</string>
+    <string name="audio_clear_book">Readings of %1$s — show all books</string>
+    <string name="audio_reader">Reader: %1$s</string>
+    <string name="audio_author">Author: %1$s</string>
+    <string name="audio_select">Select reading and player</string>
+    <string name="audio_local">Saved copy available offline</string>
+    <string name="audio_online">Online streaming uses connection data</string>
+    <string name="audio_connection_error">Unable to connect to the player. Reopen this section to retry.</string>
+    <string name="audio_play_error">Playback failed. Check your connection and press Play to retry.</string>
+    <string name="audio_buffering">Preparing audio…</string>
+    <string name="audio_position">Listening position: %1$s / %2$s</string>
+    <string name="audio_back15">Back 15s</string>
+    <string name="audio_forward15">Forward 15s</string>
+    <string name="audio_play">Play</string>
+    <string name="audio_pause">Pause</string>
+    <string name="audio_stop">Stop player</string>
+    <string name="audio_other_playing">The player currently holds another reading: %1$s</string>
+    <string name="audio_speed">Playback speed</string>
+    <string name="audio_source_credit">Source and rights: IslamHouse</string>
+    <string name="audio_source">Source page</string>
+    <string name="audio_rights">Usage terms</string>
+    <string name="audio_download_size">Recording size: %1$s MB</string>
+    <string name="audio_wifi_only">Download on Wi-Fi only</string>
+    <string name="audio_download_error">Download failed. Check the connection, free storage and Wi-Fi setting, then retry.</string>
+    <string name="audio_download_progress">Downloading: %1$d%%</string>
+    <string name="audio_cancel_download">Cancel download</string>
+    <string name="audio_download">Download for offline listening</string>
+    <string name="audio_resume_download">Resume download</string>
+    <string name="audio_delete_download">Delete download</string>
+    <string name="audio_download_note">Keep this screen open until the download finishes. You can cancel and resume later. Stop the player before deleting its file. Deleting a file keeps the listening position.</string>
+    <string name="audio_book_button">Listen to the book</string>
+</resources>

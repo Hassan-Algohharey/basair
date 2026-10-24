@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "recordings": [
+    {
+      "id": "tahawiyyah-salamah",
+      "title": "العقيدة الطحاوية — قراءة ياسر سلامة",
+      "englishTitle": "Al-Aqidah al-Tahawiyyah — Yasser Salamah",
+      "author": "أبو جعفر الطحاوي",
+      "reader": "ياسر سلامة",
+      "englishReader": "Yasser Salamah",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "language": "ar",
+      "kind": "reading",
+      "coverage": "complete-as-listed",
+      "coverageNote": "قراءة للمتن في ملف واحد كما فهرسها المصدر، وليست شرحًا. وصف الاكتمال بحسب فهرس المصدر، ولم تتم مقابلة التسجيل كاملًا بالمتن سماعًا. الربط بالكتاب لا يعني مطابقة الطبعة أو التزامن مع الصفحات.",
+      "englishCoverageNote": "A single-file reading of the text as catalogued by the source, not a commentary. Completeness follows the source listing; the entire recording has not been checked against the text by listening. The book link does not establish an identical edition or page synchronization.",
+      "sourceName": "دار الإسلام — IslamHouse",
+      "sourceUrl": "https://islamhouse.com/ar/audios/120382/",
+      "licenseName": "إذن نشر غير تجاري مع نسبة المصدر وحفظ المحتوى",
+      "licenseUrl": "https://d1.islamhouse.com/html/faq.htm",
+      "rightsNote": "إذن دار الإسلام بالنشر غير التجاري بمختلف الوسائل مع نسبة المصدر وعدم تغيير المحتوى العلمي؛ التسجيل الأصلي بلا تعديل أو إعادة استضافة. الإذن التجاري المستقل لحقوق الغير غير مثبت. التنزيل الاختياري نسخة خاصة داخل التطبيق.",
+      "englishRightsNote": "IslamHouse permits noncommercial redistribution across media with source attribution and unchanged scholarly content. Original recording, no editing or rehosting. Commercial permission for third-party rights is not established. Optional downloads are private app copies.",
+      "downloadAllowed": true,
+      "commercialUseAllowed": false,
+      "verifiedOn": "2026-10-24",
+      "tracks": [
+        {
+          "id": "tahawiyyah-salamah-full",
+          "title": "قراءة المتن",
+          "englishTitle": "Text reading",
+          "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain_01/Almtoon_Al3lmeeh/Al3qedh_AlT7aweh/ar_Al3qedh_AlT7aweh_Salamah.mp3",
+          "sequence": 1,
+          "byteSize": 6961907,
+          "mimeType": "audio/mpeg",
+          "rangeSupported": true
+        }
+      ]
+    },
+    {
+      "id": "nawawi-fifty-alansari",
+      "title": "الأربعون النووية مع زيادة ابن رجب — قراءة إبراهيم الأنصاري",
+      "englishTitle": "Nawawi Forty Hadith with Ibn Rajab additions — Ibrahim al-Ansari",
+      "author": "أبو زكريا النووي، وزيادة ابن رجب",
+      "reader": "إبراهيم الأنصاري",
+      "englishReader": "Ibrahim al-Ansari",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "language": "ar",
+      "kind": "reading",
+      "coverage": "complete-as-listed",
+      "coverageNote": "قراءة للمتن في ملف واحد كما فهرسها المصدر، وليست شرحًا. وصف الاكتمال بحسب فهرس المصدر، ولم تتم مقابلة التسجيل كاملًا بالمتن سماعًا. الربط بالكتاب لا يعني مطابقة الطبعة أو التزامن مع الصفحات.",
+      "englishCoverageNote": "A single-file reading of the text as catalogued by the source, not a commentary. Completeness follows the source listing; the entire recording has not been checked against the text by listening. The book link does not establish an identical edition or page synchronization.",
+      "sourceName": "دار الإسلام — IslamHouse",
+      "sourceUrl": "https://islamhouse.com/ar/audios/4458",
+      "licenseName": "إذن نشر غير تجاري مع نسبة المصدر وحفظ المحتوى",
+      "licenseUrl": "https://d1.islamhouse.com/html/faq.htm",
+      "rightsNote": "إذن دار الإسلام بالنشر غير التجاري بمختلف الوسائل مع نسبة المصدر وعدم تغيير المحتوى العلمي؛ التسجيل الأصلي بلا تعديل أو إعادة استضافة. الإذن التجاري المستقل لحقوق الغير غير مثبت. التنزيل الاختياري نسخة خاصة داخل التطبيق.",
+      "englishRightsNote": "IslamHouse permits noncommercial redistribution across media with source attribution and unchanged scholarly content. Original recording, no editing or rehosting. Commercial permission for third-party rights is not established. Optional downloads are private app copies.",
+      "downloadAllowed": true,
+      "commercialUseAllowed": false,
+      "verifiedOn": "2026-10-24",
+      "tracks": [
+        {
+          "id": "nawawi-fifty-alansari-full",
+          "title": "قراءة المتن",
+          "englishTitle": "Text reading",
+          "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain_01/Almtoon_Al3lmeeh/AlArb3un_AlNuweh/ar_AlArb3un_AlNuweh_AlAnsaree.mp3",
+          "sequence": 1,
+          "byteSize": 102609502,
+          "mimeType": "audio/mpeg",
+          "rangeSupported": true
+        }
+      ]
+    }
+  ]
+}

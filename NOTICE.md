@@ -11,3 +11,8 @@ Signing keys, passwords, account credentials and local machine settings are excl
 The four school-specific additions in 0.8.1 are documented edition by edition in `docs/MADHHAB_BOOKS_V081_AR.md` and `content/madhhab-review.json`. Three specific scans are classified as public domain by Wikisource. The modern Umdat al-Fiqh edition uses IslamHouse republication permission with attribution and unchanged content; it is not represented as public domain. An explicitly reserved modern Abu Shuja edition was excluded.
 
 Version 0.8.2 keeps originals and extracted pages outside the application package. Page extraction preserves original page drawing content, resources and annotations; it is a delivery format, not a new edition. Source attribution and edition-specific rights are retained in the reader and catalog. See `docs/FEATURES_V082_AR.md`.
+
+
+Version 0.12.0 adds AndroidX Media3 ExoPlayer and MediaSession (1.11.1), licensed under Apache License 2.0. The license is included in `app/src/main/assets/licenses/androidx-media3-LICENSE.txt` and in the APK. Upstream: https://github.com/androidx/media . Dependency rights are separate from audiobook permissions.
+
+Audiobook metadata and source permissions are documented in `content/audiobooks/` and `docs/AUDIO_SOURCES_V012_AR.md`. The original recordings remain on IslamHouse hosting; they are not committed or rehosted. The adopted permission covers noncommercial use with source attribution and unchanged scholarly content. No general commercial audio license is asserted.
