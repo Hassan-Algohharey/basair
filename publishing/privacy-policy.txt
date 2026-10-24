@@ -25,6 +25,10 @@
 خدمات المنصة
 قد تعالج Google Play ونظام Android وخدمة استضافة هذه الصفحة معلومات تقنية وفق سياساتها وإعدادات جهازك. لا يضيف المطوّر أدوات تحليلات أو نماذج لجمع البيانات في هذه الصفحة.
 
+
+القرآن والتفسير — من الإصدار 0.9.0
+تُنزل نصوص القرآن والتفسير الميسر من استضافة GitHub نفسها بالصفحة، مع جلب حتى 7 صفحات قبلها و7 بعدها حسب الإعدادات، أو ملف مضغوط كامل بطلبك. قد يتلقى مزود الملفات عنوان IP ورقم الصفحة المطلوبة ومعلومات الاتصال الفنية. لا تُرسل كلمات البحث أو العلامات أو موضع القراءة. البحث في الآيات محلي في النص المنزّل فقط. تحفظ العلامات وموضع القراءة وخيارات التنزيل على جهازك، وتبقى عند حذف التنزيلات؛ إزالة التطبيق أو مسح بياناته يزيلها.
+
 التحديثات والدعم
 تُحدّث هذه السياسة وتاريخها عند تغير ممارسات التطبيق. للخصوصية والدعم وحقوق المحتوى: smartgrow75@gmail.com. إذا أرسلت بريدًا، تستخدم المعلومات التي تختار مشاركتها لمعالجة طلبك عبر خدمة البريد.
 
@@ -58,3 +62,6 @@ Google Play, Android and this website host may process technical information und
 
 Updates and contact
 This policy and its effective date will be updated if the app data practices change. Privacy, support and content rights: smartgrow75@gmail.com. Information you choose to send by email is used to respond to your request through the email service.
+
+Quran and tafsir — from version 0.9.0
+Quran and Al-Tafsir Al-Muyassar text are downloaded from the same GitHub hosting by page, with up to 7 preceding and 7 following pages prefetched according to settings, or as a complete archive at your request. The file provider may receive your IP address, requested page and technical connection information. Search terms, bookmarks and reading position are not sent. Quran search runs locally on downloaded text only. Quran bookmarks, reading position and download settings stay on the device. Deleting downloads keeps them; uninstalling the app or clearing its data removes them.

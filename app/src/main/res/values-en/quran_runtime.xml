@@ -1,0 +1,10 @@
+<resources>
+    <string name="quran_data_error">Could not open the verified Quran index or font. Please try again.</string>
+    <string name="quran_missing_offline">This page is not saved. Turn off saved-only reading, then retry to download it.</string>
+    <string name="quran_wait_wifi">Full downloads and prefetching require an unmetered connection. Connect to a suitable network or change the download setting.</string>
+    <string name="quran_network_error">Could not download or verify the content. Check the connection and retry; saved pages remain available.</string>
+    <string name="quran_downloads_cleared">Downloads were removed; bookmarks and reading position remain. Retry to download the page again.</string>
+    <string name="quran_source_note">Quran text and Al-Tafsir Al-Muyassar 3.0 come unchanged from the King Fahd Complex developer package. Page and juz navigation use Tanzil metadata under CC-BY. This is a text view, not a printed-page image. Original fonts are distributed with their supplied permission. Quran and tafsir wording is unchanged; changing the interface language does not translate it.</string>
+    <string name="quran_entry">Quran and Al-Tafsir Al-Muyassar</string>
+    <string name="quran_entry_description">114 surahs · 604 pages · Quran and tafsir in one entry, downloaded on demand.</string>
+</resources>

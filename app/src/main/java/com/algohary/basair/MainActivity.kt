@@ -131,6 +131,13 @@ private fun BasairApp() {
     noteReference?.let { ref -> ReferenceDownloadDialog(ref, { noteReference = null }, {
         referencePage = it.pdfPage; referenceVolume = it.volume; noteReference = null
     }) }
+    if (route == "quran") {
+        Column(Modifier.fillMaxSize().windowInsetsPadding(WindowInsets.safeDrawing)) {
+            TextButton(onClick = { route = "home" }) { Text(context.getString(R.string.ui_back)) }
+            Box(Modifier.weight(1f)) { QuranFeature() }
+        }
+        return
+    }
     referenceVolumes[referenceVolume]?.let { volume ->
         key(volume.volume, referencePage) {
             PdfBookReader(volume.asBook(), false, { referenceVolume = null }, {},
@@ -158,11 +165,11 @@ private fun BasairApp() {
     }) { padding ->
         Box(Modifier.fillMaxSize().padding(padding)) {
             when (route) {
-                "home" -> HomeScreen(visitSubject, { navigate("search") }, { navigate("compare") }, openBook, { navigate("notes") })
+                "home" -> HomeScreen(visitSubject, { navigate("search") }, { navigate("compare") }, openBook, { navigate("notes") }, { navigate("quran") })
                 "library", "search" -> CatalogScreen(route == "search", query, { query = it }, subject,
                     { subject = it; school = null; topic = null }, openBook, saved, toggleSave, openComparison,
                     school, { school = it }, topic, { topic = it },
-                    { referencePage = it.pdfPage; referenceVolume = it.volume })
+                    { referencePage = it.pdfPage; referenceVolume = it.volume }, { navigate("quran") })
                 "compare" -> comparisonState.SaveableStateProvider("comparison") {
                     ComparisonScreen(comparisonId, { comparisonId = it }, savedComparisons, toggleComparison,
                         { referencePage = it.pdfPage; referenceVolume = it.volume })
@@ -183,10 +190,11 @@ private fun BasairApp() {
 }
 
 @Composable
-private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onCompare: () -> Unit, onBook: (String) -> Unit, onNotes: () -> Unit) {
+private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onCompare: () -> Unit, onBook: (String) -> Unit, onNotes: () -> Unit, onQuran: () -> Unit) {
     val context = LocalContext.current
     LazyColumn(contentPadding = PaddingValues(22.dp), verticalArrangement = Arrangement.spacedBy(22.dp)) {
         item { LanguageSettings() }
+        item { QuranEntry(onQuran) }
         item { OutlinedButton(onClick = onNotes) { Text(context.getString(R.string.notes_title)) } }
         item {
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
@@ -262,12 +270,14 @@ private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onComp
 @Composable
 private fun CatalogScreen(searchMode: Boolean, query: String, onQuery: (String) -> Unit, subject: String?,
     onSubject: (String?) -> Unit, onBook: (String) -> Unit, saved: Set<String>, onSave: (String) -> Unit, onCompare: (String) -> Unit,
-    school: String?, onSchool: (String?) -> Unit, topic: String?, onTopic: (String?) -> Unit, onReference: (Reference) -> Unit) {
+    school: String?, onSchool: (String?) -> Unit, topic: String?, onTopic: (String?) -> Unit, onReference: (Reference) -> Unit, onQuran: () -> Unit) {
     val context = LocalContext.current
     val results = remember(query, subject, school, topic) { Catalog.search(query, subject, school, topic) }
     val comparisons = remember(query, subject, school, topic, searchMode) {
         if (searchMode && school == null && topic == null) Catalog.searchComparisons(query, subject) else emptyList()
     }
+    val showQuran = subject in listOf(null, "tafsir") && school == null && topic == null &&
+        normalizeArabic(query).split(Regex("\\s+")).all { it in normalizeArabic("القرآن الكريم المصحف التفسير الميسر Quran Koran Madinah Mushaf tafsir muyassar") }
     LazyColumn(contentPadding = PaddingValues(22.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
         item { if (LocalConfiguration.current.locales[0].language == "en") Notice(context.getString(R.string.arabic_content_notice)) }
         item { SectionTitle(if (searchMode) context.getString(R.string.ui_find_knowledge) else context.getString(R.string.ui_library), context.getString(R.string.ui_original_books_and_volumes_by_subject)) }
@@ -288,6 +298,7 @@ private fun CatalogScreen(searchMode: Boolean, query: String, onQuery: (String) 
                 }
             }
         }
+        if (showQuran) item { QuranEntry(onQuran) }
         if (subject == "fiqh") item { SchoolSelector(school, onSchool) }
         subject?.let { selectedSubject -> Catalog.books.filter { it.subject == selectedSubject }.flatMap { it.topics }.distinct() }?.let { filters ->
             item {
@@ -305,7 +316,7 @@ private fun CatalogScreen(searchMode: Boolean, query: String, onQuery: (String) 
             Notice(context.getString(R.string.ui_biographies_of_the_four_imams_companions_and_successors_only_volumes_1_a))
         }
         item { Text(context.getString(R.string.ui_results_1, results.size) + if (searchMode) context.getString(R.string.ui_1_comparisons, comparisons.size) else context.getString(R.string.ui_books_and_volumes), color = Muted, fontSize = 12.sp) }
-        if (results.isEmpty() && comparisons.isEmpty() && !(subject == "fiqh" && (school == null || school == "shared") && matchingReferenceVolumes(query, topic).isNotEmpty())) item {
+        if (results.isEmpty() && comparisons.isEmpty() && !showQuran && !(subject == "fiqh" && (school == null || school == "shared") && matchingReferenceVolumes(query, topic).isNotEmpty())) item {
             if (school != null && school != "shared") SchoolEmptyState { onSchool("shared") }
             else EmptyState(context.getString(R.string.ui_no_results), context.getString(R.string.ui_try_a_shorter_query_or_select_all_subjects), context.getString(R.string.ui_reset_search)) { onQuery(""); onSubject(null); onSchool(null); onTopic(null) }
         }
