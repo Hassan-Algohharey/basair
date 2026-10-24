@@ -17,7 +17,7 @@
     <string name="ui_one_question_four_schools">One question, four schools</string>
     <string name="ui_explore_opinions_and_their_sources">Explore opinions and their sources</string>
     <string name="ui_start_reading">Start reading</string>
-    <string name="ui_original_books_available_offline">Original books available offline</string>
+    <string name="ui_original_books_available_offline">Original books on demand; downloaded pages work offline</string>
     <string name="ui_1_books_and_volumes_across_2_subjects_with_sources_and_usage_details_sea">Library totals — books and volumes: %1$d; subjects: %2$d. Each edition includes its source and usage details. Search covers metadata and comparisons; scanned pages retain their original content.</string>
     <string name="ui_privacy_and_support">Privacy and support</string>
     <string name="ui_find_knowledge">Find knowledge</string>
@@ -48,10 +48,8 @@
     <string name="ui_remove_issue">Remove issue</string>
     <string name="ui_saved_books">Saved books</string>
     <string name="ui_no_browser_is_available_to_open_this_source">No browser is available to open this source</string>
-    <string name="ui_unable_to_open_the_book_please_try_again">Unable to open the book. Please try again.</string>
     <string name="ui_back">Back</string>
     <string name="ui_details">Details</string>
-    <string name="ui_original_edition_offline">Original edition · Offline</string>
     <string name="ui_downloaded_reference_offline">Downloaded reference · Offline</string>
     <string name="ui_1">%1$d%%</string>
     <string name="ui_day_mode">Day mode</string>

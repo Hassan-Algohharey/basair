@@ -17,7 +17,7 @@
     <string name="ui_one_question_four_schools">مسألة واحدة، أربعة مذاهب</string>
     <string name="ui_explore_opinions_and_their_sources">تعرّف على الأقوال مع مصدرها</string>
     <string name="ui_start_reading">ابدأ القراءة</string>
-    <string name="ui_original_books_available_offline">كتب أصلية متاحة دون اتصال</string>
+    <string name="ui_original_books_available_offline">كتب أصلية تُقرأ عند الطلب وتُحفظ بعد التنزيل</string>
     <string name="ui_1_books_and_volumes_across_2_subjects_with_sources_and_usage_details_sea">كتب ومجلدات: %1$d؛ الأقسام: %2$d. لكل نسخة بيانات المصدر والإتاحة. البحث في بيانات الكتب والمقارنات؛ الصفحات المصورة تبقى على أصلها.</string>
     <string name="ui_privacy_and_support">سياسة الخصوصية والدعم</string>
     <string name="ui_find_knowledge">ابحث عن معرفة</string>
@@ -48,10 +48,8 @@
     <string name="ui_remove_issue">إزالة المسألة</string>
     <string name="ui_saved_books">الكتب المحفوظة</string>
     <string name="ui_no_browser_is_available_to_open_this_source">لا يوجد متصفح لفتح المصدر</string>
-    <string name="ui_unable_to_open_the_book_please_try_again">تعذر فتح نسخة الكتاب. أعد المحاولة.</string>
     <string name="ui_back">→ العودة</string>
     <string name="ui_details">البيانات</string>
-    <string name="ui_original_edition_offline">النسخة الأصلية · دون اتصال</string>
     <string name="ui_downloaded_reference_offline">مرجع منزّل · دون اتصال</string>
     <string name="ui_1">%1$d٪</string>
     <string name="ui_day_mode">الوضع النهاري</string>

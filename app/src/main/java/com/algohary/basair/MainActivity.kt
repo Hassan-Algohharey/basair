@@ -241,7 +241,7 @@ private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onComp
         item { SectionTitle(context.getString(R.string.ui_start_reading), context.getString(R.string.ui_original_books_available_offline)) }
         item { BookCard(Catalog.books.first(), false, { onBook(Catalog.books.first().id) }, null) }
         item { Notice(context.getString(R.string.ui_1_books_and_volumes_across_2_subjects_with_sources_and_usage_details_sea, Catalog.books.size, Catalog.subjects.size)) }
-        item { TextButton(onClick = { openSource(context, "https://sites.google.com/view/basair-privacy-algohary") }) { Text(context.getString(R.string.ui_privacy_and_support)) } }
+        item { TextButton(onClick = { openSource(context, "https://github.com/Hassan-Algohharey/basair/blob/main/publishing/privacy-policy.txt") }) { Text(context.getString(R.string.ui_privacy_and_support)) } }
     }
 }
 

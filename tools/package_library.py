@@ -22,7 +22,7 @@ for book in books:
     assert not reader.is_encrypted and len(reader.pages) == book['pages'], book['id']
     for page in reader.pages:
         assert float(page.mediabox.width) > 0 and float(page.mediabox.height) > 0
-    target = ROOT / 'app/src/main/assets' / book['asset']
+    target = ROOT / 'content/originals' / Path(book['asset']).name
     target.parent.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(source, target)
     keys = ['id','title','author','subject','description','source','asset','publisher','edition','licenseName','licenseUrl','rightsNote','sha256']
@@ -33,7 +33,7 @@ for book in books:
     chapters = book.get('chapters', [])
     assert len({c['title'] for c in chapters}) == len(chapters), book['id']
     assert all(1 <= c['pdfPage'] <= book['pages'] and c['printedPage'] and c['title'] in book['topics'] for c in chapters), book['id']
-    args += [f'pages = {book["pages"]}', 'topics = listOf(' + ', '.join(kotlin(v) for v in book['topics']) + ')',
+    args += [f'pages = {book["pages"]}', 'downloadUrl = ' + kotlin(book['downloadUrl']), f'bytes = {len(data)}L', 'topics = listOf(' + ', '.join(kotlin(v) for v in book['topics']) + ')',
              'schools = setOf(' + ', '.join(kotlin(v) for v in schools) + ')',
              'chapters = listOf(' + ', '.join('BookChapter(' + kotlin(c['title']) + ', ' + str(c['pdfPage']) + ', ' + kotlin(c['printedPage']) + ')' for c in chapters) + ')']
     rows.append('    Book(\n        ' + ',\n        '.join(args) + '\n    )')

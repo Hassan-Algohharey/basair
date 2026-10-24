@@ -1,0 +1,26 @@
+<resources>
+    <string name="reading_on_demand">قراءة حسب الطلب · الصفحات المحفوظة متاحة دون إنترنت</string>
+    <string name="page_download_error">تعذر تحميل الصفحة أو التحقق منها. تحقق من الاتصال وأعد المحاولة؛ الصفحات المحفوظة متاحة دون إنترنت.</string>
+    <string name="storage_title">التنزيل والتخزين</string>
+    <string name="storage_offline_only">قراءة المحفوظ فقط؛ إيقاف اتصالات تنزيل الكتب والصفحات.</string>
+    <string name="page_not_cached">هذه الصفحة غير محفوظة. أوقف «قراءة المحفوظ فقط» من التنزيل والتخزين لتحميلها عند توفر الإنترنت.</string>
+    <string name="storage_counts">المحفوظ: %1$d من %2$d صفحة · مساحة الكتاب: %3$d م.ب</string>
+    <string name="storage_page_ranges">صفحات الملف المحفوظة: %1$s</string>
+    <string name="storage_full_wifi">قصر تنزيل الكتاب كاملًا على اتصال غير محدود.</string>
+    <string name="storage_full_ready">الكتاب كامل محفوظ ومطابق للأصل، وجاهز دون إنترنت.</string>
+    <string name="storage_partial_notice">تُنزّل الصفحة المفتوحة أولًا، ثم ٧ قبلها و٧ بعدها حسب حدود الكتاب وإعداد الاتصال. هذا حفظ جزئي وليس تنزيلًا للكتاب كاملًا.</string>
+    <string name="storage_full_size">حجم تنزيل الأصل كاملًا: نحو %1$d م.ب. يبدأ التنزيل عند الضغط على الزر.</string>
+    <string name="storage_resume_size">تنزيل متوقف: نحو %1$d م.ب؛ يمكن استئنافه إن دعمت الاستضافة ذلك.</string>
+    <string name="storage_progress">تنزيل الكتاب: %1$d٪</string>
+    <string name="storage_pause">إيقاف التنزيل مع حفظ التقدم</string>
+    <string name="storage_resume">استئناف تنزيل الكتاب</string>
+    <string name="storage_download">تنزيل الكتاب كاملًا</string>
+    <string name="storage_failure">تعذر التنزيل أو لم يطابق الملف الأصل. تحقق من الاتصال وأعد المحاولة.</string>
+    <string name="storage_delete_book">حذف ملفات هذا الكتاب</string>
+    <string name="storage_cache_size">مساحة الصفحات المؤقتة لجميع الكتب: %1$d م.ب</string>
+    <string name="storage_wifi">جلب الصفحات المجاورة على اتصال غير محدود فقط؛ الصفحة المطلوبة تنزل عند فتحها.</string>
+    <string name="storage_limit">الحد المستهدف للصفحات المؤقتة؛ تُحفظ نافذة القراءة الحالية:</string>
+    <string name="storage_mb">%1$d م.ب</string>
+    <string name="storage_clear_cache">مسح الصفحات المؤقتة لجميع الكتب</string>
+    <string name="storage_preserve_data">حذف الملفات يحفظ العلامات والمحـفوظات وموضع القراءة. الكتب المنزلة كاملة تبقى حتى تحذفها بنفسك. التنزيل الكامل بطلبك قد يستهلك بيانات الهاتف.</string>
+</resources>

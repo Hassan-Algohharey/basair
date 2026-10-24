@@ -1,0 +1,26 @@
+<resources>
+    <string name="reading_on_demand">On-demand reading · Saved pages work offline</string>
+    <string name="page_download_error">Unable to download or verify this page. Check your connection and try again. Saved pages work offline.</string>
+    <string name="storage_title">Downloads and storage</string>
+    <string name="storage_offline_only">Read saved files only; disable book and page download connections.</string>
+    <string name="page_not_cached">This page is not saved. Turn off “Read saved files only” in Downloads and storage to download it when connected.</string>
+    <string name="storage_counts">Pages saved: %1$d / %2$d · Book storage: %3$d MB</string>
+    <string name="storage_page_ranges">Saved file pages: %1$s</string>
+    <string name="storage_full_wifi">Download complete books on unmetered connections only.</string>
+    <string name="storage_full_ready">The complete book matches the original and is ready offline.</string>
+    <string name="storage_partial_notice">The opened page downloads first, followed by up to 7 pages before and 7 after it, within the book and connection settings. This is a partial cache, not a complete download.</string>
+    <string name="storage_full_size">Complete original download: about %1$d MB. Download starts when you press the button.</string>
+    <string name="storage_resume_size">Paused download: about %1$d MB. Resume is available when supported by the host.</string>
+    <string name="storage_progress">Book download: %1$d%%</string>
+    <string name="storage_pause">Pause and keep download progress</string>
+    <string name="storage_resume">Resume book download</string>
+    <string name="storage_download">Download complete book</string>
+    <string name="storage_failure">Download failed or did not match the original. Check your connection and try again.</string>
+    <string name="storage_delete_book">Delete this book’s files</string>
+    <string name="storage_cache_size">Temporary page storage for all books: %1$d MB</string>
+    <string name="storage_wifi">Prefetch adjacent pages on unmetered connections only. The requested page downloads when opened.</string>
+    <string name="storage_limit">Target temporary page limit; the current reading window is retained:</string>
+    <string name="storage_mb">%1$d MB</string>
+    <string name="storage_clear_cache">Clear temporary pages for all books</string>
+    <string name="storage_preserve_data">Deleting files keeps bookmarks, saved items and reading position. Complete downloads remain until you delete them. Requested complete downloads may use mobile data.</string>
+</resources>

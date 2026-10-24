@@ -33,51 +33,21 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import java.io.Closeable
 import java.io.File
-import java.security.MessageDigest
 import androidx.core.view.WindowCompat
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.NonCancellable
-import kotlinx.coroutines.awaitCancellation
 import kotlinx.coroutines.withContext
 import kotlin.math.roundToInt
 import kotlin.math.sqrt
 
-private class PdfBookSession(context: Context, book: Book, localFile: File? = null) : Closeable {
+private class PdfBookSession(file: File, expectedPages: Int) : Closeable {
     private val descriptor: ParcelFileDescriptor
     private val renderer: PdfRenderer
     private var closed = false
-
     init {
-        val directory = File(context.cacheDir, "books").apply { mkdirs() }
-        val file = localFile ?: File(directory, "${book.id}-${book.sha256.take(16)}.pdf")
-        if (localFile != null) check(localFile.isFile && sha256(localFile) == book.sha256) { "Reference checksum mismatch" }
-        if (localFile == null && !file.exists()) {
-            val temporary = File(directory, "${book.id}.part")
-            try {
-                val digest = MessageDigest.getInstance("SHA-256")
-                context.assets.open(book.asset).use { input ->
-                    temporary.outputStream().use { output ->
-                        val buffer = ByteArray(64 * 1024)
-                        while (true) {
-                            val count = input.read(buffer)
-                            if (count < 0) break
-                            output.write(buffer, 0, count)
-                            digest.update(buffer, 0, count)
-                        }
-                    }
-                }
-                val hash = digest.digest().joinToString("") { "%02x".format(it) }
-                check(hash == book.sha256) { "Book checksum mismatch" }
-                check(temporary.renameTo(file)) { "Cannot store PDF" }
-            } finally { temporary.delete() }
-        }
         val opened = ParcelFileDescriptor.open(file, ParcelFileDescriptor.MODE_READ_ONLY)
         try {
             val pdf = PdfRenderer(opened)
-            if (pdf.pageCount != book.pages) {
-                pdf.close()
-                error("Unexpected page count")
-            }
+            if (pdf.pageCount != expectedPages) { pdf.close(); error("Unexpected page count") }
             descriptor = opened
             renderer = pdf
         } catch (error: Exception) { opened.close(); throw error }
@@ -171,17 +141,8 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
     }
     val muted = MaterialTheme.colorScheme.onSurfaceVariant
     var retry by remember { mutableIntStateOf(0) }
-    var error by remember(book.id, retry) { mutableStateOf<String?>(null) }
-    val session by produceState<PdfBookSession?>(null, book.id, retry) {
-        var owned: PdfBookSession? = null
-        try {
-            withContext(Dispatchers.IO) { owned = PdfBookSession(context, book, localFile) }
-            value = owned
-            awaitCancellation()
-        } catch (cancel: kotlinx.coroutines.CancellationException) { throw cancel }
-        catch (_: Exception) { error = context.getString(R.string.ui_unable_to_open_the_book_please_try_again) }
-        finally { withContext(NonCancellable + Dispatchers.IO) { owned?.close() } }
-    }
+    val downloads = remember(context) { BookDownloads(context) }
+    var showStorage by remember { mutableStateOf(false) }
     LaunchedEffect(page) { preferences.edit().putInt("page:${book.id}", page).apply() }
     LaunchedEffect(zoom) { preferences.edit().putFloat("pdfZoom", zoom).apply() }
 
@@ -194,13 +155,14 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
                 description = if (saved) context.getString(R.string.ui_remove_saved_book) else context.getString(R.string.ui_save_book)) }
         }
         Row(Modifier.fillMaxWidth().padding(horizontal = 14.dp), verticalAlignment = Alignment.CenterVertically) {
-            Text(if (localFile == null) context.getString(R.string.ui_original_edition_offline) else context.getString(R.string.ui_downloaded_reference_offline), Modifier.weight(1f), fontSize = 11.sp, color = muted)
+            Text(if (localFile == null) context.getString(R.string.reading_on_demand) else context.getString(R.string.ui_downloaded_reference_offline), Modifier.weight(1f), fontSize = 11.sp, color = muted)
             TextButton(onClick = { zoom = (zoom - .5f).coerceAtLeast(1f) }, enabled = zoom > 1f) { Text("−") }
             Text(context.getString(R.string.ui_1, (zoom * 100).roundToInt()), fontSize = 12.sp)
             TextButton(onClick = { zoom = (zoom + .5f).coerceAtMost(3f) }, enabled = zoom < 3f) { Text("+") }
         }
         Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(horizontal = 8.dp),
             verticalAlignment = Alignment.CenterVertically) {
+            if (localFile == null) TextButton(onClick = { showStorage = true }) { Text(context.getString(R.string.storage_title)) }
             if (book.chapters.isNotEmpty()) TextButton(onClick = { showChapters = true }) { Text(context.getString(R.string.book_contents)) }
             TextButton(onClick = onToggleNight) { Text(if (night) context.getString(R.string.ui_day_mode) else context.getString(R.string.ui_night_mode)) }
             TextButton(onClick = {
@@ -212,16 +174,24 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
             val density = LocalDensity.current
             val viewportWidth = maxWidth
             val renderWidth = with(density) { (viewportWidth * zoom).roundToPx() }
-            var renderError by remember(session, page, zoom) { mutableStateOf(false) }
-            val bitmap by produceState<Bitmap?>(null, session, page, renderWidth) {
+            var renderError by remember(book.id, page, zoom, retry) { mutableStateOf(false) }
+            val bitmap by key(book.id, page, renderWidth, retry) { produceState<Bitmap?>(null) {
                 value = null
-                try { value = withContext(Dispatchers.IO) { session?.render(page - 1, renderWidth) } }
+                try {
+                    value = withContext(Dispatchers.IO) {
+                        val source = if (localFile != null) PageFile(localFile, page - 1, book.pages) else downloads.open(book, page)
+                        PdfBookSession(source.file, source.count).use { it.render(source.index, renderWidth) }
+                    }
+                }
                 catch (cancel: kotlinx.coroutines.CancellationException) { throw cancel }
                 catch (_: Exception) { renderError = true }
+            } }
+            LaunchedEffect(page, bitmap != null, showStorage) {
+                if (bitmap != null && localFile == null && !showStorage) downloads.prefetch(book, page)
             }
             when {
-                error != null || renderError -> Column(Modifier.align(Alignment.Center).padding(20.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text(error ?: context.getString(R.string.ui_unable_to_display_this_page_try_reducing_the_zoom))
+                renderError -> Column(Modifier.align(Alignment.Center).padding(20.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(context.getString(if (localFile != null) R.string.ui_unable_to_display_this_page_try_reducing_the_zoom else if (downloads.offlineOnly()) R.string.page_not_cached else R.string.page_download_error))
                     Button(onClick = { retry++; renderError = false }) { Text(context.getString(R.string.ui_try_again)) }
                 }
                 bitmap == null -> CircularProgressIndicator(Modifier.align(Alignment.Center))
@@ -243,6 +213,7 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
             TextButton(onClick = { page++ }, enabled = page < book.pages) { Text(context.getString(R.string.ui_next)) }
         }
     }
+    if (showStorage) BookStorageDialog(book, page, downloads) { showStorage = false; retry++ }
     if (showChapters) AlertDialog(onDismissRequest = { showChapters = false },
         title = { Text(context.getString(R.string.book_contents)) }, text = {
             Column {
