@@ -23,3 +23,15 @@ with ThreadPoolExecutor(max_workers=4) as executor:
     for name in executor.map(verify, manifest.items()):
         print('PASS hosted first/last pages:', name, flush=True)
 print('PASS: all 16 books have verified first and last hosted pages.', flush=True)
+
+# A small range confirms the host behavior used by resumable original downloads.
+original = root / 'content/originals/nawawi-fifty.pdf'
+request = urllib.request.Request(host + 'content/originals/nawawi-fifty.pdf', headers={'Range': 'bytes=1024-2047', 'Accept-Encoding': 'identity'})
+with urllib.request.urlopen(request, timeout=40) as response:
+    data = response.read(1024)
+    source = original.read_bytes()
+    if response.status == 206:
+        assert response.headers['Content-Range'].startswith('bytes 1024-2047/') and data == source[1024:2048]
+    else:
+        assert response.status == 200 and data == source[:1024]
+    print('PASS original range behavior:', response.status, 'verified bytes:', len(data), flush=True)

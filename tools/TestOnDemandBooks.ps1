@@ -90,8 +90,8 @@ function Contains([string]$Text) {
     (Ui).SelectNodes('//node') | Where-Object { $_.package -eq $package -and $_.text.Contains($Text) } | Select-Object -First 1
 }
 function Toggle([string]$Label,[bool]$Value) {
-    $label=Show $Label
-    $b=[regex]::Matches($label.bounds,'\d+') | ForEach-Object { [int]$_.Value }
+    $labelNode=Show $Label
+    $b=[regex]::Matches($labelNode.bounds,'\d+') | ForEach-Object { [int]$_.Value }
     $center=($b[1]+$b[3])/2
     $switch=(Ui).SelectNodes('//node') | Where-Object { $_.package -eq $package -and $_.checkable -eq 'true' } | Sort-Object {
         $bounds=[regex]::Matches($_.bounds,'\d+') | ForEach-Object { [int]$_.Value }

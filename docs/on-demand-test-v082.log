@@ -1,0 +1,14 @@
+Device: Samsung Galaxy A55 SM_A556E, Android 16 / API 36, physical USB device.
+Package: com.algohary.basair.preview, 0.8.2-preview (10).
+Install: adb install -r. Official production package untouched; no app data clear.
+PASS previous Fath al-Qarib original migrated from legacy cache; prior file page 23 preserved after upgrade.
+PASS Nawawi book file page 30 downloads first; exactly 15 pages, 23-37, cached after deleting only that book's files.
+PASS saved-only mode renders cached page 23 and rejects uncached page 1 with a localized explanation; no global network settings changed.
+PASS cached page 30 and saved-only preference persist after process restart.
+PASS complete Nawawi original downloaded and SHA-256 verified; last file page 61 renders in saved-only mode.
+PASS English storage controls and complete-download status; final language Arabic and default network preferences restored.
+PASS public host: first and last pages of all 16 books verified against expected SHA-256/size (32 requests).
+PASS original host supports HTTP 206 Range bytes 1024-2047/351334; 1024 returned bytes match the unchanged original.
+Local private screenshots: publishing/screenshots/v082-phone/ (ignored).
+PASS large Hanafi original download paused with a retained partial file; resume accepted and complete 37,524,747-byte original verified against SHA-256. Reading position preserved.
+No Google Play upload, review submission or publication.
