@@ -24,16 +24,23 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-internal fun ComparisonScreen(selectedId: String, onSelect: (String) -> Unit) {
+internal fun ComparisonScreen(selectedId: String, onSelect: (String) -> Unit, saved: Set<String>,
+    onSave: (String) -> Unit, onReference: (Reference) -> Unit) {
     var query by rememberSaveable { mutableStateOf("") }
     var topic by rememberSaveable { mutableStateOf<String?>(null) }
     var school by rememberSaveable { mutableStateOf<String?>(null) }
     var expanded by remember { mutableStateOf(false) }
+    var readingReference by remember { mutableStateOf<Reference?>(null) }
     val results = remember(query, topic, school) { Catalog.searchComparisons(query, topic = topic, school = school) }
     val comparison = selectComparison(results, selectedId)
     LaunchedEffect(comparison?.id) { comparison?.let { if (it.id != selectedId) onSelect(it.id) } }
     val context = LocalContext.current
     val focus = LocalFocusManager.current
+    readingReference?.let { reference ->
+        key(reference.volume, reference.pdfPage) {
+            ReferenceDownloadDialog(reference, { readingReference = null }, { readingReference = null; onReference(it) })
+        }
+    }
     LazyColumn(contentPadding = PaddingValues(22.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
         item { SectionTitle("المقارنة الفقهية", "${Catalog.comparisons.size} مسألة · أربعة مذاهب · إحالات إلى الصفحات") }
         item {
@@ -74,6 +81,24 @@ internal fun ComparisonScreen(selectedId: String, onSelect: (String) -> Unit) {
             Notice("لا توجد مسائل مطابقة. جرّب كلمة أقصر أو غيّر الباب أو المذهب، أو اضغط إعادة الضبط.")
         }
         if (comparison != null) {
+            item {
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+                    TextButton(onClick = { onSave(comparison.id) }) {
+                        Text(if (comparison.id in saved) "إزالة المسألة من المحفوظات" else "حفظ المسألة")
+                    }
+                    TextButton(onClick = {
+                        val intent = android.content.Intent(android.content.Intent.ACTION_SEND).apply {
+                            type = "text/plain"
+                            putExtra(android.content.Intent.EXTRA_SUBJECT, comparison.title)
+                            putExtra(android.content.Intent.EXTRA_TEXT, comparison.shareText(school))
+                        }
+                        try { context.startActivity(android.content.Intent.createChooser(intent, "مشاركة المقارنة")) }
+                        catch (_: android.content.ActivityNotFoundException) {
+                            android.widget.Toast.makeText(context, "لا يوجد تطبيق متاح للمشاركة", android.widget.Toast.LENGTH_SHORT).show()
+                        }
+                    }) { Text("مشاركة المقارنة") }
+                }
+            }
             item {
                 Box {
                     OutlinedButton(onClick = { expanded = true; focus.clearFocus() }, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(14.dp)) {
@@ -116,6 +141,7 @@ internal fun ComparisonScreen(selectedId: String, onSelect: (String) -> Unit) {
                         opinion.references.forEach { reference ->
                             Text(reference.label, fontSize = 13.sp, color = Green, lineHeight = 23.sp)
                             Text("${reference.publisher}\n${reference.edition}", fontSize = 11.sp, lineHeight = 20.sp, color = Muted)
+                            TextButton(onClick = { readingReference = reference }) { Text("قراءة المرجع داخل التطبيق · صفحة ${reference.pdfPage}", fontSize = 12.sp) }
                             TextButton(onClick = { openSource(context, reference.source) }) { Text("فتح المصدر المصوّر · صفحة ${reference.pdfPage}", fontSize = 12.sp) }
                         }
                     }

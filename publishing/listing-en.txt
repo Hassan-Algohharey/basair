@@ -9,13 +9,15 @@ This version contains 12 books and volumes representing 11 titles, with 2,410 or
 
 Reading features:
 • View and zoom original book pages and jump to a page.
-• Save books and resume your reading position.
+• Save books and comparisons, resume reading, and use night mode and page bookmarks.
+• Share comparison summaries with their sources through Android.
+• Optionally download verified reference volumes and open the cited page in the app, then read offline.
 • Search Arabic book titles, authors and topics.
 • Browse shortcuts for the four imams, companions, successors and purification topics.
 • Read 15 concise comparisons across the four Sunni legal schools, with source, volume and page references. Search comparisons and filter by topic and school.
 • Inspect the author, edition, source link and reuse conditions for each included file.
 
-The books and reading interface are in Arabic. Search covers metadata and comparison summaries, not every word in scanned pages. The two included Sifat Al-Safwa volumes are not the complete multi-volume work. External source links require internet access.
+The books and reading interface are in Arabic. Search covers metadata and comparison summaries, not every word in scanned pages. The two included Sifat Al-Safwa volumes are not the complete multi-volume work. Initial reference downloads and external links require internet access.
 
 No account or advertisements. Reading preferences are stored on your device. Comparisons are educational summaries, not personal fatwas.
 

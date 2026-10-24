@@ -1,15 +1,19 @@
 بصائر | Basair — سياسة الخصوصية
-تاريخ السريان: 23 أكتوبر 2026
+تاريخ السريان: 24 أكتوبر 2026
 التطبيق: com.algohary.basair — المطوّر: Smart_Grow
 
 جمع البيانات ومشاركتها
 لا يجمع التطبيق بيانات شخصية ولا يرسلها إلى خوادم المطوّر أو يشاركها مع جهات أخرى. لا يتطلب حسابًا أو تسجيل دخول، ولا يتضمن إعلانات أو أدوات تحليلات أو تتبع.
 
 البيانات المحلية وحذفها
-يحفظ التطبيق الكتب المفضلة وآخر صفحة قرأتها وحجم التكبير ونسخ الكتب المؤقتة على جهازك فقط. لا يرفعها إلى خدمات سحابية، والنسخ الاحتياطي التلقائي معطّل. يمكنك حذف هذه البيانات بمسح مساحة تخزين التطبيق من إعدادات Android أو بإلغاء تثبيته.
+يحفظ التطبيق الكتب والمسائل المفضلة وعلامات الصفحات وآخر صفحة قرأتها وحجم التكبير والوضع الليلي ونسخ الكتب المؤقتة والمراجع المنزلة على جهازك فقط. لا يرفعها إلى خدمات سحابية، والنسخ الاحتياطي التلقائي معطّل. يمكنك حذف هذه البيانات بمسح مساحة تخزين التطبيق من إعدادات Android أو بإلغاء تثبيته.
 
 الصلاحيات والروابط
 الكتب مضمّنة للقراءة دون اتصال. لا يطلب التطبيق صلاحيات الكاميرا أو الميكروفون أو الموقع أو جهات الاتصال أو الوصول العام لملفاتك. روابط المصادر وبيانات الإتاحة تفتح في المتصفح، وتخضع زيارتها لسياسات مواقعها والمتصفح.
+
+تنزيل المراجع والمشاركة — من الإصدار 0.7.0
+يمكنك اختيار تنزيل المجلدات المرجعية من d1.islamhouse.com عبر HTTPS. يبدأ الاتصال بطلبك، وقد يستقبل مزود الملف عنوان IP ومعلومات طلب التنزيل وفق سياساته. لا يرسل التطبيق محفوظاتك أو بيانات القراءة في طلب التنزيل. تُحفظ الملفات داخل مساحة التطبيق وتتاح دون اتصال بعد التحقق منها.
+عند اختيار مشاركة مقارنة، يفتح Android قائمة المشاركة ليرسل النص والمصادر إلى التطبيق الذي تختاره. لا يُرسل شيء إلى مستلم تلقائيًا، وتخضع المشاركة لسياسات التطبيق الذي تختاره.
 
 الأطفال
 لا يجمع التطبيق بيانات شخصية من الأطفال أو غيرهم. المكتبة للقراءة والتعلم العام، وليست خدمة تواصل اجتماعي.
@@ -21,17 +25,21 @@
 تُحدّث هذه السياسة وتاريخها عند تغير ممارسات التطبيق. للخصوصية والدعم وحقوق المحتوى: smartgrow75@gmail.com. إذا أرسلت بريدًا، تستخدم المعلومات التي تختار مشاركتها لمعالجة طلبك عبر خدمة البريد.
 
 Privacy Policy — Basair
-Effective: 23 October 2026
+Effective: 24 October 2026
 Android package: com.algohary.basair. Developer: Smart_Grow.
 
 Data collection and sharing
 The app does not collect personal data, send it to developer servers, or share it with third parties. No account or login is required. It contains no advertisements, analytics or tracking SDKs.
 
 Local storage and deletion
-Saved books, reading positions, zoom preferences and cached book files are stored on your device. The app does not upload them to cloud storage and automatic backup is disabled. Clear the app storage in Android settings or uninstall it to delete this local data.
+Saved books and comparisons, page bookmarks, reading positions, zoom and night mode preferences, cached book files and downloaded references are stored on your device. The app does not upload them to cloud storage and automatic backup is disabled. Clear the app storage in Android settings or uninstall it to delete this local data.
 
 Permissions and links
 Bundled Arabic books can be read offline. The app does not request camera, microphone, location, contacts or general file access permissions. Source and licensing links open in your browser; external sites and browsers have their own privacy policies.
+
+Optional reference downloads and sharing — from version 0.7.0
+You can choose to download reference volumes from d1.islamhouse.com over HTTPS. The connection starts at your request. The file provider may receive your IP address and download request information under its policies. The app does not send favourites or reading history with the request. Verified files are stored privately in the app and remain available offline.
+When you choose to share a comparison, Android opens its share sheet with the text and sources for the app you select. Nothing is sent to a recipient automatically. The selected app has its own privacy policies.
 
 Children
 The app does not collect personal data from children or other users. It is a reading and learning library, not a social networking service.

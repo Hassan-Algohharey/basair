@@ -1,0 +1,6 @@
+<ar>
+حفظ المسائل الفقهية في محفوظاتي ومشاركة المقارنات مع مصادرها. تنزيل المراجع اختياريًا وفتح الإحالة داخل القارئ عند الصفحة المحددة، مع الاحتفاظ بفلاتر المقارنة عند الرجوع.
+</ar>
+<en-US>
+Save comparisons to favourites and share them with their sources. Optionally download verified reference volumes and open the cited page in the reader. Comparison filters are retained when returning from the reader.
+</en-US>

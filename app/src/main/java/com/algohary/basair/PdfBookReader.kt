@@ -42,15 +42,16 @@ import kotlinx.coroutines.withContext
 import kotlin.math.roundToInt
 import kotlin.math.sqrt
 
-private class PdfBookSession(context: Context, book: Book) : Closeable {
+private class PdfBookSession(context: Context, book: Book, localFile: File? = null) : Closeable {
     private val descriptor: ParcelFileDescriptor
     private val renderer: PdfRenderer
     private var closed = false
 
     init {
         val directory = File(context.cacheDir, "books").apply { mkdirs() }
-        val file = File(directory, "${book.id}-${book.sha256.take(16)}.pdf")
-        if (!file.exists()) {
+        val file = localFile ?: File(directory, "${book.id}-${book.sha256.take(16)}.pdf")
+        if (localFile != null) check(localFile.isFile && sha256(localFile) == book.sha256) { "Reference checksum mismatch" }
+        if (localFile == null && !file.exists()) {
             val temporary = File(directory, "${book.id}.part")
             try {
                 val digest = MessageDigest.getInstance("SHA-256")
@@ -106,7 +107,8 @@ private class PdfBookSession(context: Context, book: Book) : Closeable {
 }
 
 @Composable
-internal fun PdfBookReader(book: Book, saved: Boolean, onBack: () -> Unit, onSave: () -> Unit) {
+internal fun PdfBookReader(book: Book, saved: Boolean, onBack: () -> Unit, onSave: () -> Unit,
+    localFile: File? = null, initialPage: Int? = null, allowSave: Boolean = true) {
     val context = LocalContext.current
     val preferences = remember { context.getSharedPreferences("basair", Context.MODE_PRIVATE) }
     var night by rememberSaveable { mutableStateOf(preferences.getBoolean("readerNight", false)) }
@@ -133,7 +135,7 @@ internal fun PdfBookReader(book: Book, saved: Boolean, onBack: () -> Unit, onSav
     MaterialTheme(colorScheme = readerColors) {
         Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
             Box(Modifier.windowInsetsPadding(WindowInsets.safeDrawing)) {
-                PdfReaderContent(book, saved, onBack, onSave, night) {
+                PdfReaderContent(book, saved, onBack, onSave, localFile, initialPage, allowSave, night) {
                     night = !night
                     preferences.edit().putBoolean("readerNight", night).apply()
                 }
@@ -151,10 +153,10 @@ private val nightPageFilter = ColorFilter.colorMatrix(ColorMatrix(floatArrayOf(
 
 @Composable
 private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onSave: () -> Unit,
-    night: Boolean, onToggleNight: () -> Unit) {
+    localFile: File?, initialPage: Int?, allowSave: Boolean, night: Boolean, onToggleNight: () -> Unit) {
     val context = LocalContext.current
     val preferences = remember { context.getSharedPreferences("basair", Context.MODE_PRIVATE) }
-    var page by rememberSaveable(book.id) { mutableIntStateOf(preferences.getInt("page:${book.id}", 1).coerceIn(1, book.pages)) }
+    var page by rememberSaveable(book.id, initialPage) { mutableIntStateOf((initialPage ?: preferences.getInt("page:${book.id}", 1)).coerceIn(1, book.pages)) }
     var zoom by rememberSaveable(book.id) { mutableFloatStateOf(preferences.getFloat("pdfZoom", 1f).coerceIn(1f, 3f)) }
     var showPageDialog by remember { mutableStateOf(false) }
     var showDetails by remember { mutableStateOf(false) }
@@ -172,7 +174,7 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
     val session by produceState<PdfBookSession?>(null, book.id, retry) {
         var owned: PdfBookSession? = null
         try {
-            withContext(Dispatchers.IO) { owned = PdfBookSession(context, book) }
+            withContext(Dispatchers.IO) { owned = PdfBookSession(context, book, localFile) }
             value = owned
             awaitCancellation()
         } catch (cancel: kotlinx.coroutines.CancellationException) { throw cancel }
@@ -187,11 +189,11 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
             TextButton(onClick = onBack) { Text("→ العودة") }
             Text(book.title, Modifier.weight(1f), fontSize = 14.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
             TextButton(onClick = { showDetails = true }) { Text("البيانات") }
-            IconButton(onClick = onSave) { LineIcon("bookmark", if (saved) MaterialTheme.colorScheme.secondary else muted,
+            if (allowSave) IconButton(onClick = onSave) { LineIcon("bookmark", if (saved) MaterialTheme.colorScheme.secondary else muted,
                 description = if (saved) "إزالة الكتاب من المحفوظات" else "حفظ الكتاب") }
         }
         Row(Modifier.fillMaxWidth().padding(horizontal = 14.dp), verticalAlignment = Alignment.CenterVertically) {
-            Text("النسخة الأصلية · دون اتصال", Modifier.weight(1f), fontSize = 11.sp, color = muted)
+            Text(if (localFile == null) "النسخة الأصلية · دون اتصال" else "مرجع منزّل · دون اتصال", Modifier.weight(1f), fontSize = 11.sp, color = muted)
             TextButton(onClick = { zoom = (zoom - .5f).coerceAtLeast(1f) }, enabled = zoom > 1f) { Text("−") }
             Text("${(zoom * 100).roundToInt()}٪", fontSize = 12.sp)
             TextButton(onClick = { zoom = (zoom + .5f).coerceAtMost(3f) }, enabled = zoom < 3f) { Text("+") }

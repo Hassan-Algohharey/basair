@@ -1,3 +1,6 @@
 <ar>
-إضافة عشر مسائل للمقارنة، ليصبح الإجمالي 15 مسألة للمذاهب الأربعة، مع توثيق الجزء والصفحة والطبعة. بحث داخل المقارنات وتصفية حسب الباب والمذهب، مع عدد النتائج وإعادة الضبط والتنقل بين المسائل.
+إضافة عشر مسائل للمقارنة، ليصبح الإجمالي 15 مسألة للمذاهب الأربعة مع المصدر والجزء والصفحة والطبعة. بحث وتصفية حسب الباب والمذهب، وعدد النتائج والتنقل بين المسائل. تحسين القارئ بالوضع الليلي وعلامات الصفحات.
 </ar>
+<en-US>
+15 sourced comparisons across the four Sunni schools, with volume, page and edition references. Search and filter by topic and school, navigate results, and use reader night mode and page bookmarks.
+</en-US>

@@ -24,6 +24,7 @@ import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -90,19 +91,39 @@ private fun BasairApp() {
     val context = LocalContext.current
     val preferences = remember { context.getSharedPreferences("basair", Context.MODE_PRIVATE) }
     var saved by remember { mutableStateOf(preferences.getStringSet("saved", emptySet())!!.toSet()) }
+    var savedComparisons by remember { mutableStateOf(preferences.getStringSet("savedComparisons", emptySet()).orEmpty().toSet()) }
+    var referenceVolume by rememberSaveable { mutableStateOf<Int?>(null) }
+    var referencePage by rememberSaveable { mutableIntStateOf(1) }
     var comparisonId by rememberSaveable { mutableStateOf("ghusl-intention") }
     var route by rememberSaveable { mutableStateOf("home") }
     var bookId by rememberSaveable { mutableStateOf<String?>(null) }
     var subject by rememberSaveable { mutableStateOf<String?>(null) }
     var query by rememberSaveable { mutableStateOf("") }
+    val comparisonState = rememberSaveableStateHolder()
     val toggleSave: (String) -> Unit = { id ->
         saved = if (id in saved) saved - id else saved + id
         preferences.edit().putStringSet("saved", saved).apply()
     }
     val visitSubject: (String) -> Unit = { subject = it; route = "library"; bookId = null }
+    val toggleComparison: (String) -> Unit = { id ->
+        savedComparisons = if (id in savedComparisons) savedComparisons - id else savedComparisons + id
+        preferences.edit().putStringSet("savedComparisons", savedComparisons).apply()
+    }
     val navigate: (String) -> Unit = { route = it; bookId = null }
-    BackHandler(enabled = bookId != null || route != "home") {
-        if (bookId != null) bookId = null else route = "home"
+    val openComparison: (String) -> Unit = { id ->
+        comparisonState.removeState("comparison")
+        comparisonId = id
+        navigate("compare")
+    }
+    BackHandler(enabled = referenceVolume != null || bookId != null || route != "home") {
+        if (referenceVolume != null) referenceVolume = null else if (bookId != null) bookId = null else route = "home"
+    }
+    referenceVolumes[referenceVolume]?.let { volume ->
+        key(volume.volume, referencePage) {
+            PdfBookReader(volume.asBook(), false, { referenceVolume = null }, {},
+                localFile = java.io.File(referenceDirectory(context), volume.fileName), initialPage = referencePage, allowSave = false)
+        }
+        return
     }
     val readingBook = Catalog.books.find { it.id == bookId }
     if (readingBook != null) {
@@ -126,10 +147,14 @@ private fun BasairApp() {
             when (route) {
                 "home" -> HomeScreen(visitSubject, { navigate("search") }, { navigate("compare") }, { bookId = it })
                 "library", "search" -> CatalogScreen(route == "search", query, { query = it }, subject,
-                    { subject = it }, { bookId = it }, saved, toggleSave, { comparisonId = it; navigate("compare") })
-                "compare" -> ComparisonScreen(comparisonId, { comparisonId = it })
+                    { subject = it }, { bookId = it }, saved, toggleSave, openComparison)
+                "compare" -> comparisonState.SaveableStateProvider("comparison") {
+                    ComparisonScreen(comparisonId, { comparisonId = it }, savedComparisons, toggleComparison,
+                        { referencePage = it.pdfPage; referenceVolume = it.volume })
+                }
                 "saved" -> SavedScreen(Catalog.books.filter { it.id in saved }, { bookId = it }, toggleSave,
-                    { subject = null; navigate("library") })
+                    { subject = null; navigate("library") }, Catalog.comparisons.filter { it.id in savedComparisons },
+                    openComparison, toggleComparison)
             }
         }
     }
@@ -293,10 +318,26 @@ private fun BookCard(book: Book, saved: Boolean, onOpen: () -> Unit, onSave: (()
 }
 
 @Composable
-private fun SavedScreen(books: List<Book>, onBook: (String) -> Unit, onSave: (String) -> Unit, onLibrary: () -> Unit) {
+private fun SavedScreen(books: List<Book>, onBook: (String) -> Unit, onSave: (String) -> Unit, onLibrary: () -> Unit,
+    comparisons: List<Comparison>, onComparison: (String) -> Unit, onRemoveComparison: (String) -> Unit) {
     LazyColumn(contentPadding = PaddingValues(22.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
         item { SectionTitle("محفوظاتي", "ما اخترته، قريب منك دائمًا") }
-        if (books.isEmpty()) item { EmptyState("مساحة لقراءتك القادمة", "احفظ كتابًا من المكتبة لتجده هنا، مع استئناف آخر صفحة قرأتها على هذا الجهاز.", "استكشف المكتبة", onLibrary) }
+        item { Text("الكتب: ${books.size} · المسائل: ${comparisons.size}", color = Muted, fontSize = 13.sp) }
+        if (books.isEmpty() && comparisons.isEmpty()) item { EmptyState("مساحة لقراءتك القادمة", "احفظ كتابًا من المكتبة أو مسألة من المقارنات لتجدها هنا على هذا الجهاز.", "استكشف المكتبة", onLibrary) }
+        if (comparisons.isNotEmpty()) item { Text("المسائل المحفوظة", fontWeight = FontWeight.Bold) }
+        items(comparisons, key = { "comparison:${it.id}" }) { comparison ->
+            Surface(color = SoftGreen, shape = RoundedCornerShape(18.dp)) {
+                Column(Modifier.fillMaxWidth().padding(18.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    Text(comparison.topic, fontSize = 12.sp, color = Muted)
+                    Text(comparison.title, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                    Row {
+                        TextButton(onClick = { onComparison(comparison.id) }) { Text("فتح المقارنة") }
+                        TextButton(onClick = { onRemoveComparison(comparison.id) }) { Text("إزالة المسألة") }
+                    }
+                }
+            }
+        }
+        if (books.isNotEmpty()) item { Text("الكتب المحفوظة", fontWeight = FontWeight.Bold) }
         items(books, key = { it.id }) { book -> BookCard(book, true, { onBook(book.id) }, { onSave(book.id) }) }
     }
 }

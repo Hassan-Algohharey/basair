@@ -1,0 +1,12 @@
+Phone: Samsung Galaxy A55; Android 16; separate preview package.
+Original download and feature pass:
+PASS favourites survive restart, saved comparison opens, and Android share chooser opens without sending.
+PASS reference 31: verified download and rendered PDF page 207 of 399.
+PASS downloaded reference persists after restart and reopens from local storage without a new download.
+PASS reference 43: verified download and rendered PDF page 360 of 450.
+PASS reference 27: verified download and rendered PDF page 274 of 406.
+PASS reference 23: verified download and rendered PDF page 232 of 383.
+PASS v0.7.0: favourites persistence, share chooser, four original reference volumes at exact cited pages, cached reopen, search and return navigation; no app data cleared.
+Final build navigation pass:
+PASS final build: query and selected school survive reference reader navigation; cached page 274 opens.
+PASS final build: global search opens its requested comparison and clears incompatible prior comparison filters.
