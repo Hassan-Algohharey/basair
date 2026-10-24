@@ -3,7 +3,7 @@
     <string name="media_title">Scholars and lessons</string>
     <string name="media_intro">A sourced directory of lessons, sermons, short talks and book explanations.</string>
     <string name="media_initial_collection">This is an initial selection. Scholar profiles show only the items indexed in Basair, not all of their lessons.</string>
-    <string name="media_original_language">The interface is in English. Scholar names, titles and recordings remain in their original Arabic; lecture translations are not included.</string>
+    <string name="media_original_language">The interface and index labels are available in English. Scholar names, recording titles and recordings remain in their original Arabic; lecture translations are not included.</string>
     <string name="media_external_notice">Watch online on the original website or its app. Basair does not download recordings. External services may show ads or require sign-in and have their own privacy policies.</string>
     <string name="media_back_directory">Back to scholar directory</string>
     <string name="media_profile_count">Indexed items: %1$d</string>

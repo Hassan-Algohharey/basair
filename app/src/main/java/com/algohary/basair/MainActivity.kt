@@ -288,7 +288,7 @@ private fun CatalogScreen(searchMode: Boolean, query: String, onQuery: (String) 
         if (searchMode && school == null && topic == null) Catalog.searchComparisons(query, subject) else emptyList()
     }
     val mediaMatches = if (subject == null && school == null && topic == null)
-        filteredMediaItems(MediaUiState(scholars = MediaCatalog.scholars, items = MediaCatalog.items, query = query,
+        filteredMediaItems(MediaUiState(scholars = MediaCatalog.scholars, items = MediaCatalog.items, query = query, series = MediaCatalog.series,
             bookTitles = Catalog.books.associate { it.id to it.title })).size else 0
     val showQuran = subject in listOf(null, "tafsir") && school == null && topic == null &&
         normalizeArabic(query).split(Regex("\\s+")).all { it in normalizeArabic("القرآن الكريم المصحف التفسير الميسر Quran Koran Madinah Mushaf tafsir muyassar") }

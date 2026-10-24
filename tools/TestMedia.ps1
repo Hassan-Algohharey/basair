@@ -110,18 +110,24 @@ function Jump([int]$Target) {
     Tap 'انتقال'
 }
 
+$catalog=Get-Content (Join-Path $project 'content/media/catalog.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+$shortCount=@($catalog.items | Where-Object { $_.type -eq 'short' }).Count
+$sermonCount=@($catalog.items | Where-Object { $_.type -eq 'sermon' }).Count
+$lessonCount=@($catalog.items | Where-Object { $_.type -eq 'lesson' }).Count
+$nawawiCount=@($catalog.items | Where-Object { 'nawawi-fifty' -in $_.bookIds }).Count
+$totalCount=@($catalog.items).Count
 Restart
 if (Lookup 'Home') { Tap 'العربية' }
 TapNode (Show 'الشيوخ والدروس')
 ToolbarTap 'مقاطع قصيرة'
-Find 'عدد المواد: 6' | Out-Null
+Find "عدد المواد: $shortCount" | Out-Null
 Capture '01-shorts.png'
 Top
 ToolbarTap 'الخطب'
-Find 'عدد المواد: 3' | Out-Null
+Find "عدد المواد: $sermonCount" | Out-Null
 Top
 ToolbarTap 'الدروس وشروح الكتب'
-Find 'عدد المواد: 7' | Out-Null
+Find "عدد المواد: $lessonCount" | Out-Null
 Top
 Search 'tahawiyyah'
 TapNode (Show 'المصدر والمشاهدة')
@@ -171,21 +177,21 @@ Tap 'الحديث'
 TapNode (Show 'الأربعون النووية مع زيادة ابن رجب')
 WaitReader 'صفحة الملف ' | Out-Null
 ToolbarTap 'شروح الكتاب'
-Show 'عدد المواد: 4' | Out-Null
+Show "عدد المواد: $nawawiCount" | Out-Null
 Capture '07-book-explanations.png'
 TapNode (Show 'قراءة الكتاب: الأربعون النووية مع زيادة ابن رجب')
 WaitReader 'صفحة الملف ' | Out-Null
 Device @('shell','input','keyevent','4') | Out-Null
 Top
 TapNode (Show 'شروح الأربعون النووية مع زيادة ابن رجب — عرض كل الكتب')
-Show 'عدد المواد: 16' | Out-Null
+Show "عدد المواد: $totalCount" | Out-Null
 Restart
 Tap 'English'
 TapNode (Show 'Scholars and lessons')
 ToolbarTap 'Short talks'
-Find 'Items found: 6' | Out-Null
+Find "Items found: $shortCount" | Out-Null
 Capture '05-english.png'
 Restart
 Tap 'العربية'
 Find 'الرئيسية' | Out-Null
-Write-Output 'PASS: phone media filters 6/3/7, source URL, linked reader/back state, favorite restart, global search, profiles, external browser, book explanations and Arabic/English.'
+Write-Output 'PASS: phone current-catalog media filters, source URL, linked reader/back state, favorite restart, global search, profiles, external browser, book explanations and Arabic/English.'

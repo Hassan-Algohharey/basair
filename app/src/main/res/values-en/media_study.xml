@@ -1,0 +1,19 @@
+<resources>
+    <string name="study_choose_series">Choose series</string>
+    <string name="study_choose_topic">Choose topic</string>
+    <string name="study_clear_topic">Topic: %1$s — clear filter</string>
+    <string name="study_partial">Partial selection of series episodes</string>
+    <string name="study_complete">Fully indexed series according to the source</string>
+    <string name="study_indexed_episodes">Indexed episodes: %1$d</string>
+    <string name="study_series_source">Open original series page</string>
+    <string name="study_clear_series">Clear series filter</string>
+    <string name="study_episode">Episode number %1$d according to the source</string>
+    <string name="study_open_series">View series episodes</string>
+    <string name="study_last_opened">Last material opened externally</string>
+    <string name="study_resume">Return to material</string>
+    <string name="study_clear_last">Clear last material</string>
+    <string name="study_external_progress">Only the material link is saved. Playback position is managed by the external site.</string>
+    <string name="study_indexed_navigation">Navigation covers indexed episodes only. The source may contain additional episodes.</string>
+    <string name="study_previous">Previous material</string>
+    <string name="study_next">Next material</string>
+</resources>

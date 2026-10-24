@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewedOn": "2026-10-24",
-  "scope": "مراجعة صفحات المصادر والعناوين والنسبة وتوفر عناصر الوسائط؛ لم تتم مراجعة التسجيلات كاملة أو اختبار تشغيلها على جميع الأجهزة.",
+  "scope": "مراجعة صفحات المصادر والعناوين والنسبة وتوفر عناصر الوسائط وفهارس السلاسل وترقيم حلقاتها؛ لم تتم مراجعة التسجيلات سماعًا كاملة أو اختبار تشغيلها على جميع الأجهزة. بيانات المجموعة الافتتاحية محفوظة وأضيفت مراجعة 0.11.0.",
   "delivery": "روابط HTTPS لصفحات المصادر الأصلية فقط. لا ملفات وسائط ولا صور أغلفة منسوخة ولا مشغل مضمّن في التطبيق.",
   "identityEvidence": [
     {
@@ -13,6 +13,14 @@
       "scholarId": "almunajjid",
       "url": "https://almunajjid.com/",
       "observedText": "عنوان الصفحة وهوية الموقع يصرحان بأنه الموقع الرسمي للشيخ محمد صالح المنجد؛ تذييل الصفحة ينسب الحقوق إلى موقع الشيخ ومجموعة زاد ويربط القناة الرسمية."
+    },
+    {
+      "scholarId": "al-barrak",
+      "url": "https://sh-albarrak.com/about",
+      "observedText": "سيرة الشيخ وهويته منشورة في الموقع؛ وتطبع صفحة بيانات نشر كتاب التعليق والإيضاح على تفسير الجلالين الصادر عن وقف الشيخ عنوان sh-albarrak.com بوصفه الموقع الرسمي.",
+      "corroboratingUrl": "https://files.zadapps.info/cms.sh-albarrak.com/uploads/2024/02/Albarrak-Aljalalayn-0e220261a1b8780cd6075a464d9e3d71.pdf",
+      "httpStatus": 200,
+      "pageSha256": "676b94026dd257092e1edeb92990b29bc2f94c7f0af5e0f54dbb9ac2496f4b9b"
     }
   ],
   "bookLinkEvidence": [
@@ -25,12 +33,26 @@
       "bookId": "nawawi-fifty",
       "seriesUrl": "https://almunajjid.com/scientific-series/166/lessons",
       "relationship": "شرح أصل الأربعين النووية؛ لا يثبت تناول زيادة ابن رجب الموجودة في نسخة المكتبة، ولا مطابقة الطبعة."
+    },
+    {
+      "bookId": "wasael",
+      "seriesUrl": "https://sh-albarrak.com/books-explanations/indexes/51",
+      "relationship": "شرح أصل رسالة الوسائل المفيدة للسعدي في سبع حلقات بحسب فهرس المصدر؛ لا مطابقة لطبعة المكتبة أو صفحاتها ولا ادعاء قراءة صوتية لنسختها."
     }
   ],
   "excluded": [
     {
       "candidate": "خزائن الله تغني كل مفتقر — د. أحمد العربي",
       "reason": "لم يعتمد رابط رسمي موثق لهذا المقطع ضمن الدفعة؛ لا تضاف نسبة أو قناة بالتخمين."
+    },
+    {
+      "candidate": "شرح الوسائل المفيدة للحياة السعيدة — محمد سعيد رسلان",
+      "url": "https://www.rslan.com/vad/item/4518-los-l-lmfyd-llhy-lsaayd",
+      "reason": "تظهر المادة في فهرسة البحث لكن الطلب المباشر أعاد حاجز Cloudflare 403؛ لم تعتمد ضمن فهرس التطبيق أو يسجل تحقق HTTP200."
+    },
+    {
+      "candidate": "شروح عمدة الفقه وفتح القريب والرسالة المالكية على موقعي ابن باز والمنجد",
+      "reason": "نتائج البحث المتاحة استشهادات أو توصية بالكتب وليست إثباتًا لشروحها؛ أُجل الربط حتى توفر صفحات أصلية موثقة."
     }
   ],
   "items": [
@@ -276,6 +298,367 @@
       "attributionEvidenceUrl": "https://almunajjid.com/",
       "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
       "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-dua-causes",
+      "url": "https://almunajjid.com/speeches/lessons/832",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/speeches/lessons/832",
+      "pageSha256": "6820c95f9b81f8c987f8122000a30ce3c6430e9f98a70a56a4a459dfd31ee8b4",
+      "observedHeading": "الدعاء وأسباب استجابته",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio",
+        "video"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-quran-parables",
+      "url": "https://almunajjid.com/speeches/lessons/831",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/speeches/lessons/831",
+      "pageSha256": "c00c130c25834eb98474f477e94a210f36d39585552323e56d8e714c62f8176e",
+      "observedHeading": "أمثال قرآنية",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio",
+        "video"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-dua-conditions",
+      "url": "https://almunajjid.com/speeches/lessons/830",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/speeches/lessons/830",
+      "pageSha256": "6e4d40b9ec9fc1d3355c8476d7f344075e226ee01e68973d74cb7f9dcccc69fa",
+      "observedHeading": "يستجاب الدعاء في هذه الأحوال",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio",
+        "video"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-certainty",
+      "url": "https://almunajjid.com/speeches/lessons/829",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/speeches/lessons/829",
+      "pageSha256": "0f425d6471992f5eb510e370b939c1b3e6b8296cd184272926966f1fed3c4ad1",
+      "observedHeading": "كيف تزيد يقينك بالله؟ (نافع في الوسوسة)",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio",
+        "video"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-divine-love",
+      "url": "https://almunajjid.com/speeches/lessons/828",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/speeches/lessons/828",
+      "pageSha256": "7fd8686680f96181eac6697a09c96fb2f5d6879f588b5e719f4d0ce86ba79cec",
+      "observedHeading": "هل يحبك الله تعالى؟",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio",
+        "video"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-wisdom-rulings-1",
+      "url": "https://almunajjid.com/speeches/lessons/825",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/speeches/lessons/825",
+      "pageSha256": "c00b36e978d8776843f2815671ab50f05ef2ada53b25c36afeedb63d18e9cc54",
+      "observedHeading": "حكمة الأحكام 1",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-nawawi-05",
+      "url": "https://almunajjid.com/scientific-series/lessons/738",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/scientific-series/lessons/738",
+      "pageSha256": "cb166b58b9b2ce4a3ef61c1534f2038224964e9ade1f646559e4424212359863",
+      "observedHeading": "(5) الدرس الخامس",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-nawawi-06",
+      "url": "https://almunajjid.com/scientific-series/lessons/739",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/scientific-series/lessons/739",
+      "pageSha256": "b1dada6f0605de1f2276061f4be363efa12adeb186f54636aed6da22b3a81004",
+      "observedHeading": "(6) الدرس السادس",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-nawawi-07",
+      "url": "https://almunajjid.com/scientific-series/lessons/740",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/scientific-series/lessons/740",
+      "pageSha256": "dc0b8029a4677fbf9ebf2ed87029c948053869f1db3d865ad53fbd5da463d375",
+      "observedHeading": "(7) الدرس السابع",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-nawawi-08",
+      "url": "https://almunajjid.com/scientific-series/lessons/741",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/scientific-series/lessons/741",
+      "pageSha256": "2a6d7266697ac890638254099feab5d2c7740f0ddf43fb07b737c074f2a30d6d",
+      "observedHeading": "(8) الدرس الثامن",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "barrak-wasael-01",
+      "url": "https://sh-albarrak.com/books-explanations/lessons/2102",
+      "httpStatus": 200,
+      "finalUrl": "https://sh-albarrak.com/books-explanations/lessons/2102",
+      "pageSha256": "00678358f6f6ed21d357ebf2040cd8edcb9caa665f04545a39ed818ed6208f51",
+      "observedHeading": "(1) المقدمة \"قوله انما الاعمال بالنيات\"",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "attributionEvidenceUrl": "https://sh-albarrak.com/about",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24",
+      "headingExtraction": "العنوان في postContent.title يطابق رأس المادة مع استبعاد تاريخ العرض المضاف إليه.",
+      "sourceSeriesId": "51"
+    },
+    {
+      "itemId": "barrak-wasael-02",
+      "url": "https://sh-albarrak.com/books-explanations/lessons/2103",
+      "httpStatus": 200,
+      "finalUrl": "https://sh-albarrak.com/books-explanations/lessons/2103",
+      "pageSha256": "e5639fd847cc37d554a3797eb95b3e7e35b7a6ab3aebc6353c6507bdc146afc9",
+      "observedHeading": "(2) قوله \"فإن راحة القلب وسروره وزوال همومه وغمومه\"",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "attributionEvidenceUrl": "https://sh-albarrak.com/about",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24",
+      "headingExtraction": "العنوان في postContent.title يطابق رأس المادة مع استبعاد تاريخ العرض المضاف إليه.",
+      "sourceSeriesId": "51"
+    },
+    {
+      "itemId": "barrak-wasael-03",
+      "url": "https://sh-albarrak.com/books-explanations/lessons/2104",
+      "httpStatus": 200,
+      "finalUrl": "https://sh-albarrak.com/books-explanations/lessons/2104",
+      "pageSha256": "c3825eaf36ddaed909c0fa07d268257f9bcec4755d55430149f2edc1864246aa",
+      "observedHeading": "(3) قوله \"ولكني سأذكر برسالتي هذه ما يحضرني من الأسباب\"",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "attributionEvidenceUrl": "https://sh-albarrak.com/about",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24",
+      "headingExtraction": "العنوان في postContent.title يطابق رأس المادة مع استبعاد تاريخ العرض المضاف إليه.",
+      "sourceSeriesId": "51"
+    },
+    {
+      "itemId": "barrak-wasael-04",
+      "url": "https://sh-albarrak.com/books-explanations/lessons/2105",
+      "httpStatus": 200,
+      "finalUrl": "https://sh-albarrak.com/books-explanations/lessons/2105",
+      "pageSha256": "2c06c845688cffd66bbdc375dbfc979526664018ce88e10bc2feeb52603bbc0d",
+      "observedHeading": "(4) قوله \"ومن أسباب دفع القلق الناشئ عن توتر الأعصاب\"",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "attributionEvidenceUrl": "https://sh-albarrak.com/about",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24",
+      "headingExtraction": "العنوان في postContent.title يطابق رأس المادة مع استبعاد تاريخ العرض المضاف إليه.",
+      "sourceSeriesId": "51"
+    },
+    {
+      "itemId": "barrak-wasael-05",
+      "url": "https://sh-albarrak.com/books-explanations/lessons/2106",
+      "httpStatus": 200,
+      "finalUrl": "https://sh-albarrak.com/books-explanations/lessons/2106",
+      "pageSha256": "e32a99d6fa4a667cc6c602e65dff200c4d108309efca5bdd97e3579eeabde931",
+      "observedHeading": "(5) قوله \"ومن أكبر الأسباب لانشراح الصدر وطمأنينته الإكثار من ذكر الله\"",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "attributionEvidenceUrl": "https://sh-albarrak.com/about",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24",
+      "headingExtraction": "العنوان في postContent.title يطابق رأس المادة مع استبعاد تاريخ العرض المضاف إليه.",
+      "sourceSeriesId": "51"
+    },
+    {
+      "itemId": "barrak-wasael-06",
+      "url": "https://sh-albarrak.com/books-explanations/lessons/2107",
+      "httpStatus": 200,
+      "finalUrl": "https://sh-albarrak.com/books-explanations/lessons/2107",
+      "pageSha256": "93cd32c9d8d9adeb3f3647ec58869b4ff92ef64381c558a75334d0c6af954d23",
+      "observedHeading": "(6) قوله \"ومن الأسباب الموجبة للسرور وزوال الهم والغم\"",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "attributionEvidenceUrl": "https://sh-albarrak.com/about",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24",
+      "headingExtraction": "العنوان في postContent.title يطابق رأس المادة مع استبعاد تاريخ العرض المضاف إليه.",
+      "sourceSeriesId": "51"
+    },
+    {
+      "itemId": "barrak-wasael-07",
+      "url": "https://sh-albarrak.com/books-explanations/lessons/2108",
+      "httpStatus": 200,
+      "finalUrl": "https://sh-albarrak.com/books-explanations/lessons/2108",
+      "pageSha256": "ce5587b520bce03fbfddb3f7d8914cf772e8af2053cd5ad6e7544e9dc612ea72",
+      "observedHeading": "(7) قوله \"ومن أعظم العلاجات لأمراض القلب العصبية\"",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "attributionEvidenceUrl": "https://sh-albarrak.com/about",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24",
+      "headingExtraction": "العنوان في postContent.title يطابق رأس المادة مع استبعاد تاريخ العرض المضاف إليه.",
+      "sourceSeriesId": "51"
     }
-  ]
+  ],
+  "seriesEvidence": [
+    {
+      "seriesId": "bin-baz-tahawi",
+      "sourceUrl": "https://binbaz.org.sa/audios/series/51/%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9",
+      "evidencePageUrl": "https://binbaz.org.sa/audios/series/51/%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/series/51/%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9",
+      "pageSha256": "30b3d0eda685acdfc062e535dd8bd75c78f8d416f115f2c199077bd76475e312",
+      "catalogEpisodeNumbers": [
+        1,
+        3,
+        4
+      ],
+      "coverage": "partial",
+      "reviewedOn": "2026-10-24",
+      "evidenceNote": "فهرسة جزئية: الدروس 1 و3 و4 فقط، بترقيم الموقع الأصلي. يقرأ الشرح كتاب ابن أبي العز؛ لا تطابق مثبتًا مع طبعة المكتبة أو صفحاتها."
+    },
+    {
+      "seriesId": "munajjid-nawawi",
+      "sourceUrl": "https://almunajjid.com/scientific-series/166/lessons",
+      "evidencePageUrl": "https://almunajjid.com/scientific-series/166/lessons?page=4",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/scientific-series/166/lessons?page=4",
+      "pageSha256": "0329f257b50beb0bf041638c3e677cbeecf94165fa08b2068aaa94a19895b3f0",
+      "catalogEpisodeNumbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "coverage": "partial",
+      "reviewedOn": "2026-10-24",
+      "evidenceNote": "فهرسة جزئية: الدروس 1 إلى 8 بترقيم المصدر. الربط بأصل الأربعين للنووي، ولا يثبت تناول زيادة ابن رجب أو مطابقة طبعة المكتبة.",
+      "additionalEvidencePages": [
+        {
+          "url": "https://almunajjid.com/scientific-series/166/lessons?page=5",
+          "httpStatus": 200,
+          "pageSha256": "70490a4ada6b72a6507256f0b6d04362cd305481a50739f91e46e8ed35fdadf1"
+        }
+      ]
+    },
+    {
+      "seriesId": "barrak-wasael",
+      "sourceUrl": "https://sh-albarrak.com/books-explanations/indexes/51",
+      "evidencePageUrl": "https://sh-albarrak.com/books-explanations/indexes/51",
+      "httpStatus": 200,
+      "finalUrl": "https://sh-albarrak.com/books-explanations/indexes/51",
+      "pageSha256": "6f7bd1dc1bda2da84ed5a05add1a3ba9675608168336261e2927ae0165a98d80",
+      "catalogEpisodeNumbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "coverage": "complete",
+      "reviewedOn": "2026-10-24",
+      "evidenceNote": "فُهرست الحلقات السبع المدرجة في المصدر الذي يصف السلسلة بأنها مكتملة. الاكتمال بحسب فهرس المصدر، وليس مراجعة سماع لتغطية كل عبارة أو مطابقة طبعة المكتبة.",
+      "sourceStatus": "COMPLETE",
+      "listedEpisodeCount": 7,
+      "sourceLessonIds": [
+        "2108",
+        "2107",
+        "2106",
+        "2105",
+        "2104",
+        "2103",
+        "2102"
+      ],
+      "nextPage": null
+    }
+  ],
+  "summary": {
+    "scholars": 3,
+    "items": 33,
+    "lessons": 18,
+    "sermons": 9,
+    "shorts": 6,
+    "series": 3,
+    "newItemsIn011": 17
+  }
 }

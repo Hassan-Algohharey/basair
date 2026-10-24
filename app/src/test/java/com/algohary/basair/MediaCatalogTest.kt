@@ -7,11 +7,11 @@ class MediaCatalogTest {
     private fun state(query: String = "") = MediaUiState(scholars = MediaCatalog.scholars,
         items = MediaCatalog.items, query = query, bookTitles = Catalog.books.associate { it.id to it.title })
 
-    @Test fun openingCollectionHasRealLinksAndValidBookReferences() {
-        assertEquals(2, MediaCatalog.scholars.size)
-        assertEquals(16, MediaCatalog.items.size)
-        assertEquals(mapOf("lesson" to 7, "sermon" to 3, "short" to 6), MediaCatalog.items.groupingBy { it.kind }.eachCount())
-        assertEquals(16, MediaCatalog.items.map { it.id }.toSet().size)
+    @Test fun expandedCollectionHasRealLinksAndValidBookReferences() {
+        assertEquals(3, MediaCatalog.scholars.size)
+        assertEquals(33, MediaCatalog.items.size)
+        assertEquals(mapOf("lesson" to 18, "sermon" to 9, "short" to 6), MediaCatalog.items.groupingBy { it.kind }.eachCount())
+        assertEquals(33, MediaCatalog.items.map { it.id }.toSet().size)
         MediaCatalog.items.forEach { item ->
             assertTrue(item.sourceNote.isNotBlank() && item.englishSourceNote.isNotBlank())
             assertTrue(item.format in setOf("audio", "video"))
@@ -51,5 +51,26 @@ class MediaCatalogTest {
             "https://binbaz.org.sa@evil.test/", MediaCatalog.items.first().sourceUrl + "?tracking=1").forEach {
             assertFalse(it, allowedMediaUrl(it))
         }
+    }
+
+    @Test fun seriesCoverageAndBookLinksMatchTheIndexedEpisodes() {
+        assertEquals(3, MediaCatalog.series.size)
+        assertEquals(2, MediaCatalog.series.count { it.coverage == "partial" })
+        assertEquals(1, MediaCatalog.series.count { it.coverage == "complete" })
+        MediaCatalog.series.forEach { series ->
+            val episodes = orderedSeriesItems(MediaCatalog.items, series.id)
+            assertTrue(episodes.isNotEmpty())
+            assertTrue(allowedMediaUrl(series.sourceUrl))
+            assertTrue(episodes.all { it.scholarId == series.scholarId && it.bookIds.toSet() == series.bookIds.toSet() })
+            assertEquals(episodes.size, episodes.map { it.episodeNumber }.toSet().size)
+            if (series.coverage == "complete") {
+                assertEquals(series.expectedEpisodes, episodes.size)
+                assertEquals((1..episodes.size).toList(), episodes.map { it.episodeNumber })
+            }
+        }
+        assertTrue(MediaCatalog.items.filter { it.kind == "lesson" }.all { item -> MediaCatalog.series.any { it.id == item.seriesId } })
+        val useful = MediaCatalog.series.single { "wasael" in it.bookIds }
+        val results = filteredMediaItems(state("beneficial").copy(series = MediaCatalog.series, seriesFilter = useful.id))
+        assertEquals(7, results.size)
     }
 }

@@ -71,3 +71,9 @@ Quran and Al-Tafsir Al-Muyassar text are downloaded from the same GitHub hosting
 
 Scholars and lessons — from version 0.10.0
 The lesson index, search and favourites operate locally and are not sent to sources. Choosing “Open externally” opens the official source page in your browser. The site may receive your IP address and request information and use cookies or advertising under its policies and your browser settings. Basair does not download recordings or autoplay them. Clearing app data or uninstalling removes local lesson favourites.
+
+متابعة الدروس — من الإصدار 0.11.0
+يُحفظ معرّف آخر مادة اختار المستخدم فتح مصدرها على الجهاز فقط، لتسهيل العودة إليها بعد إعادة تشغيل التطبيق. لا يحفظ موضع تشغيل المشغل الخارجي. يمكن مسح هذا السجل من دليل الدروس، أو مع باقي البيانات المحلية بمسح بيانات التطبيق أو إزالته. البحث وتصفية السلاسل والموضوعات محلية، ولا ترسل كلمات البحث أو المفضلة أو السجل إلى مصادر التسجيلات.
+
+Lesson continuation — from version 0.11.0
+The identifier of the last material you choose to open externally is stored only on your device so you can return to it after restarting. External playback position is not recorded. Clear this record in the lesson directory, or remove all local data by clearing app storage or uninstalling. Series and topic filters and search operate locally. Search terms, favourites and the last-material record are not sent to recording sources.

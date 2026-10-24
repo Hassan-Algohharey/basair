@@ -31,14 +31,18 @@ internal data class MediaUiItem(
     val id: String, val scholarId: String, val title: String, val kind: String,
     val topic: String, val series: String = "", val sourceName: String, val sourceUrl: String,
     val bookIds: List<String> = emptyList(), val searchAliases: String = "", val sourceNote: String = "",
-    val englishSourceNote: String = "", val format: String = ""
+    val englishSourceNote: String = "", val format: String = "",
+    val seriesId: String? = null, val episodeNumber: Int? = null,
+    val topics: List<String> = emptyList(), val englishTopics: List<String> = emptyList()
 )
 internal data class MediaUiState(
     val scholars: List<MediaUiScholar> = emptyList(), val items: List<MediaUiItem> = emptyList(),
     val favoriteIds: Set<String> = emptySet(), val query: String = "", val scholarFilter: String? = null,
     val kindFilter: String? = null, val favoritesOnly: Boolean = false,
     val profileId: String? = null, val selectedItemId: String? = null,
-    val bookTitles: Map<String, String> = emptyMap(), val bookFilter: String? = null
+    val bookTitles: Map<String, String> = emptyMap(), val bookFilter: String? = null,
+    val series: List<MediaUiSeries> = emptyList(), val seriesFilter: String? = null,
+    val topicFilter: String? = null, val lastOpenedId: String? = null
 )
 internal sealed interface MediaAction {
     data class Query(val value: String) : MediaAction
@@ -50,25 +54,33 @@ internal sealed interface MediaAction {
     data class ToggleFavorite(val id: String) : MediaAction
     data class OpenSource(val url: String) : MediaAction
     data class OpenBook(val id: String) : MediaAction
+    data class SeriesFilter(val value: String?) : MediaAction
+    data class TopicFilter(val value: String?) : MediaAction
+    data object ResumeLast : MediaAction
+    data object ClearLast : MediaAction
 }
 
-private fun mediaSearchKey(value: String): String = value.lowercase(java.util.Locale.ROOT)
+internal fun mediaSearchKey(value: String): String = value.lowercase(java.util.Locale.ROOT)
     .replace(Regex("[\\u064B-\\u065F\\u0670\\u0640]"), "")
     .replace(Regex("[أإآٱ]"), "ا").replace('ى', 'ي')
+    .map { when (it) { in '٠'..'٩' -> '0' + (it - '٠'); in '۰'..'۹' -> '0' + (it - '۰'); else -> it } }.joinToString("")
 
 internal fun filteredMediaItems(state: MediaUiState): List<MediaUiItem> {
     val terms = mediaSearchKey(state.query).trim().split(Regex("\\s+")).filter { it.isNotBlank() }
     return state.items.filter { item ->
         val scholar = state.scholars.find { it.id == item.scholarId }
-        val searchable = mediaSearchKey(listOf(item.title, item.topic, item.series, item.searchAliases,
+        val searchable = mediaSearchKey(listOf(item.title, item.topic, item.series, item.searchAliases, item.englishTopics.joinToString(" "),
+            state.series.find { it.id == item.seriesId }?.englishTitle.orEmpty(),
             scholar?.name.orEmpty(), scholar?.englishName.orEmpty(), scholar?.description.orEmpty(),
             item.bookIds.mapNotNull { state.bookTitles[it] }.joinToString(" ")).joinToString(" "))
+        (state.seriesFilter == null || item.seriesId == state.seriesFilter) &&
+        (state.topicFilter == null || state.topicFilter in mediaTopics(item)) &&
         (state.bookFilter == null || state.bookFilter in item.bookIds) &&
         (state.profileId == null || item.scholarId == state.profileId) &&
             (state.scholarFilter == null || item.scholarId == state.scholarFilter) &&
             (state.kindFilter == null || item.kind == state.kindFilter) &&
             (!state.favoritesOnly || item.id in state.favoriteIds) && terms.all { it in searchable }
-    }
+    }.let { results -> if (state.seriesFilter == null) results else results.sortedBy { it.episodeNumber ?: Int.MAX_VALUE } }
 }
 
 @Composable
@@ -94,6 +106,7 @@ internal fun MediaScreen(state: MediaUiState, onAction: (MediaAction) -> Unit) {
         }
         item { MediaNotice(stringResource(R.string.media_external_notice)) }
         item { MediaNotice(stringResource(R.string.media_initial_collection)) }
+        item { MediaStudyControls(state, onAction) }
         if (profile != null) item {
             Card(Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(containerColor = SoftGreen)) {
                 Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -147,7 +160,7 @@ internal fun MediaScreen(state: MediaUiState, onAction: (MediaAction) -> Unit) {
             }
         }
         if (profile == null && state.query.isBlank() && state.scholarFilter == null &&
-            state.kindFilter == null && !state.favoritesOnly && state.scholars.isNotEmpty()) {
+            state.kindFilter == null && state.seriesFilter == null && state.topicFilter == null && !state.favoritesOnly && state.scholars.isNotEmpty()) {
             item { Text(stringResource(R.string.media_directory), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold) }
             items(state.scholars, key = { "scholar:${it.id}" }) { scholar ->
                 OutlinedCard(onClick = { onAction(MediaAction.Profile(scholar.id)) }, modifier = Modifier.fillMaxWidth()) {
@@ -163,10 +176,11 @@ internal fun MediaScreen(state: MediaUiState, onAction: (MediaAction) -> Unit) {
         item {
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                 Text(stringResource(R.string.media_result_count, results.size), modifier = Modifier.weight(1f), color = Muted)
-                if (state.query.isNotBlank() || state.scholarFilter != null || state.kindFilter != null || state.favoritesOnly) {
+                if (state.query.isNotBlank() || state.scholarFilter != null || state.kindFilter != null || state.seriesFilter != null || state.topicFilter != null || state.favoritesOnly) {
                     TextButton(onClick = {
                         onAction(MediaAction.Query("")); onAction(MediaAction.ScholarFilter(null))
-                        onAction(MediaAction.KindFilter(null)); onAction(MediaAction.FavoritesOnly(false)); focus.clearFocus()
+                        onAction(MediaAction.KindFilter(null)); onAction(MediaAction.FavoritesOnly(false))
+                        onAction(MediaAction.SeriesFilter(null)); onAction(MediaAction.TopicFilter(null)); focus.clearFocus()
                     }) { Text(stringResource(R.string.media_reset)) }
                 }
             }
@@ -186,6 +200,10 @@ private fun MediaItemCard(item: MediaUiItem, state: MediaUiState, onAction: (Med
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text(mediaKindLabel(item.kind) + " · " + stringResource(if (item.format == "audio") R.string.media_audio else R.string.media_video), style = MaterialTheme.typography.labelMedium, color = Green)
             Text(item.title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+            item.episodeNumber?.let { Text(stringResource(R.string.study_episode, it), color = Muted) }
+            item.seriesId?.let { id -> TextButton(onClick = { onAction(MediaAction.SeriesFilter(id)) }) {
+                Text(stringResource(R.string.study_open_series))
+            } }
             state.scholars.find { it.id == item.scholarId }?.let { scholar ->
                 TextButton(onClick = { onAction(MediaAction.Profile(scholar.id)) }, contentPadding = PaddingValues(0.dp)) { Text(scholar.name) }
             }
@@ -213,12 +231,15 @@ private fun MediaItemCard(item: MediaUiItem, state: MediaUiState, onAction: (Med
 private fun MediaSourceDialog(item: MediaUiItem, state: MediaUiState, onAction: (MediaAction) -> Unit) {
     AlertDialog(onDismissRequest = { onAction(MediaAction.SelectItem(null)) },
         title = { Text(item.title) }, text = {
-            Column(Modifier.heightIn(max = 420.dp).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            Column {
+                MediaEpisodeNavigation(item, state, onAction)
+                Column(Modifier.heightIn(max = 340.dp).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 state.scholars.find { it.id == item.scholarId }?.let { Text(it.name, fontWeight = FontWeight.Bold) }
                 Text(stringResource(R.string.media_source_value, item.sourceName))
                 if (item.sourceNote.isNotBlank()) Text(if (LocalConfiguration.current.locales[0].language == "en") item.englishSourceNote else item.sourceNote, style = MaterialTheme.typography.bodySmall)
                 SelectionContainer { Text(item.sourceUrl, style = MaterialTheme.typography.bodySmall) }
                 Text(stringResource(R.string.media_external_notice), style = MaterialTheme.typography.bodySmall)
+                }
             }
         },
         confirmButton = { TextButton(onClick = { onAction(MediaAction.OpenSource(item.sourceUrl)) }) {

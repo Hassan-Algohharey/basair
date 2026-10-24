@@ -1,0 +1,19 @@
+<resources>
+    <string name="study_choose_series">اختيار سلسلة</string>
+    <string name="study_choose_topic">اختيار موضوع</string>
+    <string name="study_clear_topic">الموضوع: %1$s — إلغاء التصفية</string>
+    <string name="study_partial">مجموعة جزئية من حلقات السلسلة</string>
+    <string name="study_complete">السلسلة مفهرسة كاملة بحسب المصدر</string>
+    <string name="study_indexed_episodes">الحلقات المفهرسة: %1$d</string>
+    <string name="study_series_source">مصدر السلسلة خارج التطبيق</string>
+    <string name="study_clear_series">إلغاء تصفية السلسلة</string>
+    <string name="study_episode">الحلقة رقم %1$d بحسب المصدر</string>
+    <string name="study_open_series">عرض حلقات السلسلة</string>
+    <string name="study_last_opened">آخر مادة فتحت مصدرها</string>
+    <string name="study_resume">العودة إلى المادة</string>
+    <string name="study_clear_last">مسح آخر مادة</string>
+    <string name="study_external_progress">يُحفظ رابط المادة فقط؛ موضع تشغيل التسجيل يتبع الموقع الخارجي.</string>
+    <string name="study_indexed_navigation">التنقل بين الحلقات المفهرسة فقط، وقد توجد حلقات أخرى بالمصدر.</string>
+    <string name="study_previous">المادة السابقة</string>
+    <string name="study_next">المادة التالية</string>
+</resources>
