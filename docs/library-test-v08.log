@@ -1,0 +1,4 @@
+PASS English UI, four school sections, honest empty school, shared book, English metadata search and return state.
+PASS saved book, bookmark and reading position persist across process restart and language switch; test additions restored.
+PASS Arabic RTL, cached reference preserved from 0.7.0 and rendered locally, Arabic preference persists after restart.
+PASS English global search and comparison controls, exact citation page 207 rendered, final UI restored to Arabic.

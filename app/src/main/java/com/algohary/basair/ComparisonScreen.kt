@@ -16,6 +16,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.font.FontWeight
@@ -42,49 +43,50 @@ internal fun ComparisonScreen(selectedId: String, onSelect: (String) -> Unit, sa
         }
     }
     LazyColumn(contentPadding = PaddingValues(22.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
-        item { SectionTitle("المقارنة الفقهية", "${Catalog.comparisons.size} مسألة · أربعة مذاهب · إحالات إلى الصفحات") }
+        item { if (LocalConfiguration.current.locales[0].language == "en") Notice(context.getString(R.string.arabic_content_notice)) }
+        item { SectionTitle(context.getString(R.string.ui_fiqh_comparison), context.getString(R.string.ui_1_issues_four_schools_page_references, Catalog.comparisons.size)) }
         item {
             OutlinedTextField(value = query, onValueChange = { query = it; expanded = false },
                 modifier = Modifier.fillMaxWidth(), singleLine = true,
-                label = { Text("ابحث في المقارنات") }, placeholder = { Text("مسألة، قول، جزء أو صفحة") },
-                trailingIcon = { if (query.isNotEmpty()) TextButton(onClick = { query = "" }) { Text("مسح") } },
+                label = { Text(context.getString(R.string.ui_search_comparisons)) }, placeholder = { Text(context.getString(R.string.ui_issue_opinion_volume_or_page)) },
+                trailingIcon = { if (query.isNotEmpty()) TextButton(onClick = { query = "" }) { Text(context.getString(R.string.ui_clear)) } },
                 keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
                 keyboardActions = KeyboardActions(onSearch = { focus.clearFocus() }), shape = RoundedCornerShape(14.dp))
         }
         item {
             Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                Text("الباب", color = Muted, fontSize = 12.sp)
+                Text(context.getString(R.string.ui_topic), color = Muted, fontSize = 12.sp)
                 Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    FilterChip(selected = topic == null, onClick = { topic = null; focus.clearFocus() }, label = { Text("كل الأبواب") })
+                    FilterChip(selected = topic == null, onClick = { topic = null; focus.clearFocus() }, label = { Text(context.getString(R.string.ui_all_topics)) })
                     Catalog.comparisonTopics.forEach { name ->
-                        FilterChip(selected = topic == name, onClick = { topic = name; focus.clearFocus() }, label = { Text(name) })
+                        FilterChip(selected = topic == name, onClick = { topic = name; focus.clearFocus() }, label = { Text(localizedLabel(context, name)) })
                     }
                 }
-                Text("المذهب · البحث يشمل الأقوال المعروضة", color = Muted, fontSize = 12.sp)
+                Text(context.getString(R.string.ui_school_search_covers_displayed_opinions), color = Muted, fontSize = 12.sp)
                 Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    FilterChip(selected = school == null, onClick = { school = null; focus.clearFocus() }, label = { Text("الأربعة") })
+                    FilterChip(selected = school == null, onClick = { school = null; focus.clearFocus() }, label = { Text(context.getString(R.string.ui_all_four)) })
                     Catalog.comparisonSchools.forEach { name ->
-                        FilterChip(selected = school == name, onClick = { school = name; focus.clearFocus() }, label = { Text(name) })
+                        FilterChip(selected = school == name, onClick = { school = name; focus.clearFocus() }, label = { Text(localizedLabel(context, name)) })
                     }
                 }
             }
         }
         item {
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                Text("النتائج: ${results.size} من ${Catalog.comparisons.size} مسألة", Modifier.weight(1f), color = Muted, fontSize = 13.sp)
+                Text(context.getString(R.string.ui_results_1_of_2_issues, results.size, Catalog.comparisons.size), Modifier.weight(1f), color = Muted, fontSize = 13.sp)
                 if (query.isNotBlank() || topic != null || school != null) TextButton(onClick = {
                     query = ""; topic = null; school = null; expanded = false; focus.clearFocus()
-                }) { Text("إعادة الضبط") }
+                }) { Text(context.getString(R.string.ui_reset)) }
             }
         }
         if (comparison == null) item {
-            Notice("لا توجد مسائل مطابقة. جرّب كلمة أقصر أو غيّر الباب أو المذهب، أو اضغط إعادة الضبط.")
+            Notice(context.getString(R.string.ui_no_matching_issues_try_a_shorter_query_change_the_topic_or_school_or_res))
         }
         if (comparison != null) {
             item {
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
                     TextButton(onClick = { onSave(comparison.id) }) {
-                        Text(if (comparison.id in saved) "إزالة المسألة من المحفوظات" else "حفظ المسألة")
+                        Text(if (comparison.id in saved) context.getString(R.string.ui_remove_saved_issue) else context.getString(R.string.ui_save_issue))
                     }
                     TextButton(onClick = {
                         val intent = android.content.Intent(android.content.Intent.ACTION_SEND).apply {
@@ -92,11 +94,11 @@ internal fun ComparisonScreen(selectedId: String, onSelect: (String) -> Unit, sa
                             putExtra(android.content.Intent.EXTRA_SUBJECT, comparison.title)
                             putExtra(android.content.Intent.EXTRA_TEXT, comparison.shareText(school))
                         }
-                        try { context.startActivity(android.content.Intent.createChooser(intent, "مشاركة المقارنة")) }
+                        try { context.startActivity(android.content.Intent.createChooser(intent, context.getString(R.string.ui_share_comparison))) }
                         catch (_: android.content.ActivityNotFoundException) {
-                            android.widget.Toast.makeText(context, "لا يوجد تطبيق متاح للمشاركة", android.widget.Toast.LENGTH_SHORT).show()
+                            android.widget.Toast.makeText(context, context.getString(R.string.ui_no_app_is_available_for_sharing), android.widget.Toast.LENGTH_SHORT).show()
                         }
-                    }) { Text("مشاركة المقارنة") }
+                    }) { Text(context.getString(R.string.ui_share_comparison)) }
                 }
             }
             item {
@@ -124,9 +126,9 @@ internal fun ComparisonScreen(selectedId: String, onSelect: (String) -> Unit, sa
             item {
                 val index = results.indexOf(comparison)
                 Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween) {
-                    TextButton(enabled = index > 0, onClick = { onSelect(results[index - 1].id) }) { Text("المسألة السابقة") }
-                    Text("${index + 1} من ${results.size}", color = Muted, fontSize = 12.sp)
-                    TextButton(enabled = index < results.lastIndex, onClick = { onSelect(results[index + 1].id) }) { Text("المسألة التالية") }
+                    TextButton(enabled = index > 0, onClick = { onSelect(results[index - 1].id) }) { Text(context.getString(R.string.ui_previous_issue)) }
+                    Text(context.getString(R.string.ui_1_of_2, index + 1, results.size), color = Muted, fontSize = 12.sp)
+                    TextButton(enabled = index < results.lastIndex, onClick = { onSelect(results[index + 1].id) }) { Text(context.getString(R.string.ui_next_issue)) }
                 }
             }
             items(comparison.opinions.filter { school == null || it.school == school }, key = { comparison.id + it.school }) { opinion ->
@@ -134,20 +136,20 @@ internal fun ComparisonScreen(selectedId: String, onSelect: (String) -> Unit, sa
                     Column(Modifier.fillMaxWidth().padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Box(Modifier.width(4.dp).height(24.dp).background(Gold, CircleShape))
-                            Spacer(Modifier.width(9.dp)); Text("المذهب ${opinion.school}", fontWeight = FontWeight.Bold, fontSize = 18.sp)
+                            Spacer(Modifier.width(9.dp)); Text(context.getString(R.string.ui_school_1, localizedLabel(context, opinion.school)), fontWeight = FontWeight.Bold, fontSize = 18.sp)
                         }
                         Text(opinion.summary, fontSize = 16.sp, lineHeight = 28.sp)
                         HorizontalDivider(color = Line)
                         opinion.references.forEach { reference ->
                             Text(reference.label, fontSize = 13.sp, color = Green, lineHeight = 23.sp)
                             Text("${reference.publisher}\n${reference.edition}", fontSize = 11.sp, lineHeight = 20.sp, color = Muted)
-                            TextButton(onClick = { readingReference = reference }) { Text("قراءة المرجع داخل التطبيق · صفحة ${reference.pdfPage}", fontSize = 12.sp) }
-                            TextButton(onClick = { openSource(context, reference.source) }) { Text("فتح المصدر المصوّر · صفحة ${reference.pdfPage}", fontSize = 12.sp) }
+                            TextButton(onClick = { readingReference = reference }) { Text(context.getString(R.string.ui_read_reference_in_app_page_1, reference.pdfPage), fontSize = 12.sp) }
+                            TextButton(onClick = { openSource(context, reference.source) }) { Text(context.getString(R.string.ui_open_scanned_source_page_1, reference.pdfPage), fontSize = 12.sp) }
                         }
                     }
                 }
             }
         }
-        item { Notice("الملخصات تحريرية، والإحالات مطابقة لصفحات النسخ المصورة المحددة. الموسوعة مرجع فقهي مقارن؛ راجع حواشيها للمصادر المذهبية الأصلية. لا تعني مطابقة الإحالة اعتماد فتوى لحالة شخصية أو مراجعة لجنة علمية للمشروع.") }
+        item { Notice(context.getString(R.string.ui_these_editorial_summaries_cite_pages_in_the_specified_scanned_editions_t)) }
     }
 }

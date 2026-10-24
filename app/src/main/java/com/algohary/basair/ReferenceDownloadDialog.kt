@@ -51,21 +51,21 @@ internal fun ReferenceDownloadDialog(reference: Reference, onDismiss: () -> Unit
         checking = false
     }
     val cancel = { task?.cancel(); onDismiss() }
-    AlertDialog(onDismissRequest = cancel, title = { Text("قراءة المرجع داخل التطبيق") }, text = {
+    AlertDialog(onDismissRequest = cancel, title = { Text(context.getString(R.string.ui_read_reference_in_app)) }, text = {
         Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
             Text(reference.label)
             Text(reference.edition)
             when {
-                checking -> { CircularProgressIndicator(); Text("جارٍ التحقق من النسخة المحفوظة…") }
+                checking -> { CircularProgressIndicator(); Text(context.getString(R.string.ui_checking_the_saved_edition)) }
                 downloading -> {
                     LinearProgressIndicator(progress = { (progress.toFloat() / volume.bytes).coerceIn(0f, 1f) }, modifier = Modifier.fillMaxWidth())
-                    Text("جارٍ تنزيل المجلد: ${progress * 100 / volume.bytes}٪")
+                    Text(context.getString(R.string.ui_downloading_volume_1, progress * 100 / volume.bytes))
                 }
-                file != null -> Text("المجلد محفوظ ومطابق للمصدر، وجاهز للقراءة دون اتصال.")
+                file != null -> Text(context.getString(R.string.ui_the_volume_matches_the_source_and_is_ready_to_read_offline))
                 else -> {
-                    Text("تنزيل الجزء ${volume.volume} كاملًا (نحو ${(volume.bytes + 999_999) / 1_000_000} ميغابايت) من دار الإسلام، ثم فتح صفحة ${reference.pdfPage}. يُحفظ داخل التطبيق ويعمل دون اتصال بعد التنزيل.")
-                    Text("قد تُحسب تكلفة بيانات حسب اتصالك. لا يبدأ التنزيل إلا عند الضغط على الزر.")
-                    if (failed) Text("تعذر التنزيل أو لم تطابق النسخة بصمة المصدر. تحقق من الاتصال والمساحة ثم أعد المحاولة.", color = MaterialTheme.colorScheme.error)
+                    Text(context.getString(R.string.ui_download_volume_1_in_full_about_2_mb_from_islamhouse_then_open_page_3_it, volume.volume, (volume.bytes + 999_999) / 1_000_000, reference.pdfPage))
+                    Text(context.getString(R.string.ui_data_charges_may_apply_download_starts_only_when_you_press_the_button))
+                    if (failed) Text(context.getString(R.string.ui_download_failed_or_the_file_did_not_match_the_source_checksum_check_your), color = MaterialTheme.colorScheme.error)
                 }
             }
         }
@@ -82,6 +82,6 @@ internal fun ReferenceDownloadDialog(reference: Reference, onDismiss: () -> Unit
                     finally { downloading = false }
                 }
             }
-        }) { Text(if (file != null) "فتح صفحة ${reference.pdfPage}" else if (failed) "إعادة التنزيل" else "تنزيل المجلد وفتح الصفحة") }
-    }, dismissButton = { TextButton(onClick = cancel) { Text(if (downloading) "إلغاء التنزيل" else "إغلاق") } })
+        }) { Text(if (file != null) context.getString(R.string.ui_open_page_1, reference.pdfPage) else if (failed) context.getString(R.string.ui_download_again) else context.getString(R.string.ui_download_volume_and_open_page)) }
+    }, dismissButton = { TextButton(onClick = cancel) { Text(if (downloading) context.getString(R.string.ui_cancel_download) else context.getString(R.string.ui_close)) } })
 }

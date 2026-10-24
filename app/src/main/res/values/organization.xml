@@ -1,0 +1,12 @@
+<resources>
+    <string name="language">لغة الواجهة</string>
+    <string name="arabic_content_notice">الكتب والنقول متاحة بالعربية؛ تغيير لغة الواجهة لا يترجمها.</string>
+    <string name="four_schools">المذاهب الفقهية الأربعة</string>
+    <string name="all_fiqh">كل الفقه</string>
+    <string name="shared_references">المراجع المشتركة</string>
+    <string name="school_catalog_notice">الفقه الميسر والموسوعة في المراجع المشتركة. تضاف كتب كل مذهب بعد توثيق نسبتها ومصدرها.</string>
+    <string name="school_empty">لا توجد كتب مذهبية مطابقة حاليًا</string>
+    <string name="school_empty_detail">لم تُضف بعد كتب خاصة بهذا المذهب تطابق البحث والموضوع المختارين. يمكنك تعديل الفلاتر أو تصفح المراجع المشتركة مع الاحتفاظ ببحثك.</string>
+    <string name="reference_volumes_notice">المجلدات المرجعية المرتبطة بالبحث والباب: %1$d. تنزيل اختياري من المصدر؛ ليست الموسوعة كاملة.</string>
+    <string name="reference_volume">الموسوعة الفقهية الكويتية · ج %1$d · الصفحات: %2$d</string>
+</resources>

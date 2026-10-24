@@ -7,7 +7,8 @@ data class Book(
     val id: String, val title: String, val author: String, val subject: String,
     val description: String, val topics: List<String>, val source: String,
     val asset: String, val pages: Int, val publisher: String, val edition: String,
-    val licenseName: String, val licenseUrl: String, val rightsNote: String, val sha256: String
+    val licenseName: String, val licenseUrl: String, val rightsNote: String, val sha256: String,
+    val schools: Set<String> = emptySet()
 )
 data class Reference(
     val title: String, val publisher: String, val edition: String,
@@ -90,11 +91,13 @@ object Catalog {
 
     private val bookSearchText = books.associate { book -> book.id to normalizeArabic(
         listOf(book.title, book.author, book.description, book.publisher,
-            subjects.first { it.id == book.subject }.title, book.topics.joinToString(" ")).joinToString(" ")) }
+            subjects.first { it.id == book.subject }.title, book.topics.joinToString(" "),
+            bookSearchAliases(book)).joinToString(" ")) }
 
-    fun search(query: String, subject: String? = null): List<Book> {
+    fun search(query: String, subject: String? = null, school: String? = null, topic: String? = null): List<Book> {
         val terms = normalizeArabic(query).split(Regex("\\s+")).filter { it.isNotBlank() }
-        return books.filter { book -> (subject == null || book.subject == subject) && terms.all { it in bookSearchText.getValue(book.id) } }
+        return books.filter { book -> book.matchesOrganization(subject, school, topic) &&
+            terms.all { it in bookSearchText.getValue(book.id) } }
     }
 
     fun searchComparisons(query: String, subject: String? = null, topic: String? = null, school: String? = null): List<Comparison> {

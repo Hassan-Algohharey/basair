@@ -1,0 +1,12 @@
+<resources>
+    <string name="language">Interface language</string>
+    <string name="arabic_content_notice">Books and quoted material remain in Arabic; only the interface changes language.</string>
+    <string name="four_schools">Four schools of fiqh</string>
+    <string name="all_fiqh">All fiqh</string>
+    <string name="shared_references">Shared references</string>
+    <string name="school_catalog_notice">Al-Fiqh al-Muyassar and the encyclopedia are shared references. School-specific books will be added after verifying their attribution and sources.</string>
+    <string name="school_empty">No matching school books yet</string>
+    <string name="school_empty_detail">No books specific to this school currently match your query and topic. Change the filters or browse shared references while keeping your search.</string>
+    <string name="reference_volumes_notice">Related reference volumes: %1$d. Optional downloads from the source; this is not the complete encyclopedia.</string>
+    <string name="reference_volume">Kuwaiti Fiqh Encyclopedia · Vol. %1$d · Pages: %2$d</string>
+</resources>

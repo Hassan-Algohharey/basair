@@ -178,7 +178,7 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
             value = owned
             awaitCancellation()
         } catch (cancel: kotlinx.coroutines.CancellationException) { throw cancel }
-        catch (_: Exception) { error = "تعذر فتح نسخة الكتاب. أعد المحاولة." }
+        catch (_: Exception) { error = context.getString(R.string.ui_unable_to_open_the_book_please_try_again) }
         finally { withContext(NonCancellable + Dispatchers.IO) { owned?.close() } }
     }
     LaunchedEffect(page) { preferences.edit().putInt("page:${book.id}", page).apply() }
@@ -186,25 +186,25 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
 
     Column(Modifier.fillMaxSize()) {
         Row(Modifier.fillMaxWidth().padding(horizontal = 12.dp), verticalAlignment = Alignment.CenterVertically) {
-            TextButton(onClick = onBack) { Text("→ العودة") }
+            TextButton(onClick = onBack) { Text(context.getString(R.string.ui_back)) }
             Text(book.title, Modifier.weight(1f), fontSize = 14.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
-            TextButton(onClick = { showDetails = true }) { Text("البيانات") }
+            TextButton(onClick = { showDetails = true }) { Text(context.getString(R.string.ui_details)) }
             if (allowSave) IconButton(onClick = onSave) { LineIcon("bookmark", if (saved) MaterialTheme.colorScheme.secondary else muted,
-                description = if (saved) "إزالة الكتاب من المحفوظات" else "حفظ الكتاب") }
+                description = if (saved) context.getString(R.string.ui_remove_saved_book) else context.getString(R.string.ui_save_book)) }
         }
         Row(Modifier.fillMaxWidth().padding(horizontal = 14.dp), verticalAlignment = Alignment.CenterVertically) {
-            Text(if (localFile == null) "النسخة الأصلية · دون اتصال" else "مرجع منزّل · دون اتصال", Modifier.weight(1f), fontSize = 11.sp, color = muted)
+            Text(if (localFile == null) context.getString(R.string.ui_original_edition_offline) else context.getString(R.string.ui_downloaded_reference_offline), Modifier.weight(1f), fontSize = 11.sp, color = muted)
             TextButton(onClick = { zoom = (zoom - .5f).coerceAtLeast(1f) }, enabled = zoom > 1f) { Text("−") }
-            Text("${(zoom * 100).roundToInt()}٪", fontSize = 12.sp)
+            Text(context.getString(R.string.ui_1, (zoom * 100).roundToInt()), fontSize = 12.sp)
             TextButton(onClick = { zoom = (zoom + .5f).coerceAtMost(3f) }, enabled = zoom < 3f) { Text("+") }
         }
         Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(horizontal = 8.dp),
             verticalAlignment = Alignment.CenterVertically) {
-            TextButton(onClick = onToggleNight) { Text(if (night) "الوضع النهاري" else "الوضع الليلي") }
+            TextButton(onClick = onToggleNight) { Text(if (night) context.getString(R.string.ui_day_mode) else context.getString(R.string.ui_night_mode)) }
             TextButton(onClick = {
                 updateBookmarks(if (page in bookmarks) bookmarks - page else bookmarks + page)
-            }) { Text(if (page in bookmarks) "إزالة علامة الصفحة" else "وضع علامة للصفحة") }
-            TextButton(onClick = { showBookmarks = true }) { Text("علامات الصفحات (${bookmarks.size})") }
+            }) { Text(if (page in bookmarks) context.getString(R.string.ui_remove_page_bookmark) else context.getString(R.string.ui_bookmark_this_page)) }
+            TextButton(onClick = { showBookmarks = true }) { Text(context.getString(R.string.ui_page_bookmarks_1, bookmarks.size)) }
         }
         BoxWithConstraints(Modifier.weight(1f).fillMaxWidth().background(if (night) Color(0xFF101612) else Color(0xFFE7E5DE))) {
             val density = LocalDensity.current
@@ -219,14 +219,14 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
             }
             when {
                 error != null || renderError -> Column(Modifier.align(Alignment.Center).padding(20.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text(error ?: "تعذر عرض هذه الصفحة. جرّب تقليل التكبير.")
-                    Button(onClick = { retry++; renderError = false }) { Text("إعادة المحاولة") }
+                    Text(error ?: context.getString(R.string.ui_unable_to_display_this_page_try_reducing_the_zoom))
+                    Button(onClick = { retry++; renderError = false }) { Text(context.getString(R.string.ui_try_again)) }
                 }
                 bitmap == null -> CircularProgressIndicator(Modifier.align(Alignment.Center))
                 else -> {
                     key(page) {
                         Box(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).horizontalScroll(rememberScrollState())) {
-                            Image(bitmap!!.asImageBitmap(), "صفحة الملف $page من ${book.pages} · ${book.title}",
+                            Image(bitmap!!.asImageBitmap(), context.getString(R.string.ui_file_page_1_of_2_3, page, book.pages, book.title),
                                 Modifier.width(viewportWidth * zoom), alignment = Alignment.TopCenter,
                                 colorFilter = if (night) nightPageFilter else null)
                         }
@@ -236,50 +236,50 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
         }
         Row(Modifier.fillMaxWidth().padding(horizontal = 12.dp), verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween) {
-            TextButton(onClick = { page-- }, enabled = page > 1) { Text("السابقة") }
-            TextButton(onClick = { showPageDialog = true }) { Text("صفحة الملف $page / ${book.pages}", fontSize = 13.sp) }
-            TextButton(onClick = { page++ }, enabled = page < book.pages) { Text("التالية") }
+            TextButton(onClick = { page-- }, enabled = page > 1) { Text(context.getString(R.string.ui_previous)) }
+            TextButton(onClick = { showPageDialog = true }) { Text(context.getString(R.string.ui_file_page_1_2, page, book.pages), fontSize = 13.sp) }
+            TextButton(onClick = { page++ }, enabled = page < book.pages) { Text(context.getString(R.string.ui_next)) }
         }
     }
-    if (showDetails) AlertDialog(onDismissRequest = { showDetails = false }, title = { Text("بيانات الكتاب والإتاحة") },
+    if (showDetails) AlertDialog(onDismissRequest = { showDetails = false }, title = { Text(context.getString(R.string.ui_book_and_usage_details)) },
         text = {
             Column(Modifier.verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 Text(book.title, fontSize = 19.sp)
-                Text("المؤلف: ${book.author}\nالناشر: ${book.publisher}\nالطبعة: ${book.edition}\nصفحات الملف: ${book.pages}", fontSize = 14.sp)
+                Text(context.getString(R.string.ui_author_1_publisher_2_edition_3_file_pages_4, book.author, book.publisher, book.edition, book.pages), fontSize = 14.sp)
                 Text(book.description, fontSize = 14.sp)
                 Text(book.licenseName, color = MaterialTheme.colorScheme.primary, fontSize = 14.sp)
                 Text(book.rightsNote, fontSize = 13.sp)
-                Text("رقم صفحة الملف قد يختلف عن الرقم المطبوع. الملفات المصورة لا تدعم البحث في جميع نصوص الصفحات أو إعادة تدفق الخط.", fontSize = 12.sp, color = muted)
-                TextButton(onClick = { openSource(context, book.source) }) { Text("صفحة المصدر") }
-                TextButton(onClick = { openSource(context, book.licenseUrl) }) { Text("بيان الإتاحة") }
+                Text(context.getString(R.string.ui_file_page_numbers_may_differ_from_printed_numbers_scanned_files_do_not_s), fontSize = 12.sp, color = muted)
+                TextButton(onClick = { openSource(context, book.source) }) { Text(context.getString(R.string.ui_source_page)) }
+                TextButton(onClick = { openSource(context, book.licenseUrl) }) { Text(context.getString(R.string.ui_usage_terms)) }
             }
-        }, confirmButton = { TextButton(onClick = { showDetails = false }) { Text("إغلاق") } })
+        }, confirmButton = { TextButton(onClick = { showDetails = false }) { Text(context.getString(R.string.ui_close)) } })
     if (showBookmarks) AlertDialog(onDismissRequest = { showBookmarks = false },
-        title = { Text("علامات صفحات الكتاب") }, text = {
+        title = { Text(context.getString(R.string.ui_book_page_bookmarks)) }, text = {
             Column {
-                Text("${book.title}\nالأرقام تخص صفحات الملف.", fontSize = 13.sp, color = muted)
+                Text(context.getString(R.string.ui_1_numbers_refer_to_file_pages, book.title), fontSize = 13.sp, color = muted)
                 if (bookmarks.isEmpty()) {
-                    Text("لا توجد علامات بعد. استخدم «وضع علامة للصفحة» أثناء القراءة.", Modifier.padding(vertical = 20.dp))
+                    Text(context.getString(R.string.ui_no_bookmarks_yet_select_bookmark_this_page_while_reading), Modifier.padding(vertical = 20.dp))
                 } else LazyColumn(Modifier.fillMaxWidth().heightIn(max = 360.dp)) {
                     items(bookmarks, key = { it }) { markedPage ->
                         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                             TextButton(onClick = { page = markedPage; showBookmarks = false }, modifier = Modifier.weight(1f)) {
-                                Text("انتقال إلى صفحة $markedPage")
+                                Text(context.getString(R.string.ui_go_to_page_1, markedPage))
                             }
-                            TextButton(onClick = { updateBookmarks(bookmarks - markedPage) }) { Text("حذف علامة $markedPage") }
+                            TextButton(onClick = { updateBookmarks(bookmarks - markedPage) }) { Text(context.getString(R.string.ui_delete_bookmark_1, markedPage)) }
                         }
                     }
                 }
             }
-        }, confirmButton = { TextButton(onClick = { showBookmarks = false }) { Text("إغلاق") } })
+        }, confirmButton = { TextButton(onClick = { showBookmarks = false }) { Text(context.getString(R.string.ui_close)) } })
     if (showPageDialog) {
         var input by remember { mutableStateOf(page.toString()) }
         val target = parsePageNumber(input, book.pages)
-        AlertDialog(onDismissRequest = { showPageDialog = false }, title = { Text("الانتقال إلى صفحة") },
+        AlertDialog(onDismissRequest = { showPageDialog = false }, title = { Text(context.getString(R.string.ui_go_to_a_page)) },
             text = { OutlinedTextField(value = input, onValueChange = { input = it }, singleLine = true,
-                label = { Text("رقم صفحة الملف من 1 إلى ${book.pages}") }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-                isError = target == null, supportingText = { if (target == null) Text("أدخل رقمًا ضمن صفحات الملف") }) },
-            confirmButton = { TextButton(onClick = { target?.let { page = it; showPageDialog = false } }, enabled = target != null) { Text("انتقال") } },
-            dismissButton = { TextButton(onClick = { showPageDialog = false }) { Text("إلغاء") } })
+                label = { Text(context.getString(R.string.ui_file_page_number_from_1_to_1, book.pages)) }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                isError = target == null, supportingText = { if (target == null) Text(context.getString(R.string.ui_enter_a_number_within_the_file_page_range)) }) },
+            confirmButton = { TextButton(onClick = { target?.let { page = it; showPageDialog = false } }, enabled = target != null) { Text(context.getString(R.string.ui_go)) } },
+            dismissButton = { TextButton(onClick = { showPageDialog = false }) { Text(context.getString(R.string.ui_cancel)) } })
     }
 }

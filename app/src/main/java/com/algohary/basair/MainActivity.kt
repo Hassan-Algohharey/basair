@@ -34,6 +34,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.semantics.contentDescription
@@ -56,7 +57,10 @@ internal val SoftGreen = Color(0xFFE8EFE7)
 
 class MainActivity : ComponentActivity() {
     override fun attachBaseContext(newBase: Context) {
-        val locale = Locale.forLanguageTag("ar")
+        val stored = newBase.getSharedPreferences("basair", Context.MODE_PRIVATE).getString("language", null)
+        val language = stored?.takeIf { it in setOf("ar", "en") }
+            ?: newBase.resources.configuration.locales[0].language.takeIf { it in setOf("ar", "en") } ?: "ar"
+        val locale = Locale.forLanguageTag(language)
         val configuration = Configuration(newBase.resources.configuration)
         configuration.setLocale(locale)
         configuration.setLayoutDirection(locale)
@@ -67,7 +71,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
+            val direction = if (resources.configuration.locales[0].language == "en") LayoutDirection.Ltr else LayoutDirection.Rtl
+            CompositionLocalProvider(LocalLayoutDirection provides direction) {
                 MaterialTheme(colorScheme = lightColorScheme(
                     primary = Green, onPrimary = Color.White, secondary = Gold,
                     background = Paper, onBackground = Ink, surface = Paper, onSurface = Ink,
@@ -80,10 +85,10 @@ class MainActivity : ComponentActivity() {
 }
 
 private data class Destination(val id: String, val title: String, val icon: String)
-private val destinations = listOf(
-    Destination("home", "الرئيسية", "home"), Destination("library", "المكتبة", "book"),
-    Destination("search", "البحث", "search"), Destination("compare", "المقارنة", "scales"),
-    Destination("saved", "محفوظاتي", "bookmark")
+private fun destinations(context: Context) = listOf(
+    Destination("home", context.getString(R.string.ui_home), "home"), Destination("library", context.getString(R.string.ui_library), "book"),
+    Destination("search", context.getString(R.string.ui_search), "search"), Destination("compare", context.getString(R.string.ui_compare), "scales"),
+    Destination("saved", context.getString(R.string.ui_saved), "bookmark")
 )
 
 @Composable
@@ -98,13 +103,15 @@ private fun BasairApp() {
     var route by rememberSaveable { mutableStateOf("home") }
     var bookId by rememberSaveable { mutableStateOf<String?>(null) }
     var subject by rememberSaveable { mutableStateOf<String?>(null) }
+    var school by rememberSaveable { mutableStateOf<String?>(null) }
+    var topic by rememberSaveable { mutableStateOf<String?>(null) }
     var query by rememberSaveable { mutableStateOf("") }
     val comparisonState = rememberSaveableStateHolder()
     val toggleSave: (String) -> Unit = { id ->
         saved = if (id in saved) saved - id else saved + id
         preferences.edit().putStringSet("saved", saved).apply()
     }
-    val visitSubject: (String) -> Unit = { subject = it; route = "library"; bookId = null }
+    val visitSubject: (String) -> Unit = { subject = it; school = null; topic = null; query = ""; route = "library"; bookId = null }
     val toggleComparison: (String) -> Unit = { id ->
         savedComparisons = if (id in savedComparisons) savedComparisons - id else savedComparisons + id
         preferences.edit().putStringSet("savedComparisons", savedComparisons).apply()
@@ -133,7 +140,7 @@ private fun BasairApp() {
     }
     Scaffold(containerColor = Paper, bottomBar = {
         NavigationBar(containerColor = Color.White, tonalElevation = 0.dp) {
-            destinations.forEach { destination ->
+            destinations(context).forEach { destination ->
                 NavigationBarItem(selected = route == destination.id,
                     onClick = { navigate(destination.id) },
                     icon = { LineIcon(destination.icon, if (route == destination.id) Green else Muted) },
@@ -147,13 +154,15 @@ private fun BasairApp() {
             when (route) {
                 "home" -> HomeScreen(visitSubject, { navigate("search") }, { navigate("compare") }, { bookId = it })
                 "library", "search" -> CatalogScreen(route == "search", query, { query = it }, subject,
-                    { subject = it }, { bookId = it }, saved, toggleSave, openComparison)
+                    { subject = it; school = null; topic = null }, { bookId = it }, saved, toggleSave, openComparison,
+                    school, { school = it }, topic, { topic = it },
+                    { referencePage = it.pdfPage; referenceVolume = it.volume })
                 "compare" -> comparisonState.SaveableStateProvider("comparison") {
                     ComparisonScreen(comparisonId, { comparisonId = it }, savedComparisons, toggleComparison,
                         { referencePage = it.pdfPage; referenceVolume = it.volume })
                 }
                 "saved" -> SavedScreen(Catalog.books.filter { it.id in saved }, { bookId = it }, toggleSave,
-                    { subject = null; navigate("library") }, Catalog.comparisons.filter { it.id in savedComparisons },
+                    { subject = null; school = null; topic = null; query = ""; navigate("library") }, Catalog.comparisons.filter { it.id in savedComparisons },
                     openComparison, toggleComparison)
             }
         }
@@ -164,6 +173,7 @@ private fun BasairApp() {
 private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onCompare: () -> Unit, onBook: (String) -> Unit) {
     val context = LocalContext.current
     LazyColumn(contentPadding = PaddingValues(22.dp), verticalArrangement = Arrangement.spacedBy(22.dp)) {
+        item { LanguageSettings() }
         item {
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                 Box(Modifier.size(48.dp).clip(RoundedCornerShape(15.dp)).background(Green), contentAlignment = Alignment.Center) {
@@ -171,10 +181,10 @@ private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onComp
                 }
                 Spacer(Modifier.width(12.dp))
                 Column(Modifier.weight(1f)) {
-                    Text("بصائر", fontSize = 28.sp, fontWeight = FontWeight.Bold, color = Ink)
-                    Text("علمٌ تقرؤه، ومصدرٌ تعرفه", fontSize = 12.sp, color = Muted)
+                    Text(context.getString(R.string.ui_basair), fontSize = 28.sp, fontWeight = FontWeight.Bold, color = Ink)
+                    Text(context.getString(R.string.ui_read_knowledge_know_its_source), fontSize = 12.sp, color = Muted)
                 }
-                Tag("${Catalog.books.size} كتابًا ومجلدًا")
+                Tag(context.getString(R.string.ui_1_books_and_volumes, Catalog.books.size))
             }
         }
         item {
@@ -185,20 +195,20 @@ private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onComp
                     for (i in 1..5) drawCircle(Color.White.copy(alpha = .055f), i * 34.dp.toPx(), center, style = Stroke(1.dp.toPx()))
                 }
                 Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                    Text("مكتبتك للعلوم الإسلامية", color = Color(0xFFDDC58F), fontSize = 12.sp)
-                    Text("رحلة العلم تبدأ\nبسؤال", fontSize = 32.sp, lineHeight = 45.sp,
+                    Text(context.getString(R.string.ui_your_library_of_islamic_studies), color = Color(0xFFDDC58F), fontSize = 12.sp)
+                    Text(context.getString(R.string.ui_a_journey_of_knowledge_begins_with_a_question), fontSize = 32.sp, lineHeight = 45.sp,
                         color = Color.White, fontWeight = FontWeight.Bold)
-                    Text("فقه، عقيدة، حديث، سيرة وتفسير\nوتراجم السلف والتزكية", color = Color(0xFFD6E6DB), fontSize = 14.sp, lineHeight = 24.sp)
+                    Text(context.getString(R.string.ui_fiqh_creed_hadith_biography_and_tafsir_early_muslim_biographies_and_spir), color = Color(0xFFD6E6DB), fontSize = 14.sp, lineHeight = 24.sp)
                     Button(onClick = onSearch, colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFE8D5A7), contentColor = Ink),
                         shape = RoundedCornerShape(12.dp)) {
-                        LineIcon("search", Ink, 18); Spacer(Modifier.width(8.dp)); Text("ابحث في المكتبة")
+                        LineIcon("search", Ink, 18); Spacer(Modifier.width(8.dp)); Text(context.getString(R.string.ui_search_the_library))
                     }
                 }
             }
         }
         item {
             Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                SectionTitle("أبواب المعرفة", "${Catalog.subjects.size} أقسام، نافذة واحدة")
+                SectionTitle(context.getString(R.string.ui_fields_of_knowledge), context.getString(R.string.ui_1_subjects_in_one_place, Catalog.subjects.size))
                 Catalog.subjects.chunked(2).forEach { row ->
                     Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                         row.forEach { item ->
@@ -206,8 +216,8 @@ private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onComp
                                 shape = RoundedCornerShape(18.dp), color = Color.White, border = androidx.compose.foundation.BorderStroke(1.dp, Line)) {
                                 Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(7.dp)) {
                                     LineIcon(item.symbol, Gold, 27)
-                                    Text(item.title, fontSize = 19.sp, fontWeight = FontWeight.Bold)
-                                    Text(item.description, fontSize = 11.sp, color = Muted)
+                                    Text(localizedLabel(context, item.title), fontSize = 19.sp, fontWeight = FontWeight.Bold)
+                                    Text(localizedLabel(context, item.description), fontSize = 11.sp, color = Muted)
                                 }
                             }
                         }
@@ -221,80 +231,89 @@ private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onComp
                 Row(Modifier.fillMaxWidth().padding(18.dp), verticalAlignment = Alignment.CenterVertically) {
                     LineIcon("scales", Green, 32); Spacer(Modifier.width(14.dp))
                     Column(Modifier.weight(1f)) {
-                        Text("مسألة واحدة، أربعة مذاهب", fontSize = 17.sp, fontWeight = FontWeight.Bold)
-                        Text("تعرّف على الأقوال مع مصدرها", fontSize = 12.sp, color = Muted)
+                        Text(context.getString(R.string.ui_one_question_four_schools), fontSize = 17.sp, fontWeight = FontWeight.Bold)
+                        Text(context.getString(R.string.ui_explore_opinions_and_their_sources), fontSize = 12.sp, color = Muted)
                     }
                     Text("‹", fontSize = 28.sp, color = Green)
                 }
             }
         }
-        item { SectionTitle("ابدأ القراءة", "كتب أصلية متاحة دون اتصال") }
+        item { SectionTitle(context.getString(R.string.ui_start_reading), context.getString(R.string.ui_original_books_available_offline)) }
         item { BookCard(Catalog.books.first(), false, { onBook(Catalog.books.first().id) }, null) }
-        item { Notice("${Catalog.books.size} كتابًا ومجلدًا في ${Catalog.subjects.size} أقسام، مع بيانات المصدر والإتاحة لكل نسخة. البحث الحالي في عناوين الكتب وموضوعاتها والمقارنات؛ الصفحات المصورة تُقرأ كما في الأصل.") }
-        item { TextButton(onClick = { openSource(context, "https://sites.google.com/view/basair-privacy-algohary") }) { Text("سياسة الخصوصية والدعم") } }
+        item { Notice(context.getString(R.string.ui_1_books_and_volumes_across_2_subjects_with_sources_and_usage_details_sea, Catalog.books.size, Catalog.subjects.size)) }
+        item { TextButton(onClick = { openSource(context, "https://sites.google.com/view/basair-privacy-algohary") }) { Text(context.getString(R.string.ui_privacy_and_support)) } }
     }
 }
 
 @Composable
 private fun CatalogScreen(searchMode: Boolean, query: String, onQuery: (String) -> Unit, subject: String?,
-    onSubject: (String?) -> Unit, onBook: (String) -> Unit, saved: Set<String>, onSave: (String) -> Unit, onCompare: (String) -> Unit) {
-    val results = remember(query, subject) { Catalog.search(query, subject) }
-    val comparisons = remember(query, subject, searchMode) {
-        if (searchMode) Catalog.searchComparisons(query, subject) else emptyList()
+    onSubject: (String?) -> Unit, onBook: (String) -> Unit, saved: Set<String>, onSave: (String) -> Unit, onCompare: (String) -> Unit,
+    school: String?, onSchool: (String?) -> Unit, topic: String?, onTopic: (String?) -> Unit, onReference: (Reference) -> Unit) {
+    val context = LocalContext.current
+    val results = remember(query, subject, school, topic) { Catalog.search(query, subject, school, topic) }
+    val comparisons = remember(query, subject, school, topic, searchMode) {
+        if (searchMode && school == null && topic == null) Catalog.searchComparisons(query, subject) else emptyList()
     }
     LazyColumn(contentPadding = PaddingValues(22.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
-        item { SectionTitle(if (searchMode) "ابحث عن معرفة" else "المكتبة", "كتب ومجلدات أصلية مرتبة حسب العلوم") }
+        item { if (LocalConfiguration.current.locales[0].language == "en") Notice(context.getString(R.string.arabic_content_notice)) }
+        item { SectionTitle(if (searchMode) context.getString(R.string.ui_find_knowledge) else context.getString(R.string.ui_library), context.getString(R.string.ui_original_books_and_volumes_by_subject)) }
         item {
             OutlinedTextField(value = query, onValueChange = onQuery, modifier = Modifier.fillMaxWidth(),
-                placeholder = { Text("عنوان، مؤلف أو موضوع…", fontSize = 14.sp) },
+                placeholder = { Text(context.getString(R.string.ui_title_author_or_topic), fontSize = 14.sp) },
                 leadingIcon = { LineIcon("search", Muted) },
-                trailingIcon = { if (query.isNotEmpty()) TextButton(onClick = { onQuery("") }) { Text("مسح") } },
+                trailingIcon = { if (query.isNotEmpty()) TextButton(onClick = { onQuery("") }) { Text(context.getString(R.string.ui_clear)) } },
                 singleLine = true, shape = RoundedCornerShape(16.dp),
                 colors = OutlinedTextFieldDefaults.colors(unfocusedBorderColor = Line,
                     focusedBorderColor = Green, unfocusedContainerColor = Color.White))
         }
         item {
             Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                FilterChip(selected = subject == null, onClick = { onSubject(null) }, label = { Text("الكل") })
+                FilterChip(selected = subject == null, onClick = { onSubject(null) }, label = { Text(context.getString(R.string.ui_all)) })
                 Catalog.subjects.forEach {
-                    FilterChip(selected = subject == it.id, onClick = { onSubject(it.id) }, label = { Text(it.title) })
+                    FilterChip(selected = subject == it.id, onClick = { onSubject(it.id) }, label = { Text(localizedLabel(context, it.title)) })
                 }
             }
         }
-        Catalog.subjectFilters[subject]?.let { filters ->
+        if (subject == "fiqh") item { SchoolSelector(school, onSchool) }
+        subject?.let { selectedSubject -> Catalog.books.filter { it.subject == selectedSubject }.flatMap { it.topics }.distinct() }?.let { filters ->
             item {
                 Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                    Text("تصفح موضوعًا", color = Muted, fontSize = 12.sp)
+                    Text(context.getString(R.string.ui_browse_a_topic), color = Muted, fontSize = 12.sp)
                     Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         filters.forEach { filter ->
-                            FilterChip(selected = query == filter, onClick = { onQuery(if (query == filter) "" else filter) }, label = { Text(filter) })
+                            FilterChip(selected = topic == filter, onClick = { onTopic(if (topic == filter) null else filter) }, label = { Text(localizedLabel(context, filter)) })
                         }
                     }
                 }
             }
         }
         if (subject == "salaf") item {
-            Notice("سير الأئمة الأربعة، وتراجم الصحابة والتابعين ومن بعدهم. المتاح من صفة الصفوة هو المجلدان الأول والثاني؛ بيانات كل نسخة ومصدرها في «البيانات» داخل القارئ.")
+            Notice(context.getString(R.string.ui_biographies_of_the_four_imams_companions_and_successors_only_volumes_1_a))
         }
-        item { Text("النتائج: ${results.size}" + if (searchMode) " · ${comparisons.size} مقارنة" else " · كتب ومجلدات", color = Muted, fontSize = 12.sp) }
-        if (results.isEmpty() && comparisons.isEmpty()) item {
-            EmptyState("لم نجد نتائج", "جرّب كلمة أقصر أو اختر جميع الأقسام.", "إعادة ضبط البحث") { onQuery(""); onSubject(null) }
+        item { Text(context.getString(R.string.ui_results_1, results.size) + if (searchMode) context.getString(R.string.ui_1_comparisons, comparisons.size) else context.getString(R.string.ui_books_and_volumes), color = Muted, fontSize = 12.sp) }
+        if (results.isEmpty() && comparisons.isEmpty() && !(subject == "fiqh" && (school == null || school == "shared") && matchingReferenceVolumes(query, topic).isNotEmpty())) item {
+            if (school != null && school != "shared") SchoolEmptyState { onSchool("shared") }
+            else EmptyState(context.getString(R.string.ui_no_results), context.getString(R.string.ui_try_a_shorter_query_or_select_all_subjects), context.getString(R.string.ui_reset_search)) { onQuery(""); onSubject(null); onSchool(null); onTopic(null) }
         }
         items(comparisons, key = { "comparison:" + it.title }) { comparison ->
             Surface(onClick = { onCompare(comparison.id) }, color = SoftGreen, shape = RoundedCornerShape(18.dp)) {
                 Column(Modifier.fillMaxWidth().padding(18.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Text("مقارنة المذاهب الأربعة", fontSize = 11.sp, color = Green)
+                    Text(context.getString(R.string.ui_compare_the_four_schools), fontSize = 11.sp, color = Green)
                     Text(comparison.title, fontSize = 18.sp, fontWeight = FontWeight.Bold)
-                    Text("عرض الأقوال والمصدر ←", fontSize = 12.sp, color = Green)
+                    Text(context.getString(R.string.ui_view_opinions_and_sources), fontSize = 12.sp, color = Green)
                 }
             }
         }
         items(results, key = { it.id }) { book -> BookCard(book, book.id in saved, { onBook(book.id) }, { onSave(book.id) }) }
+        if (subject == "fiqh" && (school == null || school == "shared")) {
+            item { SharedReferences(query, topic, onReference) }
+        }
     }
 }
 
 @Composable
 private fun BookCard(book: Book, saved: Boolean, onOpen: () -> Unit, onSave: (() -> Unit)?) {
+    val context = LocalContext.current
     Surface(onClick = onOpen, color = Color.White, shape = RoundedCornerShape(20.dp),
         border = androidx.compose.foundation.BorderStroke(1.dp, Line)) {
         Row(Modifier.fillMaxWidth().padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -305,13 +324,13 @@ private fun BookCard(book: Book, saved: Boolean, onOpen: () -> Unit, onSave: (()
             }
             Spacer(Modifier.width(14.dp))
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(5.dp)) {
-                Text(Catalog.subjects.first { it.id == book.subject }.title, fontSize = 11.sp, color = Gold)
+                Text(localizedLabel(context, Catalog.subjects.first { it.id == book.subject }.title), fontSize = 11.sp, color = Gold)
                 Text(book.title, fontSize = 17.sp, fontWeight = FontWeight.Bold, maxLines = 2, overflow = TextOverflow.Ellipsis)
                 Text(book.author, fontSize = 11.sp, color = Muted)
-                Text("قراءة الكتاب · ${book.pages} صفحة", fontSize = 11.sp, color = Green)
+                Text(context.getString(R.string.ui_read_book_1_pages, book.pages), fontSize = 11.sp, color = Green)
             }
             if (onSave != null) IconButton(onClick = onSave) {
-                LineIcon("bookmark", if (saved) Gold else Muted, description = if (saved) "إزالة الكتاب من المحفوظات" else "حفظ الكتاب")
+                LineIcon("bookmark", if (saved) Gold else Muted, description = if (saved) context.getString(R.string.ui_remove_saved_book) else context.getString(R.string.ui_save_book))
             }
         }
     }
@@ -320,24 +339,25 @@ private fun BookCard(book: Book, saved: Boolean, onOpen: () -> Unit, onSave: (()
 @Composable
 private fun SavedScreen(books: List<Book>, onBook: (String) -> Unit, onSave: (String) -> Unit, onLibrary: () -> Unit,
     comparisons: List<Comparison>, onComparison: (String) -> Unit, onRemoveComparison: (String) -> Unit) {
+    val context = LocalContext.current
     LazyColumn(contentPadding = PaddingValues(22.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
-        item { SectionTitle("محفوظاتي", "ما اخترته، قريب منك دائمًا") }
-        item { Text("الكتب: ${books.size} · المسائل: ${comparisons.size}", color = Muted, fontSize = 13.sp) }
-        if (books.isEmpty() && comparisons.isEmpty()) item { EmptyState("مساحة لقراءتك القادمة", "احفظ كتابًا من المكتبة أو مسألة من المقارنات لتجدها هنا على هذا الجهاز.", "استكشف المكتبة", onLibrary) }
-        if (comparisons.isNotEmpty()) item { Text("المسائل المحفوظة", fontWeight = FontWeight.Bold) }
+        item { SectionTitle(context.getString(R.string.ui_saved), context.getString(R.string.ui_your_selections_always_nearby)) }
+        item { Text(context.getString(R.string.ui_books_1_issues_2, books.size, comparisons.size), color = Muted, fontSize = 13.sp) }
+        if (books.isEmpty() && comparisons.isEmpty()) item { EmptyState(context.getString(R.string.ui_your_next_reading_starts_here), context.getString(R.string.ui_save_a_book_or_comparison_to_find_it_here_on_this_device), context.getString(R.string.ui_explore_the_library), onLibrary) }
+        if (comparisons.isNotEmpty()) item { Text(context.getString(R.string.ui_saved_issues), fontWeight = FontWeight.Bold) }
         items(comparisons, key = { "comparison:${it.id}" }) { comparison ->
             Surface(color = SoftGreen, shape = RoundedCornerShape(18.dp)) {
                 Column(Modifier.fillMaxWidth().padding(18.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text(comparison.topic, fontSize = 12.sp, color = Muted)
                     Text(comparison.title, fontSize = 18.sp, fontWeight = FontWeight.Bold)
                     Row {
-                        TextButton(onClick = { onComparison(comparison.id) }) { Text("فتح المقارنة") }
-                        TextButton(onClick = { onRemoveComparison(comparison.id) }) { Text("إزالة المسألة") }
+                        TextButton(onClick = { onComparison(comparison.id) }) { Text(context.getString(R.string.ui_open_comparison)) }
+                        TextButton(onClick = { onRemoveComparison(comparison.id) }) { Text(context.getString(R.string.ui_remove_issue)) }
                     }
                 }
             }
         }
-        if (books.isNotEmpty()) item { Text("الكتب المحفوظة", fontWeight = FontWeight.Bold) }
+        if (books.isNotEmpty()) item { Text(context.getString(R.string.ui_saved_books), fontWeight = FontWeight.Bold) }
         items(books, key = { it.id }) { book -> BookCard(book, true, { onBook(book.id) }, { onSave(book.id) }) }
     }
 }
@@ -376,7 +396,7 @@ internal fun EmptyState(title: String, message: String, action: String, onAction
 internal fun openSource(context: Context, source: String) {
     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(source))
     try { context.startActivity(intent) } catch (_: android.content.ActivityNotFoundException) {
-        android.widget.Toast.makeText(context, "لا يوجد متصفح لفتح المصدر", android.widget.Toast.LENGTH_SHORT).show()
+        android.widget.Toast.makeText(context, context.getString(R.string.ui_no_browser_is_available_to_open_this_source), android.widget.Toast.LENGTH_SHORT).show()
     }
 }
 

@@ -27,7 +27,11 @@ for book in books:
     shutil.copyfile(source, target)
     keys = ['id','title','author','subject','description','source','asset','publisher','edition','licenseName','licenseUrl','rightsNote','sha256']
     args = [f'{key} = {kotlin(book[key])}' for key in keys]
-    args += [f'pages = {book["pages"]}', 'topics = listOf(' + ', '.join(kotlin(v) for v in book['topics']) + ')']
+    schools = book.get('schools', [])
+    assert all(s in {'hanafi', 'maliki', 'shafii', 'hanbali'} for s in schools), book['id']
+    assert not schools or book['subject'] == 'fiqh', book['id']
+    args += [f'pages = {book["pages"]}', 'topics = listOf(' + ', '.join(kotlin(v) for v in book['topics']) + ')',
+             'schools = setOf(' + ', '.join(kotlin(v) for v in schools) + ')']
     rows.append('    Book(\n        ' + ',\n        '.join(args) + '\n    )')
     metadata.append({**book, 'bytes': len(data), 'verifiedOn': '2026-10-23'})
 
