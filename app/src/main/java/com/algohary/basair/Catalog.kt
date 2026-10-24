@@ -19,9 +19,15 @@ data class Reference(
 data class SchoolOpinion(val school: String, val summary: String, val references: List<Reference>)
 data class Comparison(val id: String, val title: String, val topic: String, val scope: String, val opinions: List<SchoolOpinion>)
 
-private fun kuwaitReference(volume: Int, pages: String, pdfPage: Int) = Reference(
+internal fun kuwaitReference(volume: Int, pages: String, pdfPage: Int) = Reference(
     "الموسوعة الفقهية الكويتية", "وزارة الأوقاف والشؤون الإسلامية — الكويت",
-    if (volume == 31) "الطبعة الأولى، 1414هـ / 1994م، مطابع دار الصفوة" else "الطبعة الأولى، 1425هـ / 2005م",
+    when (volume) {
+        23 -> "الطبعة الثانية، 1412هـ / 1992م، طباعة ذات السلاسل — الكويت"
+        27 -> "الطبعة الأولى، 1412هـ / 1992م، مطابع دار الصفوة"
+        31 -> "الطبعة الأولى، 1414هـ / 1994م، مطابع دار الصفوة"
+        43 -> "الطبعة الأولى، 1425هـ / 2005م"
+        else -> error("Unverified reference volume: $volume")
+    },
     volume, pages, pdfPage,
     "https://d1.islamhouse.com/data/ar/ih_books/chain/ar_encyclopedia_fiqhiyyah_kuwait/ar_${volume}_encyclopedia_fiqhiyyah_kuwait.pdf"
 )
@@ -77,7 +83,10 @@ object Catalog {
                 SchoolOpinion("الشافعي", "ليسا واجبين في الغسل، ويعدّ غسلهما من سننه.", listOf(kuwaitReference(31, "208–209", 209))),
                 SchoolOpinion("الحنبلي", "المضمضة والاستنشاق واجبان في الغسل.", listOf(kuwaitReference(31, "208–209", 208)))
             ))
-    )
+    ) + expandedComparisons
+
+    val comparisonTopics = comparisons.map { it.topic.substringBefore(" / ") }.distinct()
+    val comparisonSchools = listOf("الحنفي", "المالكي", "الشافعي", "الحنبلي")
 
     private val bookSearchText = books.associate { book -> book.id to normalizeArabic(
         listOf(book.title, book.author, book.description, book.publisher,
@@ -88,20 +97,27 @@ object Catalog {
         return books.filter { book -> (subject == null || book.subject == subject) && terms.all { it in bookSearchText.getValue(book.id) } }
     }
 
-    fun searchComparisons(query: String, subject: String? = null): List<Comparison> {
+    fun searchComparisons(query: String, subject: String? = null, topic: String? = null, school: String? = null): List<Comparison> {
         if (subject != null && subject != "fiqh") return emptyList()
         val terms = normalizeArabic(query).split(Regex("\\s+")).filter { it.isNotBlank() }
         return comparisons.filter { comparison ->
+            if (topic != null && comparison.topic.substringBefore(" / ") != topic) return@filter false
+            val opinions = comparison.opinions.filter { school == null || it.school == school }
+            if (opinions.isEmpty()) return@filter false
             val text = normalizeArabic(comparison.title + " " + comparison.topic + " " + comparison.scope + " " +
-                comparison.opinions.joinToString(" ") { opinion -> opinion.school + " " + opinion.summary + " " + opinion.references.joinToString { it.label } })
+                opinions.joinToString(" ") { opinion -> opinion.school + " " + opinion.summary + " " + opinion.references.joinToString { it.label } })
             terms.all { it in text }
         }
     }
 }
 
+internal fun selectComparison(results: List<Comparison>, selectedId: String): Comparison? =
+    results.firstOrNull { it.id == selectedId } ?: results.firstOrNull()
+
 fun normalizeArabic(value: String): String = Normalizer.normalize(value, Normalizer.Form.NFD)
     .replace(Regex("\\p{M}+"), "").replace("ـ", "")
     .replace('أ', 'ا').replace('إ', 'ا').replace('آ', 'ا').replace('ى', 'ي').lowercase()
+    .map { char -> Character.digit(char, 10).takeIf { it >= 0 }?.let { ('0'.code + it).toChar() } ?: char }.joinToString("")
 
 fun parsePageNumber(input: String, pageCount: Int): Int? {
     val ascii = input.trim().map { char ->

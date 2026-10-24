@@ -12,7 +12,7 @@ Reading features:
 • Save books and resume your reading position.
 • Search Arabic book titles, authors and topics.
 • Browse shortcuts for the four imams, companions, successors and purification topics.
-• Read five concise comparisons across the four Sunni legal schools, with source, volume and page references.
+• Read 15 concise comparisons across the four Sunni legal schools, with source, volume and page references. Search comparisons and filter by topic and school.
 • Inspect the author, edition, source link and reuse conditions for each included file.
 
 The books and reading interface are in Arabic. Search covers metadata and comparison summaries, not every word in scanned pages. The two included Sifat Al-Safwa volumes are not the complete multi-volume work. External source links require internet access.

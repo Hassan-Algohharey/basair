@@ -1,6 +1,6 @@
 {
-  "verifiedOn": "2026-10-23",
-  "method": "Visual inspection of publisher edition pages and printed reference pages; editorial summaries, not a new scholarly edition or a fatwa.",
+  "verifiedOn": "2026-10-24",
+  "method": "Visual inspection of scanned publisher edition page 4 and every cited printed page. Editorial paraphrases of the comparative encyclopedia, with scope and intramadhhab variants retained; not direct quotations from the four imams, a scholarly committee endorsement, or a personal fatwa.",
   "bundledInApk": false,
   "references": [
     {
@@ -11,7 +11,13 @@
       "url": "https://d1.islamhouse.com/data/ar/ih_books/chain/ar_encyclopedia_fiqhiyyah_kuwait/ar_31_encyclopedia_fiqhiyyah_kuwait.pdf",
       "sha256": "9ee4f68d5447d2a8070c7dcf2bcdeea789a7fb73b51dd80580417407ba20c491",
       "editionPdfPage": 4,
-      "verifiedPrintedPages": [207, 208, 209, 211, 212],
+      "verifiedPrintedPages": [
+        207,
+        208,
+        209,
+        211,
+        212
+      ],
       "pdfPageEqualsPrintedPageForTheseReferences": true
     },
     {
@@ -22,15 +28,171 @@
       "url": "https://d1.islamhouse.com/data/ar/ih_books/chain/ar_encyclopedia_fiqhiyyah_kuwait/ar_43_encyclopedia_fiqhiyyah_kuwait.pdf",
       "sha256": "aace4bd070b455e23f2d6eae57c4ade1d45aa058c07d20a09453be18639169ed",
       "editionPdfPage": 4,
-      "verifiedPrintedPages": [355, 356],
+      "verifiedPrintedPages": [
+        348,
+        349,
+        355,
+        356,
+        360
+      ],
+      "pdfPageEqualsPrintedPageForTheseReferences": true
+    },
+    {
+      "title": "الموسوعة الفقهية الكويتية",
+      "volume": 23,
+      "edition": "الثانية، 1412هـ / 1992م",
+      "publisher": "وزارة الأوقاف والشؤون الإسلامية بالكويت؛ طباعة ذات السلاسل",
+      "url": "https://d1.islamhouse.com/data/ar/ih_books/chain/ar_encyclopedia_fiqhiyyah_kuwait/ar_23_encyclopedia_fiqhiyyah_kuwait.pdf",
+      "sha256": "9ad75ff0a215db16aebf9dc468462d3f2c5991bf0373094b110be70c9c222e3c",
+      "editionPdfPage": 4,
+      "verifiedPrintedPages": [
+        232,
+        294,
+        295,
+        296,
+        298,
+        299
+      ],
+      "pdfPageEqualsPrintedPageForTheseReferences": true
+    },
+    {
+      "title": "الموسوعة الفقهية الكويتية",
+      "volume": 27,
+      "edition": "الأولى، 1412هـ / 1992م",
+      "publisher": "وزارة الأوقاف والشؤون الإسلامية بالكويت؛ مطابع دار الصفوة",
+      "url": "https://d1.islamhouse.com/data/ar/ih_books/chain/ar_encyclopedia_fiqhiyyah_kuwait/ar_27_encyclopedia_fiqhiyyah_kuwait.pdf",
+      "sha256": "43b61b9d3700e85b1c9d81808e48863adb43819817b6f0a8b143f669698a1d8f",
+      "editionPdfPage": 4,
+      "verifiedPrintedPages": [
+        274,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285
+      ],
       "pdfPageEqualsPrintedPageForTheseReferences": true
     }
   ],
   "comparisons": [
-    {"id": "ghusl-intention", "volume": 31, "pages": [207]},
-    {"id": "wudu-order", "volume": 43, "pages": [355, 356]},
-    {"id": "wudu-continuity", "volume": 43, "pages": [355]},
-    {"id": "ghusl-rubbing", "volume": 31, "pages": [211, 212]},
-    {"id": "ghusl-mouth-nose", "volume": 31, "pages": [208, 209]}
-  ]
+    {
+      "id": "ghusl-intention",
+      "volume": 31,
+      "pages": [
+        207
+      ]
+    },
+    {
+      "id": "wudu-order",
+      "volume": 43,
+      "pages": [
+        355,
+        356
+      ]
+    },
+    {
+      "id": "wudu-continuity",
+      "volume": 43,
+      "pages": [
+        355
+      ]
+    },
+    {
+      "id": "ghusl-rubbing",
+      "volume": 31,
+      "pages": [
+        211,
+        212
+      ]
+    },
+    {
+      "id": "ghusl-mouth-nose",
+      "volume": 31,
+      "pages": [
+        208,
+        209
+      ]
+    },
+    {
+      "id": "wudu-head",
+      "volume": 43,
+      "pages": [
+        348,
+        349
+      ]
+    },
+    {
+      "id": "wudu-mouth-nose",
+      "volume": 43,
+      "pages": [
+        360
+      ]
+    },
+    {
+      "id": "travel-qasr",
+      "volume": 27,
+      "pages": [
+        274
+      ]
+    },
+    {
+      "id": "traveler-resident-imam",
+      "volume": 27,
+      "pages": [
+        280,
+        281
+      ]
+    },
+    {
+      "id": "travel-missed-prayer",
+      "volume": 27,
+      "pages": [
+        281,
+        282
+      ]
+    },
+    {
+      "id": "travel-residence",
+      "volume": 27,
+      "pages": [
+        282,
+        283,
+        284,
+        285
+      ]
+    },
+    {
+      "id": "zakat-child",
+      "volume": 23,
+      "pages": [
+        232
+      ]
+    },
+    {
+      "id": "zakat-advance",
+      "volume": 23,
+      "pages": [
+        294,
+        295
+      ]
+    },
+    {
+      "id": "zakat-delay",
+      "volume": 23,
+      "pages": [
+        295,
+        296
+      ]
+    },
+    {
+      "id": "zakat-value",
+      "volume": 23,
+      "pages": [
+        298,
+        299
+      ]
+    }
+  ],
+  "version": "0.6.0"
 }
