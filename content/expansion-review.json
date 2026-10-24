@@ -1,0 +1,20 @@
+{
+  "version": "0.4.0",
+  "reviewedOn": "2026-10-23",
+  "scope": "Primary source provenance, supplied-file completeness and spot visual review; not certification of every historical narration.",
+  "approved": [
+    {"id": "four-imams", "rightsEvidence": "content/sources/islamhouse-permission-v04.html", "basis": "source republication policy, attribution and unchanged content, noncommercial", "visualPages": [1, 145, 147, 148], "lastContentPage": 147, "note": "Full electronic book. Original page 148 is blank."},
+    {"id": "safwa1", "rightsEvidence": "content/sources/wikisource-safwa1.html", "basis": "edition-specific public domain statement", "visualPages": [1, 340, 341, 347, 348], "scope": "complete supplied volume 1, not complete multi-volume work"},
+    {"id": "safwa2", "rightsEvidence": "content/sources/wikisource-safwa2.html", "basis": "edition-specific public domain statement", "visualPages": [1, 312, 316], "scope": "complete supplied volume 2, not complete multi-volume work", "note": "Includes successors and later figures; colophon points to volume 3."},
+    {"id": "wasael", "rightsEvidence": "PDF file page 2; docs/screenshots/v04/license-wasael-source-page2.png", "basis": "explicit permission to print and republish with attribution and unchanged text", "visualPages": [1, 2, 3, 23], "scope": "complete treatise and supplied index"},
+    {"id": "risalat", "rightsEvidence": "content/sources/islamhouse-permission-v04.html", "basis": "source republication policy, attribution and unchanged content, noncommercial", "visualPages": [1, 2, 3, 4, 97, 102, 103], "scope": "complete supplied treatise, introduction and indexes", "note": "Does not classify the modern critical edition as public domain."}
+  ],
+  "excludedCandidates": [
+    {"id": "companions", "reason": "All rights reserved explicitly stated on file page 2."},
+    {"id": "successors", "reason": "Modern commercial edition; publisher introduction asserts exclusive rights to publication, printing and distribution."},
+    {"id": "riyad", "reason": "File page 4 reserves printing rights to editor and requests direct contact for reprinting."},
+    {"id": "tatrez", "reason": "Broken cover typography from missing fonts; not selected."},
+    {"id": "zuhd", "reason": "Not selected; two other full purification works chosen."},
+    {"id": "wasael-new", "reason": "Duplicate title; chose the other attachment with directly inspected permission page."}
+  ]
+}

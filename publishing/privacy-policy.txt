@@ -1,0 +1,43 @@
+بصائر | Basair — سياسة الخصوصية
+تاريخ السريان: 23 أكتوبر 2026
+التطبيق: com.algohary.basair — المطوّر: Smart_Grow
+
+جمع البيانات ومشاركتها
+لا يجمع التطبيق بيانات شخصية ولا يرسلها إلى خوادم المطوّر أو يشاركها مع جهات أخرى. لا يتطلب حسابًا أو تسجيل دخول، ولا يتضمن إعلانات أو أدوات تحليلات أو تتبع.
+
+البيانات المحلية وحذفها
+يحفظ التطبيق الكتب المفضلة وآخر صفحة قرأتها وحجم التكبير ونسخ الكتب المؤقتة على جهازك فقط. لا يرفعها إلى خدمات سحابية، والنسخ الاحتياطي التلقائي معطّل. يمكنك حذف هذه البيانات بمسح مساحة تخزين التطبيق من إعدادات Android أو بإلغاء تثبيته.
+
+الصلاحيات والروابط
+الكتب مضمّنة للقراءة دون اتصال. لا يطلب التطبيق صلاحيات الكاميرا أو الميكروفون أو الموقع أو جهات الاتصال أو الوصول العام لملفاتك. روابط المصادر وبيانات الإتاحة تفتح في المتصفح، وتخضع زيارتها لسياسات مواقعها والمتصفح.
+
+الأطفال
+لا يجمع التطبيق بيانات شخصية من الأطفال أو غيرهم. المكتبة للقراءة والتعلم العام، وليست خدمة تواصل اجتماعي.
+
+خدمات المنصة
+قد تعالج Google Play ونظام Android وخدمة استضافة هذه الصفحة معلومات تقنية وفق سياساتها وإعدادات جهازك. لا يضيف المطوّر أدوات تحليلات أو نماذج لجمع البيانات في هذه الصفحة.
+
+التحديثات والدعم
+تُحدّث هذه السياسة وتاريخها عند تغير ممارسات التطبيق. للخصوصية والدعم وحقوق المحتوى: smartgrow75@gmail.com. إذا أرسلت بريدًا، تستخدم المعلومات التي تختار مشاركتها لمعالجة طلبك عبر خدمة البريد.
+
+Privacy Policy — Basair
+Effective: 23 October 2026
+Android package: com.algohary.basair. Developer: Smart_Grow.
+
+Data collection and sharing
+The app does not collect personal data, send it to developer servers, or share it with third parties. No account or login is required. It contains no advertisements, analytics or tracking SDKs.
+
+Local storage and deletion
+Saved books, reading positions, zoom preferences and cached book files are stored on your device. The app does not upload them to cloud storage and automatic backup is disabled. Clear the app storage in Android settings or uninstall it to delete this local data.
+
+Permissions and links
+Bundled Arabic books can be read offline. The app does not request camera, microphone, location, contacts or general file access permissions. Source and licensing links open in your browser; external sites and browsers have their own privacy policies.
+
+Children
+The app does not collect personal data from children or other users. It is a reading and learning library, not a social networking service.
+
+Platform services
+Google Play, Android and this website host may process technical information under their own policies and your settings. No developer analytics or data collection forms are added to this page.
+
+Updates and contact
+This policy and its effective date will be updated if the app data practices change. Privacy, support and content rights: smartgrow75@gmail.com. Information you choose to send by email is used to respond to your request through the email service.

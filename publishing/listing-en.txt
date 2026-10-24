@@ -1,0 +1,22 @@
+Name: Basair
+Short description: An offline Arabic Islamic library with sources and four-school comparisons.
+
+Basair is an Arabic Islamic reading library with original book pages and transparent source and reuse information.
+
+Explore seven subjects: Islamic jurisprudence, creed, hadith, prophetic biography, Quran commentary, biographies of early Muslims, and spiritual purification.
+
+This version contains 12 books and volumes representing 11 titles, with 2,410 original PDF pages available offline. Contents include Al-Fiqh Al-Muyassar, the Tahawi creed, the Nawawi hadith collection with Ibn Rajab's additions, Tafsir Al-Jalalayn with its included margins, biographies of the four imams, volumes 1 and 2 of Sifat Al-Safwa, Al-Sa'di's means to a happy life, and Ibn Al-Qayyim's letter to a brother.
+
+Reading features:
+• View and zoom original book pages and jump to a page.
+• Save books and resume your reading position.
+• Search Arabic book titles, authors and topics.
+• Browse shortcuts for the four imams, companions, successors and purification topics.
+• Read five concise comparisons across the four Sunni legal schools, with source, volume and page references.
+• Inspect the author, edition, source link and reuse conditions for each included file.
+
+The books and reading interface are in Arabic. Search covers metadata and comparison summaries, not every word in scanned pages. The two included Sifat Al-Safwa volumes are not the complete multi-volume work. External source links require internet access.
+
+No account or advertisements. Reading preferences are stored on your device. Comparisons are educational summaries, not personal fatwas.
+
+Support and content rights: smartgrow75@gmail.com

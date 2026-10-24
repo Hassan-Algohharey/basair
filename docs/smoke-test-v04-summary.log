@@ -1,0 +1,7 @@
+PASS combined v0.4 validation: all five added originals, first and end pages, metadata dialogs and topic shortcuts.
+PASS original PDF: four-imams, first and end pages, declared total 148.
+PASS original PDF: safwa1, first and end pages, declared total 348.
+PASS original PDF: safwa2, first and end pages, declared total 316.
+PASS original PDF: wasael, first and end pages, declared total 23.
+PASS original PDF: risalat, first and end pages, declared total 103.
+The first run checked four-imams, then stopped because the test matched a book-card category label. After scoping the selector to the horizontal filter row, the resumed run checked the remaining four books. No application change was needed.

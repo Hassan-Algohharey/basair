@@ -1,0 +1,194 @@
+package com.algohary.basair
+
+import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.pdf.PdfRenderer
+import android.os.ParcelFileDescriptor
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import java.io.Closeable
+import java.io.File
+import java.security.MessageDigest
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.NonCancellable
+import kotlinx.coroutines.awaitCancellation
+import kotlinx.coroutines.withContext
+import kotlin.math.roundToInt
+import kotlin.math.sqrt
+
+private class PdfBookSession(context: Context, book: Book) : Closeable {
+    private val descriptor: ParcelFileDescriptor
+    private val renderer: PdfRenderer
+    private var closed = false
+
+    init {
+        val directory = File(context.cacheDir, "books").apply { mkdirs() }
+        val file = File(directory, "${book.id}-${book.sha256.take(16)}.pdf")
+        if (!file.exists()) {
+            val temporary = File(directory, "${book.id}.part")
+            try {
+                val digest = MessageDigest.getInstance("SHA-256")
+                context.assets.open(book.asset).use { input ->
+                    temporary.outputStream().use { output ->
+                        val buffer = ByteArray(64 * 1024)
+                        while (true) {
+                            val count = input.read(buffer)
+                            if (count < 0) break
+                            output.write(buffer, 0, count)
+                            digest.update(buffer, 0, count)
+                        }
+                    }
+                }
+                val hash = digest.digest().joinToString("") { "%02x".format(it) }
+                check(hash == book.sha256) { "Book checksum mismatch" }
+                check(temporary.renameTo(file)) { "Cannot store PDF" }
+            } finally { temporary.delete() }
+        }
+        val opened = ParcelFileDescriptor.open(file, ParcelFileDescriptor.MODE_READ_ONLY)
+        try {
+            val pdf = PdfRenderer(opened)
+            if (pdf.pageCount != book.pages) {
+                pdf.close()
+                error("Unexpected page count")
+            }
+            descriptor = opened
+            renderer = pdf
+        } catch (error: Exception) { opened.close(); throw error }
+    }
+
+    @Synchronized fun render(index: Int, requestedWidth: Int): Bitmap {
+        check(!closed)
+        renderer.openPage(index).use { page ->
+            var width = requestedWidth.coerceIn(500, 2400)
+            var height = (width.toDouble() * page.height / page.width).roundToInt().coerceAtLeast(1)
+            if (width.toLong() * height > 6_000_000) {
+                val factor = sqrt(6_000_000.0 / (width.toLong() * height))
+                width = (width * factor).toInt().coerceAtLeast(1)
+                height = (height * factor).toInt().coerceAtLeast(1)
+            }
+            val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+            bitmap.eraseColor(android.graphics.Color.WHITE)
+            try { page.render(bitmap, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY) }
+            catch (error: Exception) { bitmap.recycle(); throw error }
+            return bitmap
+        }
+    }
+
+    @Synchronized override fun close() {
+        if (!closed) { closed = true; renderer.close(); descriptor.close() }
+    }
+}
+
+@Composable
+internal fun PdfBookReader(book: Book, saved: Boolean, onBack: () -> Unit, onSave: () -> Unit) {
+    val context = LocalContext.current
+    val preferences = remember { context.getSharedPreferences("basair", Context.MODE_PRIVATE) }
+    var page by rememberSaveable(book.id) { mutableIntStateOf(preferences.getInt("page:${book.id}", 1).coerceIn(1, book.pages)) }
+    var zoom by rememberSaveable(book.id) { mutableFloatStateOf(preferences.getFloat("pdfZoom", 1f).coerceIn(1f, 3f)) }
+    var showPageDialog by remember { mutableStateOf(false) }
+    var showDetails by remember { mutableStateOf(false) }
+    var retry by remember { mutableIntStateOf(0) }
+    var error by remember(book.id, retry) { mutableStateOf<String?>(null) }
+    val session by produceState<PdfBookSession?>(null, book.id, retry) {
+        var owned: PdfBookSession? = null
+        try {
+            withContext(Dispatchers.IO) { owned = PdfBookSession(context, book) }
+            value = owned
+            awaitCancellation()
+        } catch (cancel: kotlinx.coroutines.CancellationException) { throw cancel }
+        catch (_: Exception) { error = "تعذر فتح نسخة الكتاب. أعد المحاولة." }
+        finally { withContext(NonCancellable + Dispatchers.IO) { owned?.close() } }
+    }
+    LaunchedEffect(page) { preferences.edit().putInt("page:${book.id}", page).apply() }
+    LaunchedEffect(zoom) { preferences.edit().putFloat("pdfZoom", zoom).apply() }
+
+    Column(Modifier.fillMaxSize()) {
+        Row(Modifier.fillMaxWidth().padding(horizontal = 12.dp), verticalAlignment = Alignment.CenterVertically) {
+            TextButton(onClick = onBack) { Text("→ العودة") }
+            Text(book.title, Modifier.weight(1f), fontSize = 14.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
+            TextButton(onClick = { showDetails = true }) { Text("البيانات") }
+            IconButton(onClick = onSave) { LineIcon("bookmark", if (saved) Gold else Muted,
+                description = if (saved) "إزالة الكتاب من المحفوظات" else "حفظ الكتاب") }
+        }
+        Row(Modifier.fillMaxWidth().padding(horizontal = 14.dp), verticalAlignment = Alignment.CenterVertically) {
+            Text("النسخة الأصلية · دون اتصال", Modifier.weight(1f), fontSize = 11.sp, color = Muted)
+            TextButton(onClick = { zoom = (zoom - .5f).coerceAtLeast(1f) }, enabled = zoom > 1f) { Text("−") }
+            Text("${(zoom * 100).roundToInt()}٪", fontSize = 12.sp)
+            TextButton(onClick = { zoom = (zoom + .5f).coerceAtMost(3f) }, enabled = zoom < 3f) { Text("+") }
+        }
+        BoxWithConstraints(Modifier.weight(1f).fillMaxWidth().background(Color(0xFFE7E5DE))) {
+            val density = LocalDensity.current
+            val viewportWidth = maxWidth
+            val renderWidth = with(density) { (viewportWidth * zoom).roundToPx() }
+            var renderError by remember(session, page, zoom) { mutableStateOf(false) }
+            val bitmap by produceState<Bitmap?>(null, session, page, renderWidth) {
+                value = null
+                try { value = withContext(Dispatchers.IO) { session?.render(page - 1, renderWidth) } }
+                catch (cancel: kotlinx.coroutines.CancellationException) { throw cancel }
+                catch (_: Exception) { renderError = true }
+            }
+            when {
+                error != null || renderError -> Column(Modifier.align(Alignment.Center).padding(20.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(error ?: "تعذر عرض هذه الصفحة. جرّب تقليل التكبير.")
+                    Button(onClick = { retry++; renderError = false }) { Text("إعادة المحاولة") }
+                }
+                bitmap == null -> CircularProgressIndicator(Modifier.align(Alignment.Center))
+                else -> {
+                    key(page) {
+                        Box(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).horizontalScroll(rememberScrollState())) {
+                            Image(bitmap!!.asImageBitmap(), "صفحة الملف $page من ${book.pages} · ${book.title}",
+                                Modifier.width(viewportWidth * zoom), alignment = Alignment.TopCenter)
+                        }
+                    }
+                }
+            }
+        }
+        Row(Modifier.fillMaxWidth().padding(horizontal = 12.dp), verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween) {
+            TextButton(onClick = { page-- }, enabled = page > 1) { Text("السابقة") }
+            TextButton(onClick = { showPageDialog = true }) { Text("صفحة الملف $page / ${book.pages}", fontSize = 13.sp) }
+            TextButton(onClick = { page++ }, enabled = page < book.pages) { Text("التالية") }
+        }
+    }
+    if (showDetails) AlertDialog(onDismissRequest = { showDetails = false }, title = { Text("بيانات الكتاب والإتاحة") },
+        text = {
+            Column(Modifier.verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                Text(book.title, fontSize = 19.sp)
+                Text("المؤلف: ${book.author}\nالناشر: ${book.publisher}\nالطبعة: ${book.edition}\nصفحات الملف: ${book.pages}", fontSize = 14.sp)
+                Text(book.description, fontSize = 14.sp)
+                Text(book.licenseName, color = Green, fontSize = 14.sp)
+                Text(book.rightsNote, fontSize = 13.sp)
+                Text("رقم صفحة الملف قد يختلف عن الرقم المطبوع. الملفات المصورة لا تدعم البحث في جميع نصوص الصفحات أو إعادة تدفق الخط.", fontSize = 12.sp, color = Muted)
+                TextButton(onClick = { openSource(context, book.source) }) { Text("صفحة المصدر") }
+                TextButton(onClick = { openSource(context, book.licenseUrl) }) { Text("بيان الإتاحة") }
+            }
+        }, confirmButton = { TextButton(onClick = { showDetails = false }) { Text("إغلاق") } })
+    if (showPageDialog) {
+        var input by remember { mutableStateOf(page.toString()) }
+        val target = parsePageNumber(input, book.pages)
+        AlertDialog(onDismissRequest = { showPageDialog = false }, title = { Text("الانتقال إلى صفحة") },
+            text = { OutlinedTextField(value = input, onValueChange = { input = it }, singleLine = true,
+                label = { Text("رقم صفحة الملف من 1 إلى ${book.pages}") }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                isError = target == null, supportingText = { if (target == null) Text("أدخل رقمًا ضمن صفحات الملف") }) },
+            confirmButton = { TextButton(onClick = { target?.let { page = it; showPageDialog = false } }, enabled = target != null) { Text("انتقال") } },
+            dismissButton = { TextButton(onClick = { showPageDialog = false }) { Text("إلغاء") } })
+    }
+}

@@ -1,0 +1,36 @@
+{
+  "verifiedOn": "2026-10-23",
+  "method": "Visual inspection of publisher edition pages and printed reference pages; editorial summaries, not a new scholarly edition or a fatwa.",
+  "bundledInApk": false,
+  "references": [
+    {
+      "title": "الموسوعة الفقهية الكويتية",
+      "volume": 31,
+      "edition": "الأولى، 1414هـ / 1994م",
+      "publisher": "وزارة الأوقاف والشؤون الإسلامية بالكويت؛ مطابع دار الصفوة",
+      "url": "https://d1.islamhouse.com/data/ar/ih_books/chain/ar_encyclopedia_fiqhiyyah_kuwait/ar_31_encyclopedia_fiqhiyyah_kuwait.pdf",
+      "sha256": "9ee4f68d5447d2a8070c7dcf2bcdeea789a7fb73b51dd80580417407ba20c491",
+      "editionPdfPage": 4,
+      "verifiedPrintedPages": [207, 208, 209, 211, 212],
+      "pdfPageEqualsPrintedPageForTheseReferences": true
+    },
+    {
+      "title": "الموسوعة الفقهية الكويتية",
+      "volume": 43,
+      "edition": "الأولى، 1425هـ / 2005م",
+      "publisher": "وزارة الأوقاف والشؤون الإسلامية بالكويت",
+      "url": "https://d1.islamhouse.com/data/ar/ih_books/chain/ar_encyclopedia_fiqhiyyah_kuwait/ar_43_encyclopedia_fiqhiyyah_kuwait.pdf",
+      "sha256": "aace4bd070b455e23f2d6eae57c4ade1d45aa058c07d20a09453be18639169ed",
+      "editionPdfPage": 4,
+      "verifiedPrintedPages": [355, 356],
+      "pdfPageEqualsPrintedPageForTheseReferences": true
+    }
+  ],
+  "comparisons": [
+    {"id": "ghusl-intention", "volume": 31, "pages": [207]},
+    {"id": "wudu-order", "volume": 43, "pages": [355, 356]},
+    {"id": "wudu-continuity", "volume": 43, "pages": [355]},
+    {"id": "ghusl-rubbing", "volume": 31, "pages": [211, 212]},
+    {"id": "ghusl-mouth-nose", "volume": 31, "pages": [208, 209]}
+  ]
+}
