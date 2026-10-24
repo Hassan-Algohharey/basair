@@ -58,7 +58,7 @@ function Search([string]$Query) {
     if (-not $field) { throw 'Search field missing' }
     TapNode $field
     Device @('shell','input','text',$Query) | Out-Null
-    Device @('shell','input','keyevent','111') | Out-Null
+    Device @('shell','input','keyevent','4') | Out-Null
 }
 Device @('shell','am','force-stop',$package) | Out-Null
 Device @('shell','am','start','-W','-n',"$package/com.algohary.basair.MainActivity") | Out-Null
@@ -86,6 +86,12 @@ Find 'النتائج: 4 من 15 مسألة' | Out-Null
 Tap 'الطهارة'
 Find 'النتائج: 7 من 15 مسألة' | Out-Null
 Tap 'إعادة الضبط'
+$firstTitle='النية في الغسل من الجنابة'
+Tap $firstTitle
+Tap 'الترتيب في الوضوء'
+Find 'الترتيب في الوضوء' | Out-Null
+Tap 'الترتيب في الوضوء'
+Tap $firstTitle
 $cases=@(
     @('النية في الغسل من الجنابة','31','207'),
     @('الترتيب في الوضوء','43','355–356'),

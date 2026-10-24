@@ -100,7 +100,7 @@ internal fun ComparisonScreen(selectedId: String, onSelect: (String) -> Unit) {
                 val index = results.indexOf(comparison)
                 Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween) {
                     TextButton(enabled = index > 0, onClick = { onSelect(results[index - 1].id) }) { Text("المسألة السابقة") }
-                    Text("${index + 1} / ${results.size}", color = Muted, fontSize = 12.sp)
+                    Text("${index + 1} من ${results.size}", color = Muted, fontSize = 12.sp)
                     TextButton(enabled = index < results.lastIndex, onClick = { onSelect(results[index + 1].id) }) { Text("المسألة التالية") }
                 }
             }
