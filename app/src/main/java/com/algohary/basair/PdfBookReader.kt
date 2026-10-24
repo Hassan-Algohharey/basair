@@ -143,6 +143,7 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
     var retry by remember { mutableIntStateOf(0) }
     val downloads = remember(context) { BookDownloads(context) }
     var showStorage by remember { mutableStateOf(false) }
+    var showNotes by rememberSaveable { mutableStateOf(false) }
     LaunchedEffect(page) { preferences.edit().putInt("page:${book.id}", page).apply() }
     LaunchedEffect(zoom) { preferences.edit().putFloat("pdfZoom", zoom).apply() }
 
@@ -162,6 +163,7 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
         }
         Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(horizontal = 8.dp),
             verticalAlignment = Alignment.CenterVertically) {
+            TextButton(onClick = { showNotes = true }) { Text(context.getString(R.string.notes_title)) }
             if (localFile == null) TextButton(onClick = { showStorage = true }) { Text(context.getString(R.string.storage_title)) }
             if (book.chapters.isNotEmpty()) TextButton(onClick = { showChapters = true }) { Text(context.getString(R.string.book_contents)) }
             TextButton(onClick = onToggleNight) { Text(if (night) context.getString(R.string.ui_day_mode) else context.getString(R.string.ui_night_mode)) }
@@ -214,6 +216,15 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
         }
     }
     if (showStorage) BookStorageDialog(book, page, downloads) { showStorage = false; retry++ }
+    if (showNotes) androidx.compose.ui.window.Dialog(onDismissRequest = { showNotes = false },
+        properties = androidx.compose.ui.window.DialogProperties(usePlatformDefaultWidth = false)) {
+        Surface(Modifier.fillMaxWidth().fillMaxHeight(.95f)) {
+            Column {
+                TextButton(onClick = { showNotes = false }) { Text(context.getString(R.string.ui_close)) }
+                StudyNotesScreen(book, page) { page = it.page; showNotes = false }
+            }
+        }
+    }
     if (showChapters) AlertDialog(onDismissRequest = { showChapters = false },
         title = { Text(context.getString(R.string.book_contents)) }, text = {
             Column {

@@ -102,6 +102,9 @@ private fun BasairApp() {
     var comparisonId by rememberSaveable { mutableStateOf("ghusl-intention") }
     var route by rememberSaveable { mutableStateOf("home") }
     var bookId by rememberSaveable { mutableStateOf<String?>(null) }
+    var notePage by rememberSaveable { mutableStateOf<Int?>(null) }
+    var noteReference by remember { mutableStateOf<Reference?>(null) }
+    val openBook: (String) -> Unit = { notePage = null; bookId = it }
     var subject by rememberSaveable { mutableStateOf<String?>(null) }
     var school by rememberSaveable { mutableStateOf<String?>(null) }
     var topic by rememberSaveable { mutableStateOf<String?>(null) }
@@ -125,6 +128,9 @@ private fun BasairApp() {
     BackHandler(enabled = referenceVolume != null || bookId != null || route != "home") {
         if (referenceVolume != null) referenceVolume = null else if (bookId != null) bookId = null else route = "home"
     }
+    noteReference?.let { ref -> ReferenceDownloadDialog(ref, { noteReference = null }, {
+        referencePage = it.pdfPage; referenceVolume = it.volume; noteReference = null
+    }) }
     referenceVolumes[referenceVolume]?.let { volume ->
         key(volume.volume, referencePage) {
             PdfBookReader(volume.asBook(), false, { referenceVolume = null }, {},
@@ -135,7 +141,7 @@ private fun BasairApp() {
     val readingBook = Catalog.books.find { it.id == bookId }
     if (readingBook != null) {
         key(readingBook.id) { PdfBookReader(readingBook, readingBook.id in saved,
-            { bookId = null }, { toggleSave(readingBook.id) }) }
+            { bookId = null }, { toggleSave(readingBook.id) }, initialPage = notePage) }
         return
     }
     Scaffold(containerColor = Paper, bottomBar = {
@@ -152,28 +158,36 @@ private fun BasairApp() {
     }) { padding ->
         Box(Modifier.fillMaxSize().padding(padding)) {
             when (route) {
-                "home" -> HomeScreen(visitSubject, { navigate("search") }, { navigate("compare") }, { bookId = it })
+                "home" -> HomeScreen(visitSubject, { navigate("search") }, { navigate("compare") }, openBook, { navigate("notes") })
                 "library", "search" -> CatalogScreen(route == "search", query, { query = it }, subject,
-                    { subject = it; school = null; topic = null }, { bookId = it }, saved, toggleSave, openComparison,
+                    { subject = it; school = null; topic = null }, openBook, saved, toggleSave, openComparison,
                     school, { school = it }, topic, { topic = it },
                     { referencePage = it.pdfPage; referenceVolume = it.volume })
                 "compare" -> comparisonState.SaveableStateProvider("comparison") {
                     ComparisonScreen(comparisonId, { comparisonId = it }, savedComparisons, toggleComparison,
                         { referencePage = it.pdfPage; referenceVolume = it.volume })
                 }
-                "saved" -> SavedScreen(Catalog.books.filter { it.id in saved }, { bookId = it }, toggleSave,
+                "notes" -> StudyNotesScreen { note ->
+                    noteBook(note)?.let { book ->
+                        if (book.id.startsWith("reference-")) {
+                            noteReference = kuwaitReference(book.id.removePrefix("reference-").toInt(), "", note.page).copy(filePageOnly = true)
+                        } else { notePage = note.page; bookId = book.id }
+                    }
+                }
+                "saved" -> SavedScreen(Catalog.books.filter { it.id in saved }, openBook, toggleSave,
                     { subject = null; school = null; topic = null; query = ""; navigate("library") }, Catalog.comparisons.filter { it.id in savedComparisons },
-                    openComparison, toggleComparison)
+                    openComparison, toggleComparison, { navigate("notes") })
             }
         }
     }
 }
 
 @Composable
-private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onCompare: () -> Unit, onBook: (String) -> Unit) {
+private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onCompare: () -> Unit, onBook: (String) -> Unit, onNotes: () -> Unit) {
     val context = LocalContext.current
     LazyColumn(contentPadding = PaddingValues(22.dp), verticalArrangement = Arrangement.spacedBy(22.dp)) {
         item { LanguageSettings() }
+        item { OutlinedButton(onClick = onNotes) { Text(context.getString(R.string.notes_title)) } }
         item {
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                 Box(Modifier.size(48.dp).clip(RoundedCornerShape(15.dp)).background(Green), contentAlignment = Alignment.Center) {
@@ -338,10 +352,11 @@ private fun BookCard(book: Book, saved: Boolean, onOpen: () -> Unit, onSave: (()
 
 @Composable
 private fun SavedScreen(books: List<Book>, onBook: (String) -> Unit, onSave: (String) -> Unit, onLibrary: () -> Unit,
-    comparisons: List<Comparison>, onComparison: (String) -> Unit, onRemoveComparison: (String) -> Unit) {
+    comparisons: List<Comparison>, onComparison: (String) -> Unit, onRemoveComparison: (String) -> Unit, onNotes: () -> Unit) {
     val context = LocalContext.current
     LazyColumn(contentPadding = PaddingValues(22.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
         item { SectionTitle(context.getString(R.string.ui_saved), context.getString(R.string.ui_your_selections_always_nearby)) }
+        item { OutlinedButton(onClick = onNotes) { Text(context.getString(R.string.notes_title)) } }
         item { Text(context.getString(R.string.ui_books_1_issues_2, books.size, comparisons.size), color = Muted, fontSize = 13.sp) }
         if (books.isEmpty() && comparisons.isEmpty()) item { EmptyState(context.getString(R.string.ui_your_next_reading_starts_here), context.getString(R.string.ui_save_a_book_or_comparison_to_find_it_here_on_this_device), context.getString(R.string.ui_explore_the_library), onLibrary) }
         if (comparisons.isNotEmpty()) item { Text(context.getString(R.string.ui_saved_issues), fontWeight = FontWeight.Bold) }

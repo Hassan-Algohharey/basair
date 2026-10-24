@@ -4,12 +4,12 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class ComparisonTest {
-    @Test fun fifteenIssuesCoverThreeTopicsAndSixtySchoolCards() {
-        assertEquals(15, Catalog.comparisons.size)
-        assertEquals(15, Catalog.comparisons.map { it.id }.toSet().size)
-        assertEquals(60, Catalog.comparisons.sumOf { it.opinions.size })
+    @Test fun twentyFiveIssuesCoverThreeTopicsAndOneHundredSchoolCards() {
+        assertEquals(25, Catalog.comparisons.size)
+        assertEquals(25, Catalog.comparisons.map { it.id }.toSet().size)
+        assertEquals(100, Catalog.comparisons.sumOf { it.opinions.size })
         assertEquals(listOf("الطهارة", "الصلاة", "الزكاة"), Catalog.comparisonTopics)
-        assertEquals(listOf(7, 4, 4), Catalog.comparisonTopics.map { Catalog.searchComparisons("", topic = it).size })
+        assertEquals(listOf(17, 4, 4), Catalog.comparisonTopics.map { Catalog.searchComparisons("", topic = it).size })
         Catalog.comparisons.forEach {
             assertEquals(Catalog.comparisonSchools, it.opinions.map { opinion -> opinion.school })
             assertTrue(it.scope.isNotBlank())
@@ -23,7 +23,7 @@ class ComparisonTest {
         assertTrue(Catalog.searchComparisons("الغسل", topic = "الصلاة").isEmpty())
         assertTrue(Catalog.searchComparisons("", school = "غير موجود").isEmpty())
         assertTrue(Catalog.searchComparisons("", topic = "غير موجود").isEmpty())
-        assertEquals(15, Catalog.searchComparisons("  ").size)
+        assertEquals(25, Catalog.searchComparisons("  ").size)
         assertTrue(Catalog.searchComparisons("زكاة", subject = "tafsir").isEmpty())
     }
 
@@ -40,7 +40,7 @@ class ComparisonTest {
             23 to setOf(232, 294, 295, 296, 298, 299),
             27 to setOf(274, 280, 281, 282, 283, 284, 285),
             31 to setOf(207, 208, 209, 211, 212),
-            43 to setOf(348, 349, 355, 356, 360)
+            43 to setOf(348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 360, 362, 363, 364, 365)
         )
         Catalog.comparisons.flatMap { it.opinions }.flatMap { it.references }.forEach { reference ->
             assertTrue(reviewedPages.getValue(reference.volume).contains(reference.pdfPage))

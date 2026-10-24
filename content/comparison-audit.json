@@ -31,9 +31,20 @@
       "verifiedPrintedPages": [
         348,
         349,
+        350,
+        351,
+        352,
+        353,
+        354,
         355,
         356,
-        360
+        357,
+        358,
+        360,
+        362,
+        363,
+        364,
+        365
       ],
       "pdfPageEqualsPrintedPageForTheseReferences": true
     },
@@ -192,7 +203,84 @@
         298,
         299
       ]
+    },
+    {
+      "id": "wudu-rubbing",
+      "volume": 43,
+      "pages": [
+        357,
+        358
+      ]
+    },
+    {
+      "id": "wudu-basmala",
+      "volume": 43,
+      "pages": [
+        358
+      ]
+    },
+    {
+      "id": "wudu-head-repeat",
+      "volume": 43,
+      "pages": [
+        351
+      ]
+    },
+    {
+      "id": "wudu-head-wash",
+      "volume": 43,
+      "pages": [
+        350
+      ]
+    },
+    {
+      "id": "wudu-shave-after",
+      "volume": 43,
+      "pages": [
+        350,
+        351
+      ]
+    },
+    {
+      "id": "wudu-ears",
+      "volume": 43,
+      "pages": [
+        364,
+        365
+      ]
+    },
+    {
+      "id": "wudu-nose-expel",
+      "volume": 43,
+      "pages": [
+        360
+      ]
+    },
+    {
+      "id": "wudu-head-method",
+      "volume": 43,
+      "pages": [
+        362,
+        363,
+        364
+      ]
+    },
+    {
+      "id": "wudu-initial-hands",
+      "volume": 43,
+      "pages": [
+        360
+      ]
+    },
+    {
+      "id": "wudu-bare-feet",
+      "volume": 43,
+      "pages": [
+        352,
+        353,
+        354
+      ]
     }
   ],
-  "version": "0.6.0"
+  "version": "0.8.3"
 }

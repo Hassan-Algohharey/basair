@@ -1,0 +1,18 @@
+<resources>
+    <string name="notes_title">ملاحظاتي</string>
+    <string name="notes_local">ملاحظاتك محفوظة على هذا الجهاز ومرتبطة بالطبعة وصفحة الملف. تبقى عند حذف تنزيلات الكتب، وتُحذف عند إزالة التطبيق أو مسح بياناته.</string>
+    <string name="notes_current_page">كتابة أو تعديل ملاحظة الصفحة %1$d</string>
+    <string name="notes_file_page">صفحة الملف %1$d</string>
+    <string name="notes_search">ابحث في الملاحظات والكتب</string>
+    <string name="notes_empty">لا توجد ملاحظات مطابقة. يمكنك إضافة ملاحظة من داخل قارئ الكتاب.</string>
+    <string name="notes_edit">تعديل</string>
+    <string name="notes_open">فتح الصفحة</string>
+    <string name="notes_text">ملاحظتك</string>
+    <string name="notes_save">حفظ الملاحظة</string>
+    <string name="notes_delete">حذف الملاحظة</string>
+    <string name="notes_delete_confirm">حذف هذه الملاحظة نهائيًا؟</string>
+    <string name="notes_discard_confirm">تجاهل التعديلات غير المحفوظة؟</string>
+    <string name="notes_discard">تجاهل التعديلات</string>
+    <string name="notes_error">تعذر حفظ التغيير. نصك ما زال ظاهرًا؛ حاول مجددًا.</string>
+    <string name="notes_old_edition">هذه الطبعة غير متاحة حاليًا؛ يمكنك تعديل الملاحظة أو حذفها.</string>
+</resources>

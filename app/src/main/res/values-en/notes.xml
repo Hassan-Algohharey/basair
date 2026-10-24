@@ -1,0 +1,18 @@
+<resources>
+    <string name="notes_title">My notes</string>
+    <string name="notes_local">Notes stay on this device and are linked to the edition and file page. Deleting book downloads keeps notes. Uninstalling the app or clearing its data removes them.</string>
+    <string name="notes_current_page">Write or edit note for page %1$d</string>
+    <string name="notes_file_page">File page %1$d</string>
+    <string name="notes_search">Search notes and books</string>
+    <string name="notes_empty">No matching notes. Add a note from the book reader.</string>
+    <string name="notes_edit">Edit</string>
+    <string name="notes_open">Open page</string>
+    <string name="notes_text">Your note</string>
+    <string name="notes_save">Save note</string>
+    <string name="notes_delete">Delete note</string>
+    <string name="notes_delete_confirm">Permanently delete this note?</string>
+    <string name="notes_discard_confirm">Discard unsaved changes?</string>
+    <string name="notes_discard">Discard changes</string>
+    <string name="notes_error">Could not save the change. Your text is still here; please try again.</string>
+    <string name="notes_old_edition">This edition is unavailable. You can still edit or delete its note.</string>
+</resources>

@@ -6,6 +6,7 @@
 لا يجمع التطبيق بيانات شخصية ولا يرسلها إلى خوادم المطوّر أو يشاركها مع جهات أخرى. لا يتطلب حسابًا أو تسجيل دخول، ولا يتضمن إعلانات أو أدوات تحليلات أو تتبع.
 
 البيانات المحلية وحذفها
+من الإصدار 0.8.3 تُحفظ ملاحظاتك الشخصية ونصوصها وطبعتها وصفحة الملف ووقت تعديلها داخل مساحة التطبيق على جهازك فقط. لا تُرسل إلى أي خدمة. حذف تنزيلات الكتب لا يحذف الملاحظات؛ إزالة التطبيق أو مسح بياناته يحذفها.
 يحفظ التطبيق الكتب والمسائل المفضلة وعلامات الصفحات وآخر صفحة قرأتها وحجم التكبير والوضع الليلي ونسخ الكتب المؤقتة والمراجع المنزلة على جهازك فقط. لا يرفعها إلى خدمات سحابية، والنسخ الاحتياطي التلقائي معطّل. يمكنك حذف هذه البيانات بمسح مساحة تخزين التطبيق من إعدادات Android أو بإلغاء تثبيته.
 
 الصلاحيات والروابط
@@ -35,7 +36,9 @@ Data collection and sharing
 The app does not collect personal data, send it to developer servers, or share it with third parties. No account or login is required. It contains no advertisements, analytics or tracking SDKs.
 
 Local storage and deletion
-Saved books and comparisons, page bookmarks, reading positions, zoom and night mode preferences, cached book files and downloaded references are stored on your device. The app does not upload them to cloud storage and automatic backup is disabled. Clear the app storage in Android settings or uninstall it to delete this local data.
+Personal book notes (text, edition, file page and modification time), saved books and comparisons, page bookmarks, reading positions, zoom and night mode preferences, cached book files and downloaded references are stored on your device. The app does not upload them to cloud storage and automatic backup is disabled. Clear the app storage in Android settings or uninstall it to delete this local data.
+
+Deleting book downloads keeps personal notes. Uninstalling the app or clearing its data removes the notes.
 
 Permissions and links
 From version 0.8.2, books are not bundled with the app. Opening a page requests its file, then up to 7 preceding and 7 following pages are prefetched within the book and connection settings. You can request a complete original download. Saved files work offline. The app uses Internet access and network metering status for download preferences, not to determine your location. The app does not request camera, microphone, location, contacts or general file access permissions. Source and licensing links open in your browser; external sites and browsers have their own privacy policies.

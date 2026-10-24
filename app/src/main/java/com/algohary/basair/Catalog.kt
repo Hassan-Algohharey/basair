@@ -14,9 +14,10 @@ data class Book(
 )
 data class Reference(
     val title: String, val publisher: String, val edition: String,
-    val volume: Int, val pages: String, val pdfPage: Int, val pdfUrl: String
+    val volume: Int, val pages: String, val pdfPage: Int, val pdfUrl: String,
+    val filePageOnly: Boolean = false
 ) {
-    val label get() = "$title · ج $volume · ص $pages"
+    val label get() = if (filePageOnly) "$title · ج $volume · صفحة الملف $pdfPage" else "$title · ج $volume · ص $pages"
     val source get() = "$pdfUrl#page=$pdfPage"
 }
 data class SchoolOpinion(val school: String, val summary: String, val references: List<Reference>)
@@ -86,7 +87,7 @@ object Catalog {
                 SchoolOpinion("الشافعي", "ليسا واجبين في الغسل، ويعدّ غسلهما من سننه.", listOf(kuwaitReference(31, "208–209", 209))),
                 SchoolOpinion("الحنبلي", "المضمضة والاستنشاق واجبان في الغسل.", listOf(kuwaitReference(31, "208–209", 208)))
             ))
-    ) + expandedComparisons
+    ) + expandedComparisons + studyComparisons
 
     val comparisonTopics = comparisons.map { it.topic.substringBefore(" / ") }.distinct()
     val comparisonSchools = listOf("الحنفي", "المالكي", "الشافعي", "الحنبلي")
