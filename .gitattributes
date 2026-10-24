@@ -1,1 +1,7 @@
 *.pdf binary
+
+*.zip binary
+*.ttf binary
+content/quran/**/*.json text eol=lf
+content/quran/sources/* -text
+app/src/main/assets/quran-index.json text eol=lf
