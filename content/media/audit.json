@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-24",
+  "scope": "مراجعة صفحات المصادر والعناوين والنسبة وتوفر عناصر الوسائط؛ لم تتم مراجعة التسجيلات كاملة أو اختبار تشغيلها على جميع الأجهزة.",
+  "delivery": "روابط HTTPS لصفحات المصادر الأصلية فقط. لا ملفات وسائط ولا صور أغلفة منسوخة ولا مشغل مضمّن في التطبيق.",
+  "identityEvidence": [
+    {
+      "scholarId": "bin-baz",
+      "url": "https://binbaz.org.sa/about",
+      "observedText": "تصرح صفحة عن الموقع بأنه الموقع الرسمي تحت إشراف مؤسسة عبد العزيز بن باز الخيرية."
+    },
+    {
+      "scholarId": "almunajjid",
+      "url": "https://almunajjid.com/",
+      "observedText": "عنوان الصفحة وهوية الموقع يصرحان بأنه الموقع الرسمي للشيخ محمد صالح المنجد؛ تذييل الصفحة ينسب الحقوق إلى موقع الشيخ ومجموعة زاد ويربط القناة الرسمية."
+    }
+  ],
+  "bookLinkEvidence": [
+    {
+      "bookId": "tahawiyyah",
+      "seriesUrl": "https://binbaz.org.sa/audios/series/51/%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9",
+      "relationship": "شرح موضوعي لأصل متن الطحاوية ضمن قراءة شرح ابن أبي العز، لا شرح مطابق لنشرة المكتبة صفحة بصفحة."
+    },
+    {
+      "bookId": "nawawi-fifty",
+      "seriesUrl": "https://almunajjid.com/scientific-series/166/lessons",
+      "relationship": "شرح أصل الأربعين النووية؛ لا يثبت تناول زيادة ابن رجب الموجودة في نسخة المكتبة، ولا مطابقة الطبعة."
+    }
+  ],
+  "excluded": [
+    {
+      "candidate": "خزائن الله تغني كل مفتقر — د. أحمد العربي",
+      "reason": "لم يعتمد رابط رسمي موثق لهذا المقطع ضمن الدفعة؛ لا تضاف نسبة أو قناة بالتخمين."
+    }
+  ],
+  "items": [
+    {
+      "itemId": "bin-baz-tahawi-01",
+      "url": "https://binbaz.org.sa/audios/1778/01-%D9%85%D9%82%D8%AF%D9%85%D8%A9-%D8%A7%D9%84%D9%85%D9%88%D9%84%D9%81",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1778/01-%D9%85%D9%82%D8%AF%D9%85%D8%A9-%D8%A7%D9%84%D9%85%D9%88%D9%84%D9%81",
+      "pageSha256": "85a92998a1817acacb4e260a0c20874b2677045382dab883108efcd3a9a4fddd",
+      "observedHeading": "01 مقدمة المؤلف",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "attributionEvidenceUrl": "https://binbaz.org.sa/about",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "bin-baz-tahawi-03",
+      "url": "https://binbaz.org.sa/audios/1780/03-%D8%A7%D9%86%D9%88%D8%A7%D8%B9-%D8%A7%D9%84%D8%AA%D9%88%D8%AD%D9%8A%D8%AF-%D8%A7%D9%84%D8%B0%D9%8A-%D8%AF%D8%B9%D8%AA-%D8%A7%D9%84%D9%8A%D9%87-%D8%A7%D9%84%D8%B1%D8%B3%D9%84",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1780/03-%D8%A7%D9%86%D9%88%D8%A7%D8%B9-%D8%A7%D9%84%D8%AA%D9%88%D8%AD%D9%8A%D8%AF-%D8%A7%D9%84%D8%B0%D9%8A-%D8%AF%D8%B9%D8%AA-%D8%A7%D9%84%D9%8A%D9%87-%D8%A7%D9%84%D8%B1%D8%B3%D9%84",
+      "pageSha256": "0a593451c2c60a3eb59bc7b2479c20ed8a7e7866774e18a4b8fd9a27bd2ad3f3",
+      "observedHeading": "03 أنواع التوحيد الذي دعت إليه الرسل",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "attributionEvidenceUrl": "https://binbaz.org.sa/about",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "bin-baz-tahawi-04",
+      "url": "https://binbaz.org.sa/audios/1781/04-%D9%84%D8%A7-%D8%AA%D8%A8%D9%84%D8%BA%D9%87-%D8%A7%D9%84%D8%A7%D9%88%D9%87%D8%A7%D9%85-%D9%88%D9%84%D8%A7-%D8%AA%D8%AF%D8%B1%D9%83%D9%87-%D8%A7%D9%84%D8%A7%D9%81%D9%87%D8%A7%D9%85",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1781/04-%D9%84%D8%A7-%D8%AA%D8%A8%D9%84%D8%BA%D9%87-%D8%A7%D9%84%D8%A7%D9%88%D9%87%D8%A7%D9%85-%D9%88%D9%84%D8%A7-%D8%AA%D8%AF%D8%B1%D9%83%D9%87-%D8%A7%D9%84%D8%A7%D9%81%D9%87%D8%A7%D9%85",
+      "pageSha256": "37935129584e2f8b625bf939ef1b3ea754d409974c53a05dd7e6cd64f21e8843",
+      "observedHeading": "04 لا تبلغه الأوهام ولا تدركه الأفهام",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "attributionEvidenceUrl": "https://binbaz.org.sa/about",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "bin-baz-heart",
+      "url": "https://binbaz.org.sa/videos/2/%D8%B5%D9%84%D8%A7%D8%AD-%D8%A7%D9%84%D9%82%D9%84%D8%A8",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/videos/2/%D8%B5%D9%84%D8%A7%D8%AD-%D8%A7%D9%84%D9%82%D9%84%D8%A8",
+      "pageSha256": "397b52c287db0145e2a6b24a31e029305623df8e4794b2e31e182089dd73cb15",
+      "observedHeading": "صلاح القلب",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "video"
+      ],
+      "attributionEvidenceUrl": "https://binbaz.org.sa/about",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "bin-baz-dua",
+      "url": "https://binbaz.org.sa/videos/5/%D8%A7%D9%84%D8%AF%D8%B9%D8%A7%D8%A1",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/videos/5/%D8%A7%D9%84%D8%AF%D8%B9%D8%A7%D8%A1",
+      "pageSha256": "186bf8afea8f38792f7bf9a1d2ea68a574db78db7193997ac00ec0b0d7a1d60b",
+      "observedHeading": "الدعاء",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "video"
+      ],
+      "attributionEvidenceUrl": "https://binbaz.org.sa/about",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "bin-baz-backbiting",
+      "url": "https://binbaz.org.sa/videos/8/%D8%A7%D9%84%D8%AA%D9%88%D8%A8%D8%A9-%D9%85%D9%86-%D8%A7%D9%84%D8%BA%D9%8A%D8%A8%D8%A9",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/videos/8/%D8%A7%D9%84%D8%AA%D9%88%D8%A8%D8%A9-%D9%85%D9%86-%D8%A7%D9%84%D8%BA%D9%8A%D8%A8%D8%A9",
+      "pageSha256": "abc7a324dbacf5aefc0f57e4a85d79b5b144a450c36cb5ee189fcaaab04aeab0",
+      "observedHeading": "التوبة من الغيبة",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "video"
+      ],
+      "attributionEvidenceUrl": "https://binbaz.org.sa/about",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-nawawi-01",
+      "url": "https://almunajjid.com/scientific-series/lessons/734",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/scientific-series/lessons/734",
+      "pageSha256": "168886aed620ce692123b917613e9a90e4116cbe87b24ccd4e817afac6292b9e",
+      "observedHeading": "(1) الدرس الأول",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-nawawi-02",
+      "url": "https://almunajjid.com/scientific-series/lessons/735",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/scientific-series/lessons/735",
+      "pageSha256": "263883a90dc6b28b3713eaf5b9ddb82151e0bdd60835200c28b86304337c3730",
+      "observedHeading": "(2) الدرس الثاني",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-nawawi-03",
+      "url": "https://almunajjid.com/scientific-series/lessons/736",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/scientific-series/lessons/736",
+      "pageSha256": "82212827fe0455182a7affba0f755222b73034a8026618d95c3a8e44e45c1c6d",
+      "observedHeading": "(3) الدرس الثالث",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-nawawi-04",
+      "url": "https://almunajjid.com/scientific-series/lessons/737",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/scientific-series/lessons/737",
+      "pageSha256": "ef7a68f75cd596172dcb68d7450a372f29e801cd12acda9fb65adeefbdfec26d",
+      "observedHeading": "(4) الدرس الرابع",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-provision",
+      "url": "https://almunajjid.com/speeches/lessons/827",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/speeches/lessons/827",
+      "pageSha256": "d76a015ef3b417877c438c2a346e3ad96df3672f7fe02f6f905b894ba0530f67",
+      "observedHeading": "القلق في طلب الرزق",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio",
+        "video"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-recompense",
+      "url": "https://almunajjid.com/speeches/lessons/833",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/speeches/lessons/833",
+      "pageSha256": "c1d533e64f3af61b434e45350f83d648404143d4306ff7fcebb5f4c5593e28e0",
+      "observedHeading": "الجزاء من جنس العمل",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio",
+        "video"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-summer",
+      "url": "https://almunajjid.com/speeches/lessons/806",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/speeches/lessons/806",
+      "pageSha256": "4fed0edbfe668e95d8f8629df55a57ddd83245bc709aa7a1535cb45cf940316e",
+      "observedHeading": "موعظة من حرارة الصيف",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio",
+        "video"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-knowing-allah",
+      "url": "https://almunajjid.com/selection/lessons/1400",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/selection/lessons/1400",
+      "pageSha256": "7ade36cb13ce30a52f1bdff79600fc639827d4e255de8d17ffa4a84ab550c910",
+      "observedHeading": "كيف تعرف الله؟",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "video"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-reassurance",
+      "url": "https://almunajjid.com/selection/lessons/1421",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/selection/lessons/1421",
+      "pageSha256": "983b395c53f63abb1284debc3a3faa9fee7010d03ff669d72e74817f372e465e",
+      "observedHeading": "تثبيتات وعلاجات نفسية قوية",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "video"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    },
+    {
+      "itemId": "munajjid-gaming",
+      "url": "https://almunajjid.com/selection/lessons/1397",
+      "httpStatus": 200,
+      "finalUrl": "https://almunajjid.com/selection/lessons/1397",
+      "pageSha256": "d5697f541ff8d8ab87ae3932b130a3e8c2975d1b08016a54696df1aed867c48b",
+      "observedHeading": "أثر إدمان الألعاب على الأطفال",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "video"
+      ],
+      "attributionEvidenceUrl": "https://almunajjid.com/",
+      "classificationEvidence": "مسار صفحة المادة وفهرس القسم في الموقع الأصلي",
+      "reviewedOn": "2026-10-24"
+    }
+  ]
+}

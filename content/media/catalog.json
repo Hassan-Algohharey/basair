@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "scholars": [
+    {
+      "id": "bin-baz",
+      "name": "عبد العزيز بن عبد الله بن باز",
+      "englishName": "Abdulaziz ibn Abdullah ibn Baz",
+      "officialUrl": "https://binbaz.org.sa/",
+      "verificationUrl": "https://binbaz.org.sa/about"
+    },
+    {
+      "id": "almunajjid",
+      "name": "محمد صالح المنجد",
+      "englishName": "Muhammad Salih al-Munajjid",
+      "officialUrl": "https://almunajjid.com/",
+      "verificationUrl": "https://almunajjid.com/"
+    }
+  ],
+  "items": [
+    {
+      "id": "bin-baz-tahawi-01",
+      "scholarId": "bin-baz",
+      "title": "01 مقدمة المؤلف",
+      "englishTitle": "Tahawiyyah commentary — lesson 1",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1778/01-%D9%85%D9%82%D8%AF%D9%85%D8%A9-%D8%A7%D9%84%D9%85%D9%88%D9%84%D9%81",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-24",
+      "seriesTitle": "شرح العقيدة الطحاوية"
+    },
+    {
+      "id": "bin-baz-tahawi-03",
+      "scholarId": "bin-baz",
+      "title": "03 أنواع التوحيد الذي دعت إليه الرسل",
+      "englishTitle": "Tahawiyyah commentary — lesson 3",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "التوحيد",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1780/03-%D8%A7%D9%86%D9%88%D8%A7%D8%B9-%D8%A7%D9%84%D8%AA%D9%88%D8%AD%D9%8A%D8%AF-%D8%A7%D9%84%D8%B0%D9%8A-%D8%AF%D8%B9%D8%AA-%D8%A7%D9%84%D9%8A%D9%87-%D8%A7%D9%84%D8%B1%D8%B3%D9%84",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-24",
+      "seriesTitle": "شرح العقيدة الطحاوية"
+    },
+    {
+      "id": "bin-baz-tahawi-04",
+      "scholarId": "bin-baz",
+      "title": "04 لا تبلغه الأوهام ولا تدركه الأفهام",
+      "englishTitle": "Tahawiyyah commentary — lesson 4",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1781/04-%D9%84%D8%A7-%D8%AA%D8%A8%D9%84%D8%BA%D9%87-%D8%A7%D9%84%D8%A7%D9%88%D9%87%D8%A7%D9%85-%D9%88%D9%84%D8%A7-%D8%AA%D8%AF%D8%B1%D9%83%D9%87-%D8%A7%D9%84%D8%A7%D9%81%D9%87%D8%A7%D9%85",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-24",
+      "seriesTitle": "شرح العقيدة الطحاوية"
+    },
+    {
+      "id": "bin-baz-heart",
+      "scholarId": "bin-baz",
+      "title": "صلاح القلب",
+      "englishTitle": "A sound heart",
+      "type": "short",
+      "mediaKind": "video",
+      "topics": [
+        "التزكية",
+        "القلب"
+      ],
+      "url": "https://binbaz.org.sa/videos/2/%D8%B5%D9%84%D8%A7%D8%AD-%D8%A7%D9%84%D9%82%D9%84%D8%A8",
+      "bookIds": [],
+      "sourceNote": "مقطع مرئي في قسم المقاطع المختارة بالموقع الرسمي. التصنيف لا يحدد مدة ثابتة، ولم تُعد الوسائط للنشر داخل التطبيق.",
+      "englishSourceNote": "Video in the official website’s selected clips section. The category does not imply a fixed duration; media is not republished in the app.",
+      "verifiedOn": "2026-10-24"
+    },
+    {
+      "id": "bin-baz-dua",
+      "scholarId": "bin-baz",
+      "title": "الدعاء",
+      "englishTitle": "Supplication",
+      "type": "short",
+      "mediaKind": "video",
+      "topics": [
+        "الدعاء",
+        "التزكية"
+      ],
+      "url": "https://binbaz.org.sa/videos/5/%D8%A7%D9%84%D8%AF%D8%B9%D8%A7%D8%A1",
+      "bookIds": [],
+      "sourceNote": "مقطع مرئي في قسم المقاطع المختارة بالموقع الرسمي. التصنيف لا يحدد مدة ثابتة، ولم تُعد الوسائط للنشر داخل التطبيق.",
+      "englishSourceNote": "Video in the official website’s selected clips section. The category does not imply a fixed duration; media is not republished in the app.",
+      "verifiedOn": "2026-10-24"
+    },
+    {
+      "id": "bin-baz-backbiting",
+      "scholarId": "bin-baz",
+      "title": "التوبة من الغيبة",
+      "englishTitle": "Repentance from backbiting",
+      "type": "short",
+      "mediaKind": "video",
+      "topics": [
+        "التوبة",
+        "الأخلاق"
+      ],
+      "url": "https://binbaz.org.sa/videos/8/%D8%A7%D9%84%D8%AA%D9%88%D8%A8%D8%A9-%D9%85%D9%86-%D8%A7%D9%84%D8%BA%D9%8A%D8%A8%D8%A9",
+      "bookIds": [],
+      "sourceNote": "مقطع مرئي في قسم المقاطع المختارة بالموقع الرسمي. التصنيف لا يحدد مدة ثابتة، ولم تُعد الوسائط للنشر داخل التطبيق.",
+      "englishSourceNote": "Video in the official website’s selected clips section. The category does not imply a fixed duration; media is not republished in the app.",
+      "verifiedOn": "2026-10-24"
+    },
+    {
+      "id": "munajjid-nawawi-01",
+      "scholarId": "almunajjid",
+      "title": "(1) الدرس الأول",
+      "englishTitle": "Forty Nawawi Hadith — lesson 1",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/734",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-24",
+      "seriesTitle": "شرح الأربعين النووية"
+    },
+    {
+      "id": "munajjid-nawawi-02",
+      "scholarId": "almunajjid",
+      "title": "(2) الدرس الثاني",
+      "englishTitle": "Forty Nawawi Hadith — lesson 2",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/735",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-24",
+      "seriesTitle": "شرح الأربعين النووية"
+    },
+    {
+      "id": "munajjid-nawawi-03",
+      "scholarId": "almunajjid",
+      "title": "(3) الدرس الثالث",
+      "englishTitle": "Forty Nawawi Hadith — lesson 3",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/736",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-24",
+      "seriesTitle": "شرح الأربعين النووية"
+    },
+    {
+      "id": "munajjid-nawawi-04",
+      "scholarId": "almunajjid",
+      "title": "(4) الدرس الرابع",
+      "englishTitle": "Forty Nawawi Hadith — lesson 4",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/737",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-24",
+      "seriesTitle": "شرح الأربعين النووية"
+    },
+    {
+      "id": "munajjid-provision",
+      "scholarId": "almunajjid",
+      "title": "القلق في طلب الرزق",
+      "englishTitle": "Seeking provision",
+      "type": "sermon",
+      "mediaKind": "video",
+      "topics": [
+        "التوكل",
+        "الرزق",
+        "التزكية"
+      ],
+      "url": "https://almunajjid.com/speeches/lessons/827",
+      "bookIds": [],
+      "sourceNote": "صفحة خطبة في الموقع الرسمي، تضم مشغّلًا مرئيًا وصوتيًا ونص الخطبة. يفتح التطبيق الصفحة الأصلية.",
+      "englishSourceNote": "Sermon page on the official website, with video, audio and text. Opens the original page.",
+      "verifiedOn": "2026-10-24"
+    },
+    {
+      "id": "munajjid-recompense",
+      "scholarId": "almunajjid",
+      "title": "الجزاء من جنس العمل",
+      "englishTitle": "Deeds and recompense",
+      "type": "sermon",
+      "mediaKind": "video",
+      "topics": [
+        "الأخلاق",
+        "التزكية"
+      ],
+      "url": "https://almunajjid.com/speeches/lessons/833",
+      "bookIds": [],
+      "sourceNote": "صفحة خطبة في الموقع الرسمي، تضم مشغّلًا مرئيًا وصوتيًا ونص الخطبة. يفتح التطبيق الصفحة الأصلية.",
+      "englishSourceNote": "Sermon page on the official website, with video, audio and text. Opens the original page.",
+      "verifiedOn": "2026-10-24"
+    },
+    {
+      "id": "munajjid-summer",
+      "scholarId": "almunajjid",
+      "title": "موعظة من حرارة الصيف",
+      "englishTitle": "A reminder from summer heat",
+      "type": "sermon",
+      "mediaKind": "video",
+      "topics": [
+        "المواعظ",
+        "التزكية"
+      ],
+      "url": "https://almunajjid.com/speeches/lessons/806",
+      "bookIds": [],
+      "sourceNote": "صفحة خطبة في الموقع الرسمي، تضم مشغّلًا مرئيًا وصوتيًا ونص الخطبة. يفتح التطبيق الصفحة الأصلية.",
+      "englishSourceNote": "Sermon page on the official website, with video, audio and text. Opens the original page.",
+      "verifiedOn": "2026-10-24"
+    },
+    {
+      "id": "munajjid-knowing-allah",
+      "scholarId": "almunajjid",
+      "title": "كيف تعرف الله؟",
+      "englishTitle": "Knowing Allah",
+      "type": "short",
+      "mediaKind": "video",
+      "topics": [
+        "العقيدة",
+        "التزكية"
+      ],
+      "url": "https://almunajjid.com/selection/lessons/1400",
+      "bookIds": [],
+      "sourceNote": "مقطع مرئي في قسم المقاطع المختارة بالموقع الرسمي. التصنيف لا يحدد مدة ثابتة، ولم تُعد الوسائط للنشر داخل التطبيق.",
+      "englishSourceNote": "Video in the official website’s selected clips section. The category does not imply a fixed duration; media is not republished in the app.",
+      "verifiedOn": "2026-10-24"
+    },
+    {
+      "id": "munajjid-reassurance",
+      "scholarId": "almunajjid",
+      "title": "تثبيتات وعلاجات نفسية قوية",
+      "englishTitle": "Reassurance and wellbeing",
+      "type": "short",
+      "mediaKind": "video",
+      "topics": [
+        "المواعظ",
+        "التزكية"
+      ],
+      "url": "https://almunajjid.com/selection/lessons/1421",
+      "bookIds": [],
+      "sourceNote": "مقطع مرئي في قسم المقاطع المختارة بالموقع الرسمي. التصنيف لا يحدد مدة ثابتة، ولم تُعد الوسائط للنشر داخل التطبيق.",
+      "englishSourceNote": "Video in the official website’s selected clips section. The category does not imply a fixed duration; media is not republished in the app.",
+      "verifiedOn": "2026-10-24"
+    },
+    {
+      "id": "munajjid-gaming",
+      "scholarId": "almunajjid",
+      "title": "أثر إدمان الألعاب على الأطفال",
+      "englishTitle": "Children and excessive gaming",
+      "type": "short",
+      "mediaKind": "video",
+      "topics": [
+        "التربية",
+        "الأطفال"
+      ],
+      "url": "https://almunajjid.com/selection/lessons/1397",
+      "bookIds": [],
+      "sourceNote": "مقطع مرئي في قسم المقاطع المختارة بالموقع الرسمي. التصنيف لا يحدد مدة ثابتة، ولم تُعد الوسائط للنشر داخل التطبيق.",
+      "englishSourceNote": "Video in the official website’s selected clips section. The category does not imply a fixed duration; media is not republished in the app.",
+      "verifiedOn": "2026-10-24"
+    }
+  ]
+}

@@ -9,6 +9,7 @@ root = Path(__file__).resolve().parent.parent
 apk = Path(sys.argv[1]) if len(sys.argv) > 1 else root / 'app/build/outputs/apk/debug/app-debug.apk'
 books = json.loads((root / 'content/books.json').read_text(encoding='utf-8'))
 with zipfile.ZipFile(apk) as archive:
+    assert not any(name.lower().endswith(('.mp3', '.mp4', '.m4a', '.webm', '.ogg')) for name in archive.namelist()), 'Media files must remain outside the application'
     asset_prefix = 'base/assets/' if 'base/manifest/AndroidManifest.xml' in archive.namelist() else 'assets/'
     actual = {name for name in archive.namelist() if name.endswith('.pdf')}
     assert not actual, 'PDF files must not be bundled in the lightweight application'

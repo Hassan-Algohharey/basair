@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="media_title">الشيوخ والدروس</string>
+    <string name="media_intro">دليل موثّق للدروس والخطب والمقاطع القصيرة وشروح الكتب.</string>
+    <string name="media_initial_collection">هذه مجموعة افتتاحية مختارة؛ تعرض صفحات الشيوخ المواد المفهرسة في بصائر فقط، ولا تمثل جميع دروسهم.</string>
+    <string name="media_original_language">الواجهة مترجمة إلى الإنجليزية؛ أسماء الشيوخ وعناوين المواد ومحتواها تُعرض بالعربية الأصلية، ولا توجد ترجمة للمحاضرات ضمن التطبيق.</string>
+    <string name="media_external_notice">المشاهدة في الموقع الأصلي أو تطبيقه عبر الإنترنت. لا تُنزّل التسجيلات داخل بصائر. قد يعرض الموقع الخارجي إعلانات أو يطلب تسجيل الدخول، وتسري عليه سياسة الخصوصية الخاصة به.</string>
+    <string name="media_back_directory">العودة إلى دليل الشيوخ</string>
+    <string name="media_profile_count">المواد المفهرسة: %1$d</string>
+    <string name="media_source_value">المصدر: %1$s</string>
+    <string name="media_open_profile_source">فتح مصدر التعريف خارج التطبيق</string>
+    <string name="media_search">البحث في الدروس والشيوخ</string>
+    <string name="media_search_hint">شيخ، عنوان، موضوع، سلسلة أو كتاب</string>
+    <string name="media_clear">مسح</string>
+    <string name="media_all_types">كل المواد</string>
+    <string name="media_favorites">المفضلة فقط</string>
+    <string name="media_scholar_filter">تصفية حسب الشيخ</string>
+    <string name="media_all_scholars">كل الشيوخ</string>
+    <string name="media_directory">دليل الشيوخ</string>
+    <string name="media_view_profile">عرض الصفحة والدروس</string>
+    <string name="media_result_count">عدد المواد: %1$d</string>
+    <string name="media_reset">إعادة الضبط</string>
+    <string name="media_catalog_empty">ستظهر هنا المواد بعد التحقق من مصادرها وروابطها.</string>
+    <string name="media_no_results">لا توجد مواد تطابق البحث والتصفية. جرّب كلمات أخرى أو أعد ضبط الفلاتر.</string>
+    <string name="media_series_value">السلسلة: %1$s</string>
+    <string name="media_view_source">المصدر والمشاهدة</string>
+    <string name="media_remove_favorite">إزالة من المفضلة</string>
+    <string name="media_add_favorite">حفظ في المفضلة</string>
+    <string name="media_read_book_value">قراءة الكتاب: %1$s</string>
+    <string name="media_open_external">فتح خارج التطبيق</string>
+    <string name="media_close">إغلاق</string>
+    <string name="media_sermons">الخطب</string>
+    <string name="media_shorts">مقاطع قصيرة</string>
+    <string name="media_lessons">الدروس وشروح الكتب</string>
+</resources>

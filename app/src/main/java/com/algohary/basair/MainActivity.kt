@@ -110,6 +110,14 @@ private fun BasairApp() {
     var topic by rememberSaveable { mutableStateOf<String?>(null) }
     var query by rememberSaveable { mutableStateOf("") }
     val comparisonState = rememberSaveableStateHolder()
+    val mediaState = rememberSaveableStateHolder()
+    var mediaQuery by rememberSaveable { mutableStateOf("") }
+    var mediaBook by rememberSaveable { mutableStateOf<String?>(null) }
+    var mediaFavorites by rememberSaveable { mutableStateOf(false) }
+    val openMedia: (String, String?, Boolean) -> Unit = { search, book, favorites ->
+        mediaState.removeState("media")
+        mediaQuery = search; mediaBook = book; mediaFavorites = favorites; bookId = null; route = "media"
+    }
     val toggleSave: (String) -> Unit = { id ->
         saved = if (id in saved) saved - id else saved + id
         preferences.edit().putStringSet("saved", saved).apply()
@@ -148,7 +156,8 @@ private fun BasairApp() {
     val readingBook = Catalog.books.find { it.id == bookId }
     if (readingBook != null) {
         key(readingBook.id) { PdfBookReader(readingBook, readingBook.id in saved,
-            { bookId = null }, { toggleSave(readingBook.id) }, initialPage = notePage) }
+            { bookId = null }, { toggleSave(readingBook.id) }, initialPage = notePage,
+            onExplanations = if (MediaCatalog.items.any { readingBook.id in it.bookIds }) ({ openMedia("", readingBook.id, false) }) else null) }
         return
     }
     Scaffold(containerColor = Paper, bottomBar = {
@@ -165,11 +174,12 @@ private fun BasairApp() {
     }) { padding ->
         Box(Modifier.fillMaxSize().padding(padding)) {
             when (route) {
-                "home" -> HomeScreen(visitSubject, { navigate("search") }, { navigate("compare") }, openBook, { navigate("notes") }, { navigate("quran") })
+                "home" -> HomeScreen(visitSubject, { navigate("search") }, { navigate("compare") }, openBook, { navigate("notes") }, { navigate("quran") }, { openMedia("", null, false) })
                 "library", "search" -> CatalogScreen(route == "search", query, { query = it }, subject,
                     { subject = it; school = null; topic = null }, openBook, saved, toggleSave, openComparison,
                     school, { school = it }, topic, { topic = it },
-                    { referencePage = it.pdfPage; referenceVolume = it.volume }, { navigate("quran") })
+                    { referencePage = it.pdfPage; referenceVolume = it.volume }, { navigate("quran") }, { openMedia(query, null, false) })
+                "media" -> mediaState.SaveableStateProvider("media") { MediaFeature(mediaQuery, mediaBook, mediaFavorites, openBook) }
                 "compare" -> comparisonState.SaveableStateProvider("comparison") {
                     ComparisonScreen(comparisonId, { comparisonId = it }, savedComparisons, toggleComparison,
                         { referencePage = it.pdfPage; referenceVolume = it.volume })
@@ -183,18 +193,19 @@ private fun BasairApp() {
                 }
                 "saved" -> SavedScreen(Catalog.books.filter { it.id in saved }, openBook, toggleSave,
                     { subject = null; school = null; topic = null; query = ""; navigate("library") }, Catalog.comparisons.filter { it.id in savedComparisons },
-                    openComparison, toggleComparison, { navigate("notes") })
+                    openComparison, toggleComparison, { navigate("notes") }, { openMedia("", null, true) })
             }
         }
     }
 }
 
 @Composable
-private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onCompare: () -> Unit, onBook: (String) -> Unit, onNotes: () -> Unit, onQuran: () -> Unit) {
+private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onCompare: () -> Unit, onBook: (String) -> Unit, onNotes: () -> Unit, onQuran: () -> Unit, onMedia: () -> Unit) {
     val context = LocalContext.current
     LazyColumn(contentPadding = PaddingValues(22.dp), verticalArrangement = Arrangement.spacedBy(22.dp)) {
         item { LanguageSettings() }
         item { QuranEntry(onQuran) }
+        item { MediaEntry(onMedia) }
         item { OutlinedButton(onClick = onNotes) { Text(context.getString(R.string.notes_title)) } }
         item {
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
@@ -270,12 +281,15 @@ private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onComp
 @Composable
 private fun CatalogScreen(searchMode: Boolean, query: String, onQuery: (String) -> Unit, subject: String?,
     onSubject: (String?) -> Unit, onBook: (String) -> Unit, saved: Set<String>, onSave: (String) -> Unit, onCompare: (String) -> Unit,
-    school: String?, onSchool: (String?) -> Unit, topic: String?, onTopic: (String?) -> Unit, onReference: (Reference) -> Unit, onQuran: () -> Unit) {
+    school: String?, onSchool: (String?) -> Unit, topic: String?, onTopic: (String?) -> Unit, onReference: (Reference) -> Unit, onQuran: () -> Unit, onMedia: () -> Unit) {
     val context = LocalContext.current
     val results = remember(query, subject, school, topic) { Catalog.search(query, subject, school, topic) }
     val comparisons = remember(query, subject, school, topic, searchMode) {
         if (searchMode && school == null && topic == null) Catalog.searchComparisons(query, subject) else emptyList()
     }
+    val mediaMatches = if (subject == null && school == null && topic == null)
+        filteredMediaItems(MediaUiState(scholars = MediaCatalog.scholars, items = MediaCatalog.items, query = query,
+            bookTitles = Catalog.books.associate { it.id to it.title })).size else 0
     val showQuran = subject in listOf(null, "tafsir") && school == null && topic == null &&
         normalizeArabic(query).split(Regex("\\s+")).all { it in normalizeArabic("القرآن الكريم المصحف التفسير الميسر Quran Koran Madinah Mushaf tafsir muyassar") }
     LazyColumn(contentPadding = PaddingValues(22.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
@@ -299,6 +313,7 @@ private fun CatalogScreen(searchMode: Boolean, query: String, onQuery: (String) 
             }
         }
         if (showQuran) item { QuranEntry(onQuran) }
+        if (mediaMatches > 0) item { MediaEntry(onMedia, mediaMatches) }
         if (subject == "fiqh") item { SchoolSelector(school, onSchool) }
         subject?.let { selectedSubject -> Catalog.books.filter { it.subject == selectedSubject }.flatMap { it.topics }.distinct() }?.let { filters ->
             item {
@@ -316,7 +331,7 @@ private fun CatalogScreen(searchMode: Boolean, query: String, onQuery: (String) 
             Notice(context.getString(R.string.ui_biographies_of_the_four_imams_companions_and_successors_only_volumes_1_a))
         }
         item { Text(context.getString(R.string.ui_results_1, results.size) + if (searchMode) context.getString(R.string.ui_1_comparisons, comparisons.size) else context.getString(R.string.ui_books_and_volumes), color = Muted, fontSize = 12.sp) }
-        if (results.isEmpty() && comparisons.isEmpty() && !showQuran && !(subject == "fiqh" && (school == null || school == "shared") && matchingReferenceVolumes(query, topic).isNotEmpty())) item {
+        if (results.isEmpty() && comparisons.isEmpty() && !showQuran && mediaMatches == 0 && !(subject == "fiqh" && (school == null || school == "shared") && matchingReferenceVolumes(query, topic).isNotEmpty())) item {
             if (school != null && school != "shared") SchoolEmptyState { onSchool("shared") }
             else EmptyState(context.getString(R.string.ui_no_results), context.getString(R.string.ui_try_a_shorter_query_or_select_all_subjects), context.getString(R.string.ui_reset_search)) { onQuery(""); onSubject(null); onSchool(null); onTopic(null) }
         }
@@ -363,11 +378,12 @@ private fun BookCard(book: Book, saved: Boolean, onOpen: () -> Unit, onSave: (()
 
 @Composable
 private fun SavedScreen(books: List<Book>, onBook: (String) -> Unit, onSave: (String) -> Unit, onLibrary: () -> Unit,
-    comparisons: List<Comparison>, onComparison: (String) -> Unit, onRemoveComparison: (String) -> Unit, onNotes: () -> Unit) {
+    comparisons: List<Comparison>, onComparison: (String) -> Unit, onRemoveComparison: (String) -> Unit, onNotes: () -> Unit, onMedia: () -> Unit) {
     val context = LocalContext.current
     LazyColumn(contentPadding = PaddingValues(22.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
         item { SectionTitle(context.getString(R.string.ui_saved), context.getString(R.string.ui_your_selections_always_nearby)) }
         item { OutlinedButton(onClick = onNotes) { Text(context.getString(R.string.notes_title)) } }
+        item { OutlinedButton(onClick = onMedia) { Text(context.getString(R.string.media_saved_entry)) } }
         item { Text(context.getString(R.string.ui_books_1_issues_2, books.size, comparisons.size), color = Muted, fontSize = 13.sp) }
         if (books.isEmpty() && comparisons.isEmpty()) item { EmptyState(context.getString(R.string.ui_your_next_reading_starts_here), context.getString(R.string.ui_save_a_book_or_comparison_to_find_it_here_on_this_device), context.getString(R.string.ui_explore_the_library), onLibrary) }
         if (comparisons.isNotEmpty()) item { Text(context.getString(R.string.ui_saved_issues), fontWeight = FontWeight.Bold) }

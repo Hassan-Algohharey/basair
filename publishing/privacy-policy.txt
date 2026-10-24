@@ -65,3 +65,9 @@ This policy and its effective date will be updated if the app data practices cha
 
 Quran and tafsir — from version 0.9.0
 Quran and Al-Tafsir Al-Muyassar text are downloaded from the same GitHub hosting by page, with up to 7 preceding and 7 following pages prefetched according to settings, or as a complete archive at your request. The file provider may receive your IP address, requested page and technical connection information. Search terms, bookmarks and reading position are not sent. Quran search runs locally on downloaded text only. Quran bookmarks, reading position and download settings stay on the device. Deleting downloads keeps them; uninstalling the app or clearing its data removes them.
+
+الشيوخ والدروس — من الإصدار 0.10.0
+فهرس الدروس يعمل محليًا، وكذلك البحث والمفضلة، ولا ترسل كلماته أو محفوظاته إلى المصادر. عند اختيار «فتح خارج التطبيق» يفتح المتصفح صفحة المصدر الرسمي؛ قد يتلقى الموقع عنوان IP ومعلومات الطلب ويستخدم ملفات الارتباط أو الإعلانات بحسب سياسته وإعدادات المتصفح. لا يحمّل بصائر التسجيلات ولا يشغلها تلقائيًا. تحذف مفضلة الدروس بمسح بيانات التطبيق أو إزالته.
+
+Scholars and lessons — from version 0.10.0
+The lesson index, search and favourites operate locally and are not sent to sources. Choosing “Open externally” opens the official source page in your browser. The site may receive your IP address and request information and use cookies or advertising under its policies and your browser settings. Basair does not download recordings or autoplay them. Clearing app data or uninstalling removes local lesson favourites.

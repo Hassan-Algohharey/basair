@@ -78,7 +78,7 @@ private class PdfBookSession(file: File, expectedPages: Int) : Closeable {
 
 @Composable
 internal fun PdfBookReader(book: Book, saved: Boolean, onBack: () -> Unit, onSave: () -> Unit,
-    localFile: File? = null, initialPage: Int? = null, allowSave: Boolean = true) {
+    localFile: File? = null, initialPage: Int? = null, allowSave: Boolean = true, onExplanations: (() -> Unit)? = null) {
     val context = LocalContext.current
     val preferences = remember { context.getSharedPreferences("basair", Context.MODE_PRIVATE) }
     var night by rememberSaveable { mutableStateOf(preferences.getBoolean("readerNight", false)) }
@@ -105,7 +105,7 @@ internal fun PdfBookReader(book: Book, saved: Boolean, onBack: () -> Unit, onSav
     MaterialTheme(colorScheme = readerColors) {
         Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
             Box(Modifier.windowInsetsPadding(WindowInsets.safeDrawing)) {
-                PdfReaderContent(book, saved, onBack, onSave, localFile, initialPage, allowSave, night) {
+                PdfReaderContent(book, saved, onBack, onSave, localFile, initialPage, allowSave, night, onExplanations) {
                     night = !night
                     preferences.edit().putBoolean("readerNight", night).apply()
                 }
@@ -123,7 +123,7 @@ private val nightPageFilter = ColorFilter.colorMatrix(ColorMatrix(floatArrayOf(
 
 @Composable
 private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onSave: () -> Unit,
-    localFile: File?, initialPage: Int?, allowSave: Boolean, night: Boolean, onToggleNight: () -> Unit) {
+    localFile: File?, initialPage: Int?, allowSave: Boolean, night: Boolean, onExplanations: (() -> Unit)?, onToggleNight: () -> Unit) {
     val context = LocalContext.current
     val preferences = remember { context.getSharedPreferences("basair", Context.MODE_PRIVATE) }
     var page by rememberSaveable(book.id, initialPage) { mutableIntStateOf((initialPage ?: preferences.getInt("page:${book.id}", 1)).coerceIn(1, book.pages)) }
@@ -163,6 +163,7 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
         }
         Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(horizontal = 8.dp),
             verticalAlignment = Alignment.CenterVertically) {
+            if (onExplanations != null) TextButton(onClick = onExplanations) { Text(context.getString(R.string.media_book_explanations)) }
             TextButton(onClick = { showNotes = true }) { Text(context.getString(R.string.notes_title)) }
             if (localFile == null) TextButton(onClick = { showStorage = true }) { Text(context.getString(R.string.storage_title)) }
             if (book.chapters.isNotEmpty()) TextButton(onClick = { showChapters = true }) { Text(context.getString(R.string.book_contents)) }

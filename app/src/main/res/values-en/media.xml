@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="media_title">Scholars and lessons</string>
+    <string name="media_intro">A sourced directory of lessons, sermons, short talks and book explanations.</string>
+    <string name="media_initial_collection">This is an initial selection. Scholar profiles show only the items indexed in Basair, not all of their lessons.</string>
+    <string name="media_original_language">The interface is in English. Scholar names, titles and recordings remain in their original Arabic; lecture translations are not included.</string>
+    <string name="media_external_notice">Watch online on the original website or its app. Basair does not download recordings. External services may show ads or require sign-in and have their own privacy policies.</string>
+    <string name="media_back_directory">Back to scholar directory</string>
+    <string name="media_profile_count">Indexed items: %1$d</string>
+    <string name="media_source_value">Source: %1$s</string>
+    <string name="media_open_profile_source">Open profile source externally</string>
+    <string name="media_search">Search lessons and scholars</string>
+    <string name="media_search_hint">Scholar, title, topic, series or book</string>
+    <string name="media_clear">Clear</string>
+    <string name="media_all_types">All items</string>
+    <string name="media_favorites">Favorites only</string>
+    <string name="media_scholar_filter">Filter by scholar</string>
+    <string name="media_all_scholars">All scholars</string>
+    <string name="media_directory">Scholar directory</string>
+    <string name="media_view_profile">View profile and lessons</string>
+    <string name="media_result_count">Items found: %1$d</string>
+    <string name="media_reset">Reset</string>
+    <string name="media_catalog_empty">Items will appear here once their sources and links have been verified.</string>
+    <string name="media_no_results">No items match your search and filters. Try other words or reset the filters.</string>
+    <string name="media_series_value">Series: %1$s</string>
+    <string name="media_view_source">Source and viewing</string>
+    <string name="media_remove_favorite">Remove favorite</string>
+    <string name="media_add_favorite">Save favorite</string>
+    <string name="media_read_book_value">Read book: %1$s</string>
+    <string name="media_open_external">Open externally</string>
+    <string name="media_close">Close</string>
+    <string name="media_sermons">Sermons</string>
+    <string name="media_shorts">Short talks</string>
+    <string name="media_lessons">Lessons and book explanations</string>
+</resources>
