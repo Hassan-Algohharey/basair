@@ -1,10 +1,18 @@
 <resources>
+    <string name="topic_family">الأسرة</string>
+    <string name="topic_inheritance">المواريث</string>
+    <string name="topic_criminal">الجنايات</string>
+    <string name="topic_judiciary">القضاء</string>
+    <string name="topic_etiquette">الآداب</string>
     <string name="language">لغة الواجهة</string>
     <string name="arabic_content_notice">الكتب والنقول متاحة بالعربية؛ تغيير لغة الواجهة لا يترجمها.</string>
     <string name="four_schools">المذاهب الفقهية الأربعة</string>
     <string name="all_fiqh">كل الفقه</string>
     <string name="shared_references">المراجع المشتركة</string>
-    <string name="school_catalog_notice">الفقه الميسر والموسوعة في المراجع المشتركة. تضاف كتب كل مذهب بعد توثيق نسبتها ومصدرها.</string>
+    <string name="school_catalog_notice">كتب كل مذهب في قسمه، والفقه الميسر والموسوعة في المراجع المشتركة. بيانات الطبعة والإتاحة داخل القارئ.</string>
+    <string name="book_contents">أبواب الكتاب</string>
+    <string name="chapter_index_notice">فهرس مختار للأبواب الرئيسية، مع رقم الصفحة المطبوعة وصفحة الملف المطابقة لهذه النسخة.</string>
+    <string name="chapter_location">%1$s · ص %2$s · صفحة الملف %3$d</string>
     <string name="school_empty">لا توجد كتب مذهبية مطابقة حاليًا</string>
     <string name="school_empty_detail">لم تُضف بعد كتب خاصة بهذا المذهب تطابق البحث والموضوع المختارين. يمكنك تعديل الفلاتر أو تصفح المراجع المشتركة مع الاحتفاظ ببحثك.</string>
     <string name="reference_volumes_notice">المجلدات المرجعية المرتبطة بالبحث والباب: %1$d. تنزيل اختياري من المصدر؛ ليست الموسوعة كاملة.</string>

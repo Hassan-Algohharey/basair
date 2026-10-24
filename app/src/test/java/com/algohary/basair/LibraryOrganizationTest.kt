@@ -6,7 +6,11 @@ import org.junit.Test
 class LibraryOrganizationTest {
     @Test fun generalFiqhIsNotAssignedToAnySchool() {
         assertEquals(4, fiqhSchools.distinct().size)
-        fiqhSchools.forEach { assertTrue(Catalog.search("", "fiqh", it).isEmpty()) }
+        val assigned = mapOf("hanafi" to "tahtawi1290", "maliki" to "risalah-maliki", "shafii" to "fath-qarib", "hanbali" to "umdat-fiqh")
+        assigned.forEach { (school, id) ->
+            assertEquals(listOf(id), Catalog.search("", "fiqh", school).map { it.id })
+            assertTrue(Catalog.search(school, "fiqh", school).any { it.id == id })
+        }
         assertEquals(listOf("fiqh-muyassar"), Catalog.search("", "fiqh", "shared").map { it.id })
         assertTrue(Catalog.search("", "aqidah", "hanafi").isEmpty())
     }
@@ -34,5 +38,20 @@ class LibraryOrganizationTest {
         assertEquals(listOf(31), matchingReferenceVolumes("31", null).map { it.volume })
         assertTrue(matchingReferenceVolumes("unknown-query", null).isEmpty())
         assertTrue(matchingReferenceVolumes("", "غيرموجود").isEmpty())
+    }
+
+    @Test fun chapterLinksBelongToTheExactEditionAndCoveredTopics() {
+        val books=Catalog.books.filter { it.schools.isNotEmpty() }
+        assertEquals(4, books.size)
+        assertEquals(18, books.sumOf { it.chapters.size })
+        books.forEach { book ->
+            assertEquals(1, book.schools.size)
+            assertTrue(book.chapters.isNotEmpty())
+            assertTrue(book.chapters.all { it.pdfPage in 1..book.pages && it.printedPage.isNotBlank() && it.title in book.topics })
+            book.chapters.forEach { assertTrue(Catalog.search("", "fiqh", book.schools.single(), it.title).contains(book)) }
+        }
+        assertTrue(Catalog.search("", "fiqh", "hanafi", "المعاملات").isEmpty())
+        assertTrue(Catalog.search("", "fiqh", "hanafi", "الحج").isEmpty())
+        assertEquals(23, books.first { it.id=="fath-qarib" }.chapters.first { it.title=="الزكاة" }.pdfPage)
     }
 }

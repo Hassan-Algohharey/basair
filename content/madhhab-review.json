@@ -1,0 +1,218 @@
+{
+  "reviewedOn": "2026-10-24",
+  "version": "0.8.1",
+  "pdfModification": "none",
+  "reviewScope": "source and edition identity, rights statement, PDF structure, selected chapter headings and endings; not a scholarly critical edition",
+  "approved": [
+    {
+      "id": "tahtawi1290",
+      "title": "حاشية الطحطاوي على مراقي الفلاح",
+      "schools": [
+        "hanafi"
+      ],
+      "pages": 490,
+      "sha256": "7fa62fba7523272d05f0e7ba1dd3358a7527da338f9faa3786b1ba70dc1c20dd",
+      "publisher": "المطبعة الميرية ببولاق، مصر؛ الرقمنة من ويكي مصدر",
+      "edition": "طبعة مصر 1290هـ، وفق صفحة المصدر وخاتمة الطبع في صفحة الملف 490؛ لا يثبت رقم الطبعة",
+      "source": "https://ar.wikisource.org/wiki/ملف:حاشية_أحمد_الطحطاوي_على_مراقي_الفلاح.pdf",
+      "licenseName": "ملكية عامة بحسب بيان صفحة النسخة المصورة",
+      "licenseUrl": "https://ar.wikisource.org/w/index.php?title=ملف:حاشية_أحمد_الطحطاوي_على_مراقي_الفلاح.pdf&oldid=115328",
+      "rightsNote": "تصرح صفحة هذه النسخة المصورة في ويكي مصدر بأنها في الملكية العامة لانتهاء مدة حفظ حقوقها. تنسب الرقمنة إلى ويكي مصدر، وتحفظ جميع الصفحات والفهرس والخاتمة دون تغيير. هذا البيان متعلق بالنسخة المحددة، ولا يشمل تلقائيًا أي تحقيق أو طبعة حديثة أخرى للعمل.",
+      "chapters": [
+        {
+          "title": "الطهارة",
+          "pdfPage": 13,
+          "printedPage": "13"
+        },
+        {
+          "title": "الصلاة",
+          "pdfPage": 110,
+          "printedPage": "110"
+        },
+        {
+          "title": "الصيام",
+          "pdfPage": 414,
+          "printedPage": "414"
+        }
+      ],
+      "visuallyReviewedFilePages": [
+        1,
+        3,
+        13,
+        110,
+        414,
+        489,
+        490
+      ],
+      "sourceSnapshot": "content/sources/tahtawi1290-wikisource.html"
+    },
+    {
+      "id": "risalah-maliki",
+      "title": "الرسالة لابن أبي زيد القيرواني",
+      "schools": [
+        "maliki"
+      ],
+      "pages": 191,
+      "sha256": "27f53dc2a654cee192cf95eb22600edded9390565e8ee9087d604f3bb213f863",
+      "publisher": "المكتبة الثقافية، بيروت — لبنان؛ الرقمنة من ويكي مصدر",
+      "edition": "نسخة المكتبة الثقافية ذات 191 صفحة؛ لا يظهر رقم الطبعة أو تاريخها في الملف أو وصف المصدر، فلا ينسب إليها تاريخ تخميني",
+      "source": "https://ar.wikisource.org/wiki/ملف:متن_الرسالة_لابن_أبي_زيد_القيرواني.pdf",
+      "licenseName": "ملكية عامة بحسب بيان صفحة النسخة المصورة",
+      "licenseUrl": "https://ar.wikisource.org/w/index.php?title=ملف:متن_الرسالة_لابن_أبي_زيد_القيرواني.pdf&oldid=114605",
+      "rightsNote": "تصرح صفحة هذه النسخة المصورة في ويكي مصدر بأنها في الملكية العامة لانتهاء مدة حفظ حقوقها. تنسب الرقمنة إلى ويكي مصدر، وتحفظ جميع الصفحات والفهرس والخاتمة دون تغيير. هذا البيان متعلق بالنسخة المحددة، ولا يشمل تلقائيًا أي تحقيق أو طبعة حديثة أخرى للعمل.",
+      "chapters": [
+        {
+          "title": "الطهارة",
+          "pdfPage": 12,
+          "printedPage": "12"
+        },
+        {
+          "title": "الصلاة",
+          "pdfPage": 27,
+          "printedPage": "27"
+        },
+        {
+          "title": "الصيام",
+          "pdfPage": 69,
+          "printedPage": "69"
+        },
+        {
+          "title": "الزكاة",
+          "pdfPage": 75,
+          "printedPage": "75"
+        },
+        {
+          "title": "الحج",
+          "pdfPage": 84,
+          "printedPage": "84"
+        }
+      ],
+      "visuallyReviewedFilePages": [
+        1,
+        2,
+        3,
+        12,
+        27,
+        69,
+        75,
+        84,
+        191
+      ],
+      "sourceSnapshot": "content/sources/risalah-maliki-wikisource.html"
+    },
+    {
+      "id": "fath-qarib",
+      "title": "فتح القريب المجيب بشرح متن أبي شجاع",
+      "schools": [
+        "shafii"
+      ],
+      "pages": 71,
+      "sha256": "0d1255f19fa30ac44cc5e754bd96d5a5a4760531205ef1bd59713dfeed483d37",
+      "publisher": "المطبعة الخيرية بمصر؛ الرقمنة من ويكي مصدر",
+      "edition": "طبعة المطبعة الخيرية بمصر 1309هـ، وفق وصف المصدر وخاتمة الطبع بصفحة الملف 71؛ لا يثبت رقم الطبعة",
+      "source": "https://ar.wikisource.org/wiki/ملف:فتح_القريب_المجيب.pdf",
+      "licenseName": "ملكية عامة بحسب بيان صفحة النسخة المصورة",
+      "licenseUrl": "https://ar.wikisource.org/w/index.php?title=ملف:فتح_القريب_المجيب.pdf&oldid=122935",
+      "rightsNote": "تصرح صفحة هذه النسخة المصورة في ويكي مصدر بأنها في الملكية العامة لانتهاء مدة حفظ حقوقها. تنسب الرقمنة إلى ويكي مصدر، وتحفظ جميع الصفحات والفهرس والخاتمة دون تغيير. هذا البيان متعلق بالنسخة المحددة، ولا يشمل تلقائيًا أي تحقيق أو طبعة حديثة أخرى للعمل.",
+      "chapters": [
+        {
+          "title": "الطهارة",
+          "pdfPage": 4,
+          "printedPage": "3"
+        },
+        {
+          "title": "الصلاة",
+          "pdfPage": 12,
+          "printedPage": "11"
+        },
+        {
+          "title": "الزكاة",
+          "pdfPage": 23,
+          "printedPage": "22"
+        },
+        {
+          "title": "الصيام",
+          "pdfPage": 26,
+          "printedPage": "25"
+        },
+        {
+          "title": "الحج",
+          "pdfPage": 27,
+          "printedPage": "26"
+        }
+      ],
+      "visuallyReviewedFilePages": [
+        1,
+        2,
+        4,
+        12,
+        23,
+        26,
+        27,
+        71
+      ],
+      "sourceSnapshot": "content/sources/fath-qarib-wikisource.html"
+    },
+    {
+      "id": "umdat-fiqh",
+      "title": "عمدة الفقه",
+      "schools": [
+        "hanbali"
+      ],
+      "pages": 160,
+      "sha256": "bd52eeb4ddb33a72c377f8204fec37b2f95c8c61386254e7ff59cf0ac3890548",
+      "publisher": "معهد السنة — As-Sunnah College؛ المصدر الرقمي دار الإسلام",
+      "edition": "النشرة الأولى 1442هـ؛ سلسلة متون معهد السنة رقم 32، كما في الغلاف؛ أتيحت في فهرس المصدر 29 نوفمبر 2021",
+      "source": "https://islamhouse.com/ar/books/2832689/",
+      "licenseName": "إذن إعادة نشر مع نسبة المصدر وحفظ المحتوى العلمي",
+      "licenseUrl": "https://d1.islamhouse.com/html/faq.htm",
+      "rightsNote": "تقرر سياسة دار الإسلام أن محتوياته متاحة للنشر بمختلف الوسائل مع نسبة المصدر ودون تغيير المحتوى العلمي. لم يظهر تحفظ مخالف في النسخة المختارة؛ حفظت كاملة كما نشرها المصدر. لا تصنف هذه النشرة الحديثة ملكية عامة، ولا يستنتج منها ترخيص تجاري مستقل باسم معهد السنة.",
+      "chapters": [
+        {
+          "title": "الطهارة",
+          "pdfPage": 3,
+          "printedPage": "3"
+        },
+        {
+          "title": "الصلاة",
+          "pdfPage": 12,
+          "printedPage": "12"
+        },
+        {
+          "title": "الزكاة",
+          "pdfPage": 30,
+          "printedPage": "30"
+        },
+        {
+          "title": "الصيام",
+          "pdfPage": 37,
+          "printedPage": "37"
+        },
+        {
+          "title": "الحج",
+          "pdfPage": 41,
+          "printedPage": "41"
+        }
+      ],
+      "visuallyReviewedFilePages": [
+        1,
+        2,
+        30,
+        37,
+        41,
+        152,
+        153,
+        160
+      ],
+      "sourceSnapshot": "content/sources/islamhouse-2832689.html",
+      "permissionSnapshot": "content/sources/islamhouse-permission-v04.html"
+    }
+  ],
+  "excluded": [
+    {
+      "file": "abu-shuja.pdf",
+      "source": "https://islamhouse.com/ar/books/461170/",
+      "reason": "Explicit printing rights reservation, PDF page 4, Dar al-Mashari 1416/1996. Not packaged."
+    }
+  ]
+}

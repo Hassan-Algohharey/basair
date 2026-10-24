@@ -161,6 +161,7 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
     var showPageDialog by remember { mutableStateOf(false) }
     var showDetails by remember { mutableStateOf(false) }
     var showBookmarks by rememberSaveable { mutableStateOf(false) }
+    var showChapters by rememberSaveable { mutableStateOf(false) }
     var bookmarks by remember(book.id) {
         mutableStateOf(parseBookmarkedPages(preferences.getStringSet("bookmarks:${book.id}", emptySet()).orEmpty(), book.pages))
     }
@@ -200,6 +201,7 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
         }
         Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(horizontal = 8.dp),
             verticalAlignment = Alignment.CenterVertically) {
+            if (book.chapters.isNotEmpty()) TextButton(onClick = { showChapters = true }) { Text(context.getString(R.string.book_contents)) }
             TextButton(onClick = onToggleNight) { Text(if (night) context.getString(R.string.ui_day_mode) else context.getString(R.string.ui_night_mode)) }
             TextButton(onClick = {
                 updateBookmarks(if (page in bookmarks) bookmarks - page else bookmarks + page)
@@ -241,6 +243,19 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
             TextButton(onClick = { page++ }, enabled = page < book.pages) { Text(context.getString(R.string.ui_next)) }
         }
     }
+    if (showChapters) AlertDialog(onDismissRequest = { showChapters = false },
+        title = { Text(context.getString(R.string.book_contents)) }, text = {
+            Column {
+                Text(context.getString(R.string.chapter_index_notice), fontSize = 12.sp)
+                LazyColumn(Modifier.heightIn(max = 360.dp)) {
+                    items(book.chapters, key = { it.title }) { chapter ->
+                        TextButton(onClick = { page = chapter.pdfPage; showChapters = false }, modifier = Modifier.fillMaxWidth()) {
+                            Text(context.getString(R.string.chapter_location, localizedLabel(context, chapter.title), chapter.printedPage, chapter.pdfPage))
+                        }
+                    }
+                }
+            }
+        }, confirmButton = { TextButton(onClick = { showChapters = false }) { Text(context.getString(R.string.ui_close)) } })
     if (showDetails) AlertDialog(onDismissRequest = { showDetails = false }, title = { Text(context.getString(R.string.ui_book_and_usage_details)) },
         text = {
             Column(Modifier.verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(12.dp)) {

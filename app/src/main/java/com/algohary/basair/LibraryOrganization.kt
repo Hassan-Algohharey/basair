@@ -17,7 +17,8 @@ internal val subjectAliases = mapOf(
     "tazkiyah" to "tazkiyah spiritual growth purification of the soul"
 )
 internal fun bookSearchAliases(book: Book): String = subjectAliases[book.subject].orEmpty() + " " +
-    book.topics.joinToString(" ") { topicSearchAliases[it].orEmpty() }
+    book.topics.joinToString(" ") { topicSearchAliases[it].orEmpty() } + " " +
+    book.schools.joinToString(" ") { it + " " + schoolNames[it].orEmpty() }
 
 internal fun matchingReferenceVolumes(query: String, topic: String?): List<ReferenceVolume> {
     val terms = normalizeArabic(query).split(Regex("\\s+")).filter { it.isNotBlank() }

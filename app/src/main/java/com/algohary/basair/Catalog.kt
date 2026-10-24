@@ -3,12 +3,13 @@ package com.algohary.basair
 import java.text.Normalizer
 
 data class Subject(val id: String, val title: String, val description: String, val symbol: String)
+data class BookChapter(val title: String, val pdfPage: Int, val printedPage: String)
 data class Book(
     val id: String, val title: String, val author: String, val subject: String,
     val description: String, val topics: List<String>, val source: String,
     val asset: String, val pages: Int, val publisher: String, val edition: String,
     val licenseName: String, val licenseUrl: String, val rightsNote: String, val sha256: String,
-    val schools: Set<String> = emptySet()
+    val schools: Set<String> = emptySet(), val chapters: List<BookChapter> = emptyList()
 )
 data class Reference(
     val title: String, val publisher: String, val edition: String,

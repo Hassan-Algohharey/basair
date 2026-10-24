@@ -7,3 +7,5 @@ Each book has its own source and rights statement in `content/books.json`, also 
 No license covering all repository content as one work is granted. Rights in original books, modern editorial contributions, third-party dependencies, source-site snapshots, and application code remain with their respective owners unless an applicable permission says otherwise.
 
 Signing keys, passwords, account credentials and local machine settings are excluded from the repository. Generate your own upload key for a separately maintained release. The original application's Play upload key must not be committed or distributed.
+
+The four school-specific additions in 0.8.1 are documented edition by edition in `docs/MADHHAB_BOOKS_V081_AR.md` and `content/madhhab-review.json`. Three specific scans are classified as public domain by Wikisource. The modern Umdat al-Fiqh edition uses IslamHouse republication permission with attribution and unchanged content; it is not represented as public domain. An explicitly reserved modern Abu Shuja edition was excluded.

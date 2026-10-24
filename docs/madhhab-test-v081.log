@@ -1,0 +1,11 @@
+Device: Samsung Galaxy A55 SM_A556E, Android 16 / API 36, physical USB device.
+Package: com.algohary.basair.preview, 0.8.1-preview (9).
+Installation: adb install -r; existing preview data preserved, official package untouched.
+PASS Hanafi: Tahtawi 490 pages, school filter, purification file/printed 13, publisher details, last page 490 rendered.
+PASS Maliki: Risalah 191 pages, school filter, purification file/printed 12, publisher details, last page 191 rendered.
+PASS Shafii: Fath al-Qarib 71 pages, school filter, purification file 4 / printed 3, publisher details, last page 71 rendered.
+PASS Hanbali: Umdat al-Fiqh 160 pages, school filter, purification file/printed 3, publisher details, last page 160 rendered.
+PASS English chapter labels and Shafii Zakat exact file page 23 / printed page 22.
+PASS Arabic preference restored after process restart. No data cleared.
+Local private screenshot evidence: publishing/screenshots/v081-phone/ (ignored).
+No Google Play upload, review submission, or publishing action.

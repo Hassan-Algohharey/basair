@@ -3,6 +3,11 @@ package com.algohary.basair
 import android.content.Context
 
 private val labelResources = mapOf(
+    "الأسرة" to R.string.topic_family,
+    "المواريث" to R.string.topic_inheritance,
+    "الجنايات" to R.string.topic_criminal,
+    "القضاء" to R.string.topic_judiciary,
+    "الآداب" to R.string.topic_etiquette,
     "الفقه" to R.string.ui_fiqh,
     "العبادات والمعاملات" to R.string.ui_worship_and_transactions,
     "العقيدة" to R.string.ui_creed,

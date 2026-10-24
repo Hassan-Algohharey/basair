@@ -30,8 +30,8 @@ class CatalogTest {
         assertTrue(Catalog.searchComparisons("عبارةغيرموجودة").isEmpty())
     }
     @Test fun booksHaveOriginalAssetsAndLicenseProvenance() {
-        assertEquals(12, Catalog.books.size)
-        assertEquals(2410, Catalog.books.sumOf { it.pages })
+        assertEquals(16, Catalog.books.size)
+        assertEquals(3322, Catalog.books.sumOf { it.pages })
         assertTrue(Catalog.search("نافع", "salaf").any { it.id == "qurra-biographies" })
         assertTrue(Catalog.search("تزكية", "tazkiyah").any { it.id == "hearts-remedies" })
         assertTrue(Catalog.books.all { it.asset.startsWith("books/") && it.asset.endsWith(".pdf") && it.sha256.matches(Regex("[a-f0-9]{64}")) })
