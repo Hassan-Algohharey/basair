@@ -104,6 +104,12 @@ private fun BasairApp() {
     BackHandler(enabled = bookId != null || route != "home") {
         if (bookId != null) bookId = null else route = "home"
     }
+    val readingBook = Catalog.books.find { it.id == bookId }
+    if (readingBook != null) {
+        key(readingBook.id) { PdfBookReader(readingBook, readingBook.id in saved,
+            { bookId = null }, { toggleSave(readingBook.id) }) }
+        return
+    }
     Scaffold(containerColor = Paper, bottomBar = {
         NavigationBar(containerColor = Color.White, tonalElevation = 0.dp) {
             destinations.forEach { destination ->
@@ -117,10 +123,7 @@ private fun BasairApp() {
         }
     }) { padding ->
         Box(Modifier.fillMaxSize().padding(padding)) {
-            val book = Catalog.books.find { it.id == bookId }
-            if (book != null) {
-                key(book.id) { PdfBookReader(book, book.id in saved, { bookId = null }, { toggleSave(book.id) }) }
-            } else when (route) {
+            when (route) {
                 "home" -> HomeScreen(visitSubject, { navigate("search") }, { navigate("compare") }, { bookId = it })
                 "library", "search" -> CatalogScreen(route == "search", query, { query = it }, subject,
                     { subject = it }, { bookId = it }, saved, toggleSave, { comparisonId = it; navigate("compare") })

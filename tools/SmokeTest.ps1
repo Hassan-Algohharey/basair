@@ -34,7 +34,13 @@ function Tap-Node($Node) {
     Device @('shell','input','tap',([int](($bounds[0]+$bounds[2])/2)).ToString(),([int](($bounds[1]+$bounds[3])/2)).ToString()) | Out-Null
     Start-Sleep -Milliseconds 450
 }
-function Tap-Text([string]$Text) { Tap-Node (Find-Text $Text) }
+function Tap-Text([string]$Text) {
+    if ($Text -in @('الرئيسية','المكتبة','البحث','المقارنة','محفوظاتي')) {
+        $back = (Read-Ui).SelectNodes('//node') | Where-Object text -eq '→ العودة' | Select-Object -First 1
+        if ($back) { Tap-Node $back }
+    }
+    Tap-Node (Find-Text $Text)
+}
 function Capture([string]$Name) {
     Device @('shell','screencap','-p','/sdcard/basair-v02.png') | Out-Null
     Device @('pull','/sdcard/basair-v02.png',(Join-Path $shots $Name)) | Out-Null

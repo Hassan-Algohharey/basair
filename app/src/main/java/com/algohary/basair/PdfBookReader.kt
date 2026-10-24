@@ -1,6 +1,8 @@
 package com.algohary.basair
 
+import android.app.Activity
 import android.content.Context
+import android.content.ContextWrapper
 import android.graphics.Bitmap
 import android.graphics.pdf.PdfRenderer
 import android.os.ParcelFileDescriptor
@@ -8,6 +10,8 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
@@ -17,9 +21,12 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.graphics.ColorMatrix
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -27,6 +34,7 @@ import androidx.compose.ui.unit.sp
 import java.io.Closeable
 import java.io.File
 import java.security.MessageDigest
+import androidx.core.view.WindowCompat
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.awaitCancellation
@@ -101,10 +109,64 @@ private class PdfBookSession(context: Context, book: Book) : Closeable {
 internal fun PdfBookReader(book: Book, saved: Boolean, onBack: () -> Unit, onSave: () -> Unit) {
     val context = LocalContext.current
     val preferences = remember { context.getSharedPreferences("basair", Context.MODE_PRIVATE) }
+    var night by rememberSaveable { mutableStateOf(preferences.getBoolean("readerNight", false)) }
+    val view = LocalView.current
+    DisposableEffect(night, view) {
+        val activity = generateSequence(context) { (it as? ContextWrapper)?.baseContext }
+            .filterIsInstance<Activity>().firstOrNull()
+        val controller = activity?.window?.let { WindowCompat.getInsetsController(it, view) }
+        val lightStatus = controller?.isAppearanceLightStatusBars
+        val lightNavigation = controller?.isAppearanceLightNavigationBars
+        controller?.isAppearanceLightStatusBars = !night
+        controller?.isAppearanceLightNavigationBars = !night
+        onDispose {
+            if (lightStatus != null) controller?.isAppearanceLightStatusBars = lightStatus
+            if (lightNavigation != null) controller?.isAppearanceLightNavigationBars = lightNavigation
+        }
+    }
+    val readerColors = if (night) darkColorScheme(
+        primary = Color(0xFFBDD7C5), onPrimary = Ink, secondary = Color(0xFFE1C48B),
+        background = Color(0xFF151C19), surface = Color(0xFF1E2923),
+        onSurface = Color(0xFFE4E6DC), onBackground = Color(0xFFE4E6DC),
+        onSurfaceVariant = Color(0xFFB5C3B9)
+    ) else MaterialTheme.colorScheme
+    MaterialTheme(colorScheme = readerColors) {
+        Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+            Box(Modifier.windowInsetsPadding(WindowInsets.safeDrawing)) {
+                PdfReaderContent(book, saved, onBack, onSave, night) {
+                    night = !night
+                    preferences.edit().putBoolean("readerNight", night).apply()
+                }
+            }
+        }
+    }
+}
+
+private val nightPageFilter = ColorFilter.colorMatrix(ColorMatrix(floatArrayOf(
+    -.78f, 0f, 0f, 0f, 228f,
+    0f, -.76f, 0f, 0f, 230f,
+    0f, 0f, -.74f, 0f, 220f,
+    0f, 0f, 0f, 1f, 0f
+)))
+
+@Composable
+private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onSave: () -> Unit,
+    night: Boolean, onToggleNight: () -> Unit) {
+    val context = LocalContext.current
+    val preferences = remember { context.getSharedPreferences("basair", Context.MODE_PRIVATE) }
     var page by rememberSaveable(book.id) { mutableIntStateOf(preferences.getInt("page:${book.id}", 1).coerceIn(1, book.pages)) }
     var zoom by rememberSaveable(book.id) { mutableFloatStateOf(preferences.getFloat("pdfZoom", 1f).coerceIn(1f, 3f)) }
     var showPageDialog by remember { mutableStateOf(false) }
     var showDetails by remember { mutableStateOf(false) }
+    var showBookmarks by rememberSaveable { mutableStateOf(false) }
+    var bookmarks by remember(book.id) {
+        mutableStateOf(parseBookmarkedPages(preferences.getStringSet("bookmarks:${book.id}", emptySet()).orEmpty(), book.pages))
+    }
+    val updateBookmarks: (List<Int>) -> Unit = { pages ->
+        bookmarks = pages.distinct().sorted()
+        preferences.edit().putStringSet("bookmarks:${book.id}", bookmarks.map(Int::toString).toSet()).apply()
+    }
+    val muted = MaterialTheme.colorScheme.onSurfaceVariant
     var retry by remember { mutableIntStateOf(0) }
     var error by remember(book.id, retry) { mutableStateOf<String?>(null) }
     val session by produceState<PdfBookSession?>(null, book.id, retry) {
@@ -125,16 +187,24 @@ internal fun PdfBookReader(book: Book, saved: Boolean, onBack: () -> Unit, onSav
             TextButton(onClick = onBack) { Text("→ العودة") }
             Text(book.title, Modifier.weight(1f), fontSize = 14.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
             TextButton(onClick = { showDetails = true }) { Text("البيانات") }
-            IconButton(onClick = onSave) { LineIcon("bookmark", if (saved) Gold else Muted,
+            IconButton(onClick = onSave) { LineIcon("bookmark", if (saved) MaterialTheme.colorScheme.secondary else muted,
                 description = if (saved) "إزالة الكتاب من المحفوظات" else "حفظ الكتاب") }
         }
         Row(Modifier.fillMaxWidth().padding(horizontal = 14.dp), verticalAlignment = Alignment.CenterVertically) {
-            Text("النسخة الأصلية · دون اتصال", Modifier.weight(1f), fontSize = 11.sp, color = Muted)
+            Text("النسخة الأصلية · دون اتصال", Modifier.weight(1f), fontSize = 11.sp, color = muted)
             TextButton(onClick = { zoom = (zoom - .5f).coerceAtLeast(1f) }, enabled = zoom > 1f) { Text("−") }
             Text("${(zoom * 100).roundToInt()}٪", fontSize = 12.sp)
             TextButton(onClick = { zoom = (zoom + .5f).coerceAtMost(3f) }, enabled = zoom < 3f) { Text("+") }
         }
-        BoxWithConstraints(Modifier.weight(1f).fillMaxWidth().background(Color(0xFFE7E5DE))) {
+        Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(horizontal = 8.dp),
+            verticalAlignment = Alignment.CenterVertically) {
+            TextButton(onClick = onToggleNight) { Text(if (night) "الوضع النهاري" else "الوضع الليلي") }
+            TextButton(onClick = {
+                updateBookmarks(if (page in bookmarks) bookmarks - page else bookmarks + page)
+            }) { Text(if (page in bookmarks) "إزالة علامة الصفحة" else "وضع علامة للصفحة") }
+            TextButton(onClick = { showBookmarks = true }) { Text("علامات الصفحات (${bookmarks.size})") }
+        }
+        BoxWithConstraints(Modifier.weight(1f).fillMaxWidth().background(if (night) Color(0xFF101612) else Color(0xFFE7E5DE))) {
             val density = LocalDensity.current
             val viewportWidth = maxWidth
             val renderWidth = with(density) { (viewportWidth * zoom).roundToPx() }
@@ -155,7 +225,8 @@ internal fun PdfBookReader(book: Book, saved: Boolean, onBack: () -> Unit, onSav
                     key(page) {
                         Box(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).horizontalScroll(rememberScrollState())) {
                             Image(bitmap!!.asImageBitmap(), "صفحة الملف $page من ${book.pages} · ${book.title}",
-                                Modifier.width(viewportWidth * zoom), alignment = Alignment.TopCenter)
+                                Modifier.width(viewportWidth * zoom), alignment = Alignment.TopCenter,
+                                colorFilter = if (night) nightPageFilter else null)
                         }
                     }
                 }
@@ -174,13 +245,31 @@ internal fun PdfBookReader(book: Book, saved: Boolean, onBack: () -> Unit, onSav
                 Text(book.title, fontSize = 19.sp)
                 Text("المؤلف: ${book.author}\nالناشر: ${book.publisher}\nالطبعة: ${book.edition}\nصفحات الملف: ${book.pages}", fontSize = 14.sp)
                 Text(book.description, fontSize = 14.sp)
-                Text(book.licenseName, color = Green, fontSize = 14.sp)
+                Text(book.licenseName, color = MaterialTheme.colorScheme.primary, fontSize = 14.sp)
                 Text(book.rightsNote, fontSize = 13.sp)
-                Text("رقم صفحة الملف قد يختلف عن الرقم المطبوع. الملفات المصورة لا تدعم البحث في جميع نصوص الصفحات أو إعادة تدفق الخط.", fontSize = 12.sp, color = Muted)
+                Text("رقم صفحة الملف قد يختلف عن الرقم المطبوع. الملفات المصورة لا تدعم البحث في جميع نصوص الصفحات أو إعادة تدفق الخط.", fontSize = 12.sp, color = muted)
                 TextButton(onClick = { openSource(context, book.source) }) { Text("صفحة المصدر") }
                 TextButton(onClick = { openSource(context, book.licenseUrl) }) { Text("بيان الإتاحة") }
             }
         }, confirmButton = { TextButton(onClick = { showDetails = false }) { Text("إغلاق") } })
+    if (showBookmarks) AlertDialog(onDismissRequest = { showBookmarks = false },
+        title = { Text("علامات صفحات الكتاب") }, text = {
+            Column {
+                Text("${book.title}\nالأرقام تخص صفحات الملف.", fontSize = 13.sp, color = muted)
+                if (bookmarks.isEmpty()) {
+                    Text("لا توجد علامات بعد. استخدم «وضع علامة للصفحة» أثناء القراءة.", Modifier.padding(vertical = 20.dp))
+                } else LazyColumn(Modifier.fillMaxWidth().heightIn(max = 360.dp)) {
+                    items(bookmarks, key = { it }) { markedPage ->
+                        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                            TextButton(onClick = { page = markedPage; showBookmarks = false }, modifier = Modifier.weight(1f)) {
+                                Text("انتقال إلى صفحة $markedPage")
+                            }
+                            TextButton(onClick = { updateBookmarks(bookmarks - markedPage) }) { Text("حذف علامة $markedPage") }
+                        }
+                    }
+                }
+            }
+        }, confirmButton = { TextButton(onClick = { showBookmarks = false }) { Text("إغلاق") } })
     if (showPageDialog) {
         var input by remember { mutableStateOf(page.toString()) }
         val target = parsePageNumber(input, book.pages)
