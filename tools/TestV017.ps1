@@ -1,7 +1,7 @@
 ﻿param(
     [Parameter(Mandatory=$true)][string]$Serial,
     [string]$Adb = 'C:/Users/hassa/AppData/Local/Android/Sdk/platform-tools/adb.exe',
-    [ValidateSet("All","Books","Comparisons")][string]$Phase="All"
+    [ValidateSet("All","Books","Comparisons","Offline")][string]$Phase="All"
 )
 $ErrorActionPreference='Stop'
 $package='com.algohary.basair.preview'
@@ -209,4 +209,35 @@ if ($Phase -in @('All','Comparisons')) {
  Find 'Results: 40 / 40' | Out-Null; Capture 'comparisons-en.png'
  Restart; Tap 'العربية'
  Write-Output 'PASS all new comparisons, topic counts, combined school/page filter and English controls.'
+}
+if ($Phase -in @('All','Offline')) {
+ $wifiState=(Device @('shell','settings','get','global','wifi_on') | Out-String).Trim()
+ $dataState=(Device @('shell','settings','get','global','mobile_data') | Out-String).Trim()
+ try {
+  Device @('shell','svc','wifi','disable') | Out-Null
+  Device @('shell','svc','data','disable') | Out-Null
+  $offlineCases=@(
+   @('الحنفي (2)','المسلك المتقسط في المنسك المتوسط',31,296),
+   @('المالكي (2)','مختصر خليل',17,248),
+   @('الشافعي (2)','منهاج الطالبين وعمدة المفتين',32,147),
+   @('الحنبلي (2)','نيل المآرب بشرح دليل الطالب',88,323)
+  )
+  foreach ($case in $offlineCases) {
+   Restart; Tap 'المكتبة'; Tap 'الفقه'; Tap $case[0]
+   TapNode (Show $case[1])
+   WaitReader "صفحة الملف $($case[2]) من $($case[3])" | Out-Null
+   foreach ($offset in @(-7,7,0)) {
+    $target=[int]$case[2]+$offset
+    Jump $target
+    WaitReader "صفحة الملف $target من $($case[3])" | Out-Null
+   }
+   Capture "offline-$($case[3]).png"
+   Tap '→ العودة'
+   Write-Output "PASS offline $($case[1]): persisted position after restart, prefetched -7/+7 pages."
+  }
+ } finally {
+  if ($wifiState -eq '1') { Device @('shell','svc','wifi','enable') | Out-Null }
+  if ($dataState -eq '1') { Device @('shell','svc','data','enable') | Out-Null }
+ }
+ Restart
 }
