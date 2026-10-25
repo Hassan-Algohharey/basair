@@ -88,7 +88,7 @@ object Catalog {
                 SchoolOpinion("الشافعي", "ليسا واجبين في الغسل، ويعدّ غسلهما من سننه.", listOf(kuwaitReference(31, "208–209", 209))),
                 SchoolOpinion("الحنبلي", "المضمضة والاستنشاق واجبان في الغسل.", listOf(kuwaitReference(31, "208–209", 208)))
             ))
-    ) + expandedComparisons + studyComparisons
+    ) + expandedComparisons + studyComparisons + comparisonsV017
 
     val comparisonTopics = comparisons.map { it.topic.substringBefore(" / ") }.distinct()
     val comparisonSchools = listOf("الحنفي", "المالكي", "الشافعي", "الحنبلي")

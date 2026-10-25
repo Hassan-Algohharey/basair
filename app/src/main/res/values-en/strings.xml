@@ -205,4 +205,7 @@
     <string name="tje_range">Example from %1$s to %2$s in the original recording</string>
     <string name="audio_repeat_example">Repeat only the example</string>
     <string name="audio_clip_download_note">Download keeps the original surah while playback uses only the example. Examples from the same surah share one saved file; deleting it affects their offline availability but keeps listening positions.</string>
+    <string name="topic_ihram">Ihram</string>
+    <string name="topic_tawaf">Tawaf</string>
+    <string name="topic_sai">Sai between Safa and Marwah</string>
 </resources>

@@ -4,11 +4,29 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class LibraryOrganizationTest {
+    @Test fun newCompleteEditionsAreSearchableAndKeepTheirOwnScope() {
+        val editions = mapOf("hanafi" to "maslak-hanafi", "maliki" to "khalil-maliki",
+            "shafii" to "minhaj-shafii", "hanbali" to "nayl-hanbali")
+        editions.forEach { (school, id) ->
+            val book = Catalog.books.single { it.id == id }
+            assertTrue(book.licenseName.contains("ملكية عامة"))
+            assertTrue(Catalog.search("", "fiqh", school, "الحج").contains(book))
+            fiqhSchools.filter { it != school }.forEach {
+                assertFalse(Catalog.search("", "fiqh", it).contains(book))
+            }
+        }
+        assertEquals(listOf("maslak-hanafi"), Catalog.search("maslak ihram", "fiqh", "hanafi").map { it.id })
+        assertEquals(listOf("minhaj-shafii"), Catalog.search("minhaj zakat", "fiqh", "shafii").map { it.id })
+        assertTrue(Catalog.search("maslak", "fiqh", "hanafi", "الزكاة").isEmpty())
+        assertEquals(11, Catalog.books.single { it.id == "minhaj-shafii" }.chapters.first().pdfPage)
+        assertEquals("ج1، 69", Catalog.books.single { it.id == "nayl-hanbali" }.chapters.first { it.title == "الزكاة" }.printedPage)
+    }
     @Test fun generalFiqhIsNotAssignedToAnySchool() {
         assertEquals(4, fiqhSchools.distinct().size)
         val assigned = mapOf("hanafi" to "tahtawi1290", "maliki" to "risalah-maliki", "shafii" to "fath-qarib", "hanbali" to "umdat-fiqh")
         assigned.forEach { (school, id) ->
-            assertEquals(listOf(id), Catalog.search("", "fiqh", school).map { it.id })
+            assertEquals(2, Catalog.search("", "fiqh", school).size)
+            assertTrue(Catalog.search("", "fiqh", school).any { it.id == id })
             assertTrue(Catalog.search(school, "fiqh", school).any { it.id == id })
         }
         assertEquals(listOf("fiqh-muyassar"), Catalog.search("", "fiqh", "shared").map { it.id })
@@ -42,8 +60,8 @@ class LibraryOrganizationTest {
 
     @Test fun chapterLinksBelongToTheExactEditionAndCoveredTopics() {
         val books=Catalog.books.filter { it.schools.isNotEmpty() }
-        assertEquals(4, books.size)
-        assertEquals(18, books.sumOf { it.chapters.size })
+        assertEquals(8, books.size)
+        assertEquals(37, books.sumOf { it.chapters.size })
         books.forEach { book ->
             assertEquals(1, book.schools.size)
             assertTrue(book.chapters.isNotEmpty())
@@ -51,7 +69,7 @@ class LibraryOrganizationTest {
             book.chapters.forEach { assertTrue(Catalog.search("", "fiqh", book.schools.single(), it.title).contains(book)) }
         }
         assertTrue(Catalog.search("", "fiqh", "hanafi", "المعاملات").isEmpty())
-        assertTrue(Catalog.search("", "fiqh", "hanafi", "الحج").isEmpty())
+        assertEquals(listOf("maslak-hanafi"), Catalog.search("", "fiqh", "hanafi", "الحج").map { it.id })
         assertEquals(23, books.first { it.id=="fath-qarib" }.chapters.first { it.title=="الزكاة" }.pdfPage)
     }
 }

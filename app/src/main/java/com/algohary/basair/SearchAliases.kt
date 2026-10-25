@@ -1,6 +1,10 @@
 package com.algohary.basair
 
 internal val topicSearchAliases = mapOf(
+    "الإحرام" to "ihram consecration",
+    "الطواف" to "tawaf circumambulation",
+    "السعي" to "sai saee safa marwah",
+
     "الأسرة" to "family marriage divorce",
     "المواريث" to "inheritance",
     "الجنايات" to "criminal law",

@@ -18,8 +18,16 @@ internal val subjectAliases = mapOf(
     "tajweed" to "tajweed tajwid recitation tuhfat atfal jamzuri jazariyyah jazari"
 )
 internal fun bookSearchAliases(book: Book): String = subjectAliases[book.subject].orEmpty() + " " +
+    bookTitleAliases[book.id].orEmpty() + " " +
     book.topics.joinToString(" ") { topicSearchAliases[it].orEmpty() } + " " +
     book.schools.joinToString(" ") { it + " " + schoolNames[it].orEmpty() }
+
+private val bookTitleAliases = mapOf(
+    "maslak-hanafi" to "maslak mutaqassit mulla ali qari labab manasik hajj umrah",
+    "khalil-maliki" to "mukhtasar khalil ibn ishaq jundi",
+    "minhaj-shafii" to "minhaj talibin nawawi zakariyya ansari manhaj",
+    "nayl-hanbali" to "nayl maarib dalil talib abd al qadir shaybani"
+)
 
 internal fun matchingReferenceVolumes(query: String, topic: String?): List<ReferenceVolume> {
     val terms = normalizeArabic(query).split(Regex("\\s+")).filter { it.isNotBlank() }

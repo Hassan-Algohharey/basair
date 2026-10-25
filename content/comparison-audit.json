@@ -1,5 +1,5 @@
 {
-  "verifiedOn": "2026-10-24",
+  "verifiedOn": "2026-10-25",
   "method": "Visual inspection of scanned publisher edition page 4 and every cited printed page. Editorial paraphrases of the comparative encyclopedia, with scope and intramadhhab variants retained; not direct quotations from the four imams, a scholarly committee endorsement, or a personal fatwa.",
   "bundledInApk": false,
   "references": [
@@ -15,8 +15,12 @@
         207,
         208,
         209,
+        210,
         211,
-        212
+        212,
+        213,
+        214,
+        215
       ],
       "pdfPageEqualsPrintedPageForTheseReferences": true
     },
@@ -29,6 +33,9 @@
       "sha256": "aace4bd070b455e23f2d6eae57c4ade1d45aa058c07d20a09453be18639169ed",
       "editionPdfPage": 4,
       "verifiedPrintedPages": [
+        341,
+        342,
+        343,
         348,
         349,
         350,
@@ -44,7 +51,12 @@
         362,
         363,
         364,
-        365
+        365,
+        366,
+        367,
+        368,
+        369,
+        370
       ],
       "pdfPageEqualsPrintedPageForTheseReferences": true
     },
@@ -280,7 +292,120 @@
         353,
         354
       ]
+    },
+    {
+      "id": "ghusl-braids",
+      "volume": 31,
+      "pages": [
+        209,
+        210
+      ]
+    },
+    {
+      "id": "ghusl-continuity",
+      "volume": 31,
+      "pages": [
+        210,
+        211
+      ]
+    },
+    {
+      "id": "ghusl-basmala",
+      "volume": 31,
+      "pages": [
+        212,
+        213
+      ]
+    },
+    {
+      "id": "ghusl-prior-wudu",
+      "volume": 31,
+      "pages": [
+        214
+      ]
+    },
+    {
+      "id": "ghusl-feet-timing",
+      "volume": 31,
+      "pages": [
+        214
+      ]
+    },
+    {
+      "id": "ghusl-triple",
+      "volume": 31,
+      "pages": [
+        215
+      ]
+    },
+    {
+      "id": "wudu-elbows",
+      "volume": 43,
+      "pages": [
+        341,
+        342
+      ]
+    },
+    {
+      "id": "wudu-amputation-elbow",
+      "volume": 43,
+      "pages": [
+        342,
+        343
+      ]
+    },
+    {
+      "id": "wudu-extra-limb",
+      "volume": 43,
+      "pages": [
+        343
+      ]
+    },
+    {
+      "id": "wudu-ears-water",
+      "volume": 43,
+      "pages": [
+        365,
+        366
+      ]
+    },
+    {
+      "id": "wudu-triple-wash",
+      "volume": 43,
+      "pages": [
+        367
+      ]
+    },
+    {
+      "id": "wudu-siwak",
+      "volume": 43,
+      "pages": [
+        367
+      ]
+    },
+    {
+      "id": "wudu-right-first",
+      "volume": 43,
+      "pages": [
+        368,
+        369
+      ]
+    },
+    {
+      "id": "wudu-extended-washing",
+      "volume": 43,
+      "pages": [
+        369,
+        370
+      ]
+    },
+    {
+      "id": "wudu-qibla",
+      "volume": 43,
+      "pages": [
+        370
+      ]
     }
   ],
-  "version": "0.8.3"
+  "version": "0.17.0"
 }

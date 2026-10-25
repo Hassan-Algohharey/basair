@@ -717,5 +717,223 @@
         "printedPage": "37"
       }
     ]
+  },
+  {
+    "id": "maslak-hanafi",
+    "title": "المسلك المتقسط في المنسك المتوسط",
+    "author": "علي بن سلطان محمد القاري",
+    "subject": "fiqh",
+    "description": "شرح حنفي كامل على لباب المناسك لرحمة الله السندي، متخصص في الحج والعمرة، وبهامشه كتاب أدعية الحج والعمرة لقطب الدين الحنفي. لا يمثل جميع أبواب الفقه الحنفي.",
+    "topics": [
+      "الحج",
+      "الإحرام",
+      "الطواف",
+      "السعي"
+    ],
+    "source": "https://ar.wikisource.org/wiki/%D9%85%D9%84%D9%81:%D8%A7%D9%84%D9%85%D8%B3%D9%84%D9%83_%D8%A7%D9%84%D9%85%D8%AA%D9%82%D8%B3%D8%B7.pdf",
+    "downloadUrl": "https://upload.wikimedia.org/wikisource/ar/5/51/%D8%A7%D9%84%D9%85%D8%B3%D9%84%D9%83_%D8%A7%D9%84%D9%85%D8%AA%D9%82%D8%B3%D8%B7.pdf",
+    "inputFile": "maslak-hanafi.pdf",
+    "asset": "books/maslak-hanafi.pdf",
+    "pages": 296,
+    "publisher": "مطبعة الترقي الماجدية بمكة المكرمة",
+    "edition": "الأولى، 1328هـ",
+    "licenseName": "ملكية عامة — طبعة تراثية قديمة",
+    "licenseUrl": "https://ar.wikisource.org/w/index.php?oldid=115175",
+    "rightsNote": "يصرح ويكي مصدر بأن الملف في الملكية العامة لانتهاء مدة الحقوق. حُفظت المصورة الأصلية دون تغيير، مع نسبة المؤلف والمطبعة ومصدر الرقمنة؛ صفحات القراءة مستخرجة من الملف نفسه.",
+    "sha256": "25dcba134a70398dcd6dbaa27daa7a923f4f0f767d0bfab541cdc611649e6795",
+    "schools": [
+      "hanafi"
+    ],
+    "chapters": [
+      {
+        "title": "الحج",
+        "pdfPage": 6,
+        "printedPage": "6"
+      },
+      {
+        "title": "الإحرام",
+        "pdfPage": 31,
+        "printedPage": "31"
+      },
+      {
+        "title": "الطواف",
+        "pdfPage": 62,
+        "printedPage": "62"
+      },
+      {
+        "title": "السعي",
+        "pdfPage": 80,
+        "printedPage": "80"
+      }
+    ],
+    "reviewedOn": "2026-10-25"
+  },
+  {
+    "id": "khalil-maliki",
+    "title": "مختصر خليل",
+    "author": "خليل بن إسحاق الجندي المالكي",
+    "subject": "fiqh",
+    "description": "متن مختصر خليل في الفقه المالكي كاملًا حتى خاتمته، ثم فهرس الأبواب. تُحفظ الصفحات والمقدمات الملحقة كما أتاحها المصدر دون حذف.",
+    "topics": [
+      "الطهارة",
+      "الصلاة",
+      "الزكاة",
+      "الصيام",
+      "الحج"
+    ],
+    "source": "https://ar.wikisource.org/wiki/%D9%85%D9%84%D9%81:%D9%85%D8%AE%D8%AA%D8%B5%D8%B1_%D8%AE%D9%84%D9%8A%D9%84.pdf",
+    "downloadUrl": "https://upload.wikimedia.org/wikisource/ar/d/d9/%D9%85%D8%AE%D8%AA%D8%B5%D8%B1_%D8%AE%D9%84%D9%8A%D9%84.pdf",
+    "inputFile": "khalil-maliki.pdf",
+    "asset": "books/khalil-maliki.pdf",
+    "pages": 248,
+    "publisher": "المطبع السلطاني بباريس",
+    "edition": "طبعة عربية 1272هـ / 1855م؛ تليها مقدمات وغلاف فرنسي مؤرخ 1858م في المصورة نفسها",
+    "licenseName": "ملكية عامة — طبعة تراثية قديمة",
+    "licenseUrl": "https://ar.wikisource.org/w/index.php?oldid=114697",
+    "rightsNote": "يصرح ويكي مصدر بأن الملف في الملكية العامة لانتهاء مدة الحقوق. حُفظت المصورة الأصلية دون تغيير، مع نسبة المؤلف والمطبعة ومصدر الرقمنة؛ صفحات القراءة مستخرجة من الملف نفسه.",
+    "sha256": "547e2cf3c94fa0e37b1c63f8cc0bb89bd3e82761f1ac61073efff5802ca9ed6b",
+    "schools": [
+      "maliki"
+    ],
+    "chapters": [
+      {
+        "title": "الطهارة",
+        "pdfPage": 7,
+        "printedPage": "7"
+      },
+      {
+        "title": "الصلاة",
+        "pdfPage": 17,
+        "printedPage": "17"
+      },
+      {
+        "title": "الزكاة",
+        "pdfPage": 40,
+        "printedPage": "40"
+      },
+      {
+        "title": "الصيام",
+        "pdfPage": 48,
+        "printedPage": "48"
+      },
+      {
+        "title": "الحج",
+        "pdfPage": 52,
+        "printedPage": "52"
+      }
+    ],
+    "reviewedOn": "2026-10-25"
+  },
+  {
+    "id": "minhaj-shafii",
+    "title": "منهاج الطالبين وعمدة المفتين",
+    "author": "يحيى بن شرف النووي",
+    "subject": "fiqh",
+    "description": "متن النووي في الفقه الشافعي كاملًا، وبهامشه متن المنهج لزكريا الأنصاري. تشمل المصورة الفهارس والمتن والخاتمة؛ الطبع قديم وكثيف ويحتاج التكبير.",
+    "topics": [
+      "الطهارة",
+      "الصلاة",
+      "الزكاة",
+      "الصيام",
+      "الحج"
+    ],
+    "source": "https://ar.wikisource.org/wiki/%D9%85%D9%84%D9%81:%D9%85%D9%86%D9%87%D8%A7%D8%AC_%D8%A7%D9%84%D8%B7%D8%A7%D9%84%D8%A8%D9%8A%D9%86_%D9%88%D8%B9%D9%85%D8%AF%D8%A9_%D8%A7%D9%84%D9%85%D9%81%D8%AA%D9%8A%D9%86.pdf",
+    "downloadUrl": "https://upload.wikimedia.org/wikisource/ar/2/28/%D9%85%D9%86%D9%87%D8%A7%D8%AC_%D8%A7%D9%84%D8%B7%D8%A7%D9%84%D8%A8%D9%8A%D9%86_%D9%88%D8%B9%D9%85%D8%AF%D8%A9_%D8%A7%D9%84%D9%85%D9%81%D8%AA%D9%8A%D9%86.pdf",
+    "inputFile": "minhaj-shafii.pdf",
+    "asset": "books/minhaj-shafii.pdf",
+    "pages": 147,
+    "publisher": "المطبعة الميمنية بمصر",
+    "edition": "1308هـ؛ مثبتة بخاتمة الطبع في صفحة الملف 147",
+    "licenseName": "ملكية عامة — طبعة تراثية قديمة",
+    "licenseUrl": "https://ar.wikisource.org/w/index.php?oldid=115105",
+    "rightsNote": "يصرح ويكي مصدر بأن الملف في الملكية العامة لانتهاء مدة الحقوق. حُفظت المصورة الأصلية دون تغيير، مع نسبة المؤلف والمطبعة ومصدر الرقمنة؛ صفحات القراءة مستخرجة من الملف نفسه.",
+    "sha256": "046c1cecd87577b59fc1417a9dc50275c057137b3226ffe11b4182cb3478272d",
+    "schools": [
+      "shafii"
+    ],
+    "chapters": [
+      {
+        "title": "الطهارة",
+        "pdfPage": 11,
+        "printedPage": "3"
+      },
+      {
+        "title": "الصلاة",
+        "pdfPage": 15,
+        "printedPage": "7"
+      },
+      {
+        "title": "الزكاة",
+        "pdfPage": 32,
+        "printedPage": "24"
+      },
+      {
+        "title": "الصيام",
+        "pdfPage": 36,
+        "printedPage": "28"
+      },
+      {
+        "title": "الحج",
+        "pdfPage": 39,
+        "printedPage": "31"
+      }
+    ],
+    "reviewedOn": "2026-10-25"
+  },
+  {
+    "id": "nayl-hanbali",
+    "title": "نيل المآرب بشرح دليل الطالب",
+    "author": "عبد القادر بن عمر الشيباني",
+    "subject": "fiqh",
+    "description": "شرح حنبلي كامل لدليل الطالب، محفوظ بجزأيه وفهارسه وخاتمة المؤلف وخاتمة الطبع. تختلف أرقام صفحات الملف عن الترقيم المطبوع الذي يبدأ من جديد في الجزء الثاني.",
+    "topics": [
+      "الطهارة",
+      "الصلاة",
+      "الزكاة",
+      "الصيام",
+      "الحج"
+    ],
+    "source": "https://ar.wikisource.org/wiki/%D9%85%D9%84%D9%81:%D9%86%D9%8A%D9%84_%D8%A7%D9%84%D9%85%D8%A2%D8%B1%D8%A8_%D8%A8%D8%B4%D8%B1%D8%AD_%D8%AF%D9%84%D9%8A%D9%84_%D8%A7%D9%84%D8%B7%D8%A7%D9%84%D8%A8.pdf",
+    "downloadUrl": "https://upload.wikimedia.org/wikisource/ar/6/67/%D9%86%D9%8A%D9%84_%D8%A7%D9%84%D9%85%D8%A2%D8%B1%D8%A8_%D8%A8%D8%B4%D8%B1%D8%AD_%D8%AF%D9%84%D9%8A%D9%84_%D8%A7%D9%84%D8%B7%D8%A7%D9%84%D8%A8.pdf",
+    "inputFile": "nayl-hanbali.pdf",
+    "asset": "books/nayl-hanbali.pdf",
+    "pages": 323,
+    "publisher": "المطبعة العامرة بمصر",
+    "edition": "1288هـ؛ الجزآن في ملف واحد",
+    "licenseName": "ملكية عامة — طبعة تراثية قديمة",
+    "licenseUrl": "https://ar.wikisource.org/w/index.php?oldid=129392",
+    "rightsNote": "يصرح ويكي مصدر بأن الملف في الملكية العامة لانتهاء مدة الحقوق. حُفظت المصورة الأصلية دون تغيير، مع نسبة المؤلف والمطبعة ومصدر الرقمنة؛ صفحات القراءة مستخرجة من الملف نفسه.",
+    "sha256": "21b2cf33aab718ef9be7583e8d4ebdeaeee2a0fde908b906325c7f9603449baa",
+    "schools": [
+      "hanbali"
+    ],
+    "chapters": [
+      {
+        "title": "الطهارة",
+        "pdfPage": 7,
+        "printedPage": "ج1، 4"
+      },
+      {
+        "title": "الصلاة",
+        "pdfPage": 37,
+        "printedPage": "ج1، 34"
+      },
+      {
+        "title": "الزكاة",
+        "pdfPage": 72,
+        "printedPage": "ج1، 69"
+      },
+      {
+        "title": "الصيام",
+        "pdfPage": 82,
+        "printedPage": "ج1، 79"
+      },
+      {
+        "title": "الحج",
+        "pdfPage": 88,
+        "printedPage": "ج1، 85"
+      }
+    ],
+    "reviewedOn": "2026-10-25"
   }
 ]
