@@ -1,0 +1,10 @@
+<resources>
+    <string name="quality_zoom_in">تكبير الصفحة</string>
+    <string name="quality_zoom_out">تصغير الصفحة</string>
+    <string name="quality_zoom_state">نسبة التكبير %1$d بالمئة</string>
+    <string name="quality_audio_seek">موضع الاستماع</string>
+    <string name="quality_source_checked">كان الرابط متاحًا عند الفحص بتاريخ %1$s. قد تتغير إتاحة المصدر لاحقًا.</string>
+    <string name="quality_source_unverified">تعذر تأكيد إتاحة الرابط في آخر فحص بتاريخ %1$s. يمكنك إعادة محاولة فتح المصدر.</string>
+    <string name="quality_duration">المدة: %1$s</string>
+    <string name="quality_metadata_unknown">التاريخ أو المدة غير المعروضين لم يُوثقا من المصدر بعد.</string>
+</resources>

@@ -1,0 +1,169 @@
+{
+  "version": "0.20.0",
+  "checkedOn": "2026-10-25",
+  "scope": "First 4096 bytes only, not whole audio or listening review",
+  "tracks": [
+    {
+      "id": "tahawiyyah-salamah-full",
+      "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain_01/Almtoon_Al3lmeeh/Al3qedh_AlT7aweh/ar_Al3qedh_AlT7aweh_Salamah.mp3",
+      "httpStatus": 206,
+      "contentRange": "bytes 0-4095/6961907",
+      "sampleSha256": "01d4161228cf37df6500956e94794cec3414595644b6fa91bfe7c1bb59aec295",
+      "priorSampleMatched": null,
+      "status": "passed"
+    },
+    {
+      "id": "nawawi-fifty-alansari-full",
+      "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain_01/Almtoon_Al3lmeeh/AlArb3un_AlNuweh/ar_AlArb3un_AlNuweh_AlAnsaree.mp3",
+      "httpStatus": 206,
+      "contentRange": "bytes 0-4095/102609502",
+      "sampleSha256": "b891073e377981d46b6ae2791b2f9926349cd8390783bea1c7aa52f71272b266",
+      "priorSampleMatched": null,
+      "status": "passed"
+    },
+    {
+      "id": "tuhfa-alhashim-01",
+      "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_01_Tohfat_AlAtfal_Alhashim.mp3",
+      "httpStatus": 206,
+      "contentRange": "bytes 0-4095/2265170",
+      "sampleSha256": "7d016d88beb5ce92c600847fe4570523e0cef5871e71db6cecb7f979b90f3cf9",
+      "priorSampleMatched": null,
+      "status": "passed"
+    },
+    {
+      "id": "tuhfa-alhashim-02",
+      "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_02_Tohfat_AlAtfal_Alhashim.mp3",
+      "httpStatus": 206,
+      "contentRange": "bytes 0-4095/1572612",
+      "sampleSha256": "659894656a9a45a7aa9e7381c5f5a41f78110c42e12299d9932df2ce6b148154",
+      "priorSampleMatched": null,
+      "status": "passed"
+    },
+    {
+      "id": "tuhfa-alhashim-03",
+      "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_03_Tohfat_AlAtfal_Alhashim.mp3",
+      "httpStatus": 206,
+      "contentRange": "bytes 0-4095/741291",
+      "sampleSha256": "123d3da37366c53f9b898e5352a847215a8642ba977fd7b26c2695db54e6d6df",
+      "priorSampleMatched": null,
+      "status": "passed"
+    },
+    {
+      "id": "tuhfa-alhashim-04",
+      "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_04_Tohfat_AlAtfal_Alhashim.mp3",
+      "httpStatus": 206,
+      "contentRange": "bytes 0-4095/832406",
+      "sampleSha256": "678c05cfbb8dc057836d952bd16d01f9ab60cfae413dff9e6497dbb298f09a67",
+      "priorSampleMatched": null,
+      "status": "passed"
+    },
+    {
+      "id": "tuhfa-alhashim-05",
+      "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_05_Tohfat_AlAtfal_Alhashim.mp3",
+      "httpStatus": 206,
+      "contentRange": "bytes 0-4095/1105752",
+      "sampleSha256": "a151492d85dce84a61625f7aff973cc8d08cec3d8f80d04f022248ec53e5902a",
+      "priorSampleMatched": null,
+      "status": "passed"
+    },
+    {
+      "id": "tuhfa-alhashim-06",
+      "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_06_Tohfat_AlAtfal_Alhashim.mp3",
+      "httpStatus": 206,
+      "contentRange": "bytes 0-4095/963228",
+      "sampleSha256": "88643eea668c3a752a631c6bc896db34de0ae6ba1f485d88b3ac409a8f3f0b85",
+      "priorSampleMatched": null,
+      "status": "passed"
+    },
+    {
+      "id": "tuhfa-alhashim-07",
+      "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_07_Tohfat_AlAtfal_Alhashim.mp3",
+      "httpStatus": 206,
+      "contentRange": "bytes 0-4095/746307",
+      "sampleSha256": "4e551daa5a4c848aeeaa31fb60a28ccbb5e4679a5829e28a7de35585978ecce7",
+      "priorSampleMatched": null,
+      "status": "passed"
+    },
+    {
+      "id": "amer-fatiha",
+      "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain_01/Ta3lim_Tajweed/ar_02_Ta3lim_Tajweed.mp3",
+      "httpStatus": 206,
+      "contentRange": "bytes 0-4095/6971368",
+      "sampleSha256": "6f9e34ec1d740df4cf1d363678351ffd07386f77ded7d86765d8fc9eb7aea07b",
+      "priorSampleMatched": true,
+      "status": "passed"
+    },
+    {
+      "id": "amer-stopping",
+      "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain_01/Ta3lim_Tajweed/ar_03_Ta3lim_Tajweed.mp3",
+      "httpStatus": 206,
+      "contentRange": "bytes 0-4095/6967984",
+      "sampleSha256": "6f9e34ec1d740df4cf1d363678351ffd07386f77ded7d86765d8fc9eb7aea07b",
+      "priorSampleMatched": true,
+      "status": "passed"
+    },
+    {
+      "id": "amer-idgham",
+      "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain_01/Ta3lim_Tajweed/ar_04_Ta3lim_Tajweed.mp3",
+      "httpStatus": 206,
+      "contentRange": "bytes 0-4095/6916072",
+      "sampleSha256": "6f9e34ec1d740df4cf1d363678351ffd07386f77ded7d86765d8fc9eb7aea07b",
+      "priorSampleMatched": true,
+      "status": "passed"
+    },
+    {
+      "id": "amer-izhar",
+      "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain_01/Ta3lim_Tajweed/ar_06_Ta3lim_Tajweed.mp3",
+      "httpStatus": 206,
+      "contentRange": "bytes 0-4095/6563560",
+      "sampleSha256": "6f9e34ec1d740df4cf1d363678351ffd07386f77ded7d86765d8fc9eb7aea07b",
+      "priorSampleMatched": true,
+      "status": "passed"
+    },
+    {
+      "id": "amer-ikhfa",
+      "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain_01/Ta3lim_Tajweed/ar_07_Ta3lim_Tajweed.mp3",
+      "httpStatus": 206,
+      "contentRange": "bytes 0-4095/7005928",
+      "sampleSha256": "6f9e34ec1d740df4cf1d363678351ffd07386f77ded7d86765d8fc9eb7aea07b",
+      "priorSampleMatched": true,
+      "status": "passed"
+    },
+    {
+      "id": "huthify-105",
+      "url": "https://download.qurancomplex.gov.sa/new-sounds/huthify-01/hafs/sura/10-105D00-A01.mp3",
+      "httpStatus": 206,
+      "contentRange": "bytes 0-4095/328960",
+      "sampleSha256": "2fce506c938f5fb588fc3234c266d70a57f52feec9249c38fe403a26a2690ad1",
+      "priorSampleMatched": null,
+      "status": "passed"
+    },
+    {
+      "id": "huthify-108",
+      "url": "https://download.qurancomplex.gov.sa/new-sounds/huthify-01/hafs/sura/10-108D00-A01.mp3",
+      "httpStatus": 206,
+      "contentRange": "bytes 0-4095/192000",
+      "sampleSha256": "e81cf6113383ef28eac815738d1b51d8702ed8a7455ad808b5e3d77676c3042c",
+      "priorSampleMatched": null,
+      "status": "passed"
+    },
+    {
+      "id": "huthify-112",
+      "url": "https://download.qurancomplex.gov.sa/new-sounds/huthify-01/hafs/sura/10-112D00-A01.mp3",
+      "httpStatus": 206,
+      "contentRange": "bytes 0-4095/185472",
+      "sampleSha256": "1e2271921b1d34816c096d8064aef28b25ac0f7ff596f56f1895bb08e286b229",
+      "priorSampleMatched": null,
+      "status": "passed"
+    },
+    {
+      "id": "huthify-114",
+      "url": "https://download.qurancomplex.gov.sa/new-sounds/huthify-01/hafs/sura/10-114D00-A01.mp3",
+      "httpStatus": 206,
+      "contentRange": "bytes 0-4095/353728",
+      "sampleSha256": "a1b90b87b2d275cc38b724d3ccf034e5b6e545f7c54c71a7ede49fd5232e5895",
+      "priorSampleMatched": null,
+      "status": "passed"
+    }
+  ]
+}

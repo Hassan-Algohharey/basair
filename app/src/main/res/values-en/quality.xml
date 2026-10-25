@@ -1,0 +1,10 @@
+<resources>
+    <string name="quality_zoom_in">Zoom in on the page</string>
+    <string name="quality_zoom_out">Zoom out of the page</string>
+    <string name="quality_zoom_state">Zoom %1$d percent</string>
+    <string name="quality_audio_seek">Listening position</string>
+    <string name="quality_source_checked">The link was reachable when checked on %1$s. Source availability may change.</string>
+    <string name="quality_source_unverified">Link availability could not be confirmed on %1$s. You can try opening the source again.</string>
+    <string name="quality_duration">Duration: %1$s</string>
+    <string name="quality_metadata_unknown">Dates or durations that are not shown have not yet been documented from the source.</string>
+</resources>

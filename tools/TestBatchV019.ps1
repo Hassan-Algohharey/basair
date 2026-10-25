@@ -219,7 +219,7 @@ if ($Phase -in @('All','Media','MediaFilters')) {
  TapNode (Show 'تصفية بمدة التسجيل'); Tap 'قصير — حتى 3 دقائق'
  Show 'عدد المواد: 1' | Out-Null
  Show 'خزائن الله تغني كل مفتقر' | Out-Null
- Show 'المدة بالمصدر: 59 ثانية' | Out-Null
+ Show 'المدة: 0:59' | Out-Null
  TapNode (Show 'المصدر والمشاهدة')
  Find 'خزائن الله تغني كل مفتقر' | Out-Null
  if (-not (Contains 'https://t.me/Ahmed_Elaraby/2304')) {throw 'Original short-video URL missing'}

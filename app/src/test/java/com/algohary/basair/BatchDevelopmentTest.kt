@@ -55,11 +55,11 @@ class BatchDevelopmentTest {
     @Test fun publicationYearFilterCombinesWithoutGuessingUnknownDates() {
         val all = MediaUiState(items = MediaCatalog.items)
         assertEquals(43, filteredMediaItems(all.copy(yearFilter = 1435)).size)
-        assertEquals(45, filteredMediaItems(all.copy(yearFilter = 0)).size)
-        assertTrue(filteredMediaItems(all.copy(yearFilter = 1434)).isEmpty())
+        assertEquals(26, filteredMediaItems(all.copy(yearFilter = 0)).size)
+        assertEquals(7, filteredMediaItems(all.copy(yearFilter = 1434)).size)
         assertEquals(43, filteredMediaItems(all.copy(yearFilter = 1435, scholarFilter = "almunajjid", seriesFilter = "munajjid-nawawi")).size)
         assertTrue(filteredMediaItems(all.copy(yearFilter = 1435, scholarFilter = "bin-baz")).isEmpty())
-        assertTrue(MediaCatalog.items.filter { it.publishedHijriYear != null }.all { it.publishedDateLabel.contains("1435") })
+        assertTrue(MediaCatalog.items.filter { it.publishedHijriYear != null }.all { it.publishedDateLabel.isNotBlank() })
     }
     @Test fun sourceIndexContainsAll43NumberedEpisodesWithoutReplacingOldIds() {
         val episodes = orderedSeriesItems(MediaCatalog.items, "munajjid-nawawi")

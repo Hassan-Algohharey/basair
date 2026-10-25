@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewedOn": "2026-10-25",
-  "scope": "مراجعة صفحات المصادر والعناوين والنسبة وعناصر الوسائط وفهارس السلاسل؛ أضيفت صفحات مؤسسة تاج في0.14.0، واستكملت فهرسة حلقات الأربعين43 وصفحاتها وفهرسها الخماسي ومنشور المقطع ومدته وتواريخه في0.19.0. ليست مراجعة مشاهدة وسماع شاملة؛ مطابقة مواضع المتون منفصلة في ملفات book-lessons والقراءات.",
+  "scope": "مراجعة صفحات المصادر والعناوين والنسبة وعناصر الوسائط وفهارس السلاسل؛ أضيفت صفحات مؤسسة تاج في0.14.0، واستكملت فهرسة حلقات الأربعين43 وصفحاتها وفهرسها الخماسي ومنشور المقطع ومدته وتواريخه في0.19.0. ليست مراجعة مشاهدة وسماع شاملة؛ مطابقة مواضع المتون منفصلة في ملفات book-lessons والقراءات. في0.20.0 فُحصت الروابط بفحص HTTP محدود واستكملت تواريخ المواد الظاهرة ومدد المشغلات الأصلية المضمنة؛ ليس فحص مشاهدة أو سماع شاملًا. التفاصيل في link-audit-v020.json.",
   "delivery": "هذا فهرس روابط صفحات المصادر الأصلية، مع فتح مشغلاتها خارجيًا دون تنزيل الفيديو أو إعادة رفعه. الدروس الصوتية التي يشغلها التطبيق مسجلة في فهرس content/tajweed-media المستقل.",
   "identityEvidence": [
     {
@@ -1492,347 +1492,741 @@
   },
   "dateEvidence": [
     {
+      "itemId": "barrak-wasael-01",
+      "url": "https://sh-albarrak.com/books-explanations/lessons/2102",
+      "pageSha256": "14874d0863fb28098b52bffd8e71c9daed40470efba76468448de38efea54644",
+      "label": "١/ربيع الأول/١٤٣٤ الموافق ١٣/يناير/٢٠١٣",
+      "hijriYear": 1434,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "barrak-wasael-02",
+      "url": "https://sh-albarrak.com/books-explanations/lessons/2103",
+      "pageSha256": "9f655f9b03518fea89b7ea0c8bb1ca1b1194bb4b011c56f0da159aa3f9d6157c",
+      "label": "٣/ربيع الأول/١٤٣٤ الموافق ١٥/يناير/٢٠١٣",
+      "hijriYear": 1434,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "barrak-wasael-03",
+      "url": "https://sh-albarrak.com/books-explanations/lessons/2104",
+      "pageSha256": "692c356b05a6b9b928c22a82c6e4676054ed913f28da0e64960473f4bfa00418",
+      "label": "٤/ربيع الثاني/١٤٣٤ الموافق ١٤/فبراير/٢٠١٣",
+      "hijriYear": 1434,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "barrak-wasael-04",
+      "url": "https://sh-albarrak.com/books-explanations/lessons/2105",
+      "pageSha256": "758fa125625bdd2a91765c151b05f714f41cb4648108b1129b622750960c4094",
+      "label": "٤/ربيع الثاني/١٤٣٤ الموافق ١٤/فبراير/٢٠١٣",
+      "hijriYear": 1434,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "barrak-wasael-05",
+      "url": "https://sh-albarrak.com/books-explanations/lessons/2106",
+      "pageSha256": "16d182b01164433eb377dcd0b1925f3c5d2ec5e27d2c0c72ba9127cc144f0ee7",
+      "label": "٦/ربيع الثاني/١٤٣٤ الموافق ١٦/فبراير/٢٠١٣",
+      "hijriYear": 1434,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "barrak-wasael-06",
+      "url": "https://sh-albarrak.com/books-explanations/lessons/2107",
+      "pageSha256": "b520de8c3104bb7911c4780a3d01cf5cec07c45a7863bfcb377900c7463cd2b0",
+      "label": "١٣/ربيع الثاني/١٤٣٤ الموافق ٢٣/فبراير/٢٠١٣",
+      "hijriYear": 1434,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "barrak-wasael-07",
+      "url": "https://sh-albarrak.com/books-explanations/lessons/2108",
+      "pageSha256": "339c5281a0bb2695daa8f51610f75edda3101b1292839c125ca437c7b724bfad",
+      "label": "١٥/ربيع الثاني/١٤٣٤ الموافق ٢٥/فبراير/٢٠١٣",
+      "hijriYear": 1434,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "munajjid-certainty",
+      "url": "https://almunajjid.com/speeches/lessons/829",
+      "pageSha256": "a8b0ff2983913152cc39af6433a3fe6062b1324157470d907665497d6592d3d5",
+      "label": "25 رجب 1438",
+      "hijriYear": 1438,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "munajjid-divine-love",
+      "url": "https://almunajjid.com/speeches/lessons/828",
+      "pageSha256": "c8f5c41b701066308e77655359cfc3e2e2f483e312da5c15d9c89a8c5214fd29",
+      "label": "14 جمادى الأولى 1438",
+      "hijriYear": 1438,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "munajjid-dua-causes",
+      "url": "https://almunajjid.com/speeches/lessons/832",
+      "pageSha256": "65ada3d40dace04bdcca788ea14ff6a2210747d521f2dd945c6208854d3c2b4e",
+      "label": "13 شوّال 1438",
+      "hijriYear": 1438,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "munajjid-dua-conditions",
+      "url": "https://almunajjid.com/speeches/lessons/830",
+      "pageSha256": "526eb75819e2cb12325c82b9c6017094757350fce7015b05adeb555d53deba0f",
+      "label": "08 رمضان 1438",
+      "hijriYear": 1438,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "munajjid-gaming",
+      "url": "https://almunajjid.com/selection/lessons/1397",
+      "pageSha256": "83db852e2a7e4675b2de45a828d873c03c035ce565c1b0aedb3e68307b1c4ba5",
+      "label": "04 ذو القعدة 1442",
+      "hijriYear": 1442,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "munajjid-knowing-allah",
+      "url": "https://almunajjid.com/selection/lessons/1400",
+      "pageSha256": "a8fbab4a7976025a5af3870f8cec68ad3812397533954985e390f66a81091bf2",
+      "label": "04 ذو القعدة 1442",
+      "hijriYear": 1442,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
       "itemId": "munajjid-nawawi-01",
       "url": "https://almunajjid.com/scientific-series/lessons/734",
-      "pageSha256": "0ad192eb6ecfdf41f264317b0e1d15d4b0280f4513bb881d26f51cd56b34e301",
+      "pageSha256": "567cd5b1f1f19cf35673d5c259fe5d808ad6e520eae2c53c364a6de71c7d6653",
       "label": "21 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-02",
       "url": "https://almunajjid.com/scientific-series/lessons/735",
-      "pageSha256": "5f9cadfd61c1064fecdddba870ae8d7a7bba7951555f194f87c30aa9840f83c3",
+      "pageSha256": "69d69f97c83495da5ed89aa65325d9a4dc2ab8e3c10e85210dfb4d6c2f78b9be",
       "label": "21 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-03",
       "url": "https://almunajjid.com/scientific-series/lessons/736",
-      "pageSha256": "acc2c8d51dd5a82a01bd94af09905eaf41e3c1cf88ee9a50708c7230e926da2d",
+      "pageSha256": "85c3c240f936ec3df8349c1a890357155b5295f3ddf1af0fad8dccf093749914",
       "label": "21 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-04",
       "url": "https://almunajjid.com/scientific-series/lessons/737",
-      "pageSha256": "8e83b6baac9798fa903153dc742dc31148c1c74a45493cf20d1a26fdcc95b7b5",
+      "pageSha256": "2460cbf46a76daeec3cd91175a59337f4356aac96d6e11de069ba8d8ef590845",
       "label": "21 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-05",
       "url": "https://almunajjid.com/scientific-series/lessons/738",
-      "pageSha256": "4f4093fe704971cb2f9f453f3059c6bb4529c40a7800b488a2280bdd3199e420",
+      "pageSha256": "dba93869ffd69fbc3c2836ec451acb35d5e8587e582a2d3bdc690398420c7f20",
       "label": "21 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-06",
       "url": "https://almunajjid.com/scientific-series/lessons/739",
-      "pageSha256": "5c5ebb5b1da2b9d6110409e633017a2ae7c3f138a3fcee883b27f48ae261069a",
+      "pageSha256": "af007c8cfc9568413bf27ed64c57d644f62129568daca15c26f147aa776c5eee",
       "label": "21 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-07",
       "url": "https://almunajjid.com/scientific-series/lessons/740",
-      "pageSha256": "4308b276d276e1f10d0ba7b965f4a98a020ade103f7fa1be3095e40b675d4619",
+      "pageSha256": "33f9d9f2ee6528decd3d9400920e74b60775b38dd6a73ab323588081558017ca",
       "label": "21 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-08",
       "url": "https://almunajjid.com/scientific-series/lessons/741",
-      "pageSha256": "840924de82dfdb877f3d388728880a065f9a6828cbc6d0c3839be77101801d96",
+      "pageSha256": "7b2131e62c74acf158d95c1da2b5fccbf1f14c8d112e14972050de43d8b0be7a",
       "label": "21 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-09",
       "url": "https://almunajjid.com/scientific-series/lessons/742",
-      "pageSha256": "3edaf21d6c6aab123b0749942c0e767c17d439150ffb674a4aff5be7efcb8636",
+      "pageSha256": "0091b67181ebd42b43f7e8c36a1d8d5ea1ea77ce4e26e9c2233f553d593b9e0b",
       "label": "21 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-10",
       "url": "https://almunajjid.com/scientific-series/lessons/743",
-      "pageSha256": "6af77964cdd2cfe36480e015f6cf339a5bee7e18e6f2f5e51e2d94137b8234d7",
+      "pageSha256": "bae213bd918e08fe19c18dedaaf67c1858bbe6f0d6a449624ef10fb782206efd",
       "label": "03 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-11",
       "url": "https://almunajjid.com/scientific-series/lessons/744",
-      "pageSha256": "4c8ef1df66424155b4946b8fb0fed8242fe684693be3be679801d53b79812b0c",
+      "pageSha256": "293f9fe1f372e1420f75ec05796d56c30600181d85f9bd891aeb69b1e7af680d",
       "label": "23 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-12",
       "url": "https://almunajjid.com/scientific-series/lessons/745",
-      "pageSha256": "8f9e5a434c6ceb1aefba5ae563ef9fbbecd19bd8567deebd4161cecf838951b2",
+      "pageSha256": "7dabce54a104b682b49e4eecf7c7e14079e250e34782d88c14ec916151b13eb9",
       "label": "23 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-13",
       "url": "https://almunajjid.com/scientific-series/lessons/746",
-      "pageSha256": "e5914e34c5db45d19c7a0dfca2515ac8fffe9d0f26f9216feab98822e434d07b",
+      "pageSha256": "0a54ab6235000a136aaad62e5d03fd10eec194915b083ad6f0a987765183e756",
       "label": "23 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-14",
       "url": "https://almunajjid.com/scientific-series/lessons/747",
-      "pageSha256": "27226c2490031ab41d145c5e8bb23b53bbca7b2e434d4d9cb19fa90ec693dbfc",
+      "pageSha256": "b861dd865cc858868a9943cb4441e5c5aef9702f403e359bc4b5c2d05b1426c0",
       "label": "23 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-15",
       "url": "https://almunajjid.com/scientific-series/lessons/748",
-      "pageSha256": "092910a66b4efaa48fab2ff174d06cdd913119fb58c43512719d19528a06ebba",
+      "pageSha256": "53f92e36841e64e33e3d7c407efa1ea7f7de79167f065a2ff7159a3ed89aca2d",
       "label": "23 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-16",
       "url": "https://almunajjid.com/scientific-series/lessons/749",
-      "pageSha256": "60c5cb6b195c59169818b9512532a522948e9a928fa31c6e856a0513d23f1e11",
+      "pageSha256": "d44a73d8b726dddabda7c62e086b62c3ded32031ef978e9826c510f5b85b4641",
       "label": "23 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-17",
       "url": "https://almunajjid.com/scientific-series/lessons/750",
-      "pageSha256": "31b9b50c1ac04ef827eb363e67658c311bbcbdd98881f45469e150aa63afec05",
+      "pageSha256": "0c014795ec78b712a539c397b136ed22ed9127244418df85f64e7ab722e2dd7b",
       "label": "23 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-18",
       "url": "https://almunajjid.com/scientific-series/lessons/751",
-      "pageSha256": "f3091dcb15c91271c400b7115ed9f498836bedbb79921562acf838dc6333419b",
+      "pageSha256": "deb78add9f0c1a8cb449431bbe0606c8dd1be2ef84be6f74ecaa6fc8ff0e096a",
       "label": "23 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-19",
       "url": "https://almunajjid.com/scientific-series/lessons/752",
-      "pageSha256": "11cb976bdc998dc52ca49c4f77768cb73fd82aee059e1d91686e9cace23f1a7c",
+      "pageSha256": "9ff90cfae9bc97ad7b36bc2e8d3d9f923384270cc461c651fee8d10c27aef202",
       "label": "23 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-20",
       "url": "https://almunajjid.com/scientific-series/lessons/753",
-      "pageSha256": "6ff1b023c1a8368341aa9a392446ff2df6325c56d749ea7d6df87177b8922a97",
+      "pageSha256": "8529ac21d57286ac45d50c06b5b2e6d05c5a43f0c8345bfa533123d6d910a67a",
       "label": "24 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-21",
       "url": "https://almunajjid.com/scientific-series/lessons/754",
-      "pageSha256": "b219cbd9ce37b7071544015af27891279eb13e3d20b34dbf9466eba8af8af1ec",
+      "pageSha256": "e6dffd9d843701a1b157c25bd158de82f384e40ec532c18e84d9431fa96363e8",
       "label": "24 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-22",
       "url": "https://almunajjid.com/scientific-series/lessons/755",
-      "pageSha256": "48f87f6252aed6b89af19c89a0957796f67e54eab78057eb1671e2bad422c867",
+      "pageSha256": "544aabf4b0458440b69f5f759284eefce6d5d5578eb67557e97744d748cfdba5",
       "label": "24 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-23",
       "url": "https://almunajjid.com/scientific-series/lessons/756",
-      "pageSha256": "58137ee871a011d6948d308eadc506d53de73bbd7becf651fe2e1ce415b24a69",
+      "pageSha256": "ab0c1725a35d635625c05dbfe9ab69fa8338c843f5b950f2802eddaac67067df",
       "label": "24 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-24",
       "url": "https://almunajjid.com/scientific-series/lessons/757",
-      "pageSha256": "24002fbc8456c1513cd9a9cf2af8cd9b36209f4eaab0963d2b0e0e9d61e9297c",
+      "pageSha256": "e69a995f58f70b1ad64d74c8d3170bf22b4dd25918622608a7597fa5f9bf65e3",
       "label": "24 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-25",
       "url": "https://almunajjid.com/scientific-series/lessons/758",
-      "pageSha256": "aece615f197e4685a2c6e0307649e0986d1668b0bd3e1de78d15b8b5be1a9db6",
+      "pageSha256": "19e4cac9c82f00e669183319000a081e82ed27a42058b04fe4b6fd4cc599065c",
       "label": "24 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-26",
       "url": "https://almunajjid.com/scientific-series/lessons/759",
-      "pageSha256": "fc56e7fa1173d66781081aca125e8defcae1590bedf46d0c9672d75e8c6191cb",
+      "pageSha256": "0de1dd792d221ce4e783e1c57b9ccd42b857184e9806ca6ed48829d0ef8f99f3",
       "label": "24 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-27",
       "url": "https://almunajjid.com/scientific-series/lessons/760",
-      "pageSha256": "af2222d0ab410d5da0b006cfadaf03489b4795a8033e29faf31b654082233739",
+      "pageSha256": "693cbb5ca3deeeb351410de64ffc1bf6f9302a6d538ec1b555b35decea4c51e0",
       "label": "24 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-28",
       "url": "https://almunajjid.com/scientific-series/lessons/761",
-      "pageSha256": "4576b3e008d66922c4e2f7ae0ae799098329f531f3af06142889ef14ea424c4a",
+      "pageSha256": "9c5fdf345305038ff6274c3693e4857f25c7a857d733fb792a4b8215e4353b17",
       "label": "24 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-29",
       "url": "https://almunajjid.com/scientific-series/lessons/762",
-      "pageSha256": "2a7b000014518e8673a178f567030c23010bd0305fa10c207a5ad782e6c7a7eb",
+      "pageSha256": "fc493ffbefb6d8d14bc94c2d7bb046f22d690f70186f72a6ac4a1aa106035f73",
       "label": "24 ربيع الآخر 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-30",
       "url": "https://almunajjid.com/scientific-series/lessons/763",
-      "pageSha256": "59bcc5c4464d0fb4be0f394bc392fb88c10bab231899571a93cbc0be23ed81c7",
+      "pageSha256": "86a357b29a376bfb3f4ebc1601a80858e68c2635dfc3ef0b091ff7037a06edc2",
       "label": "25 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-31",
       "url": "https://almunajjid.com/scientific-series/lessons/764",
-      "pageSha256": "fa535859305a3bfe87454311f4d785a85961c34571c16a9352c714f07419cfb8",
+      "pageSha256": "07f467a8b6b838e364e5a3fc423df0c33e03efb88ae3f297410bc94c5b0b3b3a",
       "label": "25 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-32",
       "url": "https://almunajjid.com/scientific-series/lessons/765",
-      "pageSha256": "afa64487dcc27d711ac82b56fb925446aa1bcf6f7c120cb1437bb1a4dedaae47",
+      "pageSha256": "0607b455cc10809e71fa5b1c5535521728b1183ef9072c8275c21e9d0ce88ff8",
       "label": "25 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-33",
       "url": "https://almunajjid.com/scientific-series/lessons/766",
-      "pageSha256": "adede8b56143ab705e49571907931c9c9d120847df1174a7f6074dd772c1ad6b",
+      "pageSha256": "c87cf6c245f2b828985466a5965eb3f040115b0a04494cfb7f247295f70af53e",
       "label": "25 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-34",
       "url": "https://almunajjid.com/scientific-series/lessons/767",
-      "pageSha256": "13249a0c830793b95e3236826f877ab5786eb90a764b970862be8a2817e95e0d",
+      "pageSha256": "1c8560c968c0af1496902366071e06dc14f2fa62466a9593d14667343620db85",
       "label": "25 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-35",
       "url": "https://almunajjid.com/scientific-series/lessons/768",
-      "pageSha256": "4d37230c15e8da5c3f553f031403645d337c65e9c52d49985988a4ab2da75c01",
+      "pageSha256": "d28ed0331d7f3ecaf9472b6bf304bdf033a0fc5cf6d9b2c065304d15e762bef0",
       "label": "25 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-36",
       "url": "https://almunajjid.com/scientific-series/lessons/769",
-      "pageSha256": "ed139521cbefe8abe33e14e4473e056eb6ec740534422b16c1ce6c456841e1d4",
+      "pageSha256": "8b756937cbc6eae63594620a9a20d2a525e699f2c07fc8b500e03a25bfa75895",
       "label": "25 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-37",
       "url": "https://almunajjid.com/scientific-series/lessons/770",
-      "pageSha256": "ce84fbb7a7e61d59fd8d962ab6226f36e9edd44fdd9026749ef2d51fb99ef5c7",
+      "pageSha256": "3cfd11ed52027d98c7c8ea0a37adae4fd40d1ba8ff2d03472e1530ac1afb2126",
       "label": "25 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-38",
       "url": "https://almunajjid.com/scientific-series/lessons/771",
-      "pageSha256": "b3c47fee3bea54ea3475fb1af1d0e541fd6ed4bba556061a6bd72612f7981ce5",
+      "pageSha256": "20d94951e0a8d659268e506bbfb2dee3c78594fafec220373e801ff52cdbebd5",
       "label": "25 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-39",
       "url": "https://almunajjid.com/scientific-series/lessons/772",
-      "pageSha256": "ad2117811909f892bc9d4c54cb5d0ebd16e5d07a97864e184f108e63bac90f98",
+      "pageSha256": "e763fae7d97141625b8661571d0fa544cfcbbc1b7a18c2563d155d64e8b28bdb",
       "label": "25 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-40",
       "url": "https://almunajjid.com/scientific-series/lessons/773",
-      "pageSha256": "cf0e82f5090bda05de04f888b7c8c04b2008edcaafb3ecf478c6bbb6781d2a07",
+      "pageSha256": "5d5053ecb303bf59e9b50063096ed195fe2c587d458ff24f30ec2df18aaf9aa4",
       "label": "25 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-41",
       "url": "https://almunajjid.com/scientific-series/lessons/774",
-      "pageSha256": "3eb2b96aeee795d22fe825fd7e50a6abfa100e2a1be512906664747946fc46b1",
+      "pageSha256": "c5dd45e0626f64f3b055c677e7deaf26498ed110220bf27f9e9f59c6513b1f66",
       "label": "25 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-42",
       "url": "https://almunajjid.com/scientific-series/lessons/775",
-      "pageSha256": "30c2088f361de73a3dd7e331b0d15d1cf4848c4fc878b2abcb01818c724defac",
+      "pageSha256": "c9c4b8cc63a43d3921cfed2ff4655d5fabe2567b4132fb222b00b205021d41fb",
       "label": "25 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
       "reviewedOn": "2026-10-25"
     },
     {
       "itemId": "munajjid-nawawi-43",
       "url": "https://almunajjid.com/scientific-series/lessons/776",
-      "pageSha256": "7a3e7e85542181dd508ebf8a7cbe21fa5a66c0fdc6f12b497c477fefd5a19738",
+      "pageSha256": "d3f6caa000a4f22e007e04a09cc63e8d1b278ce11b173353ec4fa154b3e385f2",
       "label": "25 شعبان 1435",
       "hijriYear": 1435,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "munajjid-provision",
+      "url": "https://almunajjid.com/speeches/lessons/827",
+      "pageSha256": "b66423970e42da86303914ee4cd88a61ad9fd861c3cc626eb19c32757211f3c3",
+      "label": "07 جمادى الأولى 1438",
+      "hijriYear": 1438,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "munajjid-quran-parables",
+      "url": "https://almunajjid.com/speeches/lessons/831",
+      "pageSha256": "8048f575f531df026e77715ec53ab686f0560ea83bcdc72199706d24ac1acc75",
+      "label": "06 شوّال 1438",
+      "hijriYear": 1438,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "munajjid-reassurance",
+      "url": "https://almunajjid.com/selection/lessons/1421",
+      "pageSha256": "a8f8d53cbd994d85e93214f07cb8ba0465d3cb21e013c4728db6c76cc50f3dea",
+      "label": "22 صفر 1443",
+      "hijriYear": 1443,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "munajjid-recompense",
+      "url": "https://almunajjid.com/speeches/lessons/833",
+      "pageSha256": "3278f36f72bd5f574dd6e3ff51db3db8c930552864e6a1406e15b115bde52dfe",
+      "label": "20 شوّال 1438",
+      "hijriYear": 1438,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "munajjid-summer",
+      "url": "https://almunajjid.com/speeches/lessons/806",
+      "pageSha256": "8decff8dedf017584c4d34c84f19c473c67b26815134f32200c4b673deae7941",
+      "label": "22 شوّال 1436",
+      "hijriYear": 1436,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "munajjid-wisdom-rulings-1",
+      "url": "https://almunajjid.com/speeches/lessons/825",
+      "pageSha256": "19f0ae259bf71fb24cd8caf7bf99ac115a51d34fc2ee1520c9aadd1a282f1cf2",
+      "label": "17 شوّال 1437",
+      "hijriYear": 1437,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-1",
+      "url": "https://qurantaj.com/media/view-article?id=494",
+      "pageSha256": "df71d9bea6d5426b12fe6400c1d95f969c6ae93a345e2fe1a5c0f5ed0e513e25",
+      "label": "١٦ أكتوبر ٢٠١٩",
+      "hijriYear": null,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-10",
+      "url": "https://qurantaj.com/media/view-article?id=485",
+      "pageSha256": "f1ca244b20549dff5a2a88d90e1ef2b2e0be699f329f1040f1c0f218a722f85b",
+      "label": "١٦ أكتوبر ٢٠١٩",
+      "hijriYear": null,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-11",
+      "url": "https://qurantaj.com/media/view-article?id=484",
+      "pageSha256": "eeecde2b4fff58f58969b6cd4d03ea6fdc367a2462181142990ba976abf0a624",
+      "label": "١٦ أكتوبر ٢٠١٩",
+      "hijriYear": null,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-2",
+      "url": "https://qurantaj.com/media/view-article?id=493",
+      "pageSha256": "d47d6a6fb2eacdd624751691f4a1fb563be0c6e6f1d0da0212ca2914f0c1fc3d",
+      "label": "١٦ أكتوبر ٢٠١٩",
+      "hijriYear": null,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-3",
+      "url": "https://qurantaj.com/media/view-article?id=492",
+      "pageSha256": "fc63f1945556ae899516f7e81df7f31a7ade5cb0a5656c3e2c5246d3c7eace34",
+      "label": "١٦ أكتوبر ٢٠١٩",
+      "hijriYear": null,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-4",
+      "url": "https://qurantaj.com/media/view-article?id=491",
+      "pageSha256": "95f008ac0780ba84c35616ec2f3c2305d96c5035cd118de90988442e3edac972",
+      "label": "١٦ أكتوبر ٢٠١٩",
+      "hijriYear": null,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-5",
+      "url": "https://qurantaj.com/media/view-article?id=490",
+      "pageSha256": "9c47756e87d5b417c43b8d4cd7eb1e890fd7808d58fe457c9dc8b969ed557fa6",
+      "label": "١٦ أكتوبر ٢٠١٩",
+      "hijriYear": null,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-6",
+      "url": "https://qurantaj.com/media/view-article?id=489",
+      "pageSha256": "8f56850560db5cb13dd19febc1dfe8fc3af32860f41b4d4eac49712af3ec52a7",
+      "label": "١٦ أكتوبر ٢٠١٩",
+      "hijriYear": null,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-7",
+      "url": "https://qurantaj.com/media/view-article?id=488",
+      "pageSha256": "1c2383418ca62bc917410f47a93f0b61fb82b138a0dd32016b59d47dc67094eb",
+      "label": "١٦ أكتوبر ٢٠١٩",
+      "hijriYear": null,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-8",
+      "url": "https://qurantaj.com/media/view-article?id=487",
+      "pageSha256": "8f5e7a9b1e33404f54f634b34db183b4854a02833099c24f458b0db9d3e14312",
+      "label": "١٦ أكتوبر ٢٠١٩",
+      "hijriYear": null,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-9",
+      "url": "https://qurantaj.com/media/view-article?id=486",
+      "pageSha256": "d8ce51dec91ea4a30953f70e4d0e1b436f65dbfa1246df0dfdfb1094c78aede9",
+      "label": "١٦ أكتوبر ٢٠١٩",
+      "hijriYear": null,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-1",
+      "url": "https://qurantaj.com/media/view-article?id=507",
+      "pageSha256": "3eb3a543106503a81f405088b69b92104396e4814765a2d1206142f7516118f5",
+      "label": "١٦ أكتوبر ٢٠١٩",
+      "hijriYear": null,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-2",
+      "url": "https://qurantaj.com/media/view-article?id=506",
+      "pageSha256": "da93c446959ad4a184c0542c4a3e833b1011623d95a01becbfd177efa42531ee",
+      "label": "١٦ أكتوبر ٢٠١٩",
+      "hijriYear": null,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-3",
+      "url": "https://qurantaj.com/media/view-article?id=505",
+      "pageSha256": "fc299f80ce1f7cd00b1e95d91e98ed5fe2e6760a172262e98936387e3997b2e8",
+      "label": "١٦ أكتوبر ٢٠١٩",
+      "hijriYear": null,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-4",
+      "url": "https://qurantaj.com/media/view-article?id=504",
+      "pageSha256": "8b4a4f5b6dfa904e0a1f6489f3a7fee7a69ad261f41df5cfb978ef0342cef94c",
+      "label": "١٦ أكتوبر ٢٠١٩",
+      "hijriYear": null,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-5",
+      "url": "https://qurantaj.com/media/view-article?id=503",
+      "pageSha256": "aecd85698aaae27741dd3a1e22b9fdf5ac9fd3f70bd08c1621bafec80753918c",
+      "label": "١٦ أكتوبر ٢٠١٩",
+      "hijriYear": null,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-6",
+      "url": "https://qurantaj.com/media/view-article?id=502",
+      "pageSha256": "b227962359f81e3d8bab4fb2320f1719b8d3a822d33d0e816b830e7b06d0ef62",
+      "label": "١٦ أكتوبر ٢٠١٩",
+      "hijriYear": null,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-7",
+      "url": "https://qurantaj.com/media/view-article?id=501",
+      "pageSha256": "66ee962a308497bdd5e3ea6863869657b43a543cef16c90fc71b8c755553d251",
+      "label": "١٦ أكتوبر ٢٠١٩",
+      "hijriYear": null,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-8",
+      "url": "https://qurantaj.com/media/view-article?id=500",
+      "pageSha256": "2e8dbefe991d6aac84f5f732d09515342666f70dc849314c9fbcfdb61897ced6",
+      "label": "١٦ أكتوبر ٢٠١٩",
+      "hijriYear": null,
+      "method": "Visible item date; not file upload or series creation date",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "araby-khazain-allah",
+      "url": "https://t.me/Ahmed_Elaraby/2304",
+      "pageSha256": "9d28e39bb52f42f3e5f18fffbdc04560553b6ef98869c8336ee4eae39093f0d8",
+      "label": "2024-03-07 (ميلادي / Gregorian)",
+      "hijriYear": null,
+      "method": "Original Telegram post datetime; evidence retained from 0.19.0",
       "reviewedOn": "2026-10-25"
     }
   ],
@@ -1843,6 +2237,405 @@
       "pageSha256": "9d28e39bb52f42f3e5f18fffbdc04560553b6ef98869c8336ee4eae39093f0d8",
       "sourcePlayerDuration": "0:59",
       "durationSeconds": 59,
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-1",
+      "url": "https://qurantaj.com/media/view-article?id=494",
+      "pageSha256": "df71d9bea6d5426b12fe6400c1d95f969c6ae93a345e2fe1a5c0f5ed0e513e25",
+      "durationSeconds": 2956,
+      "method": "Original embedded YouTube player: videoDetails.lengthSeconds",
+      "playerEvidence": {
+        "url": "https://www.youtube.com/watch?v=Bxzo6MDOtGc",
+        "checkedOn": "2026-10-25",
+        "httpStatus": 200,
+        "finalUrl": "https://www.youtube.com/watch?v=Bxzo6MDOtGc",
+        "contentType": "text/html; charset=utf-8",
+        "contentRange": null,
+        "bytesRead": 1303771,
+        "truncated": false,
+        "snapshotSha256": "0a11feec7a9f0f9f5bffdbf217e3730f957cbdc2cea16bf9d87bc95a4308695e",
+        "status": "reachable"
+      },
+      "videoId": "Bxzo6MDOtGc",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-10",
+      "url": "https://qurantaj.com/media/view-article?id=485",
+      "pageSha256": "f1ca244b20549dff5a2a88d90e1ef2b2e0be699f329f1040f1c0f218a722f85b",
+      "durationSeconds": 2956,
+      "method": "Original embedded YouTube player: videoDetails.lengthSeconds",
+      "playerEvidence": {
+        "url": "https://www.youtube.com/watch?v=32NG6FWqvPo",
+        "checkedOn": "2026-10-25",
+        "httpStatus": 200,
+        "finalUrl": "https://www.youtube.com/watch?v=32NG6FWqvPo",
+        "contentType": "text/html; charset=utf-8",
+        "contentRange": null,
+        "bytesRead": 1299046,
+        "truncated": false,
+        "snapshotSha256": "7652465d636d8770f1ee8ba8d4cc6179da6d92b64ff7dbeaf2e36b90c83f85b0",
+        "status": "reachable"
+      },
+      "videoId": "32NG6FWqvPo",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-11",
+      "url": "https://qurantaj.com/media/view-article?id=484",
+      "pageSha256": "eeecde2b4fff58f58969b6cd4d03ea6fdc367a2462181142990ba976abf0a624",
+      "durationSeconds": 3817,
+      "method": "Original embedded YouTube player: videoDetails.lengthSeconds",
+      "playerEvidence": {
+        "url": "https://www.youtube.com/watch?v=wvZqPwaYH-Q",
+        "checkedOn": "2026-10-25",
+        "httpStatus": 200,
+        "finalUrl": "https://www.youtube.com/watch?v=wvZqPwaYH-Q",
+        "contentType": "text/html; charset=utf-8",
+        "contentRange": null,
+        "bytesRead": 1294046,
+        "truncated": false,
+        "snapshotSha256": "2365acd4ff4b29e4dce13c54de6cb0995dd893392b36245c7d8d76d651805082",
+        "status": "reachable"
+      },
+      "videoId": "wvZqPwaYH-Q",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-2",
+      "url": "https://qurantaj.com/media/view-article?id=493",
+      "pageSha256": "d47d6a6fb2eacdd624751691f4a1fb563be0c6e6f1d0da0212ca2914f0c1fc3d",
+      "durationSeconds": 2489,
+      "method": "Original embedded YouTube player: videoDetails.lengthSeconds",
+      "playerEvidence": {
+        "url": "https://www.youtube.com/watch?v=MAJ6H06A1B4",
+        "checkedOn": "2026-10-25",
+        "httpStatus": 200,
+        "finalUrl": "https://www.youtube.com/watch?v=MAJ6H06A1B4",
+        "contentType": "text/html; charset=utf-8",
+        "contentRange": null,
+        "bytesRead": 1358153,
+        "truncated": false,
+        "snapshotSha256": "5cdfb3b896decdcb53df21a311e7ecc3ff8720273576f94556fe55dbaadbdf9d",
+        "status": "reachable"
+      },
+      "videoId": "MAJ6H06A1B4",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-3",
+      "url": "https://qurantaj.com/media/view-article?id=492",
+      "pageSha256": "fc63f1945556ae899516f7e81df7f31a7ade5cb0a5656c3e2c5246d3c7eace34",
+      "durationSeconds": 1807,
+      "method": "Original embedded YouTube player: videoDetails.lengthSeconds",
+      "playerEvidence": {
+        "url": "https://www.youtube.com/watch?v=_UnDjO-67Ok",
+        "checkedOn": "2026-10-25",
+        "httpStatus": 200,
+        "finalUrl": "https://www.youtube.com/watch?v=_UnDjO-67Ok",
+        "contentType": "text/html; charset=utf-8",
+        "contentRange": null,
+        "bytesRead": 1316825,
+        "truncated": false,
+        "snapshotSha256": "889bd8f58f734b980f01d2e75e593cdad8f3aa957e93fc61130db84713e43062",
+        "status": "reachable"
+      },
+      "videoId": "_UnDjO-67Ok",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-4",
+      "url": "https://qurantaj.com/media/view-article?id=491",
+      "pageSha256": "95f008ac0780ba84c35616ec2f3c2305d96c5035cd118de90988442e3edac972",
+      "durationSeconds": 3601,
+      "method": "Original embedded YouTube player: videoDetails.lengthSeconds",
+      "playerEvidence": {
+        "url": "https://www.youtube.com/watch?v=_KzWgThc8rY",
+        "checkedOn": "2026-10-25",
+        "httpStatus": 200,
+        "finalUrl": "https://www.youtube.com/watch?v=_KzWgThc8rY",
+        "contentType": "text/html; charset=utf-8",
+        "contentRange": null,
+        "bytesRead": 1322492,
+        "truncated": false,
+        "snapshotSha256": "a80a93745a7cce77bb5bd7155ff2e19883cdaa26ad8cc47a719a4afee5441cff",
+        "status": "reachable"
+      },
+      "videoId": "_KzWgThc8rY",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-5",
+      "url": "https://qurantaj.com/media/view-article?id=490",
+      "pageSha256": "9c47756e87d5b417c43b8d4cd7eb1e890fd7808d58fe457c9dc8b969ed557fa6",
+      "durationSeconds": 3755,
+      "method": "Original embedded YouTube player: videoDetails.lengthSeconds",
+      "playerEvidence": {
+        "url": "https://www.youtube.com/watch?v=FRj2RsvNdYE",
+        "checkedOn": "2026-10-25",
+        "httpStatus": 200,
+        "finalUrl": "https://www.youtube.com/watch?v=FRj2RsvNdYE",
+        "contentType": "text/html; charset=utf-8",
+        "contentRange": null,
+        "bytesRead": 1316341,
+        "truncated": false,
+        "snapshotSha256": "d2a3c0c1c4733e1cd21edc70c18d50602759c931bc7e87d2af2dbef7898cefd4",
+        "status": "reachable"
+      },
+      "videoId": "FRj2RsvNdYE",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-6",
+      "url": "https://qurantaj.com/media/view-article?id=489",
+      "pageSha256": "8f56850560db5cb13dd19febc1dfe8fc3af32860f41b4d4eac49712af3ec52a7",
+      "durationSeconds": 3919,
+      "method": "Original embedded YouTube player: videoDetails.lengthSeconds",
+      "playerEvidence": {
+        "url": "https://www.youtube.com/watch?v=DIe3zlfwWLk",
+        "checkedOn": "2026-10-25",
+        "httpStatus": 200,
+        "finalUrl": "https://www.youtube.com/watch?v=DIe3zlfwWLk",
+        "contentType": "text/html; charset=utf-8",
+        "contentRange": null,
+        "bytesRead": 1313791,
+        "truncated": false,
+        "snapshotSha256": "91e386c2240c235687d26a570fe4d04329b2c6c78d022ca901e5995a7077a634",
+        "status": "reachable"
+      },
+      "videoId": "DIe3zlfwWLk",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-7",
+      "url": "https://qurantaj.com/media/view-article?id=488",
+      "pageSha256": "1c2383418ca62bc917410f47a93f0b61fb82b138a0dd32016b59d47dc67094eb",
+      "durationSeconds": 3325,
+      "method": "Original embedded YouTube player: videoDetails.lengthSeconds",
+      "playerEvidence": {
+        "url": "https://www.youtube.com/watch?v=J9bWWihIUc8",
+        "checkedOn": "2026-10-25",
+        "httpStatus": 200,
+        "finalUrl": "https://www.youtube.com/watch?v=J9bWWihIUc8",
+        "contentType": "text/html; charset=utf-8",
+        "contentRange": null,
+        "bytesRead": 1274381,
+        "truncated": false,
+        "snapshotSha256": "352d619243817c3389043ea1aa4e73579eef405620c879a1efbeffaf5ff4587d",
+        "status": "reachable"
+      },
+      "videoId": "J9bWWihIUc8",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-8",
+      "url": "https://qurantaj.com/media/view-article?id=487",
+      "pageSha256": "8f5e7a9b1e33404f54f634b34db183b4854a02833099c24f458b0db9d3e14312",
+      "durationSeconds": 1390,
+      "method": "Original embedded YouTube player: videoDetails.lengthSeconds",
+      "playerEvidence": {
+        "url": "https://www.youtube.com/watch?v=T3Sf84J7CiI",
+        "checkedOn": "2026-10-25",
+        "httpStatus": 200,
+        "finalUrl": "https://www.youtube.com/watch?v=T3Sf84J7CiI",
+        "contentType": "text/html; charset=utf-8",
+        "contentRange": null,
+        "bytesRead": 1278689,
+        "truncated": false,
+        "snapshotSha256": "aebc431a85b8873e8dc1e7d59802c9a1962df8c654136b9ba177062defeb9daf",
+        "status": "reachable"
+      },
+      "videoId": "T3Sf84J7CiI",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-jazariyyah-9",
+      "url": "https://qurantaj.com/media/view-article?id=486",
+      "pageSha256": "d8ce51dec91ea4a30953f70e4d0e1b436f65dbfa1246df0dfdfb1094c78aede9",
+      "durationSeconds": 3422,
+      "method": "Original embedded YouTube player: videoDetails.lengthSeconds",
+      "playerEvidence": {
+        "url": "https://www.youtube.com/watch?v=6H34yw-QJlM",
+        "checkedOn": "2026-10-25",
+        "httpStatus": 200,
+        "finalUrl": "https://www.youtube.com/watch?v=6H34yw-QJlM",
+        "contentType": "text/html; charset=utf-8",
+        "contentRange": null,
+        "bytesRead": 1317593,
+        "truncated": false,
+        "snapshotSha256": "46af10364a70f001dad8481ad0f9018c93682366f6c8d994e5dda8abb9e815bc",
+        "status": "reachable"
+      },
+      "videoId": "6H34yw-QJlM",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-1",
+      "url": "https://qurantaj.com/media/view-article?id=507",
+      "pageSha256": "3eb3a543106503a81f405088b69b92104396e4814765a2d1206142f7516118f5",
+      "durationSeconds": 3411,
+      "method": "Original embedded YouTube player: videoDetails.lengthSeconds",
+      "playerEvidence": {
+        "url": "https://www.youtube.com/watch?v=8Do87VxmhLQ",
+        "checkedOn": "2026-10-25",
+        "httpStatus": 200,
+        "finalUrl": "https://www.youtube.com/watch?v=8Do87VxmhLQ",
+        "contentType": "text/html; charset=utf-8",
+        "contentRange": null,
+        "bytesRead": 1323552,
+        "truncated": false,
+        "snapshotSha256": "7b191a5b1fb172e74b22609af077b2ea0a14df27dc365acdc21573628aa089a3",
+        "status": "reachable"
+      },
+      "videoId": "8Do87VxmhLQ",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-2",
+      "url": "https://qurantaj.com/media/view-article?id=506",
+      "pageSha256": "da93c446959ad4a184c0542c4a3e833b1011623d95a01becbfd177efa42531ee",
+      "durationSeconds": 5448,
+      "method": "Original embedded YouTube player: videoDetails.lengthSeconds",
+      "playerEvidence": {
+        "url": "https://www.youtube.com/watch?v=v2dfYFUjgsU",
+        "checkedOn": "2026-10-25",
+        "httpStatus": 200,
+        "finalUrl": "https://www.youtube.com/watch?v=v2dfYFUjgsU",
+        "contentType": "text/html; charset=utf-8",
+        "contentRange": null,
+        "bytesRead": 1332749,
+        "truncated": false,
+        "snapshotSha256": "dbdc435fb0596c0232f01397980e3d7b407eda2a3c07ae60392663df05a4fb3f",
+        "status": "reachable"
+      },
+      "videoId": "v2dfYFUjgsU",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-3",
+      "url": "https://qurantaj.com/media/view-article?id=505",
+      "pageSha256": "fc299f80ce1f7cd00b1e95d91e98ed5fe2e6760a172262e98936387e3997b2e8",
+      "durationSeconds": 3524,
+      "method": "Original embedded YouTube player: videoDetails.lengthSeconds",
+      "playerEvidence": {
+        "url": "https://www.youtube.com/watch?v=Ge-7Xn_8foI",
+        "checkedOn": "2026-10-25",
+        "httpStatus": 200,
+        "finalUrl": "https://www.youtube.com/watch?v=Ge-7Xn_8foI",
+        "contentType": "text/html; charset=utf-8",
+        "contentRange": null,
+        "bytesRead": 1297005,
+        "truncated": false,
+        "snapshotSha256": "4c3b3e1416a2e07c26dd871d2a5701a984493e067d745475d37f899e680e03b0",
+        "status": "reachable"
+      },
+      "videoId": "Ge-7Xn_8foI",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-4",
+      "url": "https://qurantaj.com/media/view-article?id=504",
+      "pageSha256": "8b4a4f5b6dfa904e0a1f6489f3a7fee7a69ad261f41df5cfb978ef0342cef94c",
+      "durationSeconds": 4421,
+      "method": "Original embedded YouTube player: videoDetails.lengthSeconds",
+      "playerEvidence": {
+        "url": "https://www.youtube.com/watch?v=k6dyj7ZPFTE",
+        "checkedOn": "2026-10-25",
+        "httpStatus": 200,
+        "finalUrl": "https://www.youtube.com/watch?v=k6dyj7ZPFTE",
+        "contentType": "text/html; charset=utf-8",
+        "contentRange": null,
+        "bytesRead": 1272652,
+        "truncated": false,
+        "snapshotSha256": "093766e40663ebb7f35ebc0b249fb9a56dd6439e6651ed09f6f00d51455b9d80",
+        "status": "reachable"
+      },
+      "videoId": "k6dyj7ZPFTE",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-5",
+      "url": "https://qurantaj.com/media/view-article?id=503",
+      "pageSha256": "aecd85698aaae27741dd3a1e22b9fdf5ac9fd3f70bd08c1621bafec80753918c",
+      "durationSeconds": 4299,
+      "method": "Original embedded YouTube player: videoDetails.lengthSeconds",
+      "playerEvidence": {
+        "url": "https://www.youtube.com/watch?v=WcPMneZuG6Q",
+        "checkedOn": "2026-10-25",
+        "httpStatus": 200,
+        "finalUrl": "https://www.youtube.com/watch?v=WcPMneZuG6Q",
+        "contentType": "text/html; charset=utf-8",
+        "contentRange": null,
+        "bytesRead": 1314655,
+        "truncated": false,
+        "snapshotSha256": "97ad43c6825e1eb031d82147280b448161b60920055e44ef5dd03ac81373a43b",
+        "status": "reachable"
+      },
+      "videoId": "WcPMneZuG6Q",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-6",
+      "url": "https://qurantaj.com/media/view-article?id=502",
+      "pageSha256": "b227962359f81e3d8bab4fb2320f1719b8d3a822d33d0e816b830e7b06d0ef62",
+      "durationSeconds": 4614,
+      "method": "Original embedded YouTube player: videoDetails.lengthSeconds",
+      "playerEvidence": {
+        "url": "https://www.youtube.com/watch?v=wfoClxUpxw4",
+        "checkedOn": "2026-10-25",
+        "httpStatus": 200,
+        "finalUrl": "https://www.youtube.com/watch?v=wfoClxUpxw4",
+        "contentType": "text/html; charset=utf-8",
+        "contentRange": null,
+        "bytesRead": 1270816,
+        "truncated": false,
+        "snapshotSha256": "547f49e47504339466709b609a9ad726c0828b4873aeeef479fa11d37ffbff05",
+        "status": "reachable"
+      },
+      "videoId": "wfoClxUpxw4",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-7",
+      "url": "https://qurantaj.com/media/view-article?id=501",
+      "pageSha256": "66ee962a308497bdd5e3ea6863869657b43a543cef16c90fc71b8c755553d251",
+      "durationSeconds": 2239,
+      "method": "Original embedded YouTube player: videoDetails.lengthSeconds",
+      "playerEvidence": {
+        "url": "https://www.youtube.com/watch?v=mP9C26x7qZo",
+        "checkedOn": "2026-10-25",
+        "httpStatus": 200,
+        "finalUrl": "https://www.youtube.com/watch?v=mP9C26x7qZo",
+        "contentType": "text/html; charset=utf-8",
+        "contentRange": null,
+        "bytesRead": 1300010,
+        "truncated": false,
+        "snapshotSha256": "f2e6c1032649c812592b2ca691c9abb94c10476f71520b3b505426a3e6cd8beb",
+        "status": "reachable"
+      },
+      "videoId": "mP9C26x7qZo",
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-8",
+      "url": "https://qurantaj.com/media/view-article?id=500",
+      "pageSha256": "2e8dbefe991d6aac84f5f732d09515342666f70dc849314c9fbcfdb61897ced6",
+      "durationSeconds": 3143,
+      "method": "Original embedded YouTube player: videoDetails.lengthSeconds",
+      "playerEvidence": {
+        "url": "https://www.youtube.com/watch?v=6-9NH2aSxj4",
+        "checkedOn": "2026-10-25",
+        "httpStatus": 200,
+        "finalUrl": "https://www.youtube.com/watch?v=6-9NH2aSxj4",
+        "contentType": "text/html; charset=utf-8",
+        "contentRange": null,
+        "bytesRead": 1410413,
+        "truncated": false,
+        "snapshotSha256": "89461d804e7961deb11d2b7cef97f9641ef26ffabf774cfb8a91fffef1f53bb3",
+        "status": "reachable"
+      },
+      "videoId": "6-9NH2aSxj4",
       "reviewedOn": "2026-10-25"
     }
   ]

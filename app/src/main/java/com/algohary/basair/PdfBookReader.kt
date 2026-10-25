@@ -27,6 +27,8 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.text.input.KeyboardType
@@ -179,9 +181,12 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
         }
         Row(Modifier.fillMaxWidth().padding(horizontal = 14.dp), verticalAlignment = Alignment.CenterVertically) {
             Text(if (localFile == null) context.getString(R.string.reading_on_demand) else context.getString(R.string.ui_downloaded_reference_offline), Modifier.weight(1f), fontSize = 11.sp, color = muted)
-            TextButton(onClick = { zoom = (zoom - .5f).coerceAtLeast(1f) }, enabled = zoom > 1f) { Text("−") }
-            Text(context.getString(R.string.ui_1, (zoom * 100).roundToInt()), fontSize = 12.sp)
-            TextButton(onClick = { zoom = (zoom + .5f).coerceAtMost(3f) }, enabled = zoom < 3f) { Text("+") }
+            TextButton(onClick = { zoom = (zoom - .5f).coerceAtLeast(1f) }, enabled = zoom > 1f,
+                modifier = Modifier.semantics { contentDescription = context.getString(R.string.quality_zoom_out) }) { Text("−") }
+            Text(context.getString(R.string.ui_1, (zoom * 100).roundToInt()), fontSize = 12.sp,
+                modifier = Modifier.semantics { contentDescription = context.getString(R.string.quality_zoom_state, (zoom * 100).roundToInt()) })
+            TextButton(onClick = { zoom = (zoom + .5f).coerceAtMost(3f) }, enabled = zoom < 3f,
+                modifier = Modifier.semantics { contentDescription = context.getString(R.string.quality_zoom_in) }) { Text("+") }
         }
         Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(horizontal = 8.dp),
             verticalAlignment = Alignment.CenterVertically) {

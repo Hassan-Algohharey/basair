@@ -15,6 +15,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.foundation.selection.toggleable
+import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.stateDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
@@ -167,7 +172,9 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
                     }
                     Text(stringResource(R.string.audio_position, audioTime(position), duration?.let(::audioTime) ?: "--:--:--"))
                     var seeking by remember(track.id) { mutableStateOf<Float?>(null) }
-                    Slider(value = seeking ?: position.toFloat().coerceIn(0f, (duration ?: 1).toFloat().coerceAtLeast(1f)),
+                    val seekLabel = stringResource(R.string.quality_audio_seek)
+                    Slider(modifier = Modifier.semantics { contentDescription = seekLabel; stateDescription = audioTime((seeking ?: position.toFloat()).toLong()) },
+                        value = seeking ?: position.toFloat().coerceIn(0f, (duration ?: 1).toFloat().coerceAtLeast(1f)),
                         onValueChange = { seeking = it }, enabled = active && duration != null && player?.isCurrentMediaItemSeekable == true,
                         valueRange = 0f..(duration ?: 1).toFloat().coerceAtLeast(1f), onValueChangeFinished = {
                             seeking?.let { player?.seekTo(it.toLong()) }; seeking = null
@@ -180,11 +187,11 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
                         TextButton(onClick = { player?.seekForward() }, enabled = active && player?.isCurrentMediaItemSeekable == true, modifier = Modifier.weight(1f)) { Text(stringResource(R.string.audio_forward15)) }
                     }
                     TextButton(onClick = { player?.pause(); player?.stop(); player?.clearMediaItems() }, enabled = currentId != null) { Text(stringResource(R.string.audio_stop)) }
-                    Row {
-                        Checkbox(checked = repeat, onCheckedChange = { enabled ->
+                    Row(Modifier.fillMaxWidth().toggleable(value = repeat, role = Role.Checkbox, onValueChange = { enabled ->
                             repeat = enabled; store.saveRepeat(track.id, enabled)
                             if (active) player?.repeatMode = if (enabled) Player.REPEAT_MODE_ONE else Player.REPEAT_MODE_OFF
-                        })
+                        }), verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+                        Checkbox(checked = repeat, onCheckedChange = null)
                         Text(stringResource(if (track.clipEndMs != null) R.string.audio_repeat_example else R.string.audio_repeat), Modifier.padding(top = 12.dp))
                     }
                     if (currentId != null && !active) Text(stringResource(R.string.audio_other_playing, audioRecording(currentId)?.title.orEmpty()))

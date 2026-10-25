@@ -18,8 +18,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.liveRegion
+import androidx.compose.ui.semantics.LiveRegionMode
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 
 // The parent owns navigation, filters, favorites and external navigation; this screen never downloads media.
@@ -34,7 +39,8 @@ internal data class MediaUiItem(
     val englishSourceNote: String = "", val format: String = "",
     val seriesId: String? = null, val episodeNumber: Int? = null,
     val topics: List<String> = emptyList(), val englishTopics: List<String> = emptyList(),
-    val publishedHijriYear: Int? = null, val publishedDateLabel: String = "", val durationSeconds: Int? = null
+    val publishedHijriYear: Int? = null, val publishedDateLabel: String = "", val durationSeconds: Int? = null,
+    val sourceCheckedOn: String = "", val sourceReachable: Boolean? = null
 )
 internal data class MediaUiState(
     val scholars: List<MediaUiScholar> = emptyList(), val items: List<MediaUiItem> = emptyList(),
@@ -111,7 +117,7 @@ internal fun MediaScreen(state: MediaUiState, onHistory: () -> Unit = {}, onActi
     }
     LazyColumn(contentPadding = PaddingValues(22.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
         item {
-            Text(stringResource(R.string.media_title), style = MaterialTheme.typography.headlineSmall,
+            Text(stringResource(R.string.media_title), modifier = Modifier.semantics { heading() }, style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold)
             Text(stringResource(R.string.media_intro), style = MaterialTheme.typography.bodyMedium, color = Muted)
         }
@@ -192,7 +198,7 @@ internal fun MediaScreen(state: MediaUiState, onHistory: () -> Unit = {}, onActi
         }
         item {
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                Text(stringResource(R.string.media_result_count, results.size), modifier = Modifier.weight(1f), color = Muted)
+                Text(stringResource(R.string.media_result_count, results.size), modifier = Modifier.weight(1f).semantics { liveRegion = LiveRegionMode.Polite }, color = Muted)
                 if (state.query.isNotBlank() || state.scholarFilter != null || state.kindFilter != null || state.seriesFilter != null || state.topicFilter != null || state.sectionFilter != null || state.yearFilter != null || state.durationFilter != null || state.favoritesOnly) {
                     TextButton(onClick = {
                         onAction(MediaAction.Query("")); onAction(MediaAction.ScholarFilter(null))
@@ -218,7 +224,7 @@ private fun MediaItemCard(item: MediaUiItem, state: MediaUiState, onAction: (Med
     OutlinedCard(Modifier.fillMaxWidth()) {
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text(mediaKindLabel(item.kind) + " · " + stringResource(if (item.format == "audio") R.string.media_audio else R.string.media_video), style = MaterialTheme.typography.labelMedium, color = Green)
-            Text(item.title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+            Text(item.title, modifier = Modifier.semantics { heading() }, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
             item.episodeNumber?.let { Text(stringResource(R.string.study_episode, it), color = Muted) }
             if (item.id in state.completedIds) Text(stringResource(R.string.book_study_completed), color = Green)
             item.seriesId?.let { id -> TextButton(onClick = { onAction(MediaAction.SeriesFilter(id)) }) {
@@ -229,7 +235,7 @@ private fun MediaItemCard(item: MediaUiItem, state: MediaUiState, onAction: (Med
             }
             Text(item.topic, style = MaterialTheme.typography.bodyMedium)
             if (item.publishedDateLabel.isNotBlank()) Text(stringResource(R.string.batch_source_date, item.publishedDateLabel), style = MaterialTheme.typography.bodySmall)
-            item.durationSeconds?.let { Text(stringResource(R.string.batch_seconds, it), style = MaterialTheme.typography.bodySmall) }
+            item.durationSeconds?.let { Text(stringResource(R.string.quality_duration, mediaDurationLabel(it)), style = MaterialTheme.typography.bodySmall) }
             if (item.series.isNotBlank()) Text(stringResource(R.string.media_series_value, item.series), style = MaterialTheme.typography.bodySmall)
             Text(stringResource(R.string.media_source_value, item.sourceName), color = Muted, style = MaterialTheme.typography.bodySmall)
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -252,18 +258,22 @@ private fun MediaItemCard(item: MediaUiItem, state: MediaUiState, onAction: (Med
 @Composable
 private fun MediaSourceDialog(item: MediaUiItem, state: MediaUiState, onAction: (MediaAction) -> Unit) {
     AlertDialog(onDismissRequest = { onAction(MediaAction.SelectItem(null)) },
-        title = { Text(item.title) }, text = {
-            Column {
+        title = { Text(item.title, maxLines = 3, overflow = TextOverflow.Ellipsis) }, text = {
+            Column(Modifier.heightIn(max = 460.dp).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 MediaEpisodeNavigation(item, state, onAction)
-                Column(Modifier.heightIn(max = 340.dp).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 state.scholars.find { it.id == item.scholarId }?.let { Text(it.name, fontWeight = FontWeight.Bold) }
                 Text(stringResource(R.string.media_source_value, item.sourceName))
+                if (item.publishedDateLabel.isNotBlank()) Text(stringResource(R.string.batch_source_date, item.publishedDateLabel))
+                item.durationSeconds?.let { Text(stringResource(R.string.quality_duration, mediaDurationLabel(it))) }
+                if (item.sourceCheckedOn.isNotBlank()) Text(stringResource(
+                    if (item.sourceReachable == true) R.string.quality_source_checked else R.string.quality_source_unverified,
+                    item.sourceCheckedOn), style = MaterialTheme.typography.bodySmall)
+                if (item.publishedDateLabel.isBlank() || item.durationSeconds == null) Text(stringResource(R.string.quality_metadata_unknown), style = MaterialTheme.typography.bodySmall)
                 if (item.sourceNote.isNotBlank()) Text(if (LocalConfiguration.current.locales[0].language == "en") item.englishSourceNote else item.sourceNote, style = MaterialTheme.typography.bodySmall)
                 LessonStudyDetails(item, state, onAction)
                 ReportCorrectionButton("${item.id}\n${item.title}\n${item.sourceUrl}")
                 SelectionContainer { Text(item.sourceUrl, style = MaterialTheme.typography.bodySmall) }
                 Text(stringResource(R.string.media_external_notice), style = MaterialTheme.typography.bodySmall)
-                }
             }
         },
         confirmButton = { TextButton(onClick = { onAction(MediaAction.OpenSource(item.sourceUrl)) }) {

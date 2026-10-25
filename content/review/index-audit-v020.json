@@ -1,0 +1,44 @@
+{
+  "version": "0.20.0",
+  "checkedOn": "2026-10-25",
+  "stableMediaIdsAndUrls": 88,
+  "books": 22,
+  "pages": 4398,
+  "chapterEntries": 58,
+  "series": [
+    {
+      "id": "bin-baz-tahawi",
+      "indexed": 3,
+      "coverage": "partial",
+      "missingEpisodeNumbers": [
+        2
+      ]
+    },
+    {
+      "id": "munajjid-nawawi",
+      "indexed": 43,
+      "coverage": "indexed",
+      "missingEpisodeNumbers": []
+    },
+    {
+      "id": "barrak-wasael",
+      "indexed": 7,
+      "coverage": "complete",
+      "missingEpisodeNumbers": []
+    },
+    {
+      "id": "othman-tuhfat-atfal",
+      "indexed": 8,
+      "coverage": "partial",
+      "missingEpisodeNumbers": []
+    },
+    {
+      "id": "othman-jazariyyah",
+      "indexed": 11,
+      "coverage": "partial",
+      "missingEpisodeNumbers": []
+    }
+  ],
+  "result": "passed",
+  "scope": "Structural and edition/hash consistency, not approval of scholarly attributions or text."
+}

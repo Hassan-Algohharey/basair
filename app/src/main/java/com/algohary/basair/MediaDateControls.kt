@@ -10,6 +10,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
+internal fun mediaDurationLabel(seconds: Int): String {
+    val value = seconds.coerceAtLeast(0)
+    return if (value >= 3600) java.lang.String.format(java.util.Locale.ROOT, "%d:%02d:%02d", value / 3600, value / 60 % 60, value % 60)
+    else java.lang.String.format(java.util.Locale.ROOT, "%d:%02d", value / 60, value % 60)
+}
+
 internal fun matchesMediaDuration(seconds: Int?, filter: String?): Boolean {
     val known = seconds?.takeIf { it > 0 }
     return when (filter) {

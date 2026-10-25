@@ -6,6 +6,7 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parents[1]
 catalog = json.loads((ROOT / 'content/media/catalog.json').read_text(encoding='utf-8'))
 audit = json.loads((ROOT / 'content/media/audit.json').read_text(encoding='utf-8'))
+link_audit = json.loads((ROOT / 'content/media/link-audit-v020.json').read_text(encoding='utf-8'))
 scholars = catalog['scholars']
 items = catalog['items']
 series = catalog.get('series', [])
@@ -52,10 +53,11 @@ for item in items:
     if item.get('seriesId'):
         group = next(s for s in series if s['id'] == item['seriesId'])
         assert item['scholarId'] == group['scholarId'] and set(item['bookIds']) == set(group['bookIds'])
-    if item.get('publishedHijriYear'):
+    if item.get('publishedDateLabel'):
         date_evidence = next(d for d in audit['dateEvidence'] if d['itemId'] == item['id'])
         assert date_evidence['url'] == item['url'] and len(date_evidence['pageSha256']) == 64
-        assert date_evidence['hijriYear'] == item['publishedHijriYear'] and 1 <= item['publishedHijriYear'] <= 1600
+        if item.get('publishedHijriYear'):
+            assert date_evidence['hijriYear'] == item['publishedHijriYear'] and 1 <= item['publishedHijriYear'] <= 1600
         assert date_evidence['label'] == item['publishedDateLabel']
     if item.get('durationSeconds'):
         duration = next(d for d in audit['durationEvidence'] if d['itemId'] == item['id'])
@@ -86,7 +88,14 @@ for entry in series:
     lines.append('        MediaUiSeries(' + ', '.join(q(entry[k]) for k in ['id', 'title', 'englishTitle', 'scholarId']) + ', bookIds = listOf(' + ', '.join(q(b) for b in entry['bookIds']) + '), sourceUrl = ' + q(entry['sourceUrl']) + ', coverage = ' + q(entry['coverage']) + ', expectedEpisodes = ' + str(entry['expectedEpisodes'] or 'null') + ', coverageNote = ' + q(entry['coverageNote']) + ', englishCoverageNote = ' + q(entry['englishCoverageNote']) + '),')
 lines += ['    )', '    val items = listOf(']
 for i in items:
+    checked = next(r for r in link_audit['links'] if r.get('itemId') == i['id'])
+    assert checked['url'] == i['url'] and checked['checkedOn'] == link_audit['checkedOn']
     lines.append('        MediaUiItem(' + ', '.join(q(v) for v in [i['id'], i['scholarId'], i['title'], i['type'], ' · '.join(i['topics']), i.get('seriesTitle',''), urlparse(i['url']).hostname, i['url']]) + ', bookIds = listOf(' + ', '.join(q(b) for b in i['bookIds']) + '), searchAliases = ' + q(i['englishTitle'] + ' ' + i['mediaKind']) + ', sourceNote = ' + q(i['sourceNote']) + ', englishSourceNote = ' + q(i['englishSourceNote']) + ', format = ' + q(i['mediaKind']) + ', seriesId = ' + (q(i['seriesId']) if i.get('seriesId') else 'null') + ', episodeNumber = ' + str(i.get('episodeNumber') or 'null') + ', topics = listOf(' + ', '.join(q(t) for t in i['topics']) + '), englishTopics = listOf(' + ', '.join(q(t) for t in i.get('englishTopics', [])) + '), publishedHijriYear = ' + str(i.get('publishedHijriYear') or 'null') + ', publishedDateLabel = ' + q(i.get('publishedDateLabel', '')) + ', durationSeconds = ' + str(i.get('durationSeconds') or 'null') + '),')
 lines += ['    )', '    val allowedUrls = items.map { it.sourceUrl }.toSet() + scholars.map { it.sourceUrl } + series.map { it.sourceUrl }', '}', '']
+for index, line in enumerate(lines):
+    if line.startswith('        MediaUiItem('):
+        item_id = json.loads(line.split('MediaUiItem(', 1)[1].split(',', 1)[0])
+        checked = next(r for r in link_audit['links'] if r.get('itemId') == item_id)
+        lines[index] = line[:-2] + ', sourceCheckedOn = ' + q(checked['checkedOn']) + ', sourceReachable = ' + str(checked['status'] == 'reachable').lower() + '),'
 (ROOT / 'app/src/main/java/com/algohary/basair/MediaData.kt').write_text('\n'.join(lines), encoding='utf-8')
 print(f'Validated {len(scholars)} scholars, {len(items)} media records, {len(series)} series and all linked book IDs.')
