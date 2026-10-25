@@ -26,7 +26,8 @@ internal fun MediaEntry(onOpen: () -> Unit, count: Int? = null) {
 }
 
 @Composable
-internal fun MediaFeature(initialQuery: String, initialBook: String?, initialFavorites: Boolean, onBook: (String) -> Unit, onHistory: () -> Unit) {
+internal fun MediaFeature(initialQuery: String, initialBook: String?, initialFavorites: Boolean, onBook: (String) -> Unit, onHistory: () -> Unit,
+    initialItem: String? = null, onBookPage: (String, Int) -> Unit = { id, _ -> onBook(id) }) {
     val context = LocalContext.current
     val preferences = remember { context.getSharedPreferences("basair-media", Context.MODE_PRIVATE) }
     val history = remember { SearchHistoryStore(context) }
@@ -39,12 +40,25 @@ internal fun MediaFeature(initialQuery: String, initialBook: String?, initialFav
     var onlyFavorites by rememberSaveable { mutableStateOf(initialFavorites) }
     var series by rememberSaveable { mutableStateOf<String?>(null) }
     var topic by rememberSaveable { mutableStateOf<String?>(null) }
+    var section by rememberSaveable { mutableStateOf<String?>(null) }
+    var seriesPositions by remember { mutableStateOf(MediaCatalog.series.mapNotNull { s ->
+        seriesResumeId(s.id, preferences.getString("seriesPosition:${s.id}", null))?.let { s.id to it }
+    }.toMap()) }
+    var completed by remember { mutableStateOf(preferences.getStringSet("completedLessonIds", emptySet()).orEmpty()
+        .filter { id -> MediaCatalog.items.any { it.id == id && it.seriesId != null } }.toSet()) }
+    val setPosition: (String) -> Unit = { id ->
+        MediaCatalog.items.find { it.id == id }?.seriesId?.let { seriesId ->
+            seriesPositions = seriesPositions + (seriesId to id)
+            preferences.edit().putString("seriesPosition:$seriesId", id).apply()
+        }
+    }
     var lastOpened by remember { mutableStateOf(preferences.getString("lastOpenedId", null)?.takeIf { id -> MediaCatalog.items.any { it.id == id } }) }
-    var selected by rememberSaveable { mutableStateOf<String?>(null) }
+    var selected by rememberSaveable { mutableStateOf(initialItem?.takeIf { id -> MediaCatalog.items.any { it.id == id && (initialBook == null || initialBook in it.bookIds) } }) }
     val state = MediaUiState(MediaCatalog.scholars, MediaCatalog.items, favorites, query, scholar,
-        kind, onlyFavorites, profile, selected, Catalog.books.associate { it.id to it.title }, bookFilter, MediaCatalog.series, series, topic, lastOpened)
+        kind, onlyFavorites, profile, selected, Catalog.books.associate { it.id to it.title }, bookFilter, MediaCatalog.series, series, topic, lastOpened,
+        section, seriesPositions, completed)
     Column {
-        if (bookFilter != null) TextButton(onClick = { bookFilter = null }) {
+        if (bookFilter != null) TextButton(onClick = { bookFilter = null; section = null }) {
             Text(stringResource(R.string.media_clear_book_filter, state.bookTitles[bookFilter].orEmpty()))
         }
         Box(Modifier.weight(1f)) { MediaScreen(state, onHistory) { action ->
@@ -54,7 +68,7 @@ internal fun MediaFeature(initialQuery: String, initialBook: String?, initialFav
                 is MediaAction.ScholarFilter -> scholar = action.value
                 is MediaAction.KindFilter -> kind = action.value
                 is MediaAction.FavoritesOnly -> onlyFavorites = action.value
-                is MediaAction.Profile -> { if (action.id != null) history.record(SearchScope.MEDIA, query); profile = action.id; scholar = null; query = ""; kind = null; onlyFavorites = false; series = null; topic = null }
+                is MediaAction.Profile -> { if (action.id != null) history.record(SearchScope.MEDIA, query); profile = action.id; scholar = null; query = ""; kind = null; onlyFavorites = false; series = null; topic = null; section = null }
                 is MediaAction.SelectItem -> { if (action.id != null) history.record(SearchScope.MEDIA, query); selected = action.id }
                 is MediaAction.ToggleFavorite -> {
                     favorites = toggleMediaFavorite(favorites, action.id)
@@ -63,17 +77,35 @@ internal fun MediaFeature(initialQuery: String, initialBook: String?, initialFav
                 is MediaAction.OpenSource -> if (allowedMediaUrl(action.url)) {
                     lastOpened = openedMediaId(lastOpened, action.url)
                     lastOpened?.let { preferences.edit().putString("lastOpenedId", it).apply() }
+                    MediaCatalog.items.find { it.sourceUrl == action.url }?.let { setPosition(it.id) }
                     openSource(context, action.url)
                 }
                 is MediaAction.SeriesFilter -> {
                     if (action.value != null) history.record(SearchScope.MEDIA, query)
                     series = action.value
+                    section = null
                     if (action.value != null) { profile = null; scholar = null; kind = "lesson"; topic = null; query = ""; onlyFavorites = false }
                 }
                 is MediaAction.TopicFilter -> topic = action.value
+                is MediaAction.SectionFilter -> {
+                    section = action.value?.takeIf { id -> bookLessonLinks(bookFilter).any { it.id == id } }
+                    if (section != null) { query = ""; scholar = null; profile = null; kind = "lesson"; onlyFavorites = false; topic = null }
+                }
+                is MediaAction.OpenBookPage -> bookLessonLinks().find { it.id == action.linkId }?.let { link ->
+                    onBookPage(link.bookId, link.pdfPage)
+                }
+                is MediaAction.SetSeriesPosition -> setPosition(action.itemId)
+                is MediaAction.ClearSeriesPosition -> {
+                    seriesPositions = seriesPositions - action.seriesId
+                    preferences.edit().remove("seriesPosition:${action.seriesId}").apply()
+                }
+                is MediaAction.ToggleCompleted -> {
+                    completed = toggleLessonCompleted(completed, action.itemId)
+                    preferences.edit().putStringSet("completedLessonIds", completed).apply()
+                }
                 MediaAction.ResumeLast -> lastOpened?.let { id ->
                     selected = id
-                    query = ""; scholar = null; profile = null; kind = null; onlyFavorites = false; topic = null; bookFilter = null
+                    query = ""; scholar = null; profile = null; kind = null; onlyFavorites = false; topic = null; bookFilter = null; section = null
                     series = MediaCatalog.items.find { it.id == id }?.seriesId
                 }
                 MediaAction.ClearLast -> { lastOpened = null; preferences.edit().remove("lastOpenedId").apply() }

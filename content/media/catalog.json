@@ -100,8 +100,8 @@
       "bookIds": [
         "tahawiyyah"
       ],
-      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
-      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "sourceNote": "درس صوتي في شرح العقيدة الطحاوية بالموقع الرسمي لابن باز، يقرأ شرح ابن أبي العز. روجع موضع عبارة العنوان في متن المكتبة؛ لا يعني ذلك مطابقة نسخة الشرح أو كامل محتواه أو توقيت التسجيل.",
+      "englishSourceNote": "Audio lesson from the official Ibn Baz site, reading Ibn Abi al-Izz’s commentary. The title phrase was located in the library text; this does not match the commentary edition, full lesson coverage or playback time.",
       "verifiedOn": "2026-10-24",
       "seriesTitle": "شرح العقيدة الطحاوية",
       "seriesId": "bin-baz-tahawi",
@@ -677,8 +677,8 @@
       "bookIds": [
         "wasael"
       ],
-      "sourceNote": "درس صوتي من شرح الوسائل المفيدة للحياة السعيدة للسعدي في موقع الشيخ البراك. الربط بأصل الكتاب؛ لا يعني مطابقة طبعة المكتبة أو الصفحات، ولا أنها قراءة صوتية لنسختها.",
-      "englishSourceNote": "Audio lesson in al-Barrak’s commentary on al-Sa‘di’s Beneficial Means to a Happy Life. Linked to the underlying work, without matching the library edition or its pages; not an audiobook of that edition.",
+      "sourceNote": "درس صوتي في شرح الوسائل المفيدة للحياة السعيدة من موقع الشيخ البراك الرسمي. روجع موضع عبارة عنوانه في نسخة المكتبة؛ لا تدعي هذه الإحالة مطابقة طبعة التسجيل أو كامل محتواه أو توقيته، وليست قراءة صوتية كاملة للنسخة.",
+      "englishSourceNote": "Audio commentary on Beneficial Means to a Happy Life from the official al-Barrak site. The title phrase was located in the library edition; this does not match the recording edition, full coverage or playback time, and is not a complete narrated reading of this edition.",
       "verifiedOn": "2026-10-24",
       "seriesTitle": "شرح الوسائل المفيدة للحياة السعيدة",
       "seriesId": "barrak-wasael",
@@ -703,8 +703,8 @@
       "bookIds": [
         "wasael"
       ],
-      "sourceNote": "درس صوتي من شرح الوسائل المفيدة للحياة السعيدة للسعدي في موقع الشيخ البراك. الربط بأصل الكتاب؛ لا يعني مطابقة طبعة المكتبة أو الصفحات، ولا أنها قراءة صوتية لنسختها.",
-      "englishSourceNote": "Audio lesson in al-Barrak’s commentary on al-Sa‘di’s Beneficial Means to a Happy Life. Linked to the underlying work, without matching the library edition or its pages; not an audiobook of that edition.",
+      "sourceNote": "درس صوتي في شرح الوسائل المفيدة للحياة السعيدة من موقع الشيخ البراك الرسمي. روجع موضع عبارة عنوانه في نسخة المكتبة؛ لا تدعي هذه الإحالة مطابقة طبعة التسجيل أو كامل محتواه أو توقيته، وليست قراءة صوتية كاملة للنسخة.",
+      "englishSourceNote": "Audio commentary on Beneficial Means to a Happy Life from the official al-Barrak site. The title phrase was located in the library edition; this does not match the recording edition, full coverage or playback time, and is not a complete narrated reading of this edition.",
       "verifiedOn": "2026-10-24",
       "seriesTitle": "شرح الوسائل المفيدة للحياة السعيدة",
       "seriesId": "barrak-wasael",
@@ -729,8 +729,8 @@
       "bookIds": [
         "wasael"
       ],
-      "sourceNote": "درس صوتي من شرح الوسائل المفيدة للحياة السعيدة للسعدي في موقع الشيخ البراك. الربط بأصل الكتاب؛ لا يعني مطابقة طبعة المكتبة أو الصفحات، ولا أنها قراءة صوتية لنسختها.",
-      "englishSourceNote": "Audio lesson in al-Barrak’s commentary on al-Sa‘di’s Beneficial Means to a Happy Life. Linked to the underlying work, without matching the library edition or its pages; not an audiobook of that edition.",
+      "sourceNote": "درس صوتي في شرح الوسائل المفيدة للحياة السعيدة من موقع الشيخ البراك الرسمي. روجع موضع عبارة عنوانه في نسخة المكتبة؛ لا تدعي هذه الإحالة مطابقة طبعة التسجيل أو كامل محتواه أو توقيته، وليست قراءة صوتية كاملة للنسخة.",
+      "englishSourceNote": "Audio commentary on Beneficial Means to a Happy Life from the official al-Barrak site. The title phrase was located in the library edition; this does not match the recording edition, full coverage or playback time, and is not a complete narrated reading of this edition.",
       "verifiedOn": "2026-10-24",
       "seriesTitle": "شرح الوسائل المفيدة للحياة السعيدة",
       "seriesId": "barrak-wasael",
@@ -755,8 +755,8 @@
       "bookIds": [
         "wasael"
       ],
-      "sourceNote": "درس صوتي من شرح الوسائل المفيدة للحياة السعيدة للسعدي في موقع الشيخ البراك. الربط بأصل الكتاب؛ لا يعني مطابقة طبعة المكتبة أو الصفحات، ولا أنها قراءة صوتية لنسختها.",
-      "englishSourceNote": "Audio lesson in al-Barrak’s commentary on al-Sa‘di’s Beneficial Means to a Happy Life. Linked to the underlying work, without matching the library edition or its pages; not an audiobook of that edition.",
+      "sourceNote": "درس صوتي في شرح الوسائل المفيدة للحياة السعيدة من موقع الشيخ البراك الرسمي. روجع موضع عبارة عنوانه في نسخة المكتبة؛ لا تدعي هذه الإحالة مطابقة طبعة التسجيل أو كامل محتواه أو توقيته، وليست قراءة صوتية كاملة للنسخة.",
+      "englishSourceNote": "Audio commentary on Beneficial Means to a Happy Life from the official al-Barrak site. The title phrase was located in the library edition; this does not match the recording edition, full coverage or playback time, and is not a complete narrated reading of this edition.",
       "verifiedOn": "2026-10-24",
       "seriesTitle": "شرح الوسائل المفيدة للحياة السعيدة",
       "seriesId": "barrak-wasael",
@@ -781,8 +781,8 @@
       "bookIds": [
         "wasael"
       ],
-      "sourceNote": "درس صوتي من شرح الوسائل المفيدة للحياة السعيدة للسعدي في موقع الشيخ البراك. الربط بأصل الكتاب؛ لا يعني مطابقة طبعة المكتبة أو الصفحات، ولا أنها قراءة صوتية لنسختها.",
-      "englishSourceNote": "Audio lesson in al-Barrak’s commentary on al-Sa‘di’s Beneficial Means to a Happy Life. Linked to the underlying work, without matching the library edition or its pages; not an audiobook of that edition.",
+      "sourceNote": "درس صوتي في شرح الوسائل المفيدة للحياة السعيدة من موقع الشيخ البراك الرسمي. روجع موضع عبارة عنوانه في نسخة المكتبة؛ لا تدعي هذه الإحالة مطابقة طبعة التسجيل أو كامل محتواه أو توقيته، وليست قراءة صوتية كاملة للنسخة.",
+      "englishSourceNote": "Audio commentary on Beneficial Means to a Happy Life from the official al-Barrak site. The title phrase was located in the library edition; this does not match the recording edition, full coverage or playback time, and is not a complete narrated reading of this edition.",
       "verifiedOn": "2026-10-24",
       "seriesTitle": "شرح الوسائل المفيدة للحياة السعيدة",
       "seriesId": "barrak-wasael",
@@ -807,8 +807,8 @@
       "bookIds": [
         "wasael"
       ],
-      "sourceNote": "درس صوتي من شرح الوسائل المفيدة للحياة السعيدة للسعدي في موقع الشيخ البراك. الربط بأصل الكتاب؛ لا يعني مطابقة طبعة المكتبة أو الصفحات، ولا أنها قراءة صوتية لنسختها.",
-      "englishSourceNote": "Audio lesson in al-Barrak’s commentary on al-Sa‘di’s Beneficial Means to a Happy Life. Linked to the underlying work, without matching the library edition or its pages; not an audiobook of that edition.",
+      "sourceNote": "درس صوتي في شرح الوسائل المفيدة للحياة السعيدة من موقع الشيخ البراك الرسمي. روجع موضع عبارة عنوانه في نسخة المكتبة؛ لا تدعي هذه الإحالة مطابقة طبعة التسجيل أو كامل محتواه أو توقيته، وليست قراءة صوتية كاملة للنسخة.",
+      "englishSourceNote": "Audio commentary on Beneficial Means to a Happy Life from the official al-Barrak site. The title phrase was located in the library edition; this does not match the recording edition, full coverage or playback time, and is not a complete narrated reading of this edition.",
       "verifiedOn": "2026-10-24",
       "seriesTitle": "شرح الوسائل المفيدة للحياة السعيدة",
       "seriesId": "barrak-wasael",

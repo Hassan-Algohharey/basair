@@ -42,7 +42,9 @@ internal data class MediaUiState(
     val profileId: String? = null, val selectedItemId: String? = null,
     val bookTitles: Map<String, String> = emptyMap(), val bookFilter: String? = null,
     val series: List<MediaUiSeries> = emptyList(), val seriesFilter: String? = null,
-    val topicFilter: String? = null, val lastOpenedId: String? = null
+    val topicFilter: String? = null, val lastOpenedId: String? = null,
+    val sectionFilter: String? = null, val seriesPositions: Map<String, String> = emptyMap(),
+    val completedIds: Set<String> = emptySet()
 )
 internal sealed interface MediaAction {
     data object SubmitSearch : MediaAction
@@ -57,6 +59,11 @@ internal sealed interface MediaAction {
     data class OpenBook(val id: String) : MediaAction
     data class SeriesFilter(val value: String?) : MediaAction
     data class TopicFilter(val value: String?) : MediaAction
+    data class SectionFilter(val value: String?) : MediaAction
+    data class OpenBookPage(val linkId: String) : MediaAction
+    data class SetSeriesPosition(val itemId: String) : MediaAction
+    data class ClearSeriesPosition(val seriesId: String) : MediaAction
+    data class ToggleCompleted(val itemId: String) : MediaAction
     data object ResumeLast : MediaAction
     data object ClearLast : MediaAction
 }
@@ -74,6 +81,7 @@ internal fun filteredMediaItems(state: MediaUiState): List<MediaUiItem> {
             state.series.find { it.id == item.seriesId }?.englishTitle.orEmpty(),
             scholar?.name.orEmpty(), scholar?.englishName.orEmpty(), scholar?.description.orEmpty(),
             item.bookIds.mapNotNull { state.bookTitles[it] }.joinToString(" ")).joinToString(" "))
+        (state.sectionFilter == null || bookLessonLinks(state.bookFilter, item.id).any { it.id == state.sectionFilter }) &&
         (state.seriesFilter == null || item.seriesId == state.seriesFilter) &&
         (state.topicFilter == null || state.topicFilter in mediaTopics(item)) &&
         (state.bookFilter == null || state.bookFilter in item.bookIds) &&
@@ -108,6 +116,7 @@ internal fun MediaScreen(state: MediaUiState, onHistory: () -> Unit = {}, onActi
         item { MediaNotice(stringResource(R.string.media_external_notice)) }
         item { MediaNotice(stringResource(R.string.media_initial_collection)) }
         item { MediaStudyControls(state, onAction) }
+        if (state.bookFilter != null) item { BookStudyControls(state, onAction) }
         if (profile != null) item {
             Card(Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(containerColor = SoftGreen)) {
                 Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -178,11 +187,11 @@ internal fun MediaScreen(state: MediaUiState, onHistory: () -> Unit = {}, onActi
         item {
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                 Text(stringResource(R.string.media_result_count, results.size), modifier = Modifier.weight(1f), color = Muted)
-                if (state.query.isNotBlank() || state.scholarFilter != null || state.kindFilter != null || state.seriesFilter != null || state.topicFilter != null || state.favoritesOnly) {
+                if (state.query.isNotBlank() || state.scholarFilter != null || state.kindFilter != null || state.seriesFilter != null || state.topicFilter != null || state.sectionFilter != null || state.favoritesOnly) {
                     TextButton(onClick = {
                         onAction(MediaAction.Query("")); onAction(MediaAction.ScholarFilter(null))
                         onAction(MediaAction.KindFilter(null)); onAction(MediaAction.FavoritesOnly(false))
-                        onAction(MediaAction.SeriesFilter(null)); onAction(MediaAction.TopicFilter(null)); focus.clearFocus()
+                        onAction(MediaAction.SeriesFilter(null)); onAction(MediaAction.TopicFilter(null)); onAction(MediaAction.SectionFilter(null)); focus.clearFocus()
                     }) { Text(stringResource(R.string.media_reset)) }
                 }
             }
@@ -203,6 +212,7 @@ private fun MediaItemCard(item: MediaUiItem, state: MediaUiState, onAction: (Med
             Text(mediaKindLabel(item.kind) + " · " + stringResource(if (item.format == "audio") R.string.media_audio else R.string.media_video), style = MaterialTheme.typography.labelMedium, color = Green)
             Text(item.title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
             item.episodeNumber?.let { Text(stringResource(R.string.study_episode, it), color = Muted) }
+            if (item.id in state.completedIds) Text(stringResource(R.string.book_study_completed), color = Green)
             item.seriesId?.let { id -> TextButton(onClick = { onAction(MediaAction.SeriesFilter(id)) }) {
                 Text(stringResource(R.string.study_open_series))
             } }
@@ -239,6 +249,7 @@ private fun MediaSourceDialog(item: MediaUiItem, state: MediaUiState, onAction: 
                 state.scholars.find { it.id == item.scholarId }?.let { Text(it.name, fontWeight = FontWeight.Bold) }
                 Text(stringResource(R.string.media_source_value, item.sourceName))
                 if (item.sourceNote.isNotBlank()) Text(if (LocalConfiguration.current.locales[0].language == "en") item.englishSourceNote else item.sourceNote, style = MaterialTheme.typography.bodySmall)
+                LessonStudyDetails(item, state, onAction)
                 SelectionContainer { Text(item.sourceUrl, style = MaterialTheme.typography.bodySmall) }
                 Text(stringResource(R.string.media_external_notice), style = MaterialTheme.typography.bodySmall)
                 }

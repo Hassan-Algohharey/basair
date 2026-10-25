@@ -25,6 +25,8 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ColorMatrix
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.text.input.KeyboardType
@@ -78,7 +80,8 @@ private class PdfBookSession(file: File, expectedPages: Int) : Closeable {
 
 @Composable
 internal fun PdfBookReader(book: Book, saved: Boolean, onBack: () -> Unit, onSave: () -> Unit,
-    localFile: File? = null, initialPage: Int? = null, allowSave: Boolean = true, onExplanations: (() -> Unit)? = null, onAudio: (() -> Unit)? = null) {
+    localFile: File? = null, initialPage: Int? = null, allowSave: Boolean = true, onExplanations: (() -> Unit)? = null, onAudio: (() -> Unit)? = null,
+    onLesson: ((String) -> Unit)? = null) {
     val context = LocalContext.current
     val preferences = remember { context.getSharedPreferences("basair", Context.MODE_PRIVATE) }
     var night by rememberSaveable { mutableStateOf(preferences.getBoolean("readerNight", false)) }
@@ -105,7 +108,7 @@ internal fun PdfBookReader(book: Book, saved: Boolean, onBack: () -> Unit, onSav
     MaterialTheme(colorScheme = readerColors) {
         Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
             Box(Modifier.windowInsetsPadding(WindowInsets.safeDrawing)) {
-                PdfReaderContent(book, saved, onBack, onSave, localFile, initialPage, allowSave, night, onExplanations, onAudio) {
+                PdfReaderContent(book, saved, onBack, onSave, localFile, initialPage, allowSave, night, onExplanations, onAudio, onLesson) {
                     night = !night
                     preferences.edit().putBoolean("readerNight", night).apply()
                 }
@@ -123,7 +126,8 @@ private val nightPageFilter = ColorFilter.colorMatrix(ColorMatrix(floatArrayOf(
 
 @Composable
 private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onSave: () -> Unit,
-    localFile: File?, initialPage: Int?, allowSave: Boolean, night: Boolean, onExplanations: (() -> Unit)?, onAudio: (() -> Unit)?, onToggleNight: () -> Unit) {
+    localFile: File?, initialPage: Int?, allowSave: Boolean, night: Boolean, onExplanations: (() -> Unit)?, onAudio: (() -> Unit)?,
+    onLesson: ((String) -> Unit)?, onToggleNight: () -> Unit) {
     val context = LocalContext.current
     val preferences = remember { context.getSharedPreferences("basair", Context.MODE_PRIVATE) }
     var page by rememberSaveable(book.id, initialPage) { mutableIntStateOf((initialPage ?: preferences.getInt("page:${book.id}", 1)).coerceIn(1, book.pages)) }
@@ -132,6 +136,19 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
     var showDetails by remember { mutableStateOf(false) }
     var showBookmarks by rememberSaveable { mutableStateOf(false) }
     var showChapters by rememberSaveable { mutableStateOf(false) }
+    var showLessons by rememberSaveable { mutableStateOf(false) }
+    val pageLessons = bookLessonLinks(book.id).filter { it.pdfPage == page }
+    if (showLessons) AlertDialog(onDismissRequest = { showLessons = false },
+        title = { Text(stringResource(R.string.book_study_this_page)) }, text = {
+            Column(Modifier.heightIn(max = 360.dp).verticalScroll(rememberScrollState())) {
+                pageLessons.forEach { link ->
+                    TextButton(onClick = { showLessons = false; onLesson?.invoke(link.itemId) }) {
+                        Text(if (LocalConfiguration.current.locales[0].language == "en") link.englishTitle else link.title)
+                    }
+                }
+                Text(stringResource(R.string.book_study_scope), style = MaterialTheme.typography.bodySmall)
+            }
+        }, confirmButton = { TextButton(onClick = { showLessons = false }) { Text(stringResource(R.string.media_close)) } })
     var bookmarks by remember(book.id) {
         mutableStateOf(parseBookmarkedPages(preferences.getStringSet("bookmarks:${book.id}", emptySet()).orEmpty(), book.pages))
     }
@@ -165,6 +182,7 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
             verticalAlignment = Alignment.CenterVertically) {
             if (onAudio != null) TextButton(onClick = onAudio) { Text(context.getString(R.string.audio_book_button)) }
             if (onExplanations != null) TextButton(onClick = onExplanations) { Text(context.getString(R.string.media_book_explanations)) }
+            if (onLesson != null && pageLessons.isNotEmpty()) TextButton(onClick = { showLessons = true }) { Text(stringResource(R.string.book_study_this_page)) }
             TextButton(onClick = { showNotes = true }) { Text(context.getString(R.string.notes_title)) }
             if (localFile == null) TextButton(onClick = { showStorage = true }) { Text(context.getString(R.string.storage_title)) }
             if (book.chapters.isNotEmpty()) TextButton(onClick = { showChapters = true }) { Text(context.getString(R.string.book_contents)) }

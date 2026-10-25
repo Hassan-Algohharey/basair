@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="book_study_clear_resume">Clear continuation episode</string>
+    <string name="book_study_scope">The link identifies the text passage associated with the official lesson title; it does not specify playback time or the full lesson coverage.</string>
+    <string name="book_study_link_count">Reviewed passage links for this edition: %1$d</string>
+    <string name="book_study_unmapped">Book commentaries are available, but their passages have not yet been mapped to this edition.</string>
+    <string name="book_study_choose">Choose a section or explained passage</string>
+    <string name="book_study_read_page">Read passage · Printed p. %1$s · File page %2$d</string>
+    <string name="book_study_page">Printed p. %1$s · File page %2$d</string>
+    <string name="book_study_all">Show all book commentaries</string>
+    <string name="book_study_matched">Matched text passage</string>
+    <string name="book_study_set_resume">Continue from this episode</string>
+    <string name="book_study_resume_saved">Continuation episode saved for this series</string>
+    <string name="book_study_complete">Mark episode completed</string>
+    <string name="book_study_uncomplete">Mark episode incomplete</string>
+    <string name="book_study_completed">Marked completed by you</string>
+    <string name="book_study_manual_progress">Completion is marked by you; opening a link does not complete the episode. The app saves the episode; playback time is managed by the external site.</string>
+    <string name="book_study_progress">Episodes marked completed: %1$d / %2$d indexed</string>
+    <string name="book_study_resume_series">Continue this series</string>
+    <string name="book_study_this_page">Commentaries for this passage</string>
+</resources>

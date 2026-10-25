@@ -151,9 +151,10 @@ private fun BasairApp(audioRequest: Int) {
     var mediaQuery by rememberSaveable { mutableStateOf("") }
     var mediaBook by rememberSaveable { mutableStateOf<String?>(null) }
     var mediaFavorites by rememberSaveable { mutableStateOf(false) }
+    var mediaItem by rememberSaveable { mutableStateOf<String?>(null) }
     val openMedia: (String, String?, Boolean) -> Unit = { search, book, favorites ->
         mediaState.removeState("media")
-        mediaQuery = search; mediaBook = book; mediaFavorites = favorites; bookId = null; route = "media"
+        mediaQuery = search; mediaBook = book; mediaFavorites = favorites; mediaItem = null; bookId = null; route = "media"
     }
     val toggleSave: (String) -> Unit = { id ->
         saved = if (id in saved) saved - id else saved + id
@@ -195,6 +196,7 @@ private fun BasairApp(audioRequest: Int) {
         key(readingBook.id) { PdfBookReader(readingBook, readingBook.id in saved,
             { bookId = null }, { toggleSave(readingBook.id) }, initialPage = notePage,
             onExplanations = if (MediaCatalog.items.any { readingBook.id in it.bookIds }) ({ openMedia("", readingBook.id, false) }) else null,
+            onLesson = { id -> openMedia("", readingBook.id, false); mediaItem = id },
             onAudio = if (AudiobookCatalog.recordings.any { readingBook.id in it.bookIds }) ({ openAudio("", readingBook.id) }) else null) }
         return
     }
@@ -232,7 +234,8 @@ private fun BasairApp(audioRequest: Int) {
                         { surah, ayah -> quranSurah = surah; quranAyah = ayah; quranOrigin = "tajweed"; route = "quran" })
                 }
                 "audio" -> audioState.SaveableStateProvider("audio") { key(audioRequest) { AudiobookFeature(audioQuery, audioBook, openBook) } }
-                "media" -> mediaState.SaveableStateProvider("media") { MediaFeature(mediaQuery, mediaBook, mediaFavorites, openBook, openHistory) }
+                "media" -> mediaState.SaveableStateProvider("media") { MediaFeature(mediaQuery, mediaBook, mediaFavorites, openBook, openHistory,
+                    initialItem = mediaItem, onBookPage = { id, page -> notePage = page; bookId = id }) }
                 "compare" -> comparisonState.SaveableStateProvider("comparison") {
                     ComparisonScreen(comparisonId, { comparisonId = it }, savedComparisons, toggleComparison,
                         { referencePage = it.pdfPage; referenceVolume = it.volume })

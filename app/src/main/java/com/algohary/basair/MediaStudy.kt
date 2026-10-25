@@ -75,6 +75,14 @@ internal fun MediaStudyControls(state: MediaUiState, onAction: (MediaAction) -> 
                     Text(stringResource(if (series.coverage == "complete") R.string.study_complete else R.string.study_partial))
                     Text(stringResource(R.string.study_indexed_episodes, orderedSeriesItems(state.items, series.id).size))
                     Text(if (english) series.englishCoverageNote else series.coverageNote, style = MaterialTheme.typography.bodySmall)
+                    Text(stringResource(R.string.book_study_progress,
+                        orderedSeriesItems(state.items, series.id).count { it.id in state.completedIds },
+                        orderedSeriesItems(state.items, series.id).size))
+                    state.seriesPositions[series.id]?.let { id -> state.items.find { it.id == id && it.seriesId == series.id }?.let { lesson ->
+                        Text(lesson.title)
+                        TextButton(onClick = { onAction(MediaAction.SelectItem(id)) }) { Text(stringResource(R.string.book_study_resume_series)) }
+                        TextButton(onClick = { onAction(MediaAction.ClearSeriesPosition(series.id)) }) { Text(stringResource(R.string.book_study_clear_resume)) }
+                    } }
                     TextButton(onClick = { onAction(MediaAction.OpenSource(series.sourceUrl)) }) { Text(stringResource(R.string.study_series_source)) }
                     TextButton(onClick = { onAction(MediaAction.SeriesFilter(null)) }) { Text(stringResource(R.string.study_clear_series)) }
                 }

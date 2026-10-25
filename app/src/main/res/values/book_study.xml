@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="book_study_clear_resume">مسح حلقة المتابعة</string>
+    <string name="book_study_scope">الربط يحدد موضع المتن المرتبط بعنوان الدرس؛ لا يحدد توقيت التسجيل أو كامل نطاق شرحه.</string>
+    <string name="book_study_link_count">مواضع الشروح المطابقة للنسخة: %1$d</string>
+    <string name="book_study_unmapped">توجد شروح للكتاب، لكن لم تطابق مواضعها مع صفحات هذه النسخة بعد.</string>
+    <string name="book_study_choose">اختيار باب أو موضع مشروح</string>
+    <string name="book_study_read_page">قراءة الموضع · ص %1$s · صفحة الملف %2$d</string>
+    <string name="book_study_page">ص %1$s · صفحة الملف %2$d</string>
+    <string name="book_study_all">عرض كل شروح الكتاب</string>
+    <string name="book_study_matched">موضع المتن المطابق</string>
+    <string name="book_study_set_resume">المتابعة من هذه الحلقة</string>
+    <string name="book_study_resume_saved">حُفظت حلقة المتابعة لهذه السلسلة</string>
+    <string name="book_study_complete">تعليم الحلقة كمكتملة</string>
+    <string name="book_study_uncomplete">إلغاء اكتمال الحلقة</string>
+    <string name="book_study_completed">مكتملة بحسب تعليمك</string>
+    <string name="book_study_manual_progress">الاكتمال تحدده بنفسك، وفتح الرابط لا يعني إكمال الحلقة. يحفظ التطبيق الحلقة؛ توقيت التشغيل يتبع الموقع الخارجي.</string>
+    <string name="book_study_progress">الحلقات التي أكملتها: %1$d / %2$d مفهرسة</string>
+    <string name="book_study_resume_series">استكمال هذه السلسلة</string>
+    <string name="book_study_this_page">شروح هذا الموضع</string>
+</resources>
