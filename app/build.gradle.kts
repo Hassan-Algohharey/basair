@@ -16,8 +16,8 @@ android {
         applicationId = "com.algohary.basair"
         minSdk = 26
         targetSdk = 36
-        versionCode = 19
-        versionName = "0.15.1"
+        versionCode = 20
+        versionName = "0.16.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildFeatures { compose = true }

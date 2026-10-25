@@ -1,0 +1,16 @@
+<resources>
+    <string name="history_title">Search history</string>
+    <string name="history_search">Search</string>
+    <string name="history_capture_notice">Search is saved when you press Search or open a result, if saving is enabled.</string>
+    <string name="history_private_notice">Last %1$d searches on this device only, up to %2$d characters each. History is not sent to sources.</string>
+    <string name="history_enabled">Save search history on this device</string>
+    <string name="history_on">Search saving is on</string>
+    <string name="history_off">Search saving is off</string>
+    <string name="history_disable_notice">Turning saving off stops new entries and keeps previous history until you delete it. Reusing a search restores its words and section without previous filters.</string>
+    <string name="history_clear">Delete all search history</string>
+    <string name="history_count">Saved searches: %1$d</string>
+    <string name="history_empty">No saved searches</string>
+    <string name="history_books">Books and general search</string>
+    <string name="history_media">Scholars and lessons</string>
+    <string name="history_delete">Delete search: %1$s</string>
+</resources>

@@ -26,9 +26,10 @@ internal fun MediaEntry(onOpen: () -> Unit, count: Int? = null) {
 }
 
 @Composable
-internal fun MediaFeature(initialQuery: String, initialBook: String?, initialFavorites: Boolean, onBook: (String) -> Unit) {
+internal fun MediaFeature(initialQuery: String, initialBook: String?, initialFavorites: Boolean, onBook: (String) -> Unit, onHistory: () -> Unit) {
     val context = LocalContext.current
     val preferences = remember { context.getSharedPreferences("basair-media", Context.MODE_PRIVATE) }
+    val history = remember { SearchHistoryStore(context) }
     var favorites by remember { mutableStateOf(preferences.getStringSet("favoriteIds", emptySet()).orEmpty().toSet()) }
     var query by rememberSaveable { mutableStateOf(initialQuery) }
     var bookFilter by rememberSaveable { mutableStateOf(initialBook) }
@@ -46,14 +47,15 @@ internal fun MediaFeature(initialQuery: String, initialBook: String?, initialFav
         if (bookFilter != null) TextButton(onClick = { bookFilter = null }) {
             Text(stringResource(R.string.media_clear_book_filter, state.bookTitles[bookFilter].orEmpty()))
         }
-        Box(Modifier.weight(1f)) { MediaScreen(state) { action ->
+        Box(Modifier.weight(1f)) { MediaScreen(state, onHistory) { action ->
             when (action) {
                 is MediaAction.Query -> query = action.value
+                MediaAction.SubmitSearch -> history.record(SearchScope.MEDIA, query)
                 is MediaAction.ScholarFilter -> scholar = action.value
                 is MediaAction.KindFilter -> kind = action.value
                 is MediaAction.FavoritesOnly -> onlyFavorites = action.value
-                is MediaAction.Profile -> { profile = action.id; scholar = null; query = ""; kind = null; onlyFavorites = false; series = null; topic = null }
-                is MediaAction.SelectItem -> selected = action.id
+                is MediaAction.Profile -> { if (action.id != null) history.record(SearchScope.MEDIA, query); profile = action.id; scholar = null; query = ""; kind = null; onlyFavorites = false; series = null; topic = null }
+                is MediaAction.SelectItem -> { if (action.id != null) history.record(SearchScope.MEDIA, query); selected = action.id }
                 is MediaAction.ToggleFavorite -> {
                     favorites = toggleMediaFavorite(favorites, action.id)
                     preferences.edit().putStringSet("favoriteIds", favorites).apply()
@@ -64,6 +66,7 @@ internal fun MediaFeature(initialQuery: String, initialBook: String?, initialFav
                     openSource(context, action.url)
                 }
                 is MediaAction.SeriesFilter -> {
+                    if (action.value != null) history.record(SearchScope.MEDIA, query)
                     series = action.value
                     if (action.value != null) { profile = null; scholar = null; kind = "lesson"; topic = null; query = ""; onlyFavorites = false }
                 }

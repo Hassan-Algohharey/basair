@@ -1,0 +1,16 @@
+<resources>
+    <string name="history_title">سجل البحث</string>
+    <string name="history_search">بحث</string>
+    <string name="history_capture_notice">يُحفظ البحث عند الضغط على «بحث» أو فتح نتيجة إذا كان الحفظ مفعلًا.</string>
+    <string name="history_private_notice">آخر %1$d عملية بحث على هذا الجهاز فقط، حتى %2$d حرفًا للبحث. لا يُرسل السجل إلى المصادر.</string>
+    <string name="history_enabled">حفظ سجل البحث على هذا الجهاز</string>
+    <string name="history_on">حفظ البحث مفعل</string>
+    <string name="history_off">حفظ البحث متوقف</string>
+    <string name="history_disable_notice">تعطيل الحفظ يوقف الإضافات الجديدة ويبقي السجل السابق حتى تحذفه. اختيار بحث قديم يعيد الكلمات فقط ويفتح القسم الصحيح دون الفلاتر السابقة.</string>
+    <string name="history_clear">حذف سجل البحث كله</string>
+    <string name="history_count">عمليات البحث المحفوظة: %1$d</string>
+    <string name="history_empty">لا توجد عمليات بحث محفوظة</string>
+    <string name="history_books">الكتب والبحث العام</string>
+    <string name="history_media">الشيوخ والدروس</string>
+    <string name="history_delete">حذف البحث: %1$s</string>
+</resources>

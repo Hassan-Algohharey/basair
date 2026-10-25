@@ -45,6 +45,7 @@ internal data class MediaUiState(
     val topicFilter: String? = null, val lastOpenedId: String? = null
 )
 internal sealed interface MediaAction {
+    data object SubmitSearch : MediaAction
     data class Query(val value: String) : MediaAction
     data class ScholarFilter(val value: String?) : MediaAction
     data class KindFilter(val value: String?) : MediaAction
@@ -84,7 +85,7 @@ internal fun filteredMediaItems(state: MediaUiState): List<MediaUiItem> {
 }
 
 @Composable
-internal fun MediaScreen(state: MediaUiState, onAction: (MediaAction) -> Unit) {
+internal fun MediaScreen(state: MediaUiState, onHistory: () -> Unit = {}, onAction: (MediaAction) -> Unit) {
     val focus = LocalFocusManager.current
     val englishInterface = LocalConfiguration.current.locales[0].language == "en"
     val profile = state.scholars.find { it.id == state.profileId }
@@ -134,8 +135,9 @@ internal fun MediaScreen(state: MediaUiState, onAction: (MediaAction) -> Unit) {
                     Text(stringResource(R.string.media_clear))
                 } },
                 keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
-                keyboardActions = KeyboardActions(onSearch = { focus.clearFocus() }), shape = RoundedCornerShape(14.dp))
+                keyboardActions = KeyboardActions(onSearch = { focus.clearFocus(); onAction(MediaAction.SubmitSearch) }), shape = RoundedCornerShape(14.dp))
         }
+        item { SearchHistoryActions(state.query, { onAction(MediaAction.SubmitSearch) }, onHistory) }
         item {
             Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 FilterChip(selected = state.kindFilter == null, onClick = { onAction(MediaAction.KindFilter(null)); focus.clearFocus() },

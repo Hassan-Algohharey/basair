@@ -21,6 +21,8 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.selection.SelectionContainer
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -37,6 +39,8 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontFamily
@@ -110,6 +114,9 @@ private fun BasairApp(audioRequest: Int) {
     var referencePage by rememberSaveable { mutableIntStateOf(1) }
     var comparisonId by rememberSaveable { mutableStateOf("ghusl-intention") }
     var route by rememberSaveable { mutableStateOf("home") }
+    val searchHistory = remember { SearchHistoryStore(context) }
+    var historyOrigin by rememberSaveable { mutableStateOf("home") }
+    val openHistory: () -> Unit = { historyOrigin = route; route = "history" }
     var quranSurah by rememberSaveable { mutableStateOf<Int?>(null) }
     var quranAyah by rememberSaveable { mutableStateOf<Int?>(null) }
     var quranOrigin by rememberSaveable { mutableStateOf("home") }
@@ -164,7 +171,7 @@ private fun BasairApp(audioRequest: Int) {
         navigate("compare")
     }
     BackHandler(enabled = referenceVolume != null || bookId != null || route != "home") {
-        if (referenceVolume != null) referenceVolume = null else if (bookId != null) bookId = null else route = when (route) { "quran" -> quranOrigin; "audio" -> audioOrigin; else -> "home" }
+        if (referenceVolume != null) referenceVolume = null else if (bookId != null) bookId = null else route = when (route) { "history" -> historyOrigin; "quran" -> quranOrigin; "audio" -> audioOrigin; else -> "home" }
     }
     noteReference?.let { ref -> ReferenceDownloadDialog(ref, { noteReference = null }, {
         referencePage = it.pdfPage; referenceVolume = it.volume; noteReference = null
@@ -205,11 +212,19 @@ private fun BasairApp(audioRequest: Int) {
     }) { padding ->
         Box(Modifier.fillMaxSize().padding(padding)) {
             when (route) {
-                "home" -> HomeScreen(visitSubject, { navigate("search") }, { navigate("compare") }, openBook, { navigate("notes") }, { quranSurah = null; quranAyah = null; quranOrigin = "home"; navigate("quran") }, { openMedia("", null, false) }, { openAudio("", null) }, { openTajweed("") })
+                "home" -> HomeScreen(visitSubject, { navigate("search") }, { navigate("compare") }, openBook, { navigate("notes") }, { quranSurah = null; quranAyah = null; quranOrigin = "home"; navigate("quran") }, { openMedia("", null, false) }, { openAudio("", null) }, { openTajweed("") }, openHistory)
                 "library", "search" -> CatalogScreen(route == "search", query, { query = it }, subject,
                     { subject = it; school = null; topic = null }, openBook, saved, toggleSave, openComparison,
                     school, { school = it }, topic, { topic = it },
-                    { referencePage = it.pdfPage; referenceVolume = it.volume }, { quranSurah = null; quranAyah = null; quranOrigin = "home"; navigate("quran") }, { openMedia(query, null, false) }, { openAudio(query, it) }, { openTajweed(query) })
+                    { referencePage = it.pdfPage; referenceVolume = it.volume }, { quranSurah = null; quranAyah = null; quranOrigin = "home"; navigate("quran") }, { openMedia(query, null, false) }, { openAudio(query, it) }, { openTajweed(query) },
+                    { searchHistory.record(SearchScope.BOOKS, query) }, openHistory)
+                "history" -> SearchHistoryScreen({ route = historyOrigin }) { entry ->
+                    searchHistory.record(entry.scope, entry.query)
+                    when (entry.scope) {
+                        SearchScope.BOOKS -> { subject = null; school = null; topic = null; query = entry.query; route = "search" }
+                        SearchScope.MEDIA -> openMedia(entry.query, null, false)
+                    }
+                }
                 "tajweed" -> tajweedState.SaveableStateProvider("tajweed") {
                     TajweedFeature(tajweedQuery, { id, page -> notePage = page; bookId = id },
                         { id -> allAudioRecordings.find { it.id == id }?.let { openAudio(it.title, null); audioOrigin = "tajweed" } },
@@ -217,7 +232,7 @@ private fun BasairApp(audioRequest: Int) {
                         { surah, ayah -> quranSurah = surah; quranAyah = ayah; quranOrigin = "tajweed"; route = "quran" })
                 }
                 "audio" -> audioState.SaveableStateProvider("audio") { key(audioRequest) { AudiobookFeature(audioQuery, audioBook, openBook) } }
-                "media" -> mediaState.SaveableStateProvider("media") { MediaFeature(mediaQuery, mediaBook, mediaFavorites, openBook) }
+                "media" -> mediaState.SaveableStateProvider("media") { MediaFeature(mediaQuery, mediaBook, mediaFavorites, openBook, openHistory) }
                 "compare" -> comparisonState.SaveableStateProvider("comparison") {
                     ComparisonScreen(comparisonId, { comparisonId = it }, savedComparisons, toggleComparison,
                         { referencePage = it.pdfPage; referenceVolume = it.volume })
@@ -238,7 +253,7 @@ private fun BasairApp(audioRequest: Int) {
 }
 
 @Composable
-private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onCompare: () -> Unit, onBook: (String) -> Unit, onNotes: () -> Unit, onQuran: () -> Unit, onMedia: () -> Unit, onAudio: () -> Unit, onTajweed: () -> Unit) {
+private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onCompare: () -> Unit, onBook: (String) -> Unit, onNotes: () -> Unit, onQuran: () -> Unit, onMedia: () -> Unit, onAudio: () -> Unit, onTajweed: () -> Unit, onHistory: () -> Unit) {
     val context = LocalContext.current
     LazyColumn(contentPadding = PaddingValues(22.dp), verticalArrangement = Arrangement.spacedBy(22.dp)) {
         item { LanguageSettings() }
@@ -247,6 +262,7 @@ private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onComp
         item { TajweedEntry(onTajweed) }
         item { MediaEntry(onMedia) }
         item { OutlinedButton(onClick = onNotes) { Text(context.getString(R.string.notes_title)) } }
+        item { OutlinedButton(onClick = onHistory) { Text(context.getString(R.string.history_title)) } }
         item {
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                 Box(Modifier.size(48.dp).clip(RoundedCornerShape(15.dp)).background(Green), contentAlignment = Alignment.Center) {
@@ -321,8 +337,11 @@ private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onComp
 @Composable
 private fun CatalogScreen(searchMode: Boolean, query: String, onQuery: (String) -> Unit, subject: String?,
     onSubject: (String?) -> Unit, onBook: (String) -> Unit, saved: Set<String>, onSave: (String) -> Unit, onCompare: (String) -> Unit,
-    school: String?, onSchool: (String?) -> Unit, topic: String?, onTopic: (String?) -> Unit, onReference: (Reference) -> Unit, onQuran: () -> Unit, onMedia: () -> Unit, onAudio: (String?) -> Unit, onTajweed: () -> Unit) {
+    school: String?, onSchool: (String?) -> Unit, topic: String?, onTopic: (String?) -> Unit, onReference: (Reference) -> Unit, onQuran: () -> Unit, onMedia: () -> Unit, onAudio: (String?) -> Unit, onTajweed: () -> Unit,
+    onSubmit: () -> Unit, onHistory: () -> Unit) {
     val context = LocalContext.current
+    val focus = LocalFocusManager.current
+    val searchedBook: (String) -> Unit = { id -> onSubmit(); onBook(id) }
     val results = remember(query, subject, school, topic) { Catalog.search(query, subject, school, topic) }
     val comparisons = remember(query, subject, school, topic, searchMode) {
         if (searchMode && school == null && topic == null) Catalog.searchComparisons(query, subject) else emptyList()
@@ -344,9 +363,12 @@ private fun CatalogScreen(searchMode: Boolean, query: String, onQuery: (String) 
                 leadingIcon = { LineIcon("search", Muted) },
                 trailingIcon = { if (query.isNotEmpty()) TextButton(onClick = { onQuery("") }) { Text(context.getString(R.string.ui_clear)) } },
                 singleLine = true, shape = RoundedCornerShape(16.dp),
+                keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
+                keyboardActions = KeyboardActions(onSearch = { focus.clearFocus(); onSubmit() }),
                 colors = OutlinedTextFieldDefaults.colors(unfocusedBorderColor = Line,
                     focusedBorderColor = Green, unfocusedContainerColor = Color.White))
         }
+        item { SearchHistoryActions(query, onSubmit, onHistory) }
         item {
             Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 FilterChip(selected = subject == null, onClick = { onSubject(null) }, label = { Text(context.getString(R.string.ui_all)) })
@@ -355,10 +377,10 @@ private fun CatalogScreen(searchMode: Boolean, query: String, onQuery: (String) 
                 }
             }
         }
-        if (subject in listOf(null, "tajweed") && school == null && topic == null && searchTajweed(query).isNotEmpty()) item { TajweedEntry(onTajweed) }
-        if (showQuran) item { QuranEntry(onQuran) }
-        if (audioResults.isNotEmpty()) item { AudiobookEntry({ onAudio(audioResults.singleOrNull()?.bookIds?.firstOrNull()) }, audioResults.size) }
-        if (mediaMatches > 0) item { MediaEntry(onMedia, mediaMatches) }
+        if (subject in listOf(null, "tajweed") && school == null && topic == null && searchTajweed(query).isNotEmpty()) item { TajweedEntry { onSubmit(); onTajweed() } }
+        if (showQuran) item { QuranEntry { onSubmit(); onQuran() } }
+        if (audioResults.isNotEmpty()) item { AudiobookEntry({ onSubmit(); onAudio(audioResults.singleOrNull()?.bookIds?.firstOrNull()) }, audioResults.size) }
+        if (mediaMatches > 0) item { MediaEntry({ onSubmit(); onMedia() }, mediaMatches) }
         if (subject == "fiqh") item { SchoolSelector(school, onSchool) }
         subject?.let { selectedSubject -> Catalog.books.filter { it.subject == selectedSubject }.flatMap { it.topics }.distinct() }?.let { filters ->
             item {
@@ -381,7 +403,7 @@ private fun CatalogScreen(searchMode: Boolean, query: String, onQuery: (String) 
             else EmptyState(context.getString(R.string.ui_no_results), context.getString(R.string.ui_try_a_shorter_query_or_select_all_subjects), context.getString(R.string.ui_reset_search)) { onQuery(""); onSubject(null); onSchool(null); onTopic(null) }
         }
         items(comparisons, key = { "comparison:" + it.title }) { comparison ->
-            Surface(onClick = { onCompare(comparison.id) }, color = SoftGreen, shape = RoundedCornerShape(18.dp)) {
+            Surface(onClick = { onSubmit(); onCompare(comparison.id) }, color = SoftGreen, shape = RoundedCornerShape(18.dp)) {
                 Column(Modifier.fillMaxWidth().padding(18.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text(context.getString(R.string.ui_compare_the_four_schools), fontSize = 11.sp, color = Green)
                     Text(comparison.title, fontSize = 18.sp, fontWeight = FontWeight.Bold)
@@ -389,9 +411,9 @@ private fun CatalogScreen(searchMode: Boolean, query: String, onQuery: (String) 
                 }
             }
         }
-        items(results, key = { it.id }) { book -> BookCard(book, book.id in saved, { onBook(book.id) }, { onSave(book.id) }) }
+        items(results, key = { it.id }) { book -> BookCard(book, book.id in saved, { searchedBook(book.id) }, { onSave(book.id) }) }
         if (subject == "fiqh" && (school == null || school == "shared")) {
-            item { SharedReferences(query, topic, onReference) }
+            item { SharedReferences(query, topic) { onSubmit(); onReference(it) } }
         }
     }
 }
