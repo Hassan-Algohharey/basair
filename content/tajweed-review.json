@@ -1,0 +1,157 @@
+{
+  "reviewedOn": "2026-10-25",
+  "books": [
+    {
+      "id": "tuhfat-atfal",
+      "title": "تحفة الأطفال والغلمان في تجويد القرآن",
+      "source": "https://islamhouse.com/ar/books/2101/",
+      "downloadUrl": "https://d1.islamhouse.com/data/ar/ih_books/single_01/ar_Tuhfat_Alatfal2.pdf",
+      "pages": 18,
+      "sha256": "259e87590c539eb08a04ad99172dcb07660fdc599cadd855065879f9348f2e11",
+      "publisher": "نسخة متون طالب العلم بتحقيق عبد المحسن بن محمد القاسم — إتاحة دار الإسلام",
+      "edition": "المتن الثاني؛ رقم الطبعة وسنة الطبع غير مبينين في الملف المستقل",
+      "licenseUrl": "https://d1.islamhouse.com/html/faq.htm",
+      "reviewedOn": "2026-10-25",
+      "chapters": [
+        {
+          "title": "أحكام النون الساكنة والتنوين",
+          "pdfPage": 5,
+          "printedPage": "26"
+        },
+        {
+          "title": "أحكام الميم والنون المشددتين",
+          "pdfPage": 7,
+          "printedPage": "28"
+        },
+        {
+          "title": "أحكام الميم الساكنة",
+          "pdfPage": 8,
+          "printedPage": "29"
+        },
+        {
+          "title": "أحكام اللام",
+          "pdfPage": 9,
+          "printedPage": "30"
+        },
+        {
+          "title": "المتماثلان والمتقاربان والمتجانسان",
+          "pdfPage": 11,
+          "printedPage": "32"
+        },
+        {
+          "title": "المدود",
+          "pdfPage": 12,
+          "printedPage": "33"
+        }
+      ]
+    },
+    {
+      "id": "jazariyyah",
+      "title": "المقدمة فيما يجب على قارئ القرآن أن يعلمه — الجزرية",
+      "source": "https://islamhouse.com/ar/books/2833500/",
+      "downloadUrl": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-jazariyyah.pdf",
+      "pages": 44,
+      "sha256": "07894c13babb430b3babc021f3289a2d7d794e65e15757ae449f8e3f9723df66",
+      "publisher": "عبد المحسن بن محمد القاسم — الرياض؛ إتاحة دار الإسلام",
+      "edition": "الطبعة الأولى، 1441هـ / 2020م كما في صفحة حقوق الملف",
+      "licenseUrl": "https://d1.islamhouse.com/html/faq.htm",
+      "reviewedOn": "2026-10-25",
+      "chapters": [
+        {
+          "title": "مخارج الحروف",
+          "pdfPage": 15,
+          "printedPage": "13"
+        },
+        {
+          "title": "صفات الحروف",
+          "pdfPage": 17,
+          "printedPage": "15"
+        },
+        {
+          "title": "التجويد",
+          "pdfPage": 19,
+          "printedPage": "17"
+        },
+        {
+          "title": "الترقيق",
+          "pdfPage": 21,
+          "printedPage": "19"
+        },
+        {
+          "title": "الراءات",
+          "pdfPage": 23,
+          "printedPage": "21"
+        },
+        {
+          "title": "أحكام اللام",
+          "pdfPage": 24,
+          "printedPage": "22"
+        },
+        {
+          "title": "الضاد والظاء",
+          "pdfPage": 25,
+          "printedPage": "23"
+        },
+        {
+          "title": "أحكام الميم الساكنة",
+          "pdfPage": 29,
+          "printedPage": "27"
+        },
+        {
+          "title": "أحكام النون الساكنة والتنوين",
+          "pdfPage": 30,
+          "printedPage": "28"
+        },
+        {
+          "title": "المدود",
+          "pdfPage": 31,
+          "printedPage": "29"
+        },
+        {
+          "title": "الوقف والابتداء",
+          "pdfPage": 32,
+          "printedPage": "30"
+        },
+        {
+          "title": "المقطوع والموصول",
+          "pdfPage": 33,
+          "printedPage": "31"
+        },
+        {
+          "title": "التاءات",
+          "pdfPage": 36,
+          "printedPage": "34"
+        },
+        {
+          "title": "همز الوصل",
+          "pdfPage": 38,
+          "printedPage": "36"
+        },
+        {
+          "title": "الوقف على أواخر الكلم",
+          "pdfPage": 39,
+          "printedPage": "37"
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "path": "content/sources/islamhouse-2101-v013.html",
+      "bytes": 89882,
+      "sha256": "4b56f1afa96b5bc414467d67732c96ce89e0c7c5240ae7a583baf8203d42ba7e"
+    },
+    {
+      "path": "content/sources/islamhouse-2833500-v013.html",
+      "bytes": 79401,
+      "sha256": "74af4308c5fe0815764dfd45bfad5a1e0078cfc05e02a86a7448fb9901e12919"
+    },
+    {
+      "path": "content/sources/islamhouse-permission-v013.html",
+      "bytes": 97594,
+      "sha256": "04e8f24dc082fbb4720b0b697e06b2207659c55ce1cca0f7c5c8d298ca032a8a"
+    }
+  ],
+  "commercialUseAllowed": false,
+  "reviewScope": "Source identity, full file and page count, all rendered page thumbnails, chapter starts and printed references. No new recitation recordings or verse links are included."
+}
