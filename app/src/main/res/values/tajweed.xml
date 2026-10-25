@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tj_title">التجويد</string>
+    <string name="tj_subject_detail">أحكام التلاوة ومخارج الحروف</string>
+    <string name="tj_noon">أحكام النون الساكنة والتنوين</string>
+    <string name="tj_ghunnah">أحكام الميم والنون المشددتين</string>
+    <string name="tj_meem">أحكام الميم الساكنة</string>
+    <string name="tj_lam">أحكام اللام</string>
+    <string name="tj_pairs">المتماثلان والمتقاربان والمتجانسان</string>
+    <string name="tj_madd">المدود</string>
+    <string name="tj_articulation">مخارج الحروف</string>
+    <string name="tj_attributes">صفات الحروف</string>
+    <string name="tj_thinning">الترقيق</string>
+    <string name="tj_raa">الراءات</string>
+    <string name="tj_dad">الضاد والظاء</string>
+    <string name="tj_stopping">الوقف والابتداء</string>
+    <string name="tj_joined">المقطوع والموصول</string>
+    <string name="tj_taa">التاءات</string>
+    <string name="tj_hamzah">همز الوصل</string>
+    <string name="tj_endings">الوقف على أواخر الكلم</string>
+    <string name="tj_intro">كتابان كاملان وخطة قراءة موثقة بالأبواب والصفحات</string>
+    <string name="tj_notice">خطة قراءة للمتون العربية، وليست دورة صوتية. تسجيلات الدروس والأمثلة الصوتية لم تضف بعد.</string>
+    <string name="tj_plan">خطة القراءة</string>
+    <string name="tj_books">كتب التجويد</string>
+    <string name="tj_progress">موضوعات قرأتها: %1$d من %2$d</string>
+    <string name="tj_mark">قرأت هذا الموضوع</string>
+    <string name="tj_unmark">إلغاء علامة القراءة</string>
+    <string name="tj_read_page">قراءة %1$s — صفحة الملف %2$d، ص %3$s</string>
+    <string name="tj_continue">متابعة آخر موضوع</string>
+    <string name="tj_search">ابحث عن موضوع أو كتاب تجويد</string>
+    <string name="tj_empty">لا توجد موضوعات مطابقة</string>
+    <string name="tj_results">موضوعات مطابقة: %1$d</string>
+    <string name="tj_local">علامات القراءة محفوظة على جهازك، ولا تدل على إتقان التلاوة.</string>
+</resources>

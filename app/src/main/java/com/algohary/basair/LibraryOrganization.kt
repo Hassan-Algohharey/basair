@@ -14,7 +14,8 @@ internal val subjectAliases = mapOf(
     "fiqh" to "fiqh jurisprudence worship transactions", "aqidah" to "aqidah creed faith",
     "hadith" to "hadith sunnah", "sirah" to "sirah seerah prophetic biography",
     "tafsir" to "tafsir quran interpretation", "salaf" to "salaf biographies",
-    "tazkiyah" to "tazkiyah spiritual growth purification of the soul"
+    "tazkiyah" to "tazkiyah spiritual growth purification of the soul",
+    "tajweed" to "tajweed tajwid recitation tuhfat atfal jamzuri jazariyyah jazari"
 )
 internal fun bookSearchAliases(book: Book): String = subjectAliases[book.subject].orEmpty() + " " +
     book.topics.joinToString(" ") { topicSearchAliases[it].orEmpty() } + " " +

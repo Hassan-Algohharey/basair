@@ -121,6 +121,11 @@ private fun BasairApp(audioRequest: Int) {
     val comparisonState = rememberSaveableStateHolder()
     val mediaState = rememberSaveableStateHolder()
     val audioState = rememberSaveableStateHolder()
+    val tajweedState = rememberSaveableStateHolder()
+    var tajweedQuery by rememberSaveable { mutableStateOf("") }
+    val openTajweed: (String) -> Unit = { search ->
+        tajweedState.removeState("tajweed"); tajweedQuery = search; bookId = null; route = "tajweed"
+    }
     var audioQuery by rememberSaveable { mutableStateOf("") }
     var audioBook by rememberSaveable { mutableStateOf<String?>(null) }
     val openAudio: (String, String?) -> Unit = { search, book ->
@@ -196,11 +201,12 @@ private fun BasairApp(audioRequest: Int) {
     }) { padding ->
         Box(Modifier.fillMaxSize().padding(padding)) {
             when (route) {
-                "home" -> HomeScreen(visitSubject, { navigate("search") }, { navigate("compare") }, openBook, { navigate("notes") }, { navigate("quran") }, { openMedia("", null, false) }, { openAudio("", null) })
+                "home" -> HomeScreen(visitSubject, { navigate("search") }, { navigate("compare") }, openBook, { navigate("notes") }, { navigate("quran") }, { openMedia("", null, false) }, { openAudio("", null) }, { openTajweed("") })
                 "library", "search" -> CatalogScreen(route == "search", query, { query = it }, subject,
                     { subject = it; school = null; topic = null }, openBook, saved, toggleSave, openComparison,
                     school, { school = it }, topic, { topic = it },
-                    { referencePage = it.pdfPage; referenceVolume = it.volume }, { navigate("quran") }, { openMedia(query, null, false) }, { openAudio(query, it) })
+                    { referencePage = it.pdfPage; referenceVolume = it.volume }, { navigate("quran") }, { openMedia(query, null, false) }, { openAudio(query, it) }, { openTajweed(query) })
+                "tajweed" -> tajweedState.SaveableStateProvider("tajweed") { TajweedFeature(tajweedQuery) { id, page -> notePage = page; bookId = id } }
                 "audio" -> audioState.SaveableStateProvider("audio") { key(audioRequest) { AudiobookFeature(audioQuery, audioBook, openBook) } }
                 "media" -> mediaState.SaveableStateProvider("media") { MediaFeature(mediaQuery, mediaBook, mediaFavorites, openBook) }
                 "compare" -> comparisonState.SaveableStateProvider("comparison") {
@@ -223,12 +229,13 @@ private fun BasairApp(audioRequest: Int) {
 }
 
 @Composable
-private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onCompare: () -> Unit, onBook: (String) -> Unit, onNotes: () -> Unit, onQuran: () -> Unit, onMedia: () -> Unit, onAudio: () -> Unit) {
+private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onCompare: () -> Unit, onBook: (String) -> Unit, onNotes: () -> Unit, onQuran: () -> Unit, onMedia: () -> Unit, onAudio: () -> Unit, onTajweed: () -> Unit) {
     val context = LocalContext.current
     LazyColumn(contentPadding = PaddingValues(22.dp), verticalArrangement = Arrangement.spacedBy(22.dp)) {
         item { LanguageSettings() }
         item { QuranEntry(onQuran) }
         item { AudiobookEntry(onAudio) }
+        item { TajweedEntry(onTajweed) }
         item { MediaEntry(onMedia) }
         item { OutlinedButton(onClick = onNotes) { Text(context.getString(R.string.notes_title)) } }
         item {
@@ -305,7 +312,7 @@ private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onComp
 @Composable
 private fun CatalogScreen(searchMode: Boolean, query: String, onQuery: (String) -> Unit, subject: String?,
     onSubject: (String?) -> Unit, onBook: (String) -> Unit, saved: Set<String>, onSave: (String) -> Unit, onCompare: (String) -> Unit,
-    school: String?, onSchool: (String?) -> Unit, topic: String?, onTopic: (String?) -> Unit, onReference: (Reference) -> Unit, onQuran: () -> Unit, onMedia: () -> Unit, onAudio: (String?) -> Unit) {
+    school: String?, onSchool: (String?) -> Unit, topic: String?, onTopic: (String?) -> Unit, onReference: (Reference) -> Unit, onQuran: () -> Unit, onMedia: () -> Unit, onAudio: (String?) -> Unit, onTajweed: () -> Unit) {
     val context = LocalContext.current
     val results = remember(query, subject, school, topic) { Catalog.search(query, subject, school, topic) }
     val comparisons = remember(query, subject, school, topic, searchMode) {
@@ -339,6 +346,7 @@ private fun CatalogScreen(searchMode: Boolean, query: String, onQuery: (String) 
                 }
             }
         }
+        if (subject in listOf(null, "tajweed") && school == null && topic == null && searchTajweed(query).isNotEmpty()) item { TajweedEntry(onTajweed) }
         if (showQuran) item { QuranEntry(onQuran) }
         if (audioResults.isNotEmpty()) item { AudiobookEntry({ onAudio(audioResults.singleOrNull()?.bookIds?.firstOrNull()) }, audioResults.size) }
         if (mediaMatches > 0) item { MediaEntry(onMedia, mediaMatches) }

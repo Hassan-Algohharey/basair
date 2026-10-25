@@ -33,7 +33,7 @@ internal fun pageRanges(pages: List<Int>): String {
 
 internal data class PageSpec(val sha256: String, val bytes: Long)
 internal data class PageFile(val file: File, val index: Int, val count: Int)
-internal const val BOOK_HOST = "https://raw.githubusercontent.com/Hassan-Algohharey/basair/b31a89987cb33d6efa3f1e4ae8ed2750ea217cb1/"
+internal const val BOOK_HOST = "https://raw.githubusercontent.com/Hassan-Algohharey/basair/9ca0530e333f3eb337caf6f71912e739b30d33a9/"
 
 internal fun storePage(input: InputStream, target: File, spec: PageSpec, active: () -> Unit = {}): File {
     target.parentFile!!.mkdirs()

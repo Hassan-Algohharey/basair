@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tj_title">Tajweed</string>
+    <string name="tj_subject_detail">Recitation rules and articulation</string>
+    <string name="tj_noon">Noon sakinah and tanween</string>
+    <string name="tj_ghunnah">Doubled meem and noon</string>
+    <string name="tj_meem">Meem sakinah</string>
+    <string name="tj_lam">Laam rules</string>
+    <string name="tj_pairs">Identical, close and related letters</string>
+    <string name="tj_madd">Lengthening</string>
+    <string name="tj_articulation">Articulation points</string>
+    <string name="tj_attributes">Letter attributes</string>
+    <string name="tj_thinning">Light pronunciation</string>
+    <string name="tj_raa">Raa rules</string>
+    <string name="tj_dad">Daad and zaa</string>
+    <string name="tj_stopping">Stopping and starting</string>
+    <string name="tj_joined">Separated and joined words</string>
+    <string name="tj_taa">Taa spellings</string>
+    <string name="tj_hamzah">Connecting hamzah</string>
+    <string name="tj_endings">Stopping at word endings</string>
+    <string name="tj_intro">Two complete texts and a chapter reading plan with page references</string>
+    <string name="tj_notice">A reading plan for the Arabic texts. Lesson recordings and audio examples are not available yet.</string>
+    <string name="tj_plan">Reading plan</string>
+    <string name="tj_books">Tajweed books</string>
+    <string name="tj_progress">Topics read: %1$d of %2$d</string>
+    <string name="tj_mark">I have read this topic</string>
+    <string name="tj_unmark">Mark as unread</string>
+    <string name="tj_read_page">Read %1$s — PDF page %2$d, printed p. %3$s</string>
+    <string name="tj_continue">Continue last topic</string>
+    <string name="tj_search">Search a Tajweed topic or book</string>
+    <string name="tj_empty">No matching topics</string>
+    <string name="tj_results">Matching topics: %1$d</string>
+    <string name="tj_local">Reading marks stay on your device and do not assess recitation proficiency.</string>
+</resources>

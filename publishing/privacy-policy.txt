@@ -87,3 +87,10 @@ Audiobooks — from version 0.12.0
 Audio streaming and downloads start at your request from d1.islamhouse.com over HTTPS. The provider may receive your IP address, connection information and file-range requests used for seeking and resuming, under its policies. Basair does not send a separate saved-item history, search terms or notes to the provider.
 Listening positions, durations, last track per reading, speed and download setting are stored locally. Complete and partial audio copies remain in private app storage and are not uploaded or exposed to other apps. Delete downloads in the audio screen while keeping listening positions; clearing app storage or uninstalling removes all these local records and files.
 Background audio uses an Android media notification and FOREGROUND_SERVICE, FOREGROUND_SERVICE_MEDIA_PLAYBACK and WAKE_LOCK permissions. No microphone, recording or general file-access permission is requested. Stop audio in the app or system controls. Book and Quran saved-only filters do not control audio streaming. Audio starts with Play and uses a complete local audio copy when available. Audio downloads use unmetered Wi-Fi by default; you can change this setting.
+
+
+خطة التجويد — من الإصدار 0.13.0
+تحفظ علامات الموضوعات المقروءة ومعرّف آخر موضوع محليًا على جهازك. لا ترسل علامات القراءة أو كلمات البحث إلى المصادر. يمكن إلغاء علامة كل موضوع من شاشة التجويد؛ مسح بيانات التطبيق أو إزالته يحذف العلامات والسجل. تستخدم كتب التجويد استضافة الكتب وإعدادات التنزيل نفسها الموضحة أعلاه.
+
+Tajweed reading plan — from version 0.13.0
+Read-topic marks and the last opened topic identifier stay on your device. Reading marks and search terms are not sent to sources. You can unmark each topic in the Tajweed screen; clearing app storage or uninstalling removes marks and history. Tajweed books use the same book hosting and download settings described above.

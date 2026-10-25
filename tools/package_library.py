@@ -7,7 +7,7 @@ from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parent.parent
 books = json.loads((ROOT / 'content/books.json').read_text(encoding='utf-8'))
-assert {b['subject'] for b in books} == {'fiqh', 'aqidah', 'hadith', 'sirah', 'tafsir', 'salaf', 'tazkiyah'}
+assert {b['subject'] for b in books} == {'fiqh', 'aqidah', 'hadith', 'sirah', 'tafsir', 'salaf', 'tazkiyah', 'tajweed'}
 assert len({b['id'] for b in books}) == len(books)
 metadata = []
 rows = []

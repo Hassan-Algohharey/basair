@@ -44,7 +44,8 @@ object Catalog {
         Subject("sirah", "السيرة", "السيرة النبوية والشمائل", "sun"),
         Subject("tafsir", "التفسير", "معاني القرآن وعلومه", "open"),
         Subject("salaf", "تراجم السلف", "سير الأئمة والعلماء", "book"),
-        Subject("tazkiyah", "التزكية", "أعمال القلوب وتهذيب النفس", "star")
+        Subject("tazkiyah", "التزكية", "أعمال القلوب وتهذيب النفس", "star"),
+        Subject("tajweed", "التجويد", "أحكام التلاوة ومخارج الحروف", "open")
     )
     val books = libraryBooks
     val subjectFilters = mapOf(
