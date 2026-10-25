@@ -224,4 +224,3 @@ WaitReader 'File page 10 of 23' | Out-Null
 Capture 'english-passage.png'
 Restart; Tap 'العربية'
 Write-Output 'PASS unmapped-book notice, original lesson availability, English passage selection and printed/file page offset.'
-
