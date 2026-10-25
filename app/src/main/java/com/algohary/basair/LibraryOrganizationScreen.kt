@@ -17,7 +17,7 @@ internal fun LanguageSettings() {
     val context = LocalContext.current
     val language = LocalConfiguration.current.locales[0].language
     Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+        Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(6.dp)) {
             Text(context.getString(R.string.language), fontSize = 14.sp)
             Row {
                 listOf("ar" to "العربية", "en" to "English").forEach { (tag, label) ->

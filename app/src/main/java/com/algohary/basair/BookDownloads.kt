@@ -67,7 +67,8 @@ internal class BookDownloads(private val context: Context) {
     private val fullRoot = File(root, "full")
     @Volatile private var retainedPaths: Set<String> = emptySet()
     private val manifest by lazy { JSONObject(context.assets.open("page-manifest.json").bufferedReader().use { it.readText() }) }
-    private fun entry(book: Book): JSONObject = manifest.getJSONObject(book.id).also {
+    private val madinahManifest by lazy { MadinahPages.manifest(context) }
+    private fun entry(book: Book): JSONObject = (if (book.id == madinahBook.id) madinahManifest else manifest.getJSONObject(book.id)).also {
         check(it.getString("originalSha256") == book.sha256 && it.getJSONArray("pages").length() == book.pages)
     }
     private fun directory(book: Book) = File(pagesRoot, "${book.id}-${book.sha256.take(16)}")
@@ -75,6 +76,7 @@ internal class BookDownloads(private val context: Context) {
     private val verifiedFull = mutableMapOf<String, Pair<Long, Long>>()
 
     @Synchronized fun fullFile(book: Book): File? {
+        if (book.pageOnly) return null
         val target = fullTarget(book)
         if (!target.exists()) {
             val legacy = File(context.cacheDir, "books/${target.name}")
@@ -109,6 +111,9 @@ internal class BookDownloads(private val context: Context) {
         fullFile(book)?.let { return@withContext PageFile(it, page - 1, book.pages) }
         val file = pageFile(book, page) ?: run {
             check(!offlineOnly()) { "Page not cached" }
+            if (book.id == madinahBook.id) {
+                return@run MadinahPages.fetch(context, page, File(directory(book), "$page.pdf"), spec(book, page))
+            }
             val url = BOOK_HOST + entry(book).getString("path") + "/$page.pdf"
             connection(url).let { connection ->
                 try {
@@ -172,6 +177,7 @@ internal class BookDownloads(private val context: Context) {
             .sortedBy { it.lastModified() }.forEach { if (bytes > limit) { val size = it.length(); if (it.delete()) bytes -= size } }
     }
     suspend fun downloadFull(book: Book, progress: (Long) -> Unit): File = fullDownloadLock.withLock { withContext(Dispatchers.IO) {
+        check(!book.pageOnly) { "This edition is downloaded by page" }
         fullFile(book)?.let { return@withContext it }
         check(!offlineOnly()) { "Offline reading only" }
         val network = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager

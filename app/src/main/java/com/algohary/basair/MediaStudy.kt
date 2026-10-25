@@ -72,7 +72,7 @@ internal fun MediaStudyControls(state: MediaUiState, onAction: (MediaAction) -> 
             OutlinedCard(Modifier.fillMaxWidth()) {
                 Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text(if (english) series.englishTitle else series.title, style = MaterialTheme.typography.titleMedium)
-                    Text(stringResource(if (series.coverage == "complete") R.string.study_complete else R.string.study_partial))
+                    Text(stringResource(when (series.coverage) { "complete" -> R.string.study_complete; "indexed" -> R.string.batch_indexed; else -> R.string.study_partial }))
                     Text(stringResource(R.string.study_indexed_episodes, orderedSeriesItems(state.items, series.id).size))
                     Text(if (english) series.englishCoverageNote else series.coverageNote, style = MaterialTheme.typography.bodySmall)
                     Text(stringResource(R.string.book_study_progress,

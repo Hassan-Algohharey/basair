@@ -44,7 +44,7 @@ class TajweedExamplesTest {
         assertEquals(3, searchAudiobooks("An-Nas").size)
         assertEquals(3, searchTajweedExamples("الناس").size)
         assertTrue(searchAudiobooks("").none { it.id in TajweedExamples.sourceRecordings.map { s -> s.id } })
-        assertEquals(2, searchAudiobooks("audiobooks").size)
+        assertEquals(3, searchAudiobooks("audiobooks").size)
         assertEquals(5, searchTajweedAudio("Ahmed").size)
     }
 

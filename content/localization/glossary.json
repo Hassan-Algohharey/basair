@@ -1,0 +1,105 @@
+{
+  "status": "terminology_draft_for_review",
+  "terms": [
+    {
+      "ar": "الفقه",
+      "en": "Fiqh / Islamic jurisprudence",
+      "reviewer": null,
+      "approved": false
+    },
+    {
+      "ar": "العقيدة",
+      "en": "Creed",
+      "reviewer": null,
+      "approved": false
+    },
+    {
+      "ar": "الحديث",
+      "en": "Hadith",
+      "reviewer": null,
+      "approved": false
+    },
+    {
+      "ar": "السيرة",
+      "en": "Prophetic biography",
+      "reviewer": null,
+      "approved": false
+    },
+    {
+      "ar": "التفسير",
+      "en": "Tafsir",
+      "reviewer": null,
+      "approved": false
+    },
+    {
+      "ar": "التجويد",
+      "en": "Tajweed",
+      "reviewer": null,
+      "approved": false
+    },
+    {
+      "ar": "تراجم السلف",
+      "en": "Early Muslim biographies",
+      "reviewer": null,
+      "approved": false
+    },
+    {
+      "ar": "التزكية",
+      "en": "Spiritual growth",
+      "reviewer": null,
+      "approved": false
+    },
+    {
+      "ar": "الحنفي",
+      "en": "Hanafi",
+      "reviewer": null,
+      "approved": false
+    },
+    {
+      "ar": "المالكي",
+      "en": "Maliki",
+      "reviewer": null,
+      "approved": false
+    },
+    {
+      "ar": "الشافعي",
+      "en": "Shafii",
+      "reviewer": null,
+      "approved": false
+    },
+    {
+      "ar": "الحنبلي",
+      "en": "Hanbali",
+      "reviewer": null,
+      "approved": false
+    },
+    {
+      "ar": "ترجمة معاني القرآن",
+      "en": "Translation of the meanings of the Quran",
+      "reviewer": null,
+      "approved": false
+    },
+    {
+      "ar": "قراءة المتن",
+      "en": "Text reading",
+      "reviewer": null,
+      "approved": false
+    },
+    {
+      "ar": "شرح الكتاب",
+      "en": "Book commentary",
+      "reviewer": null,
+      "approved": false
+    }
+  ],
+  "languageReviewRequired": [
+    "ar",
+    "en",
+    "fr",
+    "de",
+    "tr",
+    "ur",
+    "id"
+  ],
+  "notes": "الواجهة الحالية عربية وإنجليزية؛ الحقول الأخرى فارغة عمدًا ولا تشحن ترجمات غير مراجعة. المراجعة اللغوية والمراجعة العلمية عمليتان منفصلتان."
+}

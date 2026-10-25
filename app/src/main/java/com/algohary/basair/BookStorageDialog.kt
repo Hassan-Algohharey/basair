@@ -50,7 +50,8 @@ internal fun BookStorageDialog(book: Book, page: Int, downloads: BookDownloads, 
             Text(context.getString(R.string.storage_counts, cached, book.pages, (bytes + 999_999) / 1_000_000))
             if (!full) Text(context.getString(R.string.storage_page_ranges, ranges))
             Text(context.getString(if (full) R.string.storage_full_ready else R.string.storage_partial_notice))
-            Text(context.getString(R.string.storage_full_size, (book.bytes + 999_999) / 1_000_000))
+            if (!book.pageOnly) Text(context.getString(R.string.storage_full_size, (book.bytes + 999_999) / 1_000_000))
+            else Text(context.getString(R.string.batch_madinah_page_only))
             Row {
                 Switch(checked = offlineOnly, enabled = !running, onCheckedChange = { offlineOnly = it; downloads.setOfflineOnly(it) })
                 Text(context.getString(R.string.storage_offline_only), Modifier.padding(start = 8.dp))
@@ -60,7 +61,7 @@ internal fun BookStorageDialog(book: Book, page: Int, downloads: BookDownloads, 
                 LinearProgressIndicator(progress = { (progress.toFloat() / book.bytes).coerceIn(0f, 1f) }, modifier = Modifier.fillMaxWidth())
                 Text(context.getString(R.string.storage_progress, progress * 100 / book.bytes))
                 TextButton(onClick = { job?.cancel() }) { Text(context.getString(R.string.storage_pause)) }
-            } else Button(enabled = !busy && !full && !offlineOnly, onClick = {
+            } else if (!book.pageOnly) Button(enabled = !busy && !full && !offlineOnly, onClick = {
                 running = true; failed = false
                 job = scope.launch {
                     try { downloads.downloadFull(book) { progress = it } }
@@ -79,7 +80,7 @@ internal fun BookStorageDialog(book: Book, page: Int, downloads: BookDownloads, 
                 Switch(checked = wifiOnly, onCheckedChange = { wifiOnly = it; downloads.setWifiOnly(it) })
                 Text(context.getString(R.string.storage_wifi), Modifier.padding(start = 8.dp))
             }
-            Row {
+            if (!book.pageOnly) Row {
                 Switch(checked = fullWifiOnly, onCheckedChange = { fullWifiOnly = it; downloads.setFullWifiOnly(it) })
                 Text(context.getString(R.string.storage_full_wifi), Modifier.padding(start = 8.dp))
             }

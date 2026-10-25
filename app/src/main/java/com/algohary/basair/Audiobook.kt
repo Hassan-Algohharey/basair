@@ -1,10 +1,14 @@
 package com.algohary.basair
 
+internal data class AudioBookPage(val bookId: String, val bookSha256: String, val pdfPage: Int, val printedPage: String)
+internal fun validAudioBookPage(page: AudioBookPage): Boolean = Catalog.books.any {
+    it.id == page.bookId && it.sha256 == page.bookSha256 && it.chapters.any { c -> c.pdfPage == page.pdfPage && c.printedPage == page.printedPage }
+}
 internal data class AudioTrack(
     val id: String, val title: String, val englishTitle: String, val url: String,
     val sequence: Int, val durationMs: Long? = null, val byteSize: Long = 0,
     val mimeType: String = "audio/mpeg", val sha256: String? = null,
-    val clipStartMs: Long = 0, val clipEndMs: Long? = null
+    val clipStartMs: Long = 0, val clipEndMs: Long? = null, val bookPage: AudioBookPage? = null
 )
 
 internal data class Audiobook(

@@ -28,6 +28,13 @@
       "englishName": "Abdul Qadir al-Othman",
       "officialUrl": "https://qurantaj.com/",
       "verificationUrl": "https://qurantaj.com/media/article/41"
+    },
+    {
+      "id": "ahmed-elaraby",
+      "name": "د. أحمد العربي — قناة النشر",
+      "englishName": "Dr Ahmed al-Araby — publishing channel",
+      "officialUrl": "https://t.me/Ahmed_Elaraby",
+      "verificationUrl": "https://t.me/s/Ahmed_Elaraby"
     }
   ],
   "items": [
@@ -198,7 +205,9 @@
       "englishTopics": [
         "Hadith",
         "Forty Nawawi Hadith"
-      ]
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "21 شعبان 1435"
     },
     {
       "id": "munajjid-nawawi-02",
@@ -224,7 +233,9 @@
       "englishTopics": [
         "Hadith",
         "Forty Nawawi Hadith"
-      ]
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "21 شعبان 1435"
     },
     {
       "id": "munajjid-nawawi-03",
@@ -250,7 +261,9 @@
       "englishTopics": [
         "Hadith",
         "Forty Nawawi Hadith"
-      ]
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "21 شعبان 1435"
     },
     {
       "id": "munajjid-nawawi-04",
@@ -276,7 +289,9 @@
       "englishTopics": [
         "Hadith",
         "Forty Nawawi Hadith"
-      ]
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "21 شعبان 1435"
     },
     {
       "id": "munajjid-provision",
@@ -556,7 +571,9 @@
       "englishTopics": [
         "Hadith",
         "Forty Nawawi Hadith"
-      ]
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "21 شعبان 1435"
     },
     {
       "id": "munajjid-nawawi-06",
@@ -582,7 +599,9 @@
       "englishTopics": [
         "Hadith",
         "Forty Nawawi Hadith"
-      ]
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "21 شعبان 1435"
     },
     {
       "id": "munajjid-nawawi-07",
@@ -608,7 +627,9 @@
       "englishTopics": [
         "Hadith",
         "Forty Nawawi Hadith"
-      ]
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "21 شعبان 1435"
     },
     {
       "id": "munajjid-nawawi-08",
@@ -634,7 +655,9 @@
       "englishTopics": [
         "Hadith",
         "Forty Nawawi Hadith"
-      ]
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "21 شعبان 1435"
     },
     {
       "id": "barrak-wasael-01",
@@ -1273,6 +1296,1009 @@
       "verifiedOn": "2026-10-25",
       "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
       "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
+    },
+    {
+      "id": "munajjid-nawawi-09",
+      "scholarId": "almunajjid",
+      "title": "(9) الدرس التاسع",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 9",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/742",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 9,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "21 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-10",
+      "scholarId": "almunajjid",
+      "title": "(10) الدرس العاشر",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 10",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/743",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 10,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "03 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-11",
+      "scholarId": "almunajjid",
+      "title": "(11) الدرس الحادي عشر",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 11",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/744",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 11,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "23 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-12",
+      "scholarId": "almunajjid",
+      "title": "(12) الدرس الثاني عشر",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 12",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/745",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 12,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "23 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-13",
+      "scholarId": "almunajjid",
+      "title": "(13) الدرس الثالث عشر",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 13",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/746",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 13,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "23 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-14",
+      "scholarId": "almunajjid",
+      "title": "(14) الدرس الرابع عشر",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 14",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/747",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 14,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "23 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-15",
+      "scholarId": "almunajjid",
+      "title": "(15) الدرس الخامس عشر",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 15",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/748",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 15,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "23 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-16",
+      "scholarId": "almunajjid",
+      "title": "(16) الدرس السادس عشر",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 16",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/749",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 16,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "23 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-17",
+      "scholarId": "almunajjid",
+      "title": "(17) الدرس السابع عشر",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 17",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/750",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 17,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "23 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-18",
+      "scholarId": "almunajjid",
+      "title": "(18) الدرس الثامن عشر",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 18",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/751",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 18,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "23 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-19",
+      "scholarId": "almunajjid",
+      "title": "(19) الدرس التاسع عشر",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 19",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/752",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 19,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "23 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-20",
+      "scholarId": "almunajjid",
+      "title": "(20) الدرس العشرون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 20",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/753",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 20,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "24 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-21",
+      "scholarId": "almunajjid",
+      "title": "(21) الدرس الحادي والعشرون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 21",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/754",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 21,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "24 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-22",
+      "scholarId": "almunajjid",
+      "title": "(22) الدرس الثاني والعشرون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 22",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/755",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 22,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "24 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-23",
+      "scholarId": "almunajjid",
+      "title": "(23) الدرس الثالث والعشرون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 23",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/756",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 23,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "24 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-24",
+      "scholarId": "almunajjid",
+      "title": "(24) الدرس الرابع والعشرون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 24",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/757",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 24,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "24 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-25",
+      "scholarId": "almunajjid",
+      "title": "(25) الدرس الخامس والعشرون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 25",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/758",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 25,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "24 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-26",
+      "scholarId": "almunajjid",
+      "title": "(26) الدرس السادس والعشرون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 26",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/759",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 26,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "24 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-27",
+      "scholarId": "almunajjid",
+      "title": "(27) الدرس السابع والعشرون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 27",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/760",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 27,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "24 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-28",
+      "scholarId": "almunajjid",
+      "title": "(28) الدرس الثامن والعشرون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 28",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/761",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 28,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "24 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-29",
+      "scholarId": "almunajjid",
+      "title": "(29) الدرس التاسع والعشرون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 29",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/762",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 29,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "24 ربيع الآخر 1435"
+    },
+    {
+      "id": "munajjid-nawawi-30",
+      "scholarId": "almunajjid",
+      "title": "(30) الدرس الثلاثون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 30",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/763",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 30,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "25 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-31",
+      "scholarId": "almunajjid",
+      "title": "(31) الدرس الحادي والثلاثون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 31",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/764",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 31,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "25 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-32",
+      "scholarId": "almunajjid",
+      "title": "(32) الدرس الثاني والثلاثون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 32",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/765",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 32,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "25 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-33",
+      "scholarId": "almunajjid",
+      "title": "(33) الدرس الثالث والثلاثون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 33",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/766",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 33,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "25 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-34",
+      "scholarId": "almunajjid",
+      "title": "(34) الدرس الرابع والثلاثون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 34",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/767",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 34,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "25 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-35",
+      "scholarId": "almunajjid",
+      "title": "(35) الدرس الخامس والثلاثون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 35",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/768",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 35,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "25 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-36",
+      "scholarId": "almunajjid",
+      "title": "(36) الدرس السادس والثلاثون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 36",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/769",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 36,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "25 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-37",
+      "scholarId": "almunajjid",
+      "title": "(37) الدرس السابع والثلاثون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 37",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/770",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 37,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "25 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-38",
+      "scholarId": "almunajjid",
+      "title": "(38) الدرس الثامن والثلاثون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 38",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/771",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 38,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "25 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-39",
+      "scholarId": "almunajjid",
+      "title": "(39) الدرس التاسع والثلاثون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 39",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/772",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 39,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "25 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-40",
+      "scholarId": "almunajjid",
+      "title": "(40) الدرس الأربعون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 40",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/773",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 40,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "25 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-41",
+      "scholarId": "almunajjid",
+      "title": "(41) الدرس الحادي والأربعون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 41",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/774",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 41,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "25 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-42",
+      "scholarId": "almunajjid",
+      "title": "(42) الدرس الثاني والأربعون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 42",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/775",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 42,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "25 شعبان 1435"
+    },
+    {
+      "id": "munajjid-nawawi-43",
+      "scholarId": "almunajjid",
+      "title": "(43) الدرس الثالث والأربعون",
+      "englishTitle": "Forty Nawawi Hadith commentary — lesson 43",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "الحديث",
+        "الأربعون النووية"
+      ],
+      "url": "https://almunajjid.com/scientific-series/lessons/776",
+      "bookIds": [
+        "nawawi-fifty"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح الأربعين النووية بالموقع الرسمي. الربط بأصل متن النووي في نسخة المكتبة؛ لا يثبت شرح زيادة ابن رجب أو مطابقة طبعة وصفحات.",
+      "englishSourceNote": "Audio lesson in the official Forty Nawawi Hadith series. Linked to the underlying Nawawi text; coverage of Ibn Rajab’s additions and edition or page matching are not asserted.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح الأربعين النووية",
+      "seriesId": "munajjid-nawawi",
+      "episodeNumber": 43,
+      "englishTopics": [
+        "Hadith",
+        "Forty Nawawi Hadith"
+      ],
+      "publishedHijriYear": 1435,
+      "publishedDateLabel": "25 شعبان 1435"
+    },
+    {
+      "id": "araby-khazain-allah",
+      "scholarId": "ahmed-elaraby",
+      "title": "خزائن الله تغني كل مفتقر",
+      "englishTitle": "Allah provides for everyone in need — short benefit",
+      "type": "short",
+      "mediaKind": "video",
+      "topics": [
+        "التزكية",
+        "الدعاء"
+      ],
+      "englishTopics": [
+        "Spiritual growth",
+        "Supplication"
+      ],
+      "url": "https://t.me/Ahmed_Elaraby/2304",
+      "bookIds": [],
+      "sourceNote": "منشور القناة المعنونة «د. أحمد العربي - القناة الرسمية». نسبة النشر للقناة؛ لا نقدم توثيقًا مستقلاً لهوية الصوت أو مراجعة مشاهدة وسماع شاملة. المدة59 ثانية بحسب مشغل المنشور. يفتح الأصل خارجيًا، ولا يعاد رفع الفيديو أو تنزيله داخل بصائر.",
+      "englishSourceNote": "Posted by the channel titled Dr Ahmed al-Araby — official channel. Attribution is to the publishing channel, without independent voice identification or a full audiovisual review. The post player lists 59 seconds. Opens externally; the video is not rehosted or downloaded in Basair.",
+      "verifiedOn": "2026-10-25",
+      "durationSeconds": 59,
+      "publishedDateLabel": "2024-03-07 (ميلادي / Gregorian)"
     }
   ],
   "series": [
@@ -1299,10 +2325,10 @@
         "nawawi-fifty"
       ],
       "sourceUrl": "https://almunajjid.com/scientific-series/166/lessons",
-      "coverage": "partial",
-      "expectedEpisodes": null,
-      "coverageNote": "فهرسة جزئية: الدروس 1 إلى 8 بترقيم المصدر. الربط بأصل الأربعين للنووي، ولا يثبت تناول زيادة ابن رجب أو مطابقة طبعة المكتبة.",
-      "englishCoverageNote": "Partial index: source-numbered lessons 1 to 8. Links to Nawawi’s underlying text; coverage of Ibn Rajab’s additions and matching library editions are not asserted."
+      "coverage": "indexed",
+      "expectedEpisodes": 43,
+      "coverageNote": "فهرست الحلقات43 المتاحة في صفحات المصدر الخمس؛ لا يصرح ذلك باكتمال الشرح علميًا أو بتناول زيادة ابن رجب، ولم تراجع التسجيلات كاملة سماعًا.",
+      "englishCoverageNote": "All 43 episodes available across five source index pages are indexed. This does not establish complete commentary coverage or the Ibn Rajab additions; the recordings have not been fully reviewed by listening."
     },
     {
       "id": "barrak-wasael",

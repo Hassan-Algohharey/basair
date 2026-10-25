@@ -4,6 +4,7 @@ import android.graphics.Typeface
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontFamily
@@ -57,6 +58,9 @@ private fun QuranReady(repo: QuranRepository, quranFont: FontFamily, tafsirFont:
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
     val data = repo.index
+    var imagePage by rememberSaveable { mutableStateOf<Int?>(null) }
+    var printedTafsirPage by rememberSaveable { mutableStateOf<Int?>(null) }
+    var returningFromImages by rememberSaveable { mutableStateOf(false) }
     fun sourceDetails() = data.source.getString("sourceDetails") + "\n\n" +
         context.getString(R.string.quran_source_note) + "\n\n" +
         data.source.getString("sourceUrl") + "\n" + data.source.getString("navigationSourceUrl")
@@ -66,6 +70,7 @@ private fun QuranReady(repo: QuranRepository, quranFont: FontFamily, tafsirFont:
     var ui by remember(repo) { mutableStateOf(QuranUiState(
         surahs = data.surahs.map { QuranUiSurah(it.id, it.name, it.englishName, it.ayahPages.size, it.ayahPages.first()) },
         page = repo.savedPage() ?: 1, savedPage = repo.savedPage(), bookmarks = bookmarkRows(),
+        focusSurah = repo.savedAnchor()?.first, focusAyah = repo.savedAnchor()?.second,
         offlineOnly = repo.offlineOnly(), wifiOnly = repo.wifiOnly(), sourceTitle = data.source.getString("sourceTitle"),
         sourceDetails = sourceDetails(), sourceUrl = data.source.getString("sourceUrl"), navigationSourceUrl = data.source.getString("navigationSourceUrl"),
         totalDownloadBytes = data.archive.bytes, fontFamily = quranFont, tafsirFontFamily = tafsirFont
@@ -106,6 +111,16 @@ private fun QuranReady(repo: QuranRepository, quranFont: FontFamily, tafsirFont:
         initialAyah?.let { (s, a) -> data.pageFor(s, a)?.let { open(it, s to a) } }
     }
     val onAction: (QuranAction) -> Unit = { action -> when (action) {
+        is QuranAction.OpenMadinah -> imagePage = ui.focusSurah?.let { s -> ui.focusAyah?.let { a ->
+            val manifest = MadinahPages.manifest(context)
+            (1..604).firstOrNull { n ->
+                val row = manifest.getJSONArray("pages").getJSONObject(n - 1)
+                val next = if (n < 604) manifest.getJSONArray("pages").getJSONObject(n) else null
+                val anchor = s * 1000 + a
+                anchor >= row.getInt("firstSurah") * 1000 + row.getInt("firstAyah") &&
+                    (next == null || anchor < next.getInt("firstSurah") * 1000 + next.getInt("firstAyah"))
+            }
+        } } ?: ui.page
         is QuranAction.OpenPage -> open(action.page)
         is QuranAction.OpenAyah -> data.pageFor(action.surah, action.ayah)?.let { open(it, action.surah to action.ayah) }
         is QuranAction.OpenJuz -> data.juzPages.getOrNull(action.juz - 1)?.let { open(it) }
@@ -151,5 +166,23 @@ private fun QuranReady(repo: QuranRepository, quranFont: FontFamily, tafsirFont:
             }
         }
     } }
-    QuranScreen(ui, onAction, initialReading = initialAyah != null)
+    if (imagePage != null) {
+        val imagePreferences = context.getSharedPreferences("basair", android.content.Context.MODE_PRIVATE)
+        val returnToText: (Int) -> Unit = { page ->
+            val row = MadinahPages.manifest(context).getJSONArray("pages").getJSONObject(page - 1)
+            val s = row.getInt("firstSurah"); val a = row.getInt("firstAyah")
+            returningFromImages = true; imagePage = null; data.pageFor(s, a)?.let { open(it, s to a) }
+        }
+        val closeImages = { returnToText(imagePreferences.getInt("page:${madinahBook.id}", imagePage ?: 1).coerceIn(1, 604)) }
+        androidx.compose.ui.window.Dialog(onDismissRequest = closeImages,
+            properties = androidx.compose.ui.window.DialogProperties(usePlatformDefaultWidth = false, decorFitsSystemWindows = false)) {
+            PdfBookReader(madinahBook, false, onBack = closeImages,
+                onSave = {}, initialPage = imagePage, allowSave = false, onTafsir = { printedTafsirPage = it },
+                onPageChanged = { page ->
+                    val row = MadinahPages.manifest(context).getJSONArray("pages").getJSONObject(page - 1)
+                    repo.savePosition(row.getInt("firstSurah"), row.getInt("firstAyah"))
+                })
+            printedTafsirPage?.let { page -> PrintedTafsirDialog(repo, page, tafsirFont) { printedTafsirPage = null } }
+        }
+    } else QuranScreen(ui, onAction, initialReading = initialAyah != null || returningFromImages)
 }

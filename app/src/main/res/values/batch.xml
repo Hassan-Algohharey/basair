@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="batch_indexed">كل الحلقات المتاحة في فهرس المصدر؛ اكتمال الشرح غير مثبت</string>
+    <string name="batch_text_search">بحث داخل متن التحفة</string>
+    <string name="batch_text_scope">متن تحفة الأطفال: 61 بيتًا فقط. النص غير المشكّل مساعد للبحث؛ الصورة الأصلية مرجع القراءة والنقل. بقية الكتب لم تفهرس نصيًا بعد.</string>
+    <string name="batch_text_query">كلمات من المتن أو رقم البيت</string>
+    <string name="batch_text_count">نتائج المتن: %1$d</string>
+    <string name="batch_text_hint">اكتب كلمة من المتن أو رقم بيت من 1 إلى61.</string>
+    <string name="batch_verse">البيت %1$d</string>
+    <string name="batch_text_limit">تظهر أول40 نتيجة؛ ضيق البحث لعرض المزيد.</string>
+    <string name="batch_report">الإبلاغ عن خطأ في المحتوى</string>
+    <string name="batch_reports">بلاغات المحتوى المحفوظة</string>
+    <string name="batch_report_local">يحفظ البلاغ على جهازك فقط ولا يُرسل تلقائيًا. أضف وصف الخطأ والمصدر المقترح للتصحيح، ثم شاركه من قائمة البلاغات إذا أردت. لا يغير البلاغ النص الأصلي.</string>
+    <string name="batch_report_body">وصف الخطأ ومصدر التصحيح</string>
+    <string name="batch_report_limit">تعذر الحفظ. الحد100 بلاغ؛ احذف بلاغًا قديمًا قبل إضافة آخر.</string>
+    <string name="batch_save_report">حفظ البلاغ محليًا</string>
+    <string name="batch_discard">تجاهل التعديلات غير المحفوظة؟</string>
+    <string name="batch_discard_yes">تجاهل</string>
+    <string name="batch_continue_edit">استكمال الكتابة</string>
+    <string name="batch_no_reports">لا توجد بلاغات محفوظة.</string>
+    <string name="batch_report_draft">مسودة محلية؛ لم تُرسل أو تعتمد كمراجعة علمية</string>
+    <string name="batch_share_report">مشاركة البلاغ باختيارك</string>
+    <string name="batch_delete_report">حذف هذا البلاغ؟</string>
+    <string name="batch_audio_chapters">اختيار فصل مسموع</string>
+    <string name="batch_audio_page_scope">ربط موضوع الفصل ببداية بابه في المتن؛ لا يعني مطابقة كل ألفاظ التسجيل أو توقيته.</string>
+    <string name="batch_source_date">تاريخ النشر بالمصدر: %1$s</string>
+    <string name="batch_year_filter">تصفية بسنة النشر الهجرية</string>
+    <string name="batch_unknown_date">السنة الهجرية غير موثقة في الفهرس</string>
+    <string name="batch_hijri_year">سنة %1$d هـ</string>
+    <string name="batch_clear_year">إلغاء تصفية السنة</string>
+    <string name="batch_date_scope">التاريخ كما نشره المصدر، وقد يختلف عن تاريخ تسجيل الدرس. التصفية بسنة محددة تستبعد المواد التي لم يوثق تاريخها.</string>
+    <string name="batch_madinah">مصحف المدينة المصوّر</string>
+    <string name="batch_madinah_page_only">النسخة المصورة تُنزّل بالصفحة وما حولها. لا يتاح تنزيل الأرشيف الكامل الكبير داخل التطبيق.</string>
+    <string name="batch_page_tafsir">التفسير لهذه الصفحة</string>
+    <string name="batch_duration_filter">تصفية بمدة التسجيل</string>
+    <string name="batch_duration_short">قصير — حتى 3 دقائق</string>
+    <string name="batch_duration_medium">متوسط — أكثر من3 وحتى30 دقيقة</string>
+    <string name="batch_duration_long">طويل — أكثر من30 دقيقة</string>
+    <string name="batch_duration_unknown">المدة غير موثقة في الفهرس</string>
+    <string name="batch_clear_duration">إلغاء تصفية المدة</string>
+    <string name="batch_duration_scope">تظهر فقط التسجيلات ذات المدة الموثقة في النطاق المختار. لا نخمن مدد الدروس؛ أغلب المواد الحالية لم توثق مددها بعد.</string>
+    <string name="batch_seconds">المدة بالمصدر: %1$d ثانية</string>
+    <string name="batch_printed_tafsir">تفسير آيات الصفحة المصورة %1$d</string>
+    <string name="batch_printed_tafsir_source">التفسير الميسر — من بيانات مجمع الملك فهد. ربط الآيات بحسب رقم الصفحة الأصلي في المصدر، مع اختلاف حدود بعض صفحات الفهرسة النصية.</string>
+    <string name="batch_remove_report">حذف</string>
+</resources>

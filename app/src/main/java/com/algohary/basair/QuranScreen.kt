@@ -51,6 +51,7 @@ internal sealed interface QuranAction {
     data class OpenAyah(val surah: Int, val ayah: Int) : QuranAction
     data class OpenJuz(val juz: Int) : QuranAction
     data class Search(val query: String) : QuranAction
+    data object OpenMadinah : QuranAction
     data class SetOfflineOnly(val enabled: Boolean) : QuranAction
     data class SetWifiOnly(val enabled: Boolean) : QuranAction
     data object ToggleBookmark : QuranAction
@@ -92,6 +93,7 @@ internal fun QuranScreen(state: QuranUiState, onAction: (QuranAction) -> Unit, i
                 TextButton(onClick = { dialog = "bookmarks" }) { Text(label(R.string.quran_bookmarks)) }
                 TextButton(onClick = { dialog = "downloads" }) { Text(label(R.string.quran_downloads)) }
                 TextButton(onClick = { dialog = "sources" }) { Text(label(R.string.quran_sources)) }
+                TextButton(onClick = { onAction(QuranAction.OpenMadinah) }) { Text(label(R.string.batch_madinah)) }
             }
         }
         if (index) {

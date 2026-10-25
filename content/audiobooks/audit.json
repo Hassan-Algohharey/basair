@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "reviewedOn": "2026-10-24",
-  "scope": "تحقق من صفحات المصدر وأسماء القراء والعناوين وإذن النشر، ومن ترويسات أول ووسط وآخر الملفين بطلبات Range صغيرة. لا مراجعة سماعية كاملة، ولا اعتماد مطابقة طبعة المكتبة.",
+  "reviewedOn": "2026-10-25",
+  "scope": "فحص صفحات المصادر وأسماء القراء والتغطية وإذن النشر؛ فحص أول ووسط وآخر ملفي القراءتين السابقتين، ثم أول4096 بايت لكل واحد من ملفات التحفة السبعة في0.19.0 باستجابة Range206. لا مراجعة سماعية شاملة أو مطابقة لكل ألفاظ الطبعات.",
   "rightsDecision": {
     "licenseUrl": "https://d1.islamhouse.com/html/faq.htm",
     "sourcePageSha256": "45cad70918c23a3eb26566f2be776c7df34936ed114070b2144a3b0bdb89dabf",
@@ -10,7 +10,7 @@
       "هل تنشرون إنتاجات الآخرين؟ وهل حقوق إنتاجاتكم مفتوحة؟",
       "هل يحق لي المتاجرة بالمواد التي تنشرونها؟"
     ],
-    "permissionSummary": "تصرح السياسة بجواز الاستفادة والنشر بمختلف الوسائل مع نسبة المصدر وعدم تغيير المحتوى العلمي. وتشترط التباحث مع مصدر المادة الآخر قبل المتاجرة؛ لذا لا ترخيص تجاري مثبت لهذين التسجيلين.",
+    "permissionSummary": "تصرح السياسة بجواز الاستفادة والنشر بمختلف الوسائل مع نسبة المصدر وعدم تغيير المحتوى العلمي. وتشترط التباحث مع مصدر المادة الآخر قبل المتاجرة؛ لا ترخيص تجاري مستقل مثبت لهذه التسجيلات.",
     "allowed": [
       "noncommercial in-app streaming",
       "background playback of the same recording",
@@ -117,6 +117,88 @@
         ]
       },
       "wholeRecordingSha256": null,
+      "wholeRecordingDownloadedDuringSourceAudit": false
+    },
+    {
+      "recordingId": "tuhfa-alhashim",
+      "sourceUrl": "https://islamhouse.com/ar/audios/289541/",
+      "sourceHttpStatus": 200,
+      "sourcePageSha256": "8a069e9044c95fadfe6988e1ee56d33df4931b4cfbaf7a9e2e3b6da5e611a0be",
+      "sourcePageBytes": 104535,
+      "sourceAttachmentTitle": "قراءة تحفة الأطفال — صلاح الهاشم؛ سبعة مرفقات على الأبواب",
+      "classification": "قراءة متن مقسمة بحسب فهرس المصدر، لا شرح",
+      "audioProbes": [
+        {
+          "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_01_Tohfat_AlAtfal_Alhashim.mp3",
+          "finalUrl": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_01_Tohfat_AlAtfal_Alhashim.mp3",
+          "status": 206,
+          "totalBytes": 2265170,
+          "contentType": "audio/mpeg",
+          "contentRange": "bytes 0-4095/2265170",
+          "sampleBytes": 4096,
+          "sampleSha256": "7d016d88beb5ce92c600847fe4570523e0cef5871e71db6cecb7f979b90f3cf9"
+        },
+        {
+          "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_02_Tohfat_AlAtfal_Alhashim.mp3",
+          "finalUrl": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_02_Tohfat_AlAtfal_Alhashim.mp3",
+          "status": 206,
+          "totalBytes": 1572612,
+          "contentType": "audio/mpeg",
+          "contentRange": "bytes 0-4095/1572612",
+          "sampleBytes": 4096,
+          "sampleSha256": "659894656a9a45a7aa9e7381c5f5a41f78110c42e12299d9932df2ce6b148154"
+        },
+        {
+          "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_03_Tohfat_AlAtfal_Alhashim.mp3",
+          "finalUrl": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_03_Tohfat_AlAtfal_Alhashim.mp3",
+          "status": 206,
+          "totalBytes": 741291,
+          "contentType": "audio/mpeg",
+          "contentRange": "bytes 0-4095/741291",
+          "sampleBytes": 4096,
+          "sampleSha256": "123d3da37366c53f9b898e5352a847215a8642ba977fd7b26c2695db54e6d6df"
+        },
+        {
+          "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_04_Tohfat_AlAtfal_Alhashim.mp3",
+          "finalUrl": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_04_Tohfat_AlAtfal_Alhashim.mp3",
+          "status": 206,
+          "totalBytes": 832406,
+          "contentType": "audio/mpeg",
+          "contentRange": "bytes 0-4095/832406",
+          "sampleBytes": 4096,
+          "sampleSha256": "678c05cfbb8dc057836d952bd16d01f9ab60cfae413dff9e6497dbb298f09a67"
+        },
+        {
+          "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_05_Tohfat_AlAtfal_Alhashim.mp3",
+          "finalUrl": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_05_Tohfat_AlAtfal_Alhashim.mp3",
+          "status": 206,
+          "totalBytes": 1105752,
+          "contentType": "audio/mpeg",
+          "contentRange": "bytes 0-4095/1105752",
+          "sampleBytes": 4096,
+          "sampleSha256": "a151492d85dce84a61625f7aff973cc8d08cec3d8f80d04f022248ec53e5902a"
+        },
+        {
+          "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_06_Tohfat_AlAtfal_Alhashim.mp3",
+          "finalUrl": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_06_Tohfat_AlAtfal_Alhashim.mp3",
+          "status": 206,
+          "totalBytes": 963228,
+          "contentType": "audio/mpeg",
+          "contentRange": "bytes 0-4095/963228",
+          "sampleBytes": 4096,
+          "sampleSha256": "88643eea668c3a752a631c6bc896db34de0ae6ba1f485d88b3ac409a8f3f0b85"
+        },
+        {
+          "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_07_Tohfat_AlAtfal_Alhashim.mp3",
+          "finalUrl": "https://d1.islamhouse.com/data/ar/ih_sounds/chain/Reading_Matn_of_Tohfat_AlAtfal/ar_Tohfat_AlAtfal_Alhashim/ar_07_Tohfat_AlAtfal_Alhashim.mp3",
+          "status": 206,
+          "totalBytes": 746307,
+          "contentType": "audio/mpeg",
+          "contentRange": "bytes 0-4095/746307",
+          "sampleBytes": 4096,
+          "sampleSha256": "4e551daa5a4c848aeeaa31fb60a28ccbb5e4679a5829e28a7de35585978ecce7"
+        }
+      ],
       "wholeRecordingDownloadedDuringSourceAudit": false
     }
   ]

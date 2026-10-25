@@ -6,7 +6,7 @@ import org.junit.Test
 class TajweedAudioTest {
     @Test fun practiceRecordingsResolveThroughTheCanonicalPlaybackRegistry() {
         assertEquals(5, TajweedAudioCatalog.lessons.size)
-        assertEquals(17, allAudioRecordings.size)
+        assertEquals(18, allAudioRecordings.size)
         assertEquals(allAudioRecordings.size, allAudioRecordings.map { it.id }.distinct().size)
         TajweedAudioCatalog.lessons.forEach { lesson ->
             val recording = audioRecording(lesson.id + "-full")!!
@@ -39,7 +39,7 @@ class TajweedAudioTest {
         assertEquals(listOf("amer-idgham"), searchTajweedAudio("Ahmed idgham").map { it.id })
         assertTrue(searchTajweedAudio("stopping tanween").isEmpty())
         assertEquals(5, searchAudiobooks("Ahmed Amer").size)
-        assertEquals(2, searchAudiobooks("audiobooks").size)
+        assertEquals(3, searchAudiobooks("audiobooks").size)
         assertEquals(19, filteredMediaItems(MediaUiState(scholars = MediaCatalog.scholars,
             items = MediaCatalog.items, query = "Abdul Qadir")).size)
     }

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="batch_indexed">All source-indexed episodes; commentary completeness is not established</string>
+    <string name="batch_text_search">Search the Tuhfah text</string>
+    <string name="batch_text_scope">Tuhfat al-Atfal: the 61 verses only. Unvowelled text is a search aid; use the original page for reading and quotation. Other books are not yet text-indexed.</string>
+    <string name="batch_text_query">Text words or verse number</string>
+    <string name="batch_text_count">Text results: %1$d</string>
+    <string name="batch_text_hint">Enter an Arabic word from the text or a verse number from 1 to 61.</string>
+    <string name="batch_verse">Verse %1$d</string>
+    <string name="batch_text_limit">Showing the first 40 results; narrow the query to see more.</string>
+    <string name="batch_report">Report a content issue</string>
+    <string name="batch_reports">Saved content reports</string>
+    <string name="batch_report_local">Reports are stored only on your device and are not sent automatically. Describe the issue and proposed correction source, then share it from the reports list if desired. Reports do not change the original text.</string>
+    <string name="batch_report_body">Issue and correction source</string>
+    <string name="batch_report_limit">Could not save. The limit is 100 reports; delete an older report before adding another.</string>
+    <string name="batch_save_report">Save report locally</string>
+    <string name="batch_discard">Discard unsaved changes?</string>
+    <string name="batch_discard_yes">Discard</string>
+    <string name="batch_continue_edit">Continue editing</string>
+    <string name="batch_no_reports">No saved reports.</string>
+    <string name="batch_report_draft">Local draft; not submitted or approved as a scholarly review</string>
+    <string name="batch_share_report">Share report</string>
+    <string name="batch_delete_report">Delete this report?</string>
+    <string name="batch_audio_chapters">Choose an audio chapter</string>
+    <string name="batch_audio_page_scope">Links the chapter topic to its text section start; it does not match every recorded word or playback time.</string>
+    <string name="batch_source_date">Source publication date: %1$s</string>
+    <string name="batch_year_filter">Filter by Hijri publication year</string>
+    <string name="batch_unknown_date">Hijri year not documented in this index</string>
+    <string name="batch_hijri_year">Year %1$d AH</string>
+    <string name="batch_clear_year">Clear year filter</string>
+    <string name="batch_date_scope">Dates follow the source and may differ from recording dates. A selected year excludes items whose dates are not documented.</string>
+    <string name="batch_madinah">Madinah page images</string>
+    <string name="batch_madinah_page_only">This edition downloads the current page and nearby pages. The large full archive is not downloaded inside the app.</string>
+    <string name="batch_page_tafsir">Tafsir for this page</string>
+    <string name="batch_duration_filter">Filter by duration</string>
+    <string name="batch_duration_short">Short — up to 3 minutes</string>
+    <string name="batch_duration_medium">Medium — over 3 to 30 minutes</string>
+    <string name="batch_duration_long">Long — over 30 minutes</string>
+    <string name="batch_duration_unknown">Duration not documented in this index</string>
+    <string name="batch_clear_duration">Clear duration filter</string>
+    <string name="batch_duration_scope">Only recordings with documented durations appear in the selected range. Lesson lengths are not guessed; most current items do not yet have a documented duration.</string>
+    <string name="batch_seconds">Source duration: %1$d seconds</string>
+    <string name="batch_printed_tafsir">Tafsir for printed page %1$d</string>
+    <string name="batch_printed_tafsir_source">Al-Tafsir Al-Muyassar from King Fahd Complex data. Verses are matched by the original source page; some textual index page boundaries differ.</string>
+    <string name="batch_remove_report">Delete</string>
+</resources>

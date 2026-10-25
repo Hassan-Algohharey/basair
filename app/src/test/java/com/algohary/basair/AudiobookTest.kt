@@ -5,8 +5,8 @@ import org.junit.Test
 
 class AudiobookTest {
     @Test fun readingsHaveSourcesRightsAndActualLibraryLinks() {
-        assertEquals(2, AudiobookCatalog.recordings.size)
-        assertEquals(setOf("tahawiyyah", "nawawi-fifty"), AudiobookCatalog.recordings.flatMap { it.bookIds }.toSet())
+        assertEquals(3, AudiobookCatalog.recordings.size)
+        assertEquals(setOf("tahawiyyah", "nawawi-fifty", "tuhfat-atfal"), AudiobookCatalog.recordings.flatMap { it.bookIds }.toSet())
         val ids = mutableSetOf<String>()
         AudiobookCatalog.recordings.forEach { recording ->
             assertTrue(recording.author.isNotBlank() && recording.reader.isNotBlank())
@@ -32,7 +32,7 @@ class AudiobookTest {
     }
 
     @Test fun searchCombinesReaderTitleBookAndEveryWord() {
-        assertEquals(2, searchAudiobooks("audiobooks").size)
+        assertEquals(3, searchAudiobooks("audiobooks").size)
         assertEquals(1, searchAudiobooks("salama tahawiyyah").size)
         assertEquals(1, searchAudiobooks("alansari").size)
         assertEquals(1, searchAudiobooks("إبراهيم النَّوَوِيَّة").size)

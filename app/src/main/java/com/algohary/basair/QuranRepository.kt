@@ -14,7 +14,7 @@ import org.json.JSONObject
 // Pinned to the reviewed data commit before distribution.
 internal const val QURAN_HOST = "https://raw.githubusercontent.com/Hassan-Algohharey/basair/550e6fbf9714601273b86020f44111aff10b2e21/"
 internal data class QuranSurah(val id: Int, val name: String, val englishName: String, val ayahPages: List<Int>)
-internal data class QuranVerse(val surah: Int, val ayah: Int, val text: String, val tafsir: String, val juz: Int)
+internal data class QuranVerse(val surah: Int, val ayah: Int, val text: String, val tafsir: String, val juz: Int, val originalPage: Int = 0)
 internal data class QuranPage(val page: Int, val verses: List<QuranVerse>)
 internal data class QuranIndex(val source: JSONObject, val surahs: List<QuranSurah>, val pages: List<PageSpec>,
     val juzPages: List<Int>, val archive: PageSpec) {
@@ -85,7 +85,7 @@ internal class QuranRepository(private val context: Context, val index: QuranInd
         check(json.getInt("page") == page)
         val array = json.getJSONArray("ayahs")
         val verses = (0 until array.length()).map { i -> array.getJSONObject(i).let {
-            QuranVerse(it.getInt("surah"), it.getInt("ayah"), it.getString("text"), it.getString("tafsir"), it.getInt("juz"))
+            QuranVerse(it.getInt("surah"), it.getInt("ayah"), it.getString("text"), it.getString("tafsir"), it.getInt("juz"), it.optInt("originalPage", 0))
         } }
         check(verses.map { it.surah to it.ayah } == index.expected(page))
         check(verses.all { it.text.isNotBlank() && it.tafsir.isNotBlank() && it.juz in 1..30 })

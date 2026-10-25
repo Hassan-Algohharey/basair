@@ -7,6 +7,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -43,7 +44,8 @@ internal fun AudiobookEntry(onOpen: () -> Unit, count: Int? = null) {
 }
 
 @Composable
-internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook: (String) -> Unit) {
+internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook: (String) -> Unit,
+    onBookPage: (String, Int) -> Unit = { id, _ -> onBook(id) }) {
     val context = LocalContext.current
     val english = LocalConfiguration.current.locales[0].language == "en"
     val store = remember { AudioProgressStore(context) }
@@ -57,6 +59,7 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
     var controller by remember { mutableStateOf<MediaController?>(null) }
     var connectionError by remember { mutableStateOf(false) }
     var tick by remember { mutableIntStateOf(0) }
+    var showChapters by rememberSaveable { mutableStateOf(false) }
     var wifiOnly by remember { mutableStateOf(preferences.getBoolean("wifiOnly", true)) }
     var downloading by remember { mutableStateOf<String?>(null) }
     var downloadedBytes by remember { mutableLongStateOf(0) }
@@ -84,6 +87,17 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
     val position = if (active) player?.currentPosition ?: store.position(track.id) else store.position(track.id)
     val playing = active && player?.isPlaying == true
     val results = searchAudiobooks(query, bookFilter)
+    if (showChapters) AlertDialog(onDismissRequest = { showChapters = false }, title = { Text(stringResource(R.string.batch_audio_chapters)) }, text = {
+        Column(Modifier.heightIn(max = 420.dp).verticalScroll(rememberScrollState())) {
+            selected.tracks.sortedBy { it.sequence }.forEach { chapter ->
+                TextButton(onClick = {
+                    player?.pause()
+                    store.save(chapter.id, store.position(chapter.id), store.duration(chapter.id), store.speed())
+                    tick++; showChapters = false
+                }) { Text("${chapter.sequence}. " + if (english) chapter.englishTitle else chapter.title) }
+            }
+        }
+    }, confirmButton = { TextButton(onClick = { showChapters = false }) { Text(stringResource(R.string.media_close)) } })
     val local = remember(track.id, storageVersion) { AudioDownloads.localFile(context, track) != null }
     val partialBytes = remember(track.id, storageVersion) { AudioDownloads.partialBytes(context, track) }
     val play: () -> Unit = {
@@ -132,6 +146,16 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
             Card(Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(containerColor = SoftGreen)) {
                 Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                     Text(selected.title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+                    if (selected.tracks.size > 1) {
+                        Text(if (english) track.englishTitle else track.title)
+                        OutlinedButton(onClick = { showChapters = true }) { Text(stringResource(R.string.batch_audio_chapters)) }
+                    }
+                    track.bookPage?.takeIf { validAudioBookPage(it) }?.let { link ->
+                        TextButton(onClick = { onBookPage(link.bookId, link.pdfPage) }) {
+                            Text(stringResource(R.string.book_study_read_page, link.printedPage, link.pdfPage))
+                        }
+                        Text(stringResource(R.string.batch_audio_page_scope), style = MaterialTheme.typography.bodySmall)
+                    }
                     Text(stringResource(if (selected.kind == "lesson") R.string.tja_speaker else R.string.audio_reader, if (english) selected.englishReader else selected.reader))
                     if (selected.author.isNotBlank()) Text(stringResource(R.string.audio_author, selected.author))
                     Text(if (english) selected.englishCoverageNote else selected.coverageNote, style = MaterialTheme.typography.bodySmall)

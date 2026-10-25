@@ -10,7 +10,7 @@ data class Book(
     val asset: String, val pages: Int, val publisher: String, val edition: String,
     val licenseName: String, val licenseUrl: String, val rightsNote: String, val sha256: String,
     val schools: Set<String> = emptySet(), val chapters: List<BookChapter> = emptyList(),
-    val downloadUrl: String = "", val bytes: Long = 0
+    val downloadUrl: String = "", val bytes: Long = 0, val pageOnly: Boolean = false
 )
 data class Reference(
     val title: String, val publisher: String, val edition: String,

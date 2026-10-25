@@ -59,6 +59,21 @@ with zipfile.ZipFile(apk) as archive:
             assert (example['recordingId'] + '-clip').encode() in dex
         license_path = 'licenses/androidx-media3-LICENSE.txt'
         assert archive.read(asset_prefix + license_path) == (root / 'app/src/main/assets' / license_path).read_bytes()
+    image_manifest = root / 'content/quran-madinah/manifest.json'
+    if image_manifest.exists():
+        images = json.loads(archive.read(asset_prefix + 'madinah-pages.json'))
+        assert images == json.loads(image_manifest.read_text('utf-8'))
+        assert images['archiveBytes'] == 466430736 and len(images['pages']) == 604
+        assert images['originalSha256'] == '280c5d71ca16aaeeb3a343be1b92c76fa6df71d0671e202c026fde12402d9eef'
+        assert sum(row['verseCount'] for row in images['pages']) == 6236
+        assert images['textSourceSha256'] == json.loads(archive.read(asset_prefix + 'quran-index.json'))['sourceSha256']
+        for n, row in enumerate(images['pages'], 1):
+            assert row['sourceFile'] == f'{n:03}___Hafs39__DM.ai'
+            assert row['compressedOffset'] >= 0 and 0 < row['compressedBytes'] <= 8_000_000
+            assert row['compressedOffset'] + row['compressedBytes'] <= images['archiveBytes']
+            assert 0 < row['bytes'] <= 12_000_000 and len(row['sha256']) == 64
+            assert row['textPages'] and all(1 <= page <= 604 for page in row['textPages'])
+        assert not any(name.lower().endswith(('.ai', '.zip')) for name in archive.namelist())
 print(json.dumps({'apk': str(apk), 'bundledPdfs': 0, 'catalogBooks': len(books), 'pages': sum(b['pages'] for b in books),
                   'bytes': apk.stat().st_size, 'sha256': hashlib.sha256(apk.read_bytes()).hexdigest(),
                   'result': 'PASS: no PDFs bundled; all hosted original/page hashes and catalog match.'}, ensure_ascii=False))

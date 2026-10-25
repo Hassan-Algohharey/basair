@@ -1,0 +1,30 @@
+{
+  "reviewedOn": "2026-10-25",
+  "sourceUrl": "https://dm.qurancomplex.gov.sa/",
+  "rightsUrl": "https://dm.qurancomplex.gov.sa/rights/",
+  "rightsPageSha256": "a6e6d6a37af32f5db294cdcca2a40d8902ff7575f67e7c4c2dffaf02c3d0f7ea",
+  "archiveUrl": "https://dm.qurancomplex.gov.sa/Download/1441-AI-hafs.zip",
+  "officialArchiveSha256": "280c5d71ca16aaeeb3a343be1b92c76fa6df71d0671e202c026fde12402d9eef",
+  "archiveBytes": 466430736,
+  "pages": 604,
+  "rawPdfCompatiblePageBytes": 768981578,
+  "pageBytesModified": false,
+  "validation": [
+    "official archive SHA-256 matched",
+    "ZIP CRC checked for all 604 members",
+    "each member is one unencrypted PDF-compatible page",
+    "each page SHA-256 and HTTP range offsets indexed",
+    "6236 original-page verse bindings verified against existing official text data"
+  ],
+  "visualSamplePages": [
+    1,
+    2,
+    121,
+    300,
+    582,
+    604
+  ],
+  "independentScholarlyReview": false,
+  "licenseDecision": "إذن رسمي مجاني للاستخدام في البرامج؛ تستخدم بيانات الصفحات الأصلية دون تعديل. لا يعاد رفع الأرشيف أو صفحات مشتقة على استضافة أخرى في هذه الدفعة.",
+  "delivery": "الأرشيف الأصلي في خادم المجمع؛ طلب HTTP Range لجزء الصفحة ثم فك ضغطها والتحقق منها محليًا. الأرشيف الكامل خارج APK ولا ينزل على الهاتف تلقائيًا."
+}

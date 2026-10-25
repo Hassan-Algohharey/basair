@@ -42,6 +42,7 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -122,6 +123,8 @@ private fun BasairApp(audioRequest: Int) {
     var quranOrigin by rememberSaveable { mutableStateOf("home") }
     var bookId by rememberSaveable { mutableStateOf<String?>(null) }
     var notePage by rememberSaveable { mutableStateOf<Int?>(null) }
+    var showTextSearch by rememberSaveable { mutableStateOf(false) }
+    if (showTextSearch) BookTextSearchDialog(onPage = { id, page -> notePage = page; bookId = id }, onClose = { showTextSearch = false })
     var noteReference by remember { mutableStateOf<Reference?>(null) }
     val openBook: (String) -> Unit = { notePage = null; bookId = it }
     var subject by rememberSaveable { mutableStateOf<String?>(null) }
@@ -214,7 +217,9 @@ private fun BasairApp(audioRequest: Int) {
     }) { padding ->
         Box(Modifier.fillMaxSize().padding(padding)) {
             when (route) {
-                "home" -> HomeScreen(visitSubject, { navigate("search") }, { navigate("compare") }, openBook, { navigate("notes") }, { quranSurah = null; quranAyah = null; quranOrigin = "home"; navigate("quran") }, { openMedia("", null, false) }, { openAudio("", null) }, { openTajweed("") }, openHistory)
+                "home" -> HomeScreen(visitSubject, { navigate("search") }, { navigate("compare") }, openBook, { navigate("notes") }, { quranSurah = null; quranAyah = null; quranOrigin = "home"; navigate("quran") }, { openMedia("", null, false) }, { openAudio("", null) }, { openTajweed("") }, openHistory,
+                    { showTextSearch = true }, { navigate("corrections") })
+                "corrections" -> CorrectionsScreen()
                 "library", "search" -> CatalogScreen(route == "search", query, { query = it }, subject,
                     { subject = it; school = null; topic = null }, openBook, saved, toggleSave, openComparison,
                     school, { school = it }, topic, { topic = it },
@@ -233,7 +238,8 @@ private fun BasairApp(audioRequest: Int) {
                         { id -> openMedia("", id, false) },
                         { surah, ayah -> quranSurah = surah; quranAyah = ayah; quranOrigin = "tajweed"; route = "quran" })
                 }
-                "audio" -> audioState.SaveableStateProvider("audio") { key(audioRequest) { AudiobookFeature(audioQuery, audioBook, openBook) } }
+                "audio" -> audioState.SaveableStateProvider("audio") { key(audioRequest) { AudiobookFeature(audioQuery, audioBook, openBook,
+                    onBookPage = { id, page -> notePage = page; bookId = id }) } }
                 "media" -> mediaState.SaveableStateProvider("media") { MediaFeature(mediaQuery, mediaBook, mediaFavorites, openBook, openHistory,
                     initialItem = mediaItem, onBookPage = { id, page -> notePage = page; bookId = id }) }
                 "compare" -> comparisonState.SaveableStateProvider("comparison") {
@@ -256,7 +262,8 @@ private fun BasairApp(audioRequest: Int) {
 }
 
 @Composable
-private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onCompare: () -> Unit, onBook: (String) -> Unit, onNotes: () -> Unit, onQuran: () -> Unit, onMedia: () -> Unit, onAudio: () -> Unit, onTajweed: () -> Unit, onHistory: () -> Unit) {
+private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onCompare: () -> Unit, onBook: (String) -> Unit, onNotes: () -> Unit, onQuran: () -> Unit, onMedia: () -> Unit, onAudio: () -> Unit, onTajweed: () -> Unit, onHistory: () -> Unit,
+    onTextSearch: () -> Unit, onCorrections: () -> Unit) {
     val context = LocalContext.current
     LazyColumn(contentPadding = PaddingValues(22.dp), verticalArrangement = Arrangement.spacedBy(22.dp)) {
         item { LanguageSettings() }
@@ -264,6 +271,8 @@ private fun HomeScreen(onSubject: (String) -> Unit, onSearch: () -> Unit, onComp
         item { AudiobookEntry(onAudio) }
         item { TajweedEntry(onTajweed) }
         item { MediaEntry(onMedia) }
+        item { TextSearchEntry(onTextSearch) }
+        item { OutlinedButton(onClick = onCorrections) { Text(stringResource(R.string.batch_reports)) } }
         item { OutlinedButton(onClick = onNotes) { Text(context.getString(R.string.notes_title)) } }
         item { OutlinedButton(onClick = onHistory) { Text(context.getString(R.string.history_title)) } }
         item {

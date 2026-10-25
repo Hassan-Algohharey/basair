@@ -41,6 +41,8 @@ internal fun MediaFeature(initialQuery: String, initialBook: String?, initialFav
     var series by rememberSaveable { mutableStateOf<String?>(null) }
     var topic by rememberSaveable { mutableStateOf<String?>(null) }
     var section by rememberSaveable { mutableStateOf<String?>(null) }
+    var year by rememberSaveable { mutableStateOf<Int?>(null) }
+    var durationFilter by rememberSaveable { mutableStateOf<String?>(null) }
     var seriesPositions by remember { mutableStateOf(MediaCatalog.series.mapNotNull { s ->
         seriesResumeId(s.id, preferences.getString("seriesPosition:${s.id}", null))?.let { s.id to it }
     }.toMap()) }
@@ -56,7 +58,7 @@ internal fun MediaFeature(initialQuery: String, initialBook: String?, initialFav
     var selected by rememberSaveable { mutableStateOf(initialItem?.takeIf { id -> MediaCatalog.items.any { it.id == id && (initialBook == null || initialBook in it.bookIds) } }) }
     val state = MediaUiState(MediaCatalog.scholars, MediaCatalog.items, favorites, query, scholar,
         kind, onlyFavorites, profile, selected, Catalog.books.associate { it.id to it.title }, bookFilter, MediaCatalog.series, series, topic, lastOpened,
-        section, seriesPositions, completed)
+        section, seriesPositions, completed, year, durationFilter)
     Column {
         if (bookFilter != null) TextButton(onClick = { bookFilter = null; section = null }) {
             Text(stringResource(R.string.media_clear_book_filter, state.bookTitles[bookFilter].orEmpty()))
@@ -87,6 +89,8 @@ internal fun MediaFeature(initialQuery: String, initialBook: String?, initialFav
                     if (action.value != null) { profile = null; scholar = null; kind = "lesson"; topic = null; query = ""; onlyFavorites = false }
                 }
                 is MediaAction.TopicFilter -> topic = action.value
+                is MediaAction.YearFilter -> year = action.value?.takeIf { value -> value == 0 || MediaCatalog.items.any { it.publishedHijriYear == value } }
+                is MediaAction.DurationFilter -> durationFilter = action.value?.takeIf { it in setOf("short", "medium", "long", "unknown") }
                 is MediaAction.SectionFilter -> {
                     section = action.value?.takeIf { id -> bookLessonLinks(bookFilter).any { it.id == id } }
                     if (section != null) { query = ""; scholar = null; profile = null; kind = "lesson"; onlyFavorites = false; topic = null }

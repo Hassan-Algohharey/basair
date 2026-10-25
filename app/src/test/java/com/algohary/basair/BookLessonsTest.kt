@@ -38,7 +38,7 @@ class BookLessonsTest {
 
     @Test fun bookWithoutPageMappingRetainsItsWholeCommentaryIndex() {
         assertTrue(bookLessonLinks("nawawi-fifty").isEmpty())
-        assertEquals(8, filteredMediaItems(MediaUiState(items = MediaCatalog.items, bookFilter = "nawawi-fifty")).size)
+        assertEquals(43, filteredMediaItems(MediaUiState(items = MediaCatalog.items, bookFilter = "nawawi-fifty")).size)
         assertTrue(bookLessonLinks("missing").isEmpty())
     }
 

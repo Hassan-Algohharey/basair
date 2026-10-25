@@ -81,7 +81,7 @@ private class PdfBookSession(file: File, expectedPages: Int) : Closeable {
 @Composable
 internal fun PdfBookReader(book: Book, saved: Boolean, onBack: () -> Unit, onSave: () -> Unit,
     localFile: File? = null, initialPage: Int? = null, allowSave: Boolean = true, onExplanations: (() -> Unit)? = null, onAudio: (() -> Unit)? = null,
-    onLesson: ((String) -> Unit)? = null) {
+    onLesson: ((String) -> Unit)? = null, onTafsir: ((Int) -> Unit)? = null, onPageChanged: ((Int) -> Unit)? = null) {
     val context = LocalContext.current
     val preferences = remember { context.getSharedPreferences("basair", Context.MODE_PRIVATE) }
     var night by rememberSaveable { mutableStateOf(preferences.getBoolean("readerNight", false)) }
@@ -108,7 +108,7 @@ internal fun PdfBookReader(book: Book, saved: Boolean, onBack: () -> Unit, onSav
     MaterialTheme(colorScheme = readerColors) {
         Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
             Box(Modifier.windowInsetsPadding(WindowInsets.safeDrawing)) {
-                PdfReaderContent(book, saved, onBack, onSave, localFile, initialPage, allowSave, night, onExplanations, onAudio, onLesson) {
+                PdfReaderContent(book, saved, onBack, onSave, localFile, initialPage, allowSave, night, onExplanations, onAudio, onLesson, onTafsir, onPageChanged) {
                     night = !night
                     preferences.edit().putBoolean("readerNight", night).apply()
                 }
@@ -127,7 +127,7 @@ private val nightPageFilter = ColorFilter.colorMatrix(ColorMatrix(floatArrayOf(
 @Composable
 private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onSave: () -> Unit,
     localFile: File?, initialPage: Int?, allowSave: Boolean, night: Boolean, onExplanations: (() -> Unit)?, onAudio: (() -> Unit)?,
-    onLesson: ((String) -> Unit)?, onToggleNight: () -> Unit) {
+    onLesson: ((String) -> Unit)?, onTafsir: ((Int) -> Unit)?, onPageChanged: ((Int) -> Unit)?, onToggleNight: () -> Unit) {
     val context = LocalContext.current
     val preferences = remember { context.getSharedPreferences("basair", Context.MODE_PRIVATE) }
     var page by rememberSaveable(book.id, initialPage) { mutableIntStateOf((initialPage ?: preferences.getInt("page:${book.id}", 1)).coerceIn(1, book.pages)) }
@@ -137,6 +137,8 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
     var showBookmarks by rememberSaveable { mutableStateOf(false) }
     var showChapters by rememberSaveable { mutableStateOf(false) }
     var showLessons by rememberSaveable { mutableStateOf(false) }
+    var showTextSearch by rememberSaveable { mutableStateOf(false) }
+    if (showTextSearch) BookTextSearchDialog(book.id, { _, target -> page = target }, { showTextSearch = false })
     val pageLessons = bookLessonLinks(book.id).filter { it.pdfPage == page }
     if (showLessons) AlertDialog(onDismissRequest = { showLessons = false },
         title = { Text(stringResource(R.string.book_study_this_page)) }, text = {
@@ -161,7 +163,10 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
     val downloads = remember(context) { BookDownloads(context) }
     var showStorage by remember { mutableStateOf(false) }
     var showNotes by rememberSaveable { mutableStateOf(false) }
-    LaunchedEffect(page) { preferences.edit().putInt("page:${book.id}", page).apply() }
+    LaunchedEffect(page) {
+        preferences.edit().putInt("page:${book.id}", page).apply()
+        onPageChanged?.invoke(page)
+    }
     LaunchedEffect(zoom) { preferences.edit().putFloat("pdfZoom", zoom).apply() }
 
     Column(Modifier.fillMaxSize()) {
@@ -182,8 +187,11 @@ private fun PdfReaderContent(book: Book, saved: Boolean, onBack: () -> Unit, onS
             verticalAlignment = Alignment.CenterVertically) {
             if (onAudio != null) TextButton(onClick = onAudio) { Text(context.getString(R.string.audio_book_button)) }
             if (onExplanations != null) TextButton(onClick = onExplanations) { Text(context.getString(R.string.media_book_explanations)) }
+            if (availableBookText(book.id).isNotEmpty()) TextButton(onClick = { showTextSearch = true }) { Text(stringResource(R.string.batch_text_search)) }
+            ReportCorrectionButton("${book.title}\n${book.edition}\nPDF $page\nSHA-256 ${book.sha256}\n${book.source}")
             if (onLesson != null && pageLessons.isNotEmpty()) TextButton(onClick = { showLessons = true }) { Text(stringResource(R.string.book_study_this_page)) }
-            TextButton(onClick = { showNotes = true }) { Text(context.getString(R.string.notes_title)) }
+            if (!book.pageOnly) TextButton(onClick = { showNotes = true }) { Text(context.getString(R.string.notes_title)) }
+            if (onTafsir != null) TextButton(onClick = { onTafsir(page) }) { Text(stringResource(R.string.batch_page_tafsir)) }
             if (localFile == null) TextButton(onClick = { showStorage = true }) { Text(context.getString(R.string.storage_title)) }
             if (book.chapters.isNotEmpty()) TextButton(onClick = { showChapters = true }) { Text(context.getString(R.string.book_contents)) }
             TextButton(onClick = onToggleNight) { Text(if (night) context.getString(R.string.ui_day_mode) else context.getString(R.string.ui_night_mode)) }
