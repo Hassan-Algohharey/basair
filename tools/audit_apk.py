@@ -44,6 +44,12 @@ with zipfile.ZipFile(apk) as archive:
             assert recording['licenseUrl'].encode() in dex
             for track in recording['tracks']:
                 assert track['id'].encode() in dex and track['url'].encode() in dex
+        tajweed_audio = root / 'content/tajweed-media/catalog.json'
+        if tajweed_audio.exists():
+            lessons = json.loads(tajweed_audio.read_text('utf-8'))['audio']
+            for lesson in lessons:
+                assert lesson['id'].encode() in dex and (lesson['id'] + '-full').encode() in dex
+                assert lesson['url'].encode() in dex and lesson['sourceUrl'].encode() in dex
         license_path = 'licenses/androidx-media3-LICENSE.txt'
         assert archive.read(asset_prefix + license_path) == (root / 'app/src/main/assets' / license_path).read_bytes()
 print(json.dumps({'apk': str(apk), 'bundledPdfs': 0, 'catalogBooks': len(books), 'pages': sum(b['pages'] for b in books),

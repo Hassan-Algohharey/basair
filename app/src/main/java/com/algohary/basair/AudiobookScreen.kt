@@ -53,7 +53,7 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
     var bookFilter by rememberSaveable { mutableStateOf(initialBook) }
     var selectedId by rememberSaveable { mutableStateOf(
         searchAudiobooks(initialQuery, initialBook).find { it.id == audioRecording(store.lastTrack().orEmpty())?.id }?.id
-            ?: searchAudiobooks(initialQuery, initialBook).firstOrNull()?.id ?: AudiobookCatalog.recordings.first().id) }
+            ?: searchAudiobooks(initialQuery, initialBook).firstOrNull()?.id ?: allAudioRecordings.first().id) }
     var controller by remember { mutableStateOf<MediaController?>(null) }
     var connectionError by remember { mutableStateOf(false) }
     var tick by remember { mutableIntStateOf(0) }
@@ -74,7 +74,7 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
     }
     LaunchedEffect(controller) { while (true) { tick++; delay(500) } }
     val player = controller
-    val selected = AudiobookCatalog.recordings.find { it.id == selectedId } ?: AudiobookCatalog.recordings.first()
+    val selected = allAudioRecordings.find { it.id == selectedId } ?: allAudioRecordings.first()
     val track = selected.tracks.find { it.id == store.lastTrack(selected.id) } ?: selected.tracks.first()
     @Suppress("UNUSED_VARIABLE") val observedTick = tick
     val currentId = player?.currentMediaItem?.mediaId
@@ -119,7 +119,7 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
                 Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
                     Text(recording.title, fontWeight = FontWeight.Bold)
                     if (english) Text(recording.englishTitle, style = MaterialTheme.typography.bodySmall)
-                    Text(stringResource(R.string.audio_reader, if (english) recording.englishReader else recording.reader))
+                    Text(stringResource(if (recording.kind == "lesson") R.string.tja_speaker else R.string.audio_reader, if (english) recording.englishReader else recording.reader))
                     Text(stringResource(R.string.audio_select), color = Green)
                 }
             }
@@ -129,8 +129,8 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
             Card(Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(containerColor = SoftGreen)) {
                 Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                     Text(selected.title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
-                    Text(stringResource(R.string.audio_reader, if (english) selected.englishReader else selected.reader))
-                    Text(stringResource(R.string.audio_author, selected.author))
+                    Text(stringResource(if (selected.kind == "lesson") R.string.tja_speaker else R.string.audio_reader, if (english) selected.englishReader else selected.reader))
+                    if (selected.author.isNotBlank()) Text(stringResource(R.string.audio_author, selected.author))
                     Text(if (english) selected.englishCoverageNote else selected.coverageNote, style = MaterialTheme.typography.bodySmall)
                     Text(stringResource(if (local) R.string.audio_local else R.string.audio_online), color = Green)
                     if (connectionError) Text(stringResource(R.string.audio_connection_error))

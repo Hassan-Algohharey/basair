@@ -22,7 +22,7 @@ internal fun QuranEntry(onOpen: () -> Unit) {
 }
 
 @Composable
-internal fun QuranFeature() {
+internal fun QuranFeature(initialAyah: Pair<Int, Int>? = null) {
     val context = LocalContext.current
     var repository by remember { mutableStateOf<QuranRepository?>(null) }
     var fonts by remember { mutableStateOf<Pair<FontFamily, FontFamily>?>(null) }
@@ -49,11 +49,11 @@ internal fun QuranFeature() {
                 Button(onClick = { retry++ }) { Text(context.getString(R.string.quran_retry)) }
             } else CircularProgressIndicator()
         }
-    } else key(repo) { QuranReady(repo, readyFonts.first, readyFonts.second) }
+    } else key(repo) { QuranReady(repo, readyFonts.first, readyFonts.second, initialAyah) }
 }
 
 @Composable
-private fun QuranReady(repo: QuranRepository, quranFont: FontFamily, tafsirFont: FontFamily) {
+private fun QuranReady(repo: QuranRepository, quranFont: FontFamily, tafsirFont: FontFamily, initialAyah: Pair<Int, Int>?) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
     val data = repo.index
@@ -101,7 +101,10 @@ private fun QuranReady(repo: QuranRepository, quranFont: FontFamily, tafsirFont:
             catch (error: Exception) { ui = ui.copy(loading = false, error = message(error)) }
         }
     }
-    LaunchedEffect(repo) { ui = ui.copy(cachedPages = countCache()) }
+    LaunchedEffect(repo, initialAyah) {
+        ui = ui.copy(cachedPages = countCache())
+        initialAyah?.let { (s, a) -> data.pageFor(s, a)?.let { open(it, s to a) } }
+    }
     val onAction: (QuranAction) -> Unit = { action -> when (action) {
         is QuranAction.OpenPage -> open(action.page)
         is QuranAction.OpenAyah -> data.pageFor(action.surah, action.ayah)?.let { open(it, action.surah to action.ayah) }
@@ -148,5 +151,5 @@ private fun QuranReady(repo: QuranRepository, quranFont: FontFamily, tafsirFont:
             }
         }
     } }
-    QuranScreen(ui, onAction)
+    QuranScreen(ui, onAction, initialReading = initialAyah != null)
 }

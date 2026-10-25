@@ -8,10 +8,10 @@ class MediaCatalogTest {
         items = MediaCatalog.items, query = query, bookTitles = Catalog.books.associate { it.id to it.title })
 
     @Test fun expandedCollectionHasRealLinksAndValidBookReferences() {
-        assertEquals(3, MediaCatalog.scholars.size)
-        assertEquals(33, MediaCatalog.items.size)
-        assertEquals(mapOf("lesson" to 18, "sermon" to 9, "short" to 6), MediaCatalog.items.groupingBy { it.kind }.eachCount())
-        assertEquals(33, MediaCatalog.items.map { it.id }.toSet().size)
+        assertEquals(4, MediaCatalog.scholars.size)
+        assertEquals(52, MediaCatalog.items.size)
+        assertEquals(mapOf("lesson" to 37, "sermon" to 9, "short" to 6), MediaCatalog.items.groupingBy { it.kind }.eachCount())
+        assertEquals(52, MediaCatalog.items.map { it.id }.toSet().size)
         MediaCatalog.items.forEach { item ->
             assertTrue(item.sourceNote.isNotBlank() && item.englishSourceNote.isNotBlank())
             assertTrue(item.format in setOf("audio", "video"))
@@ -54,8 +54,8 @@ class MediaCatalogTest {
     }
 
     @Test fun seriesCoverageAndBookLinksMatchTheIndexedEpisodes() {
-        assertEquals(3, MediaCatalog.series.size)
-        assertEquals(2, MediaCatalog.series.count { it.coverage == "partial" })
+        assertEquals(5, MediaCatalog.series.size)
+        assertEquals(4, MediaCatalog.series.count { it.coverage == "partial" })
         assertEquals(1, MediaCatalog.series.count { it.coverage == "complete" })
         MediaCatalog.series.forEach { series ->
             val episodes = orderedSeriesItems(MediaCatalog.items, series.id)

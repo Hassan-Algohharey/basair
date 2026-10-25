@@ -19,7 +19,7 @@
     <string name="tj_hamzah">Connecting hamzah</string>
     <string name="tj_endings">Stopping at word endings</string>
     <string name="tj_intro">Two complete texts and a chapter reading plan with page references</string>
-    <string name="tj_notice">A reading plan for the Arabic texts. Lesson recordings and audio examples are not available yet.</string>
+    <string name="tj_notice">Books, video commentaries and sourced practice lessons. Some reading-plan topics have no linked recording yet.</string>
     <string name="tj_plan">Reading plan</string>
     <string name="tj_books">Tajweed books</string>
     <string name="tj_progress">Topics read: %1$d of %2$d</string>

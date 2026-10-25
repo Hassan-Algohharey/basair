@@ -110,6 +110,9 @@ private fun BasairApp(audioRequest: Int) {
     var referencePage by rememberSaveable { mutableIntStateOf(1) }
     var comparisonId by rememberSaveable { mutableStateOf("ghusl-intention") }
     var route by rememberSaveable { mutableStateOf("home") }
+    var quranSurah by rememberSaveable { mutableStateOf<Int?>(null) }
+    var quranAyah by rememberSaveable { mutableStateOf<Int?>(null) }
+    var quranOrigin by rememberSaveable { mutableStateOf("home") }
     var bookId by rememberSaveable { mutableStateOf<String?>(null) }
     var notePage by rememberSaveable { mutableStateOf<Int?>(null) }
     var noteReference by remember { mutableStateOf<Reference?>(null) }
@@ -126,15 +129,16 @@ private fun BasairApp(audioRequest: Int) {
     val openTajweed: (String) -> Unit = { search ->
         tajweedState.removeState("tajweed"); tajweedQuery = search; bookId = null; route = "tajweed"
     }
+    var audioOrigin by rememberSaveable { mutableStateOf("home") }
     var audioQuery by rememberSaveable { mutableStateOf("") }
     var audioBook by rememberSaveable { mutableStateOf<String?>(null) }
     val openAudio: (String, String?) -> Unit = { search, book ->
-        audioState.removeState("audio"); audioQuery = search; audioBook = book; bookId = null; route = "audio"
+        audioOrigin = "home"; audioState.removeState("audio"); audioQuery = search; audioBook = book; bookId = null; route = "audio"
     }
     LaunchedEffect(audioRequest) {
         if (audioRequest > 0) {
             bookId = null; referenceVolume = null; noteReference = null
-            audioState.removeState("audio"); audioQuery = ""; audioBook = null; route = "audio"
+            audioOrigin = "home"; audioState.removeState("audio"); audioQuery = ""; audioBook = null; route = "audio"
         }
     }
     var mediaQuery by rememberSaveable { mutableStateOf("") }
@@ -160,15 +164,15 @@ private fun BasairApp(audioRequest: Int) {
         navigate("compare")
     }
     BackHandler(enabled = referenceVolume != null || bookId != null || route != "home") {
-        if (referenceVolume != null) referenceVolume = null else if (bookId != null) bookId = null else route = "home"
+        if (referenceVolume != null) referenceVolume = null else if (bookId != null) bookId = null else route = when (route) { "quran" -> quranOrigin; "audio" -> audioOrigin; else -> "home" }
     }
     noteReference?.let { ref -> ReferenceDownloadDialog(ref, { noteReference = null }, {
         referencePage = it.pdfPage; referenceVolume = it.volume; noteReference = null
     }) }
     if (route == "quran") {
         Column(Modifier.fillMaxSize().windowInsetsPadding(WindowInsets.safeDrawing)) {
-            TextButton(onClick = { route = "home" }) { Text(context.getString(R.string.ui_back)) }
-            Box(Modifier.weight(1f)) { QuranFeature() }
+            TextButton(onClick = { route = quranOrigin }) { Text(context.getString(R.string.ui_back)) }
+            Box(Modifier.weight(1f)) { QuranFeature(quranSurah?.let { s -> quranAyah?.let { s to it } }) }
         }
         return
     }
@@ -201,12 +205,17 @@ private fun BasairApp(audioRequest: Int) {
     }) { padding ->
         Box(Modifier.fillMaxSize().padding(padding)) {
             when (route) {
-                "home" -> HomeScreen(visitSubject, { navigate("search") }, { navigate("compare") }, openBook, { navigate("notes") }, { navigate("quran") }, { openMedia("", null, false) }, { openAudio("", null) }, { openTajweed("") })
+                "home" -> HomeScreen(visitSubject, { navigate("search") }, { navigate("compare") }, openBook, { navigate("notes") }, { quranSurah = null; quranAyah = null; quranOrigin = "home"; navigate("quran") }, { openMedia("", null, false) }, { openAudio("", null) }, { openTajweed("") })
                 "library", "search" -> CatalogScreen(route == "search", query, { query = it }, subject,
                     { subject = it; school = null; topic = null }, openBook, saved, toggleSave, openComparison,
                     school, { school = it }, topic, { topic = it },
-                    { referencePage = it.pdfPage; referenceVolume = it.volume }, { navigate("quran") }, { openMedia(query, null, false) }, { openAudio(query, it) }, { openTajweed(query) })
-                "tajweed" -> tajweedState.SaveableStateProvider("tajweed") { TajweedFeature(tajweedQuery) { id, page -> notePage = page; bookId = id } }
+                    { referencePage = it.pdfPage; referenceVolume = it.volume }, { quranSurah = null; quranAyah = null; quranOrigin = "home"; navigate("quran") }, { openMedia(query, null, false) }, { openAudio(query, it) }, { openTajweed(query) })
+                "tajweed" -> tajweedState.SaveableStateProvider("tajweed") {
+                    TajweedFeature(tajweedQuery, { id, page -> notePage = page; bookId = id },
+                        { id -> TajweedAudioCatalog.recordings.find { it.id == id }?.let { openAudio(it.title, null); audioOrigin = "tajweed" } },
+                        { id -> openMedia("", id, false) },
+                        { surah, ayah -> quranSurah = surah; quranAyah = ayah; quranOrigin = "tajweed"; route = "quran" })
+                }
                 "audio" -> audioState.SaveableStateProvider("audio") { key(audioRequest) { AudiobookFeature(audioQuery, audioBook, openBook) } }
                 "media" -> mediaState.SaveableStateProvider("media") { MediaFeature(mediaQuery, mediaBook, mediaFavorites, openBook) }
                 "compare" -> comparisonState.SaveableStateProvider("comparison") {

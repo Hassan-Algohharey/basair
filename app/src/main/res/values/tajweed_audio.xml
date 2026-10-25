@@ -1,0 +1,12 @@
+<resources>
+    <string name="tja_title">الدروس والتطبيقات الصوتية</string>
+    <string name="tja_speaker">المقدم: %1$s</string>
+    <string name="tja_open">فتح مشغل الدرس</string>
+    <string name="tja_verses">بداية التطبيق بحسب المصدر: %1$d:%2$d</string>
+    <string name="tja_notice">دروس تطبيقية كاملة من المصدر، وليست مقتطفات قصيرة. رابط الآية لبداية التطبيق المفهرسة، دون تزامن زمني. لم يحدد المصدر رواية الأداء؛ المصحف المعروض برواية حفص.</string>
+    <string name="tja_resume">متابعة آخر درس اخترته</string>
+    <string name="tja_commentaries">شروح %1$s — الحلقات المفهرسة: %2$d</string>
+    <string name="tja_source">صفحة مصدر التسجيل</string>
+    <string name="tja_book_chapter">قراءة الباب: %1$s</string>
+    <string name="tja_count">دروس تطبيقية مطابقة: %1$d</string>
+</resources>

@@ -63,11 +63,11 @@ internal sealed interface QuranAction {
 
 /** Presentation only: the caller supplies verified scripture, sources and persisted state. */
 @Composable
-internal fun QuranScreen(state: QuranUiState, onAction: (QuranAction) -> Unit) {
+internal fun QuranScreen(state: QuranUiState, onAction: (QuranAction) -> Unit, initialReading: Boolean = false) {
     val context = LocalContext.current
     fun label(id: Int) = context.getString(id)
     val english = LocalConfiguration.current.locales[0].language == "en"
-    var index by rememberSaveable { mutableStateOf(true) }
+    var index by rememberSaveable { mutableStateOf(!initialReading) }
     var query by rememberSaveable { mutableStateOf("") }
     var submittedQuery by rememberSaveable { mutableStateOf<String?>(null) }
     var dialog by rememberSaveable { mutableStateOf("") }

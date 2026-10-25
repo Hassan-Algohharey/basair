@@ -1,0 +1,382 @@
+{
+  "audio": [
+    {
+      "id": "amer-fatiha",
+      "sourceEpisode": 2,
+      "title": "قراءة الفاتحة وأول سورة البقرة",
+      "englishTitle": "Al-Fatihah and the beginning of Al-Baqarah",
+      "speaker": "أحمد عامر",
+      "englishSpeaker": "Ahmed Amer",
+      "topicIds": [],
+      "bookIds": [
+        "jazariyyah"
+      ],
+      "sourceUrl": "https://islamhouse.com/ar/audios/174077/",
+      "sourcePageSha256": "7e809384b94897a8d0f0c94f84a558bc3ae3fc8f934526123e131b8d693d9f71",
+      "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain_01/Ta3lim_Tajweed/ar_02_Ta3lim_Tajweed.mp3",
+      "bytes": 6971368,
+      "mimeType": "audio/mpeg",
+      "probes": [
+        {
+          "offset": 0,
+          "bytes": 4096,
+          "sha256": "6f9e34ec1d740df4cf1d363678351ffd07386f77ded7d86765d8fc9eb7aea07b",
+          "contentRange": "bytes 0-4095/6971368",
+          "httpStatus": 206
+        },
+        {
+          "offset": 3485684,
+          "bytes": 4096,
+          "sha256": "8721e15059c81980addd7bd526e50057494475892e36136ee91ca2a8b94f09b1",
+          "contentRange": "bytes 3485684-3489779/6971368",
+          "httpStatus": 206
+        },
+        {
+          "offset": 6967272,
+          "bytes": 4096,
+          "sha256": "64a197287be80f6d1d0976c8c40fdf62b62a01cc0f87a0d631144d5cdd144ca8",
+          "contentRange": "bytes 6967272-6971367/6971368",
+          "httpStatus": 206
+        }
+      ],
+      "quranStart": {
+        "surah": 1,
+        "ayah": 1
+      },
+      "quranLinkBasis": "بداية التطبيق بحسب عنوان المصدر؛ لا توقيت محدد ولا ادعاء وجود الحكم في كل كلمة من الآية.",
+      "riwayaStatus": "not-stated-by-source",
+      "kind": "lesson",
+      "downloadAllowed": true,
+      "commercialUseAllowed": false,
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "id": "amer-stopping",
+      "sourceEpisode": 3,
+      "title": "الوقف والابتداء — تطبيقات من البقرة",
+      "englishTitle": "Stopping and starting — Al-Baqarah practice",
+      "speaker": "أحمد عامر",
+      "englishSpeaker": "Ahmed Amer",
+      "topicIds": [
+        "stopping"
+      ],
+      "bookIds": [
+        "jazariyyah"
+      ],
+      "sourceUrl": "https://islamhouse.com/ar/audios/174077/",
+      "sourcePageSha256": "7e809384b94897a8d0f0c94f84a558bc3ae3fc8f934526123e131b8d693d9f71",
+      "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain_01/Ta3lim_Tajweed/ar_03_Ta3lim_Tajweed.mp3",
+      "bytes": 6967984,
+      "mimeType": "audio/mpeg",
+      "probes": [
+        {
+          "offset": 0,
+          "bytes": 4096,
+          "sha256": "6f9e34ec1d740df4cf1d363678351ffd07386f77ded7d86765d8fc9eb7aea07b",
+          "contentRange": "bytes 0-4095/6967984",
+          "httpStatus": 206
+        },
+        {
+          "offset": 3483992,
+          "bytes": 4096,
+          "sha256": "d3695d7771a7782e4285d39e56f8275d95e508f8f8595a767d6e46a25252305c",
+          "contentRange": "bytes 3483992-3488087/6967984",
+          "httpStatus": 206
+        },
+        {
+          "offset": 6963888,
+          "bytes": 4096,
+          "sha256": "81b874364f097d3f8b1879027d6ff30e9d8259092d7df963154fc56278d6006a",
+          "contentRange": "bytes 6963888-6967983/6967984",
+          "httpStatus": 206
+        }
+      ],
+      "quranStart": null,
+      "quranLinkBasis": null,
+      "riwayaStatus": "not-stated-by-source",
+      "kind": "lesson",
+      "downloadAllowed": true,
+      "commercialUseAllowed": false,
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "id": "amer-idgham",
+      "sourceEpisode": 4,
+      "title": "الإدغام — تطبيقات من البقرة",
+      "englishTitle": "Idgham — Al-Baqarah practice",
+      "speaker": "أحمد عامر",
+      "englishSpeaker": "Ahmed Amer",
+      "topicIds": [
+        "noon"
+      ],
+      "bookIds": [
+        "tuhfat-atfal",
+        "jazariyyah"
+      ],
+      "sourceUrl": "https://islamhouse.com/ar/audios/174077/",
+      "sourcePageSha256": "7e809384b94897a8d0f0c94f84a558bc3ae3fc8f934526123e131b8d693d9f71",
+      "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain_01/Ta3lim_Tajweed/ar_04_Ta3lim_Tajweed.mp3",
+      "bytes": 6916072,
+      "mimeType": "audio/mpeg",
+      "probes": [
+        {
+          "offset": 0,
+          "bytes": 4096,
+          "sha256": "6f9e34ec1d740df4cf1d363678351ffd07386f77ded7d86765d8fc9eb7aea07b",
+          "contentRange": "bytes 0-4095/6916072",
+          "httpStatus": 206
+        },
+        {
+          "offset": 3458036,
+          "bytes": 4096,
+          "sha256": "142a39b5e69c833ec66a6e9c3da8c020b963d44bc3f30d74e55f15a2981c4dcc",
+          "contentRange": "bytes 3458036-3462131/6916072",
+          "httpStatus": 206
+        },
+        {
+          "offset": 6911976,
+          "bytes": 4096,
+          "sha256": "95a6dbee83d2fd98026278985ad4bc4c32250406e277b13d8cd647bebff46cdc",
+          "contentRange": "bytes 6911976-6916071/6916072",
+          "httpStatus": 206
+        }
+      ],
+      "quranStart": {
+        "surah": 2,
+        "ayah": 19
+      },
+      "quranLinkBasis": "بداية التطبيق بحسب عنوان المصدر؛ لا توقيت محدد ولا ادعاء وجود الحكم في كل كلمة من الآية.",
+      "riwayaStatus": "not-stated-by-source",
+      "kind": "lesson",
+      "downloadAllowed": true,
+      "commercialUseAllowed": false,
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "id": "amer-izhar",
+      "sourceEpisode": 6,
+      "title": "الإظهار — تطبيقات من البقرة",
+      "englishTitle": "Izhar — Al-Baqarah practice",
+      "speaker": "أحمد عامر",
+      "englishSpeaker": "Ahmed Amer",
+      "topicIds": [
+        "noon"
+      ],
+      "bookIds": [
+        "tuhfat-atfal",
+        "jazariyyah"
+      ],
+      "sourceUrl": "https://islamhouse.com/ar/audios/174077/",
+      "sourcePageSha256": "7e809384b94897a8d0f0c94f84a558bc3ae3fc8f934526123e131b8d693d9f71",
+      "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain_01/Ta3lim_Tajweed/ar_06_Ta3lim_Tajweed.mp3",
+      "bytes": 6563560,
+      "mimeType": "audio/mpeg",
+      "probes": [
+        {
+          "offset": 0,
+          "bytes": 4096,
+          "sha256": "6f9e34ec1d740df4cf1d363678351ffd07386f77ded7d86765d8fc9eb7aea07b",
+          "contentRange": "bytes 0-4095/6563560",
+          "httpStatus": 206
+        },
+        {
+          "offset": 3281780,
+          "bytes": 4096,
+          "sha256": "337a4ca851fff54d7a81cd7c01e3b3b502c2c796a237fb90f46a5e4fb0b2f593",
+          "contentRange": "bytes 3281780-3285875/6563560",
+          "httpStatus": 206
+        },
+        {
+          "offset": 6559464,
+          "bytes": 4096,
+          "sha256": "f05c17a694805e5f041e8623ecefc9f00f667bd91caa21f98f2503958e07acac",
+          "contentRange": "bytes 6559464-6563559/6563560",
+          "httpStatus": 206
+        }
+      ],
+      "quranStart": {
+        "surah": 2,
+        "ayah": 26
+      },
+      "quranLinkBasis": "بداية التطبيق بحسب عنوان المصدر؛ لا توقيت محدد ولا ادعاء وجود الحكم في كل كلمة من الآية.",
+      "riwayaStatus": "not-stated-by-source",
+      "kind": "lesson",
+      "downloadAllowed": true,
+      "commercialUseAllowed": false,
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "id": "amer-ikhfa",
+      "sourceEpisode": 7,
+      "title": "الإخفاء — تطبيقات من البقرة",
+      "englishTitle": "Ikhfa — Al-Baqarah practice",
+      "speaker": "أحمد عامر",
+      "englishSpeaker": "Ahmed Amer",
+      "topicIds": [
+        "noon"
+      ],
+      "bookIds": [
+        "tuhfat-atfal",
+        "jazariyyah"
+      ],
+      "sourceUrl": "https://islamhouse.com/ar/audios/174077/",
+      "sourcePageSha256": "7e809384b94897a8d0f0c94f84a558bc3ae3fc8f934526123e131b8d693d9f71",
+      "url": "https://d1.islamhouse.com/data/ar/ih_sounds/chain_01/Ta3lim_Tajweed/ar_07_Ta3lim_Tajweed.mp3",
+      "bytes": 7005928,
+      "mimeType": "audio/mpeg",
+      "probes": [
+        {
+          "offset": 0,
+          "bytes": 4096,
+          "sha256": "6f9e34ec1d740df4cf1d363678351ffd07386f77ded7d86765d8fc9eb7aea07b",
+          "contentRange": "bytes 0-4095/7005928",
+          "httpStatus": 206
+        },
+        {
+          "offset": 3502964,
+          "bytes": 4096,
+          "sha256": "245cdab6284a26a5f49385a80b6be63cce51b25ba8cdfc4bad8c0819adae4ccc",
+          "contentRange": "bytes 3502964-3507059/7005928",
+          "httpStatus": 206
+        },
+        {
+          "offset": 7001832,
+          "bytes": 4096,
+          "sha256": "9b9a0c4e82ef3845f99bbd9570d0bd1520d609f7093fe6de72f4eda8cfb031ea",
+          "contentRange": "bytes 7001832-7005927/7005928",
+          "httpStatus": 206
+        }
+      ],
+      "quranStart": {
+        "surah": 2,
+        "ayah": 32
+      },
+      "quranLinkBasis": "بداية التطبيق بحسب عنوان المصدر؛ لا توقيت محدد ولا ادعاء وجود الحكم في كل كلمة من الآية.",
+      "riwayaStatus": "not-stated-by-source",
+      "kind": "lesson",
+      "downloadAllowed": true,
+      "commercialUseAllowed": false,
+      "reviewedOn": "2026-10-25"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "content/tajweed-media/taj-index-44.html",
+      "bytes": 50106,
+      "sha256": "2959aa86330942222ad380550091d09ea34cd13c8368279c45197e5fcf71a572"
+    },
+    {
+      "path": "content/tajweed-media/taj-episode-507.html",
+      "bytes": 49073,
+      "sha256": "d9c0ec1b434c2593e95cd8b7ba11661fd2112b181f85fa1bca74fac8cfd1e980"
+    },
+    {
+      "path": "content/tajweed-media/taj-episode-506.html",
+      "bytes": 49074,
+      "sha256": "6835d0c6c0b472df96bb6514219a9c1929bc4c3cb9524c62c9efb90b1939845d"
+    },
+    {
+      "path": "content/tajweed-media/taj-episode-505.html",
+      "bytes": 49073,
+      "sha256": "cb13ffce9d57ecc2083d4efa5275ad531f7c3355c4a1309fb1a5ff93df222192"
+    },
+    {
+      "path": "content/tajweed-media/taj-episode-504.html",
+      "bytes": 49073,
+      "sha256": "5d4f118d08271a3bbf90ca2f0a9de0252ccc6c4a2226ad0772b0d8d3ee201dc4"
+    },
+    {
+      "path": "content/tajweed-media/taj-episode-503.html",
+      "bytes": 49073,
+      "sha256": "7624c730fe3198729e07b87de5b104dd0d89017ed549316e6235464164270c72"
+    },
+    {
+      "path": "content/tajweed-media/taj-episode-502.html",
+      "bytes": 49074,
+      "sha256": "379e5a1c14781a11eb5e855108bdac010c65a145532a6e4b4fab6da34228f243"
+    },
+    {
+      "path": "content/tajweed-media/taj-episode-501.html",
+      "bytes": 49074,
+      "sha256": "bb1a0bc02ac28d403b55134593473ec8c2fd525a556d10975b0dbc98a5061dce"
+    },
+    {
+      "path": "content/tajweed-media/taj-episode-500.html",
+      "bytes": 49209,
+      "sha256": "c8fc0ceb6969d514a6a79b5a6ce07e678ea0ef592a6cd35076cf400228a8dbd3"
+    },
+    {
+      "path": "content/tajweed-media/taj-index-41.html",
+      "bytes": 55801,
+      "sha256": "be24e254b6ccf35867d6327c3f1e541f1b90f4d9906ef3114609920f84d84244"
+    },
+    {
+      "path": "content/tajweed-media/taj-episode-494.html",
+      "bytes": 49072,
+      "sha256": "f968c6ccdf1df3f4c842104390dfd749009680c8b220e206301b0e4fc4edc5cc"
+    },
+    {
+      "path": "content/tajweed-media/taj-episode-493.html",
+      "bytes": 49081,
+      "sha256": "f27c69b88b8823f10b2f8bd3573774ad9405f26b8707de1c2fe657cf38bef178"
+    },
+    {
+      "path": "content/tajweed-media/taj-episode-492.html",
+      "bytes": 49081,
+      "sha256": "c03df0b83911efd09d66de8d7c02f8a93f2de77aa9a102881297e83eb7efac98"
+    },
+    {
+      "path": "content/tajweed-media/taj-episode-491.html",
+      "bytes": 49081,
+      "sha256": "c79f407afdb0a9fb284f0a7e28f717ab41b333255adbddf0d8ca04dac2de38ed"
+    },
+    {
+      "path": "content/tajweed-media/taj-episode-490.html",
+      "bytes": 49080,
+      "sha256": "1a902bc7e001787d40753810155cab9e73d4fe4c2f3606e16d33e84464c48589"
+    },
+    {
+      "path": "content/tajweed-media/taj-episode-489.html",
+      "bytes": 49080,
+      "sha256": "315b34d35ae766ce99ce2f0915c534000638e1c7acfc9656e88a85f5781b4ce1"
+    },
+    {
+      "path": "content/tajweed-media/taj-episode-488.html",
+      "bytes": 49073,
+      "sha256": "4b28f13764079523af3ad74fcdd142aeed15b76657d3cd5614340c0997980423"
+    },
+    {
+      "path": "content/tajweed-media/taj-episode-487.html",
+      "bytes": 49080,
+      "sha256": "e49d8ea158043a46920450f83e65bf83bb84c08bd02b164d3ac08979d9ebc86d"
+    },
+    {
+      "path": "content/tajweed-media/taj-episode-486.html",
+      "bytes": 49080,
+      "sha256": "5ca2b5059cc28cd4bfc964f2d84e9ab69a09a1faaa8d436609804fd900ead94f"
+    },
+    {
+      "path": "content/tajweed-media/taj-episode-485.html",
+      "bytes": 49089,
+      "sha256": "9dbfaca1298592b24e470e2993213d24a3bb942626e5882509275d3cbf67cd6e"
+    },
+    {
+      "path": "content/tajweed-media/taj-episode-484.html",
+      "bytes": 49089,
+      "sha256": "a93aec013047bcd677f2cfe95a9f47c84390312564814643f039ce6eeadbbb1d"
+    },
+    {
+      "path": "content/tajweed-media/islamhouse-174077.html",
+      "bytes": 91560,
+      "sha256": "7e809384b94897a8d0f0c94f84a558bc3ae3fc8f934526123e131b8d693d9f71"
+    },
+    {
+      "path": "content/tajweed-media/islamhouse-permission.html",
+      "bytes": 97594,
+      "sha256": "66888c80718cdbcb4678a0613b674b972240934a620bd1d0a734b34753a35449"
+    }
+  ],
+  "licenseUrl": "https://d1.islamhouse.com/html/faq.htm",
+  "licensePageSha256": "66888c80718cdbcb4678a0613b674b972240934a620bd1d0a734b34753a35449",
+  "reviewScope": "Official index identity, titles, embedded players and HTTP range samples. Full recordings have not been listened through. No timestamp-level or edition-level alignment. Source does not state a recitation riwaya."
+}

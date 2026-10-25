@@ -16,3 +16,8 @@ Version 0.8.2 keeps originals and extracted pages outside the application packag
 Version 0.12.0 adds AndroidX Media3 ExoPlayer and MediaSession (1.11.1), licensed under Apache License 2.0. The license is included in `app/src/main/assets/licenses/androidx-media3-LICENSE.txt` and in the APK. Upstream: https://github.com/androidx/media . Dependency rights are separate from audiobook permissions.
 
 Audiobook metadata and source permissions are documented in `content/audiobooks/` and `docs/AUDIO_SOURCES_V012_AR.md`. The original recordings remain on IslamHouse hosting; they are not committed or rehosted. The adopted permission covers noncommercial use with source attribution and unchanged scholarly content. No general commercial audio license is asserted.
+
+
+### Tajweed media — 0.14.0
+
+Taj Foundation video lessons are linked to their original institutional pages; no video downloading, copying or rehosting is provided. Ahmed Amer practice recordings remain on IslamHouse and use its noncommercial attribution and unchanged-content permission; independent commercial permission is not established. Source evidence and review limitations: docs/TAJWEED_MEDIA_SOURCES_V014_AR.md.

@@ -12,11 +12,13 @@ internal data class Audiobook(
     val bookIds: List<String>, val coverage: String, val coverageNote: String,
     val englishCoverageNote: String, val sourceUrl: String, val licenseName: String,
     val licenseUrl: String, val rightsNote: String, val englishRightsNote: String,
-    val tracks: List<AudioTrack>, val downloadAllowed: Boolean = false
+    val tracks: List<AudioTrack>, val downloadAllowed: Boolean = false, val kind: String = "reading"
 )
 
-internal fun audioTrack(id: String): AudioTrack? = AudiobookCatalog.recordings.flatMap { it.tracks }.find { it.id == id }
-internal fun audioRecording(trackId: String): Audiobook? = AudiobookCatalog.recordings.find { recording -> recording.tracks.any { it.id == trackId } }
+internal val allAudioRecordings: List<Audiobook> get() = AudiobookCatalog.recordings + TajweedAudioCatalog.recordings
+
+internal fun audioTrack(id: String): AudioTrack? = allAudioRecordings.flatMap { it.tracks }.find { it.id == id }
+internal fun audioRecording(trackId: String): Audiobook? = allAudioRecordings.find { recording -> recording.tracks.any { it.id == trackId } }
 internal fun audioSeekPosition(position: Long, duration: Long?): Long =
     position.coerceAtLeast(0).let { if (duration != null && duration > 0) it.coerceAtMost(duration) else it }
 
@@ -27,8 +29,8 @@ internal fun audioResumePosition(position: Long, duration: Long?): Long =
 
 internal fun searchAudiobooks(query: String, bookId: String? = null): List<Audiobook> {
     val terms = mediaSearchKey(query).trim().split(Regex("\\s+")).filter { it.isNotBlank() }
-    return AudiobookCatalog.recordings.filter { recording ->
-        val value = mediaSearchKey(listOf("كتب مسموعة قراءة متن تسجيل صوتي audiobook audiobooks audio reading IslamHouse دار الإسلام", recording.title, recording.englishTitle, recording.author,
+    return allAudioRecordings.filter { recording ->
+        val value = mediaSearchKey(listOf(if (recording.kind == "reading") "كتب مسموعة قراءة متن تسجيل صوتي audiobook audiobooks audio reading IslamHouse دار الإسلام" else "درس تطبيق تجويد صوتي lesson practice tajweed tajwid audio IslamHouse دار الإسلام", recording.title, recording.englishTitle, recording.author,
             recording.reader, recording.englishReader, recording.englishReader.filter { it.isLetterOrDigit() }, recording.tracks.joinToString(" ") { "${it.title} ${it.englishTitle}" },
             recording.bookIds.mapNotNull { id -> Catalog.books.find { it.id == id }?.title }.joinToString(" ")).joinToString(" "))
         (bookId == null || bookId in recording.bookIds) && terms.all { it in value }

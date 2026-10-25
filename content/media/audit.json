@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "reviewedOn": "2026-10-24",
-  "scope": "مراجعة صفحات المصادر والعناوين والنسبة وتوفر عناصر الوسائط وفهارس السلاسل وترقيم حلقاتها؛ لم تتم مراجعة التسجيلات سماعًا كاملة أو اختبار تشغيلها على جميع الأجهزة. بيانات المجموعة الافتتاحية محفوظة وأضيفت مراجعة 0.11.0.",
-  "delivery": "روابط HTTPS لصفحات المصادر الأصلية فقط. لا ملفات وسائط ولا صور أغلفة منسوخة ولا مشغل مضمّن في التطبيق.",
+  "reviewedOn": "2026-10-25",
+  "scope": "مراجعة صفحات المصادر والعناوين والنسبة وعناصر الوسائط وفهارس السلاسل؛ أضيفت 0.14.0 من مصادر مؤسسة تاج. لم تتم مراجعة التسجيلات كاملة سماعًا أو مشاهدة، ولا مطابقة زمنية أو لطبعات الكتب.",
+  "delivery": "هذا فهرس روابط صفحات المصادر الأصلية، مع فتح مشغلاتها خارجيًا دون تنزيل الفيديو أو إعادة رفعه. الدروس الصوتية التي يشغلها التطبيق مسجلة في فهرس content/tajweed-media المستقل.",
   "identityEvidence": [
     {
       "scholarId": "bin-baz",
@@ -21,6 +21,11 @@
       "corroboratingUrl": "https://files.zadapps.info/cms.sh-albarrak.com/uploads/2024/02/Albarrak-Aljalalayn-0e220261a1b8780cd6075a464d9e3d71.pdf",
       "httpStatus": 200,
       "pageSha256": "676b94026dd257092e1edeb92990b29bc2f94c7f0af5e0f54dbb9ac2496f4b9b"
+    },
+    {
+      "scholarId": "abdulqadir-othman",
+      "url": "https://qurantaj.com/media/article/41",
+      "observedText": "يسمي فهرس مؤسسة تاج مقدم حلقات الجزرية بالشيخ عبد القادر العثمان، ويربط المشغلات وصفحات الحلقات الأصلية."
     }
   ],
   "bookLinkEvidence": [
@@ -38,6 +43,16 @@
       "bookId": "wasael",
       "seriesUrl": "https://sh-albarrak.com/books-explanations/indexes/51",
       "relationship": "شرح أصل رسالة الوسائل المفيدة للسعدي في سبع حلقات بحسب فهرس المصدر؛ لا مطابقة لطبعة المكتبة أو صفحاتها ولا ادعاء قراءة صوتية لنسختها."
+    },
+    {
+      "bookId": "tuhfat-atfal",
+      "seriesUrl": "https://qurantaj.com/media/article/44",
+      "relationship": "شرح لأصل المتن من فهرس مؤسسة تاج؛ لا مطابقة مثبتة لطبعة المكتبة أو صفحاتها، ولا مزامنة بالتوقيت."
+    },
+    {
+      "bookId": "jazariyyah",
+      "seriesUrl": "https://qurantaj.com/media/article/41",
+      "relationship": "شرح لأصل المتن من فهرس مؤسسة تاج؛ لا مطابقة مثبتة لطبعة المكتبة أو صفحاتها، ولا مزامنة بالتوقيت."
     }
   ],
   "excluded": [
@@ -572,6 +587,177 @@
       "reviewedOn": "2026-10-24",
       "headingExtraction": "العنوان في postContent.title يطابق رأس المادة مع استبعاد تاريخ العرض المضاف إليه.",
       "sourceSeriesId": "51"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-1",
+      "url": "https://qurantaj.com/media/view-article?id=507",
+      "httpStatus": 200,
+      "pageSha256": "d9c0ec1b434c2593e95cd8b7ba11661fd2112b181f85fa1bca74fac8cfd1e980",
+      "mediaElementPresent": true,
+      "reviewedOn": "2026-10-25",
+      "embedUrl": "https://www.youtube.com/embed/8Do87VxmhLQ?rel=1"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-2",
+      "url": "https://qurantaj.com/media/view-article?id=506",
+      "httpStatus": 200,
+      "pageSha256": "6835d0c6c0b472df96bb6514219a9c1929bc4c3cb9524c62c9efb90b1939845d",
+      "mediaElementPresent": true,
+      "reviewedOn": "2026-10-25",
+      "embedUrl": "https://www.youtube.com/embed/v2dfYFUjgsU?rel=1"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-3",
+      "url": "https://qurantaj.com/media/view-article?id=505",
+      "httpStatus": 200,
+      "pageSha256": "cb13ffce9d57ecc2083d4efa5275ad531f7c3355c4a1309fb1a5ff93df222192",
+      "mediaElementPresent": true,
+      "reviewedOn": "2026-10-25",
+      "embedUrl": "https://www.youtube.com/embed/Ge-7Xn_8foI?rel=1"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-4",
+      "url": "https://qurantaj.com/media/view-article?id=504",
+      "httpStatus": 200,
+      "pageSha256": "5d4f118d08271a3bbf90ca2f0a9de0252ccc6c4a2226ad0772b0d8d3ee201dc4",
+      "mediaElementPresent": true,
+      "reviewedOn": "2026-10-25",
+      "embedUrl": "https://www.youtube.com/embed/k6dyj7ZPFTE?rel=1"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-5",
+      "url": "https://qurantaj.com/media/view-article?id=503",
+      "httpStatus": 200,
+      "pageSha256": "7624c730fe3198729e07b87de5b104dd0d89017ed549316e6235464164270c72",
+      "mediaElementPresent": true,
+      "reviewedOn": "2026-10-25",
+      "embedUrl": "https://www.youtube.com/embed/WcPMneZuG6Q?rel=1"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-6",
+      "url": "https://qurantaj.com/media/view-article?id=502",
+      "httpStatus": 200,
+      "pageSha256": "379e5a1c14781a11eb5e855108bdac010c65a145532a6e4b4fab6da34228f243",
+      "mediaElementPresent": true,
+      "reviewedOn": "2026-10-25",
+      "embedUrl": "https://www.youtube.com/embed/wfoClxUpxw4?rel=1"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-7",
+      "url": "https://qurantaj.com/media/view-article?id=501",
+      "httpStatus": 200,
+      "pageSha256": "bb1a0bc02ac28d403b55134593473ec8c2fd525a556d10975b0dbc98a5061dce",
+      "mediaElementPresent": true,
+      "reviewedOn": "2026-10-25",
+      "embedUrl": "https://www.youtube.com/embed/mP9C26x7qZo?rel=1"
+    },
+    {
+      "itemId": "othman-tuhfat-atfal-8",
+      "url": "https://qurantaj.com/media/view-article?id=500",
+      "httpStatus": 200,
+      "pageSha256": "c8fc0ceb6969d514a6a79b5a6ce07e678ea0ef592a6cd35076cf400228a8dbd3",
+      "mediaElementPresent": true,
+      "reviewedOn": "2026-10-25",
+      "embedUrl": "https://www.youtube.com/embed/6-9NH2aSxj4?rel=1"
+    },
+    {
+      "itemId": "othman-jazariyyah-1",
+      "url": "https://qurantaj.com/media/view-article?id=494",
+      "httpStatus": 200,
+      "pageSha256": "f968c6ccdf1df3f4c842104390dfd749009680c8b220e206301b0e4fc4edc5cc",
+      "mediaElementPresent": true,
+      "reviewedOn": "2026-10-25",
+      "embedUrl": "https://www.youtube.com/embed/Bxzo6MDOtGc?rel=1"
+    },
+    {
+      "itemId": "othman-jazariyyah-2",
+      "url": "https://qurantaj.com/media/view-article?id=493",
+      "httpStatus": 200,
+      "pageSha256": "f27c69b88b8823f10b2f8bd3573774ad9405f26b8707de1c2fe657cf38bef178",
+      "mediaElementPresent": true,
+      "reviewedOn": "2026-10-25",
+      "embedUrl": "https://www.youtube.com/embed/MAJ6H06A1B4?rel=1"
+    },
+    {
+      "itemId": "othman-jazariyyah-3",
+      "url": "https://qurantaj.com/media/view-article?id=492",
+      "httpStatus": 200,
+      "pageSha256": "c03df0b83911efd09d66de8d7c02f8a93f2de77aa9a102881297e83eb7efac98",
+      "mediaElementPresent": true,
+      "reviewedOn": "2026-10-25",
+      "embedUrl": "https://www.youtube.com/embed/_UnDjO-67Ok?rel=1"
+    },
+    {
+      "itemId": "othman-jazariyyah-4",
+      "url": "https://qurantaj.com/media/view-article?id=491",
+      "httpStatus": 200,
+      "pageSha256": "c79f407afdb0a9fb284f0a7e28f717ab41b333255adbddf0d8ca04dac2de38ed",
+      "mediaElementPresent": true,
+      "reviewedOn": "2026-10-25",
+      "embedUrl": "https://www.youtube.com/embed/_KzWgThc8rY?rel=1"
+    },
+    {
+      "itemId": "othman-jazariyyah-5",
+      "url": "https://qurantaj.com/media/view-article?id=490",
+      "httpStatus": 200,
+      "pageSha256": "1a902bc7e001787d40753810155cab9e73d4fe4c2f3606e16d33e84464c48589",
+      "mediaElementPresent": true,
+      "reviewedOn": "2026-10-25",
+      "embedUrl": "https://www.youtube.com/embed/FRj2RsvNdYE?rel=1"
+    },
+    {
+      "itemId": "othman-jazariyyah-6",
+      "url": "https://qurantaj.com/media/view-article?id=489",
+      "httpStatus": 200,
+      "pageSha256": "315b34d35ae766ce99ce2f0915c534000638e1c7acfc9656e88a85f5781b4ce1",
+      "mediaElementPresent": true,
+      "reviewedOn": "2026-10-25",
+      "embedUrl": "https://www.youtube.com/embed/DIe3zlfwWLk?rel=1"
+    },
+    {
+      "itemId": "othman-jazariyyah-7",
+      "url": "https://qurantaj.com/media/view-article?id=488",
+      "httpStatus": 200,
+      "pageSha256": "4b28f13764079523af3ad74fcdd142aeed15b76657d3cd5614340c0997980423",
+      "mediaElementPresent": true,
+      "reviewedOn": "2026-10-25",
+      "embedUrl": "https://www.youtube.com/embed/J9bWWihIUc8?rel=1"
+    },
+    {
+      "itemId": "othman-jazariyyah-8",
+      "url": "https://qurantaj.com/media/view-article?id=487",
+      "httpStatus": 200,
+      "pageSha256": "e49d8ea158043a46920450f83e65bf83bb84c08bd02b164d3ac08979d9ebc86d",
+      "mediaElementPresent": true,
+      "reviewedOn": "2026-10-25",
+      "embedUrl": "https://www.youtube.com/embed/T3Sf84J7CiI?rel=1"
+    },
+    {
+      "itemId": "othman-jazariyyah-9",
+      "url": "https://qurantaj.com/media/view-article?id=486",
+      "httpStatus": 200,
+      "pageSha256": "5ca2b5059cc28cd4bfc964f2d84e9ab69a09a1faaa8d436609804fd900ead94f",
+      "mediaElementPresent": true,
+      "reviewedOn": "2026-10-25",
+      "embedUrl": "https://www.youtube.com/embed/6H34yw-QJlM?rel=1"
+    },
+    {
+      "itemId": "othman-jazariyyah-10",
+      "url": "https://qurantaj.com/media/view-article?id=485",
+      "httpStatus": 200,
+      "pageSha256": "9dbfaca1298592b24e470e2993213d24a3bb942626e5882509275d3cbf67cd6e",
+      "mediaElementPresent": true,
+      "reviewedOn": "2026-10-25",
+      "embedUrl": "https://www.youtube.com/embed/32NG6FWqvPo?rel=1"
+    },
+    {
+      "itemId": "othman-jazariyyah-11",
+      "url": "https://qurantaj.com/media/view-article?id=484",
+      "httpStatus": 200,
+      "pageSha256": "a93aec013047bcd677f2cfe95a9f47c84390312564814643f039ce6eeadbbb1d",
+      "mediaElementPresent": true,
+      "reviewedOn": "2026-10-25",
+      "embedUrl": "https://www.youtube.com/embed/wvZqPwaYH-Q?rel=1"
     }
   ],
   "seriesEvidence": [
@@ -650,15 +836,61 @@
         "2102"
       ],
       "nextPage": null
+    },
+    {
+      "seriesId": "othman-tuhfat-atfal",
+      "sourceUrl": "https://qurantaj.com/media/article/44",
+      "httpStatus": 200,
+      "pageSha256": "2959aa86330942222ad380550091d09ea34cd13c8368279c45197e5fcf71a572",
+      "coverage": "partial",
+      "catalogEpisodeNumbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "sourceStatus": "INDEXED_ONLY",
+      "listedEpisodeCount": 8,
+      "nextPage": null,
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "seriesId": "othman-jazariyyah",
+      "sourceUrl": "https://qurantaj.com/media/article/41",
+      "httpStatus": 200,
+      "pageSha256": "be24e254b6ccf35867d6327c3f1e541f1b90f4d9906ef3114609920f84d84244",
+      "coverage": "partial",
+      "catalogEpisodeNumbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "sourceStatus": "INDEXED_ONLY",
+      "listedEpisodeCount": 11,
+      "nextPage": null,
+      "reviewedOn": "2026-10-25"
     }
   ],
   "summary": {
-    "scholars": 3,
-    "items": 33,
-    "lessons": 18,
+    "scholars": 4,
+    "items": 52,
+    "lessons": 37,
     "sermons": 9,
     "shorts": 6,
-    "series": 3,
-    "newItemsIn011": 17
+    "series": 5,
+    "newItemsIn011": 17,
+    "newItemsIn014": 19
   }
 }

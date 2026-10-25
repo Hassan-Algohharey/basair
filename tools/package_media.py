@@ -19,7 +19,7 @@ if isinstance(books, dict):
 book_ids = {b['id'] for b in books}
 def url(value):
     parsed = urlparse(value)
-    assert parsed.scheme == 'https' and parsed.hostname in {'binbaz.org.sa', 'almunajjid.com', 'sh-albarrak.com'}
+    assert parsed.scheme == 'https' and parsed.hostname in {'binbaz.org.sa', 'almunajjid.com', 'sh-albarrak.com', 'qurantaj.com'}
     assert not parsed.username and not parsed.password and parsed.port in (None, 443)
 for scholar in scholars:
     url(scholar['officialUrl']); url(scholar['verificationUrl'])

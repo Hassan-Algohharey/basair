@@ -110,7 +110,7 @@ class AudioPlaybackService : MediaSessionService() {
         if (controllerInfo.uid == Process.myUid() || controllerInfo.isTrusted) session else null
 
     private fun canonicalItems(items: List<MediaItem>): List<MediaItem>? {
-        if (items.size > AudiobookCatalog.recordings.sumOf { it.tracks.size }) return null
+        if (items.size > allAudioRecordings.sumOf { it.tracks.size }) return null
         return items.map { item ->
             val track = audioTrack(item.mediaId) ?: return null
             val recording = audioRecording(track.id) ?: return null

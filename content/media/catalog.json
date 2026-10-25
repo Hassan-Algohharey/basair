@@ -21,6 +21,13 @@
       "englishName": "Abdulrahman ibn Nasir al-Barrak",
       "officialUrl": "https://sh-albarrak.com/",
       "verificationUrl": "https://sh-albarrak.com/about"
+    },
+    {
+      "id": "abdulqadir-othman",
+      "name": "عبد القادر العثمان",
+      "englishName": "Abdul Qadir al-Othman",
+      "officialUrl": "https://qurantaj.com/",
+      "verificationUrl": "https://qurantaj.com/media/article/41"
     }
   ],
   "items": [
@@ -810,6 +817,462 @@
         "Spiritual growth",
         "Happiness"
       ]
+    },
+    {
+      "id": "othman-tuhfat-atfal-1",
+      "scholarId": "abdulqadir-othman",
+      "title": "شرح تحفة الأطفال - الحلقة 1 - مع السفرة - المستوى 2",
+      "englishTitle": "Tuhfat al-Atfal commentary — Abdul Qadir al-Othman episode 1",
+      "type": "lesson",
+      "mediaKind": "video",
+      "bookIds": [
+        "tuhfat-atfal"
+      ],
+      "url": "https://qurantaj.com/media/view-article?id=507",
+      "seriesId": "othman-tuhfat-atfal",
+      "seriesTitle": "شرح تحفة الأطفال — عبد القادر العثمان",
+      "episodeNumber": 1,
+      "topics": [
+        "التجويد"
+      ],
+      "englishTopics": [
+        "Tajweed"
+      ],
+      "verifiedOn": "2026-10-25",
+      "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
+      "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
+    },
+    {
+      "id": "othman-tuhfat-atfal-2",
+      "scholarId": "abdulqadir-othman",
+      "title": "شرح تحفة الأطفال - الحلقة 2 - مع السفرة - المستوى 2",
+      "englishTitle": "Tuhfat al-Atfal commentary — Abdul Qadir al-Othman episode 2",
+      "type": "lesson",
+      "mediaKind": "video",
+      "bookIds": [
+        "tuhfat-atfal"
+      ],
+      "url": "https://qurantaj.com/media/view-article?id=506",
+      "seriesId": "othman-tuhfat-atfal",
+      "seriesTitle": "شرح تحفة الأطفال — عبد القادر العثمان",
+      "episodeNumber": 2,
+      "topics": [
+        "التجويد"
+      ],
+      "englishTopics": [
+        "Tajweed"
+      ],
+      "verifiedOn": "2026-10-25",
+      "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
+      "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
+    },
+    {
+      "id": "othman-tuhfat-atfal-3",
+      "scholarId": "abdulqadir-othman",
+      "title": "شرح تحفة الأطفال - الحلقة 3 - مع السفرة - المستوى 2",
+      "englishTitle": "Tuhfat al-Atfal commentary — Abdul Qadir al-Othman episode 3",
+      "type": "lesson",
+      "mediaKind": "video",
+      "bookIds": [
+        "tuhfat-atfal"
+      ],
+      "url": "https://qurantaj.com/media/view-article?id=505",
+      "seriesId": "othman-tuhfat-atfal",
+      "seriesTitle": "شرح تحفة الأطفال — عبد القادر العثمان",
+      "episodeNumber": 3,
+      "topics": [
+        "التجويد"
+      ],
+      "englishTopics": [
+        "Tajweed"
+      ],
+      "verifiedOn": "2026-10-25",
+      "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
+      "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
+    },
+    {
+      "id": "othman-tuhfat-atfal-4",
+      "scholarId": "abdulqadir-othman",
+      "title": "شرح تحفة الأطفال - الحلقة 4 - مع السفرة - المستوى 2",
+      "englishTitle": "Tuhfat al-Atfal commentary — Abdul Qadir al-Othman episode 4",
+      "type": "lesson",
+      "mediaKind": "video",
+      "bookIds": [
+        "tuhfat-atfal"
+      ],
+      "url": "https://qurantaj.com/media/view-article?id=504",
+      "seriesId": "othman-tuhfat-atfal",
+      "seriesTitle": "شرح تحفة الأطفال — عبد القادر العثمان",
+      "episodeNumber": 4,
+      "topics": [
+        "التجويد"
+      ],
+      "englishTopics": [
+        "Tajweed"
+      ],
+      "verifiedOn": "2026-10-25",
+      "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
+      "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
+    },
+    {
+      "id": "othman-tuhfat-atfal-5",
+      "scholarId": "abdulqadir-othman",
+      "title": "شرح تحفة الأطفال - الحلقة 5 - مع السفرة - المستوى 2",
+      "englishTitle": "Tuhfat al-Atfal commentary — Abdul Qadir al-Othman episode 5",
+      "type": "lesson",
+      "mediaKind": "video",
+      "bookIds": [
+        "tuhfat-atfal"
+      ],
+      "url": "https://qurantaj.com/media/view-article?id=503",
+      "seriesId": "othman-tuhfat-atfal",
+      "seriesTitle": "شرح تحفة الأطفال — عبد القادر العثمان",
+      "episodeNumber": 5,
+      "topics": [
+        "التجويد"
+      ],
+      "englishTopics": [
+        "Tajweed"
+      ],
+      "verifiedOn": "2026-10-25",
+      "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
+      "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
+    },
+    {
+      "id": "othman-tuhfat-atfal-6",
+      "scholarId": "abdulqadir-othman",
+      "title": "شرح تحفة الأطفال - الحلقة 6 - مع السفرة - المستوى 2",
+      "englishTitle": "Tuhfat al-Atfal commentary — Abdul Qadir al-Othman episode 6",
+      "type": "lesson",
+      "mediaKind": "video",
+      "bookIds": [
+        "tuhfat-atfal"
+      ],
+      "url": "https://qurantaj.com/media/view-article?id=502",
+      "seriesId": "othman-tuhfat-atfal",
+      "seriesTitle": "شرح تحفة الأطفال — عبد القادر العثمان",
+      "episodeNumber": 6,
+      "topics": [
+        "التجويد"
+      ],
+      "englishTopics": [
+        "Tajweed"
+      ],
+      "verifiedOn": "2026-10-25",
+      "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
+      "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
+    },
+    {
+      "id": "othman-tuhfat-atfal-7",
+      "scholarId": "abdulqadir-othman",
+      "title": "شرح تحفة الأطفال - الحلقة 7 - مع السفرة - المستوى 2",
+      "englishTitle": "Tuhfat al-Atfal commentary — Abdul Qadir al-Othman episode 7",
+      "type": "lesson",
+      "mediaKind": "video",
+      "bookIds": [
+        "tuhfat-atfal"
+      ],
+      "url": "https://qurantaj.com/media/view-article?id=501",
+      "seriesId": "othman-tuhfat-atfal",
+      "seriesTitle": "شرح تحفة الأطفال — عبد القادر العثمان",
+      "episodeNumber": 7,
+      "topics": [
+        "التجويد"
+      ],
+      "englishTopics": [
+        "Tajweed"
+      ],
+      "verifiedOn": "2026-10-25",
+      "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
+      "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
+    },
+    {
+      "id": "othman-tuhfat-atfal-8",
+      "scholarId": "abdulqadir-othman",
+      "title": "شرح تحفة الأطفال - الحلقة 8 والأخيرة - مع السفرة - المستوى 2",
+      "englishTitle": "Tuhfat al-Atfal commentary — Abdul Qadir al-Othman episode 8",
+      "type": "lesson",
+      "mediaKind": "video",
+      "bookIds": [
+        "tuhfat-atfal"
+      ],
+      "url": "https://qurantaj.com/media/view-article?id=500",
+      "seriesId": "othman-tuhfat-atfal",
+      "seriesTitle": "شرح تحفة الأطفال — عبد القادر العثمان",
+      "episodeNumber": 8,
+      "topics": [
+        "التجويد"
+      ],
+      "englishTopics": [
+        "Tajweed"
+      ],
+      "verifiedOn": "2026-10-25",
+      "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
+      "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
+    },
+    {
+      "id": "othman-jazariyyah-1",
+      "scholarId": "abdulqadir-othman",
+      "title": "شرح متن الجزرية - الحلقة 1- مع السفرة - المستوى 1",
+      "englishTitle": "Al-Jazariyyah commentary — Abdul Qadir al-Othman episode 1",
+      "type": "lesson",
+      "mediaKind": "video",
+      "bookIds": [
+        "jazariyyah"
+      ],
+      "url": "https://qurantaj.com/media/view-article?id=494",
+      "seriesId": "othman-jazariyyah",
+      "seriesTitle": "شرح الجزرية — عبد القادر العثمان",
+      "episodeNumber": 1,
+      "topics": [
+        "التجويد"
+      ],
+      "englishTopics": [
+        "Tajweed"
+      ],
+      "verifiedOn": "2026-10-25",
+      "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
+      "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
+    },
+    {
+      "id": "othman-jazariyyah-2",
+      "scholarId": "abdulqadir-othman",
+      "title": "شرح متن الجزرية - الحلقة 2 - مع السفرة - المستوى 1",
+      "englishTitle": "Al-Jazariyyah commentary — Abdul Qadir al-Othman episode 2",
+      "type": "lesson",
+      "mediaKind": "video",
+      "bookIds": [
+        "jazariyyah"
+      ],
+      "url": "https://qurantaj.com/media/view-article?id=493",
+      "seriesId": "othman-jazariyyah",
+      "seriesTitle": "شرح الجزرية — عبد القادر العثمان",
+      "episodeNumber": 2,
+      "topics": [
+        "التجويد"
+      ],
+      "englishTopics": [
+        "Tajweed"
+      ],
+      "verifiedOn": "2026-10-25",
+      "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
+      "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
+    },
+    {
+      "id": "othman-jazariyyah-3",
+      "scholarId": "abdulqadir-othman",
+      "title": "شرح متن الجزرية - الحلقة 3 - مع السفرة - المستوى 1",
+      "englishTitle": "Al-Jazariyyah commentary — Abdul Qadir al-Othman episode 3",
+      "type": "lesson",
+      "mediaKind": "video",
+      "bookIds": [
+        "jazariyyah"
+      ],
+      "url": "https://qurantaj.com/media/view-article?id=492",
+      "seriesId": "othman-jazariyyah",
+      "seriesTitle": "شرح الجزرية — عبد القادر العثمان",
+      "episodeNumber": 3,
+      "topics": [
+        "التجويد"
+      ],
+      "englishTopics": [
+        "Tajweed"
+      ],
+      "verifiedOn": "2026-10-25",
+      "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
+      "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
+    },
+    {
+      "id": "othman-jazariyyah-4",
+      "scholarId": "abdulqadir-othman",
+      "title": "شرح متن الجزرية - الحلقة 4 - مع السفرة - المستوى 1",
+      "englishTitle": "Al-Jazariyyah commentary — Abdul Qadir al-Othman episode 4",
+      "type": "lesson",
+      "mediaKind": "video",
+      "bookIds": [
+        "jazariyyah"
+      ],
+      "url": "https://qurantaj.com/media/view-article?id=491",
+      "seriesId": "othman-jazariyyah",
+      "seriesTitle": "شرح الجزرية — عبد القادر العثمان",
+      "episodeNumber": 4,
+      "topics": [
+        "التجويد"
+      ],
+      "englishTopics": [
+        "Tajweed"
+      ],
+      "verifiedOn": "2026-10-25",
+      "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
+      "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
+    },
+    {
+      "id": "othman-jazariyyah-5",
+      "scholarId": "abdulqadir-othman",
+      "title": "شرح متن الجزرية - الحلقة 5 - مع السفرة - المستوى 1",
+      "englishTitle": "Al-Jazariyyah commentary — Abdul Qadir al-Othman episode 5",
+      "type": "lesson",
+      "mediaKind": "video",
+      "bookIds": [
+        "jazariyyah"
+      ],
+      "url": "https://qurantaj.com/media/view-article?id=490",
+      "seriesId": "othman-jazariyyah",
+      "seriesTitle": "شرح الجزرية — عبد القادر العثمان",
+      "episodeNumber": 5,
+      "topics": [
+        "التجويد"
+      ],
+      "englishTopics": [
+        "Tajweed"
+      ],
+      "verifiedOn": "2026-10-25",
+      "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
+      "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
+    },
+    {
+      "id": "othman-jazariyyah-6",
+      "scholarId": "abdulqadir-othman",
+      "title": "شرح متن الجزرية - الحلقة 6 - مع السفرة - المستوى 1",
+      "englishTitle": "Al-Jazariyyah commentary — Abdul Qadir al-Othman episode 6",
+      "type": "lesson",
+      "mediaKind": "video",
+      "bookIds": [
+        "jazariyyah"
+      ],
+      "url": "https://qurantaj.com/media/view-article?id=489",
+      "seriesId": "othman-jazariyyah",
+      "seriesTitle": "شرح الجزرية — عبد القادر العثمان",
+      "episodeNumber": 6,
+      "topics": [
+        "التجويد"
+      ],
+      "englishTopics": [
+        "Tajweed"
+      ],
+      "verifiedOn": "2026-10-25",
+      "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
+      "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
+    },
+    {
+      "id": "othman-jazariyyah-7",
+      "scholarId": "abdulqadir-othman",
+      "title": "شرح متن الجزرية - الحلقة 7- مع السفرة - المستوى 1",
+      "englishTitle": "Al-Jazariyyah commentary — Abdul Qadir al-Othman episode 7",
+      "type": "lesson",
+      "mediaKind": "video",
+      "bookIds": [
+        "jazariyyah"
+      ],
+      "url": "https://qurantaj.com/media/view-article?id=488",
+      "seriesId": "othman-jazariyyah",
+      "seriesTitle": "شرح الجزرية — عبد القادر العثمان",
+      "episodeNumber": 7,
+      "topics": [
+        "التجويد"
+      ],
+      "englishTopics": [
+        "Tajweed"
+      ],
+      "verifiedOn": "2026-10-25",
+      "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
+      "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
+    },
+    {
+      "id": "othman-jazariyyah-8",
+      "scholarId": "abdulqadir-othman",
+      "title": "شرح متن الجزرية - الحلقة 8 - مع السفرة - المستوى 1",
+      "englishTitle": "Al-Jazariyyah commentary — Abdul Qadir al-Othman episode 8",
+      "type": "lesson",
+      "mediaKind": "video",
+      "bookIds": [
+        "jazariyyah"
+      ],
+      "url": "https://qurantaj.com/media/view-article?id=487",
+      "seriesId": "othman-jazariyyah",
+      "seriesTitle": "شرح الجزرية — عبد القادر العثمان",
+      "episodeNumber": 8,
+      "topics": [
+        "التجويد"
+      ],
+      "englishTopics": [
+        "Tajweed"
+      ],
+      "verifiedOn": "2026-10-25",
+      "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
+      "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
+    },
+    {
+      "id": "othman-jazariyyah-9",
+      "scholarId": "abdulqadir-othman",
+      "title": "شرح متن الجزرية - الحلقة 9 - مع السفرة - المستوى 1",
+      "englishTitle": "Al-Jazariyyah commentary — Abdul Qadir al-Othman episode 9",
+      "type": "lesson",
+      "mediaKind": "video",
+      "bookIds": [
+        "jazariyyah"
+      ],
+      "url": "https://qurantaj.com/media/view-article?id=486",
+      "seriesId": "othman-jazariyyah",
+      "seriesTitle": "شرح الجزرية — عبد القادر العثمان",
+      "episodeNumber": 9,
+      "topics": [
+        "التجويد"
+      ],
+      "englishTopics": [
+        "Tajweed"
+      ],
+      "verifiedOn": "2026-10-25",
+      "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
+      "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
+    },
+    {
+      "id": "othman-jazariyyah-10",
+      "scholarId": "abdulqadir-othman",
+      "title": "شرح متن الجزرية - الحلقة 10 - مع السفرة - المستوى 1",
+      "englishTitle": "Al-Jazariyyah commentary — Abdul Qadir al-Othman episode 10",
+      "type": "lesson",
+      "mediaKind": "video",
+      "bookIds": [
+        "jazariyyah"
+      ],
+      "url": "https://qurantaj.com/media/view-article?id=485",
+      "seriesId": "othman-jazariyyah",
+      "seriesTitle": "شرح الجزرية — عبد القادر العثمان",
+      "episodeNumber": 10,
+      "topics": [
+        "التجويد"
+      ],
+      "englishTopics": [
+        "Tajweed"
+      ],
+      "verifiedOn": "2026-10-25",
+      "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
+      "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
+    },
+    {
+      "id": "othman-jazariyyah-11",
+      "scholarId": "abdulqadir-othman",
+      "title": "شرح متن الجزرية - الحلقة 11 - مع السفرة - المستوى 1",
+      "englishTitle": "Al-Jazariyyah commentary — Abdul Qadir al-Othman episode 11",
+      "type": "lesson",
+      "mediaKind": "video",
+      "bookIds": [
+        "jazariyyah"
+      ],
+      "url": "https://qurantaj.com/media/view-article?id=484",
+      "seriesId": "othman-jazariyyah",
+      "seriesTitle": "شرح الجزرية — عبد القادر العثمان",
+      "episodeNumber": 11,
+      "topics": [
+        "التجويد"
+      ],
+      "englishTopics": [
+        "Tajweed"
+      ],
+      "verifiedOn": "2026-10-25",
+      "sourceNote": "عنوان الحلقة ونسبتها ومشغلها في موقع مؤسسة تاج. ربط بأصل المتن دون مطابقة طبعة أو توقيت أو صفحة. تشغيل خارجي فقط؛ لا تنزيل أو إعادة رفع للفيديو، ولا ادعاء مراجعة جميع دقائق الدرس.",
+      "englishSourceNote": "Title, teacher and player verified on the Taj Foundation website. Linked to the underlying text, without edition, timestamp or page synchronization. External playback only; no video downloading or rehosting, and no claim of reviewing every minute."
     }
   ],
   "series": [
@@ -854,6 +1317,34 @@
       "expectedEpisodes": 7,
       "coverageNote": "فُهرست الحلقات السبع المدرجة في المصدر الذي يصف السلسلة بأنها مكتملة. الاكتمال بحسب فهرس المصدر، وليس مراجعة سماع لتغطية كل عبارة أو مطابقة طبعة المكتبة.",
       "englishCoverageNote": "All seven source-listed episodes are indexed; the source labels the series complete. Completeness follows its index, without a full listening review or matching the library edition."
+    },
+    {
+      "id": "othman-tuhfat-atfal",
+      "title": "شرح تحفة الأطفال — عبد القادر العثمان",
+      "englishTitle": "Tuhfat al-Atfal commentary — Abdul Qadir al-Othman",
+      "scholarId": "abdulqadir-othman",
+      "bookIds": [
+        "tuhfat-atfal"
+      ],
+      "sourceUrl": "https://qurantaj.com/media/article/44",
+      "coverage": "partial",
+      "expectedEpisodes": null,
+      "coverageNote": "فهرسة 8 حلقات ظاهرة في صفحة مؤسسة تاج. لا تثبت اكتمال شرح المتن أو مطابقة طبعة المكتبة وصفحاتها. الفيديو يفتح من صفحة المؤسسة الأصلية.",
+      "englishCoverageNote": "8 episodes indexed from the Taj Foundation page. This does not establish complete text coverage or matching library edition/page numbers. Videos open on the original institutional page."
+    },
+    {
+      "id": "othman-jazariyyah",
+      "title": "شرح الجزرية — عبد القادر العثمان",
+      "englishTitle": "Al-Jazariyyah commentary — Abdul Qadir al-Othman",
+      "scholarId": "abdulqadir-othman",
+      "bookIds": [
+        "jazariyyah"
+      ],
+      "sourceUrl": "https://qurantaj.com/media/article/41",
+      "coverage": "partial",
+      "expectedEpisodes": null,
+      "coverageNote": "فهرسة 11 حلقات ظاهرة في صفحة مؤسسة تاج. لا تثبت اكتمال شرح المتن أو مطابقة طبعة المكتبة وصفحاتها. الفيديو يفتح من صفحة المؤسسة الأصلية.",
+      "englishCoverageNote": "11 episodes indexed from the Taj Foundation page. This does not establish complete text coverage or matching library edition/page numbers. Videos open on the original institutional page."
     }
   ]
 }

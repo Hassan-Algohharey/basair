@@ -94,3 +94,10 @@ Background audio uses an Android media notification and FOREGROUND_SERVICE, FORE
 
 Tajweed reading plan — from version 0.13.0
 Read-topic marks and the last opened topic identifier stay on your device. Reading marks and search terms are not sent to sources. You can unmark each topic in the Tajweed screen; clearing app storage or uninstalling removes marks and history. Tajweed books use the same book hosting and download settings described above.
+
+
+شروح التجويد والتطبيقات — من الإصدار 0.14.0
+يحفظ التطبيق معرّف آخر درس تطبيقي اخترت فتح مشغله على جهازك، مع موضع الاستماع في سجل الصوت المحلي. لا ترسل كلمات البحث أو علامات الدراسة أو السجل إلى المصادر. تفتح فيديوهات مؤسسة تاج على qurantaj.com في المتصفح بطلبك؛ قد يتلقى الموقع ومزود الفيديو عنوان IP ومعلومات الطلب وفق سياستهما. لا ينزل بصائر الفيديوهات أو يعيد رفعها. تستخدم الدروس الصوتية المصدر وأذونات الخدمة وإعدادات التنزيل نفسها الموضحة في قسم الصوت، وتفتح إحالات الآيات داخل قارئ القرآن في التطبيق. مسح بيانات التطبيق أو إزالته يحذف سجل الاختيار المحلي.
+
+Tajweed commentaries and practice — from version 0.14.0
+The app stores the last practice lesson you select on your device, alongside listening positions in local audio history. Search terms, study marks and history are not sent to sources. Taj Foundation videos open on qurantaj.com in your browser at your request; that site and its video provider may receive your IP address and request information under their policies. Basair does not download or rehost the videos. Practice audio uses the same source, service permissions and download settings described in the audio section. Verse references open within the app Quran reader. Clearing app storage or uninstalling removes the local selection history.

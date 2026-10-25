@@ -1,13 +1,13 @@
 <resources>
-    <string name="audio_title">الكتب المسموعة</string>
-    <string name="audio_intro">قراءات متون من دار الإسلام، بمصادرها وشروط استخدامها.</string>
-    <string name="audio_reading_notice">هذه قراءات للكتب؛ شروح الكتب متاحة في قسم الشيوخ والدروس. التسجيلات بالعربية.</string>
-    <string name="audio_results">القراءات المتاحة: %1$d</string>
-    <string name="audio_search">البحث عن كتاب أو قارئ</string>
-    <string name="audio_clear_book">قراءات %1$s — عرض كل الكتب</string>
+    <string name="audio_title">المكتبة الصوتية</string>
+    <string name="audio_intro">قراءات متون ودروس تطبيقية من دار الإسلام، بمصادرها وشروط استخدامها.</string>
+    <string name="audio_reading_notice">نوع كل مادة مبين بوصفها: قراءة متن أو درس تطبيقي. التسجيلات بالعربية.</string>
+    <string name="audio_results">المواد الصوتية المتاحة: %1$d</string>
+    <string name="audio_search">ابحث عن كتاب أو قارئ أو مقدم درس</string>
+    <string name="audio_clear_book">صوتيات %1$s — عرض كل المواد</string>
     <string name="audio_reader">القارئ: %1$s</string>
     <string name="audio_author">المؤلف: %1$s</string>
-    <string name="audio_select">اختيار القراءة والمشغل</string>
+    <string name="audio_select">اختيار المادة والمشغل</string>
     <string name="audio_local">نسخة محفوظة متاحة دون اتصال</string>
     <string name="audio_online">بث عبر الإنترنت؛ يستهلك بيانات الاتصال</string>
     <string name="audio_connection_error">تعذر الاتصال بالمشغل. أعد فتح هذا القسم للمحاولة.</string>

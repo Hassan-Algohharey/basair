@@ -130,7 +130,7 @@ function AudioPosition {
 }
 Restart
 if (Lookup 'Home') { Tap 'العربية' }
-TapNode (Show 'الكتب المسموعة')
+TapNode (Show 'المكتبة الصوتية')
 TapNode (Show 'العقيدة الطحاوية — قراءة ياسر سلامة')
 TapNode (Show 'تشغيل')
 Show 'إيقاف مؤقت' | Out-Null
@@ -154,7 +154,7 @@ if ([math]::Abs($back-$paused) -gt 3000) { throw "Back seek failed: $paused -> $
 TapNode (Show '1.5×')
 Start-Sleep -Seconds 1
 Restart
-TapNode (Show 'الكتب المسموعة')
+TapNode (Show 'المكتبة الصوتية')
 TapNode (Show 'تشغيل')
 Show 'إيقاف مؤقت' | Out-Null
 Tap 'إيقاف مؤقت'
@@ -165,7 +165,7 @@ TapNode (Show 'إيقاف المشغل')
 Write-Output "PASS: audio playback, foreground/background continuation $before -> $after, +/-15seek, speed and persisted position $paused -> $resumed."
 
 Restart
-TapNode (Show 'الكتب المسموعة')
+TapNode (Show 'المكتبة الصوتية')
 TapNode (Show 'العقيدة الطحاوية — قراءة ياسر سلامة')
 $downloadButton=Show 'تنزيل للاستماع دون اتصال'
 $button=$downloadButton
@@ -197,8 +197,8 @@ try {
 Restart
 Tap 'البحث'
 Search 'alansari'
-TapNode (Show 'الكتب المسموعة')
-Show 'القراءات المتاحة: 1' | Out-Null
+TapNode (Show 'المكتبة الصوتية')
+Show 'المواد الصوتية المتاحة: 1' | Out-Null
 TapNode (Show 'تشغيل')
 Show 'إيقاف مؤقت' | Out-Null
 Tap 'إيقاف مؤقت'
@@ -207,11 +207,11 @@ TapNode (Show 'قراءة الكتاب: الأربعون النووية مع ز�
 WaitReader 'صفحة الملف ' | Out-Null
 Capture '07-linked-book.png'
 ToolbarTap 'استمع إلى الكتاب'
-Show 'القراءات المتاحة: 1' | Out-Null
+Show 'المواد الصوتية المتاحة: 1' | Out-Null
 TapNode (Show 'إيقاف المشغل')
 Restart
 Tap 'English'
-TapNode (Show 'Audiobooks')
+TapNode (Show 'Audio library')
 Show 'Playback speed' | Out-Null
 Show 'Source and rights: IslamHouse' | Out-Null
 Capture '08-english-player.png'

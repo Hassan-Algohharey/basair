@@ -1,13 +1,13 @@
 <resources>
-    <string name="audio_title">Audiobooks</string>
-    <string name="audio_intro">Readings of original texts from IslamHouse, with sources and usage terms.</string>
-    <string name="audio_reading_notice">These are book readings. Commentaries are in Scholars and lessons. Recordings are in Arabic.</string>
-    <string name="audio_results">Available readings: %1$d</string>
-    <string name="audio_search">Search books or readers</string>
-    <string name="audio_clear_book">Readings of %1$s — show all books</string>
+    <string name="audio_title">Audio library</string>
+    <string name="audio_intro">Text readings and practice lessons from IslamHouse, with sources and usage terms.</string>
+    <string name="audio_reading_notice">Each item is labelled as a text reading or practice lesson. Recordings are in Arabic.</string>
+    <string name="audio_results">Audio items available: %1$d</string>
+    <string name="audio_search">Search books, readers or lesson speakers</string>
+    <string name="audio_clear_book">Audio linked to %1$s — show all items</string>
     <string name="audio_reader">Reader: %1$s</string>
     <string name="audio_author">Author: %1$s</string>
-    <string name="audio_select">Select reading and player</string>
+    <string name="audio_select">Select item and player</string>
     <string name="audio_local">Saved copy available offline</string>
     <string name="audio_online">Online streaming uses connection data</string>
     <string name="audio_connection_error">Unable to connect to the player. Reopen this section to retry.</string>

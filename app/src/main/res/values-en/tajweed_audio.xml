@@ -1,0 +1,12 @@
+<resources>
+    <string name="tja_title">Audio lessons and practice</string>
+    <string name="tja_speaker">Speaker: %1$s</string>
+    <string name="tja_open">Open lesson player</string>
+    <string name="tja_verses">Practice starts at %1$d:%2$d according to the source</string>
+    <string name="tja_notice">Full original practice lessons, not short clips. Verse links point to the indexed practice start, without time synchronization. The source does not state the recitation riwaya; the Quran reader uses Hafs.</string>
+    <string name="tja_resume">Continue last selected lesson</string>
+    <string name="tja_commentaries">%1$s commentaries (%2$d indexed episodes)</string>
+    <string name="tja_source">Recording source page</string>
+    <string name="tja_book_chapter">Read chapter: %1$s</string>
+    <string name="tja_count">Matching practice lessons: %1$d</string>
+</resources>
