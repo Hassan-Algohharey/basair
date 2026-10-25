@@ -161,7 +161,7 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
                             repeat = enabled; store.saveRepeat(track.id, enabled)
                             if (active) player?.repeatMode = if (enabled) Player.REPEAT_MODE_ONE else Player.REPEAT_MODE_OFF
                         })
-                        Text(stringResource(R.string.audio_repeat), Modifier.padding(top = 12.dp))
+                        Text(stringResource(if (track.clipEndMs != null) R.string.audio_repeat_example else R.string.audio_repeat), Modifier.padding(top = 12.dp))
                     }
                     if (currentId != null && !active) Text(stringResource(R.string.audio_other_playing, audioRecording(currentId)?.title.orEmpty()))
                     if (selected.kind != "recitation") {
@@ -210,11 +210,12 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
                     }, enabled = selected.downloadAllowed && !local && downloading == null) {
                         Text(stringResource(if (partialBytes > 0) R.string.audio_resume_download else R.string.audio_download))
                     }
-                    TextButton(onClick = { scope.launch { downloads.remove(track); storageVersion++ } }, enabled = currentId != track.id && downloading == null) {
+                    TextButton(onClick = { scope.launch { downloads.remove(track); storageVersion++ } }, enabled = currentId?.let(::audioTrack)?.url != track.url && downloading == null) {
                         Text(stringResource(R.string.audio_delete_download))
                     }
                 }
                 Text(stringResource(R.string.audio_download_note), style = MaterialTheme.typography.bodySmall, color = Muted)
+                if (track.clipEndMs != null) Text(stringResource(R.string.audio_clip_download_note), style = MaterialTheme.typography.bodySmall, color = Muted)
             }
         }
     }

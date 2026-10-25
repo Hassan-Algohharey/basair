@@ -6,7 +6,7 @@
   "riwaya": "Hafs an Asim",
   "reader": "علي الحذيفي",
   "englishReader": "Ali al-Hudhaify",
-  "timingScope": "whole-original-surah-only",
+  "timingScope": "verified-ayah-context-clips",
   "evidence": [
     {
       "path": "content/tajweed-examples/audios.html",
@@ -78,7 +78,12 @@
       "englishTitle": "Meem sakinah: ikhfa shafawi",
       "surah": 105,
       "ayah": 4,
-      "recordingId": "huthify-105"
+      "recordingId": "huthify-example-meem",
+      "sourceRecordingId": "huthify-105",
+      "startMs": 24847,
+      "endMs": 32707,
+      "reviewMethod": "official-per-ayah-source-and-waveform-comparison",
+      "scope": "complete-ayah-context-not-isolated-word"
     },
     {
       "id": "ghunnah",
@@ -87,7 +92,12 @@
       "englishTitle": "Ghunnah: stressed noon",
       "surah": 108,
       "ayah": 1,
-      "recordingId": "huthify-108"
+      "recordingId": "huthify-example-ghunnah",
+      "sourceRecordingId": "huthify-108",
+      "startMs": 6024,
+      "endMs": 12644,
+      "reviewMethod": "official-per-ayah-source-and-waveform-comparison",
+      "scope": "complete-ayah-context-not-isolated-word"
     },
     {
       "id": "madd",
@@ -96,7 +106,12 @@
       "englishTitle": "Natural madd: aoodhu",
       "surah": 114,
       "ayah": 1,
-      "recordingId": "huthify-114"
+      "recordingId": "huthify-example-madd",
+      "sourceRecordingId": "huthify-114",
+      "startMs": 6017,
+      "endMs": 11327,
+      "reviewMethod": "official-per-ayah-source-and-waveform-comparison",
+      "scope": "complete-ayah-context-not-isolated-word"
     },
     {
       "id": "articulation",
@@ -105,7 +120,12 @@
       "englishTitle": "Articulation: ayn",
       "surah": 114,
       "ayah": 1,
-      "recordingId": "huthify-114"
+      "recordingId": "huthify-example-articulation",
+      "sourceRecordingId": "huthify-114",
+      "startMs": 6017,
+      "endMs": 11327,
+      "reviewMethod": "official-per-ayah-source-and-waveform-comparison",
+      "scope": "complete-ayah-context-not-isolated-word"
     },
     {
       "id": "noon",
@@ -114,7 +134,12 @@
       "englishTitle": "Noon sakinah: idgham without ghunnah",
       "surah": 112,
       "ayah": 4,
-      "recordingId": "huthify-112"
+      "recordingId": "huthify-example-noon",
+      "sourceRecordingId": "huthify-112",
+      "startMs": 16553,
+      "endMs": 20953,
+      "reviewMethod": "official-per-ayah-source-and-waveform-comparison",
+      "scope": "complete-ayah-context-not-isolated-word"
     },
     {
       "id": "lam",
@@ -123,7 +148,12 @@
       "englishTitle": "Solar lam: an-nas",
       "surah": 114,
       "ayah": 1,
-      "recordingId": "huthify-114"
+      "recordingId": "huthify-example-lam",
+      "sourceRecordingId": "huthify-114",
+      "startMs": 6017,
+      "endMs": 11327,
+      "reviewMethod": "official-per-ayah-source-and-waveform-comparison",
+      "scope": "complete-ayah-context-not-isolated-word"
     }
   ]
 }

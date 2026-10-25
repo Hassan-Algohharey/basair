@@ -35,7 +35,7 @@ internal class AudioDownloads(private val context: Context) {
     suspend fun download(track: AudioTrack, onProgress: (Long) -> Unit): File = withContext(Dispatchers.IO) {
         check(audioRecording(track.id)?.downloadAllowed == true)
         check(audioTrack(track.id) == track && track.byteSize in 1..500_000_000)
-        locks.getOrPut(track.id) { Mutex() }.withLock {
+        locks.getOrPut(key(track)) { Mutex() }.withLock {
             localFile(context, track)?.let { return@withLock it }
             val preferences = context.getSharedPreferences("basair-audio", Context.MODE_PRIVATE)
             val network = context.getSystemService(ConnectivityManager::class.java)
@@ -109,7 +109,7 @@ internal class AudioDownloads(private val context: Context) {
     }
 
     suspend fun remove(track: AudioTrack) = withContext(Dispatchers.IO) {
-        locks.getOrPut(track.id) { Mutex() }.withLock {
+        locks.getOrPut(key(track)) { Mutex() }.withLock {
             val target = file(context, track)
             File(target.path + ".complete").delete(); target.delete(); File(target.path + ".part").delete(); File(target.path + ".part.version").delete()
         }

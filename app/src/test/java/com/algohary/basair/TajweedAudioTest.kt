@@ -6,7 +6,7 @@ import org.junit.Test
 class TajweedAudioTest {
     @Test fun practiceRecordingsResolveThroughTheCanonicalPlaybackRegistry() {
         assertEquals(5, TajweedAudioCatalog.lessons.size)
-        assertEquals(11, allAudioRecordings.size)
+        assertEquals(17, allAudioRecordings.size)
         assertEquals(allAudioRecordings.size, allAudioRecordings.map { it.id }.distinct().size)
         TajweedAudioCatalog.lessons.forEach { lesson ->
             val recording = audioRecording(lesson.id + "-full")!!

@@ -55,6 +55,8 @@ with zipfile.ZipFile(apk) as archive:
             assert (recording['id'] + '-full').encode() in dex
             assert recording['url'].encode() in dex and recording['sha256'].encode() in dex
         assert examples['licenseUrl'].encode() in dex
+        for example in examples['examples']:
+            assert (example['recordingId'] + '-clip').encode() in dex
         license_path = 'licenses/androidx-media3-LICENSE.txt'
         assert archive.read(asset_prefix + license_path) == (root / 'app/src/main/assets' / license_path).read_bytes()
 print(json.dumps({'apk': str(apk), 'bundledPdfs': 0, 'catalogBooks': len(books), 'pages': sum(b['pages'] for b in books),

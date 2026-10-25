@@ -27,7 +27,7 @@ internal data class TajweedExample(val id: String, val topicId: String, val word
 internal fun searchTajweedExamples(query: String): List<TajweedExample> {
     val terms = mediaSearchKey(query).split(Regex("\\s+")).filter { it.isNotBlank() }
     return TajweedExamples.examples.filter { e ->
-        val text = mediaSearchKey("${e.word} ${e.englishTitle} ${e.topic.title} ${e.recording.title} ${e.recording.englishTitle} علي الحذيفي Ali al-Hudhaify Hafs حفص تجويد tajweed")
+        val text = mediaSearchKey("${e.word} ${e.englishTitle} ${e.topic.title} ${e.recording.title} ${e.recording.englishTitle} ${audioSourceSearchText(e.recording)} علي الحذيفي Ali al-Hudhaify Hafs حفص تجويد tajweed")
         terms.all { it in text }
     }
 }
@@ -141,7 +141,9 @@ internal fun TajweedFeature(initialQuery: String, onRead: (String, Int) -> Unit,
                 Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
                     Text(if (english) example.englishTitle else example.word, style = MaterialTheme.typography.titleMedium)
                     Text(stringResource(R.string.tje_reader))
-                    Text(example.recording.title + " · 00:00–" + audioTime(example.recording.tracks.single().durationMs!!))
+                    val track = example.recording.tracks.single()
+                    Text(stringResource(R.string.tje_range, audioTime(track.clipStartMs) + "." + "%03d".format(java.util.Locale.ROOT, track.clipStartMs % 1000),
+                        audioTime(track.clipEndMs!!) + "." + "%03d".format(java.util.Locale.ROOT, track.clipEndMs % 1000)))
                     Button(onClick = {
                         lastLesson = "example-" + example.id
                         preferences.edit().putString("lastLesson", lastLesson).apply()
