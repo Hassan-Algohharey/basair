@@ -101,3 +101,10 @@ Read-topic marks and the last opened topic identifier stay on your device. Readi
 
 Tajweed commentaries and practice — from version 0.14.0
 The app stores the last practice lesson you select on your device, alongside listening positions in local audio history. Search terms, study marks and history are not sent to sources. Taj Foundation videos open on qurantaj.com in your browser at your request; that site and its video provider may receive your IP address and request information under their policies. Basair does not download or rehost the videos. Practice audio uses the same source, service permissions and download settings described in the audio section. Verse references open within the app Quran reader. Clearing app storage or uninstalling removes the local selection history.
+
+
+أمثلة حفص وتكرار الصوت — 0.15.0
+تبدأ تلاوات الحذيفي الجديدة من download.qurancomplex.gov.sa بطلبك عبر HTTPS، بما في ذلك طلبات المدى للتقديم والتنزيل والاستئناف. قد يتلقى المجمع عنوان IP ومعلومات الاتصال وطلب الملف وفق سياساته. تفتح روابط المصدر والحقوق على qurancomplex.gov.sa بطلبك. لا ترسل الملاحظات أو كلمات البحث أو سجل الاستماع كبيانات منفصلة إلى المصدر. اختيار التكرار محفوظ لكل تسجيل محليًا على جهازك، ويُحذف بمسح بيانات التطبيق أو إزالته. التكرار يشمل التسجيل كاملًا؛ التنزيل الخاص اختياري ولا يضيف إذنًا جديدًا للجهاز.
+
+Hafs examples and audio repeat — 0.15.0
+New al-Hudhaify recitations start from download.qurancomplex.gov.sa at your request over HTTPS, including range requests for seeking, downloading and resuming. The Complex may receive your IP address, connection information and file request under its policies. Source and rights links open qurancomplex.gov.sa at your request. Notes, search terms and listening history are not sent as separate records to the source. Repeat selection is stored per track locally and removed by clearing app data or uninstalling. Repeat plays the complete recording; optional private downloads require no new device permission.

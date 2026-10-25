@@ -50,6 +50,11 @@ with zipfile.ZipFile(apk) as archive:
             for lesson in lessons:
                 assert lesson['id'].encode() in dex and (lesson['id'] + '-full').encode() in dex
                 assert lesson['url'].encode() in dex and lesson['sourceUrl'].encode() in dex
+        examples = json.loads((root / 'content/tajweed-examples/catalog.json').read_text('utf-8'))
+        for recording in examples['recordings']:
+            assert (recording['id'] + '-full').encode() in dex
+            assert recording['url'].encode() in dex and recording['sha256'].encode() in dex
+        assert examples['licenseUrl'].encode() in dex
         license_path = 'licenses/androidx-media3-LICENSE.txt'
         assert archive.read(asset_prefix + license_path) == (root / 'app/src/main/assets' / license_path).read_bytes()
 print(json.dumps({'apk': str(apk), 'bundledPdfs': 0, 'catalogBooks': len(books), 'pages': sum(b['pages'] for b in books),

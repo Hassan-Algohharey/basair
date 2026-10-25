@@ -1,7 +1,7 @@
 <resources>
     <string name="audio_title">Audio library</string>
-    <string name="audio_intro">Text readings and practice lessons from IslamHouse, with sources and usage terms.</string>
-    <string name="audio_reading_notice">Each item is labelled as a text reading or practice lesson. Recordings are in Arabic.</string>
+    <string name="audio_intro">Text readings, practice lessons and recitations, with sources and usage terms.</string>
+    <string name="audio_reading_notice">Each item is described as a text reading, practice lesson or recitation. Recordings are in Arabic.</string>
     <string name="audio_results">Audio items available: %1$d</string>
     <string name="audio_search">Search books, readers or lesson speakers</string>
     <string name="audio_clear_book">Audio linked to %1$s — show all items</string>
@@ -21,7 +21,7 @@
     <string name="audio_stop">Stop player</string>
     <string name="audio_other_playing">The player currently holds another reading: %1$s</string>
     <string name="audio_speed">Playback speed</string>
-    <string name="audio_source_credit">Source and rights: IslamHouse</string>
+    <string name="audio_source_credit">Source and rights</string>
     <string name="audio_source">Source page</string>
     <string name="audio_rights">Usage terms</string>
     <string name="audio_download_size">Recording size: %1$s MB</string>

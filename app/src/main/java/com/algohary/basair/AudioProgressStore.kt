@@ -16,6 +16,12 @@ internal class AudioProgressStore(context: Context) {
 
     fun speed(): Float = audioPlaybackSpeed(preferences.getFloat("speed", 1f))
 
+    fun repeat(trackId: String): Boolean = preferences.getBoolean("repeat:$trackId", false)
+
+    fun saveRepeat(trackId: String, enabled: Boolean) {
+        if (audioTrack(trackId) != null) preferences.edit().putBoolean("repeat:$trackId", enabled).apply()
+    }
+
     fun clearPosition(trackId: String) {
         preferences.edit().remove("position:$trackId").apply()
     }

@@ -60,6 +60,10 @@ class AudioPlaybackService : MediaSessionService() {
             .build()
         player.playbackParameters = PlaybackParameters(progress.speed())
         player.addListener(object : Player.Listener {
+            override fun onMediaItemTransition(mediaItem: MediaItem?, reason: Int) {
+                player.repeatMode = if (mediaItem?.mediaId?.let(progress::repeat) == true) Player.REPEAT_MODE_ONE else Player.REPEAT_MODE_OFF
+            }
+
             override fun onEvents(player: Player, events: Player.Events) {
                 if (events.containsAny(Player.EVENT_IS_PLAYING_CHANGED, Player.EVENT_PLAYBACK_STATE_CHANGED,
                         Player.EVENT_PLAY_WHEN_READY_CHANGED, Player.EVENT_PLAYBACK_PARAMETERS_CHANGED,

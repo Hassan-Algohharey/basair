@@ -1,0 +1,129 @@
+{
+  "reviewedOn": "2026-10-25",
+  "sourceUrl": "https://qurancomplex.gov.sa/quran-audio-hafs-huthify/",
+  "licenseUrl": "https://qurancomplex.gov.sa/quran-audios/",
+  "playlistUrl": "https://qurancomplex.gov.sa/?audioigniter_playlist_id=4341",
+  "riwaya": "Hafs an Asim",
+  "reader": "علي الحذيفي",
+  "englishReader": "Ali al-Hudhaify",
+  "timingScope": "whole-original-surah-only",
+  "evidence": [
+    {
+      "path": "content/tajweed-examples/audios.html",
+      "sha256": "5946eff3bde55f6f7cba30bc053b09cf7eae33f09e576f918a7c0137311e0a42",
+      "bytes": 547210
+    },
+    {
+      "path": "content/tajweed-examples/huthify.html",
+      "sha256": "696a2a11a1dcbafc082e13ba400130189adadf1c279ed297c44c800f55d1a1f5",
+      "bytes": 485341
+    },
+    {
+      "path": "content/tajweed-examples/playlist.json",
+      "sha256": "a65e96986d4163368d67a2ed96d79e0b5822ce8bb61d8335f39fbbe2335dbbf4",
+      "bytes": 41330
+    }
+  ],
+  "recordings": [
+    {
+      "id": "huthify-105",
+      "surah": 105,
+      "title": "سورة الفيل",
+      "englishTitle": "Surah Al-Fil",
+      "url": "https://download.qurancomplex.gov.sa/new-sounds/huthify-01/hafs/sura/10-105D00-A01.mp3",
+      "bytes": 328960,
+      "durationMs": 40848,
+      "sha256": "78bb52e291d0a1f23da1ecf2f8fc1397f92b5edc914380ed95502a21a5a65e26",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "id": "huthify-108",
+      "surah": 108,
+      "title": "سورة الكوثر",
+      "englishTitle": "Surah Al-Kawthar",
+      "url": "https://download.qurancomplex.gov.sa/new-sounds/huthify-01/hafs/sura/10-108D00-A01.mp3",
+      "bytes": 192000,
+      "durationMs": 23856,
+      "sha256": "a43d9be0ce0e2ba80670f36f8d7d1506964eb7d6bf22b7187ad7ae04ce9f05b4",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "id": "huthify-112",
+      "surah": 112,
+      "title": "سورة الإخلاص",
+      "englishTitle": "Surah Al-Ikhlas",
+      "url": "https://download.qurancomplex.gov.sa/new-sounds/huthify-01/hafs/sura/10-112D00-A01.mp3",
+      "bytes": 185472,
+      "durationMs": 23040,
+      "sha256": "376e0dc75d64a504af150e680a061b5505a42be58fb7edb68aa349bfb0087ed3",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "id": "huthify-114",
+      "surah": 114,
+      "title": "سورة الناس",
+      "englishTitle": "Surah An-Nas",
+      "url": "https://download.qurancomplex.gov.sa/new-sounds/huthify-01/hafs/sura/10-114D00-A01.mp3",
+      "bytes": 353728,
+      "durationMs": 43944,
+      "sha256": "7119a1a930c92a47408e2594d8e02cb94de32882cd9a23eeecac3dc5a7efe317",
+      "mimeType": "audio/mpeg"
+    }
+  ],
+  "examples": [
+    {
+      "id": "meem",
+      "topic": "meem",
+      "word": "الإخفاء الشفوي: تَرْمِيهِمْ بِحِجَارَةٍ",
+      "englishTitle": "Meem sakinah: ikhfa shafawi",
+      "surah": 105,
+      "ayah": 4,
+      "recordingId": "huthify-105"
+    },
+    {
+      "id": "ghunnah",
+      "topic": "ghunnah",
+      "word": "الغنة: إِنَّا",
+      "englishTitle": "Ghunnah: stressed noon",
+      "surah": 108,
+      "ayah": 1,
+      "recordingId": "huthify-108"
+    },
+    {
+      "id": "madd",
+      "topic": "madd",
+      "word": "المد الطبيعي: أَعُوذُ",
+      "englishTitle": "Natural madd: aoodhu",
+      "surah": 114,
+      "ayah": 1,
+      "recordingId": "huthify-114"
+    },
+    {
+      "id": "articulation",
+      "topic": "articulation",
+      "word": "مخرج العين: أَعُوذُ",
+      "englishTitle": "Articulation: ayn",
+      "surah": 114,
+      "ayah": 1,
+      "recordingId": "huthify-114"
+    },
+    {
+      "id": "noon",
+      "topic": "noon",
+      "word": "الإدغام بغير غنة: يَكُن لَّهُ",
+      "englishTitle": "Noon sakinah: idgham without ghunnah",
+      "surah": 112,
+      "ayah": 4,
+      "recordingId": "huthify-112"
+    },
+    {
+      "id": "lam",
+      "topic": "lam",
+      "word": "اللام الشمسية: النَّاس",
+      "englishTitle": "Solar lam: an-nas",
+      "surah": 114,
+      "ayah": 1,
+      "recordingId": "huthify-114"
+    }
+  ]
+}

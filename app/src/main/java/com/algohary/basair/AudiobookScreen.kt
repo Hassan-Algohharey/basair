@@ -76,10 +76,11 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
     val player = controller
     val selected = allAudioRecordings.find { it.id == selectedId } ?: allAudioRecordings.first()
     val track = selected.tracks.find { it.id == store.lastTrack(selected.id) } ?: selected.tracks.first()
+    var repeat by remember(track.id) { mutableStateOf(store.repeat(track.id)) }
     @Suppress("UNUSED_VARIABLE") val observedTick = tick
     val currentId = player?.currentMediaItem?.mediaId
     val active = currentId == track.id
-    val duration = if (active) player?.duration?.takeIf { it != C.TIME_UNSET && it > 0 } ?: store.duration(track.id) else store.duration(track.id)
+    val duration = (if (active) player?.duration?.takeIf { it != C.TIME_UNSET && it > 0 } ?: store.duration(track.id) else store.duration(track.id)) ?: track.durationMs
     val position = if (active) player?.currentPosition ?: store.position(track.id) else store.position(track.id)
     val playing = active && player?.isPlaying == true
     val results = searchAudiobooks(query, bookFilter)
@@ -100,6 +101,8 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
                     audioResumePosition(resume, resumeDuration))
                 control.setPlaybackSpeed(resumeSpeed); control.prepare()
             }
+            control.repeatMode = if (repeat) Player.REPEAT_MODE_ONE else Player.REPEAT_MODE_OFF
+            if (selected.kind == "recitation") control.setPlaybackSpeed(1f)
             control.play()
         }
     }
@@ -153,13 +156,22 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
                         TextButton(onClick = { player?.seekForward() }, enabled = active && player?.isCurrentMediaItemSeekable == true, modifier = Modifier.weight(1f)) { Text(stringResource(R.string.audio_forward15)) }
                     }
                     TextButton(onClick = { player?.pause(); player?.stop(); player?.clearMediaItems() }, enabled = currentId != null) { Text(stringResource(R.string.audio_stop)) }
+                    Row {
+                        Checkbox(checked = repeat, onCheckedChange = { enabled ->
+                            repeat = enabled; store.saveRepeat(track.id, enabled)
+                            if (active) player?.repeatMode = if (enabled) Player.REPEAT_MODE_ONE else Player.REPEAT_MODE_OFF
+                        })
+                        Text(stringResource(R.string.audio_repeat), Modifier.padding(top = 12.dp))
+                    }
                     if (currentId != null && !active) Text(stringResource(R.string.audio_other_playing, audioRecording(currentId)?.title.orEmpty()))
+                    if (selected.kind != "recitation") {
                     Text(stringResource(R.string.audio_speed), style = MaterialTheme.typography.labelLarge)
                     Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                         listOf(.75f, 1f, 1.25f, 1.5f, 2f).forEach { speed ->
                             FilterChip(selected = (player?.playbackParameters?.speed ?: store.speed()) == speed,
                                 onClick = { player?.setPlaybackSpeed(speed) }, enabled = player != null, label = { Text("${speed}×") })
                         }
+                    }
                     }
                     selected.bookIds.filter { id -> Catalog.books.any { it.id == id } }.forEach { id ->
                         TextButton(onClick = { onBook(id) }) { Text(stringResource(R.string.media_read_book_value, Catalog.books.first { it.id == id }.title)) }

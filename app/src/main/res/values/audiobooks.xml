@@ -1,7 +1,7 @@
 <resources>
     <string name="audio_title">المكتبة الصوتية</string>
-    <string name="audio_intro">قراءات متون ودروس تطبيقية من دار الإسلام، بمصادرها وشروط استخدامها.</string>
-    <string name="audio_reading_notice">نوع كل مادة مبين بوصفها: قراءة متن أو درس تطبيقي. التسجيلات بالعربية.</string>
+    <string name="audio_intro">قراءات متون ودروس تطبيقية وتلاوات، بمصادرها وشروط استخدامها.</string>
+    <string name="audio_reading_notice">نوع كل مادة مبين بوصفها: قراءة متن أو درس تطبيقي أو تلاوة. التسجيلات بالعربية.</string>
     <string name="audio_results">المواد الصوتية المتاحة: %1$d</string>
     <string name="audio_search">ابحث عن كتاب أو قارئ أو مقدم درس</string>
     <string name="audio_clear_book">صوتيات %1$s — عرض كل المواد</string>
@@ -21,7 +21,7 @@
     <string name="audio_stop">إيقاف المشغل</string>
     <string name="audio_other_playing">المشغل يحتفظ حاليًا بقراءة أخرى: %1$s</string>
     <string name="audio_speed">سرعة الاستماع</string>
-    <string name="audio_source_credit">المصدر والحقوق: دار الإسلام — IslamHouse</string>
+    <string name="audio_source_credit">المصدر والحقوق</string>
     <string name="audio_source">صفحة المصدر</string>
     <string name="audio_rights">شروط الاستخدام</string>
     <string name="audio_download_size">حجم التسجيل: %1$s ميجابايت</string>

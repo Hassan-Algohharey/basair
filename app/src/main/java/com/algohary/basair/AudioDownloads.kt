@@ -98,6 +98,9 @@ internal class AudioDownloads(private val context: Context) {
                 while (true) { currentCoroutineContext().ensureActive(); val count = input.read(buffer); if (count < 0) break; digest.update(buffer, 0, count) }
             }
             val localHash = digest.digest().joinToString("") { "%02x".format(it) }
+            if (track.sha256 != null && localHash != track.sha256) {
+                partial.delete(); versionFile.delete(); throw IOException("Audio checksum mismatch")
+            }
             if (!partial.renameTo(target)) throw IOException("Cannot finalize audio")
             File(target.path + ".complete").writeText(localHash, Charsets.US_ASCII)
             versionFile.delete()

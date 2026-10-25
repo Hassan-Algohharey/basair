@@ -18,6 +18,19 @@ internal data class TajweedReading(val bookId: String, val chapterTitle: String)
     val chapter: BookChapter get() = book.chapters.first { it.title == chapterTitle }
 }
 internal data class TajweedTopic(val id: String, val title: String, val readings: List<TajweedReading>)
+internal data class TajweedExample(val id: String, val topicId: String, val word: String, val englishTitle: String,
+    val surah: Int, val ayah: Int, val recordingId: String) {
+    val topic: TajweedTopic get() = tajweedTopics.first { it.id == topicId }
+    val recording: Audiobook get() = TajweedExamples.recordings.first { it.id == recordingId }
+}
+
+internal fun searchTajweedExamples(query: String): List<TajweedExample> {
+    val terms = mediaSearchKey(query).split(Regex("\\s+")).filter { it.isNotBlank() }
+    return TajweedExamples.examples.filter { e ->
+        val text = mediaSearchKey("${e.word} ${e.englishTitle} ${e.topic.title} ${e.recording.title} ${e.recording.englishTitle} علي الحذيفي Ali al-Hudhaify Hafs حفص تجويد tajweed")
+        terms.all { it in text }
+    }
+}
 internal data class TajweedAudioLesson(val id: String, val title: String, val englishTitle: String,
     val speaker: String, val englishSpeaker: String, val topicIds: List<String>, val bookIds: List<String>,
     val surah: Int? = null, val ayah: Int? = null) {
@@ -79,6 +92,7 @@ internal fun TajweedFeature(initialQuery: String, onRead: (String, Int) -> Unit,
     var lastLesson by remember { mutableStateOf(preferences.getString("lastLesson", null)) }
     val results = remember(query) { searchTajweed(query) }
     val audioResults = remember(query) { searchTajweedAudio(query) }
+    val examples = remember(query) { searchTajweedExamples(query) }
     fun lessonPlayer(lesson: TajweedAudioLesson) {
         lastLesson = lesson.id
         preferences.edit().putString("lastLesson", lesson.id).apply()
@@ -102,6 +116,11 @@ internal fun TajweedFeature(initialQuery: String, onRead: (String, Int) -> Unit,
                     Text(stringResource(R.string.tj_continue) + ": " + localizedLabel(context, topic.title))
                 }
             }
+            TajweedExamples.examples.find { "example-" + it.id == lastLesson }?.let { example ->
+                TextButton(onClick = { onAudio(example.recordingId) }) {
+                    Text(stringResource(R.string.tja_resume) + ": " + if (english) example.englishTitle else example.word)
+                }
+            }
             TajweedAudioCatalog.lessons.find { it.id == lastLesson }?.let { lesson ->
                 TextButton(onClick = { lessonPlayer(lesson) }) {
                     Text(stringResource(R.string.tja_resume) + ": " + if (english) lesson.englishTitle else lesson.title)
@@ -112,6 +131,33 @@ internal fun TajweedFeature(initialQuery: String, onRead: (String, Int) -> Unit,
             OutlinedTextField(value = query, onValueChange = { query = it }, modifier = Modifier.fillMaxWidth(),
                 label = { Text(stringResource(R.string.tj_search)) }, singleLine = true,
                 trailingIcon = { if (query.isNotEmpty()) TextButton(onClick = { query = "" }) { Text(stringResource(R.string.ui_clear)) } })
+        }
+        item {
+            Text(stringResource(R.string.tje_title, examples.size), style = MaterialTheme.typography.titleMedium)
+            Text(stringResource(R.string.tje_notice), style = MaterialTheme.typography.bodySmall)
+        }
+        items(examples, key = { "example-" + it.id }) { example ->
+            OutlinedCard(Modifier.fillMaxWidth()) {
+                Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                    Text(if (english) example.englishTitle else example.word, style = MaterialTheme.typography.titleMedium)
+                    Text(stringResource(R.string.tje_reader))
+                    Text(example.recording.title + " · 00:00–" + audioTime(example.recording.tracks.single().durationMs!!))
+                    Button(onClick = {
+                        lastLesson = "example-" + example.id
+                        preferences.edit().putString("lastLesson", lastLesson).apply()
+                        onAudio(example.recordingId)
+                    }) { Text(stringResource(R.string.tje_play)) }
+                    TextButton(onClick = { onQuran(example.surah, example.ayah) }) {
+                        Text(stringResource(R.string.tje_verse, example.surah, example.ayah))
+                    }
+                    example.topic.readings.forEach { reading ->
+                        TextButton(onClick = { onRead(reading.bookId, reading.chapter.pdfPage) }) {
+                            Text(stringResource(R.string.tj_read_page, reading.book.title, reading.chapter.pdfPage, reading.chapter.printedPage))
+                        }
+                    }
+                    TextButton(onClick = { openSource(context, example.recording.sourceUrl) }) { Text(stringResource(R.string.audio_source)) }
+                }
+            }
         }
         item { Text(stringResource(R.string.tj_books), style = MaterialTheme.typography.titleMedium) }
         items(Catalog.search(query, "tajweed"), key = { "book-" + it.id }) { book ->

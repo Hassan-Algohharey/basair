@@ -212,7 +212,7 @@ private fun BasairApp(audioRequest: Int) {
                     { referencePage = it.pdfPage; referenceVolume = it.volume }, { quranSurah = null; quranAyah = null; quranOrigin = "home"; navigate("quran") }, { openMedia(query, null, false) }, { openAudio(query, it) }, { openTajweed(query) })
                 "tajweed" -> tajweedState.SaveableStateProvider("tajweed") {
                     TajweedFeature(tajweedQuery, { id, page -> notePage = page; bookId = id },
-                        { id -> TajweedAudioCatalog.recordings.find { it.id == id }?.let { openAudio(it.title, null); audioOrigin = "tajweed" } },
+                        { id -> allAudioRecordings.find { it.id == id }?.let { openAudio(it.title, null); audioOrigin = "tajweed" } },
                         { id -> openMedia("", id, false) },
                         { surah, ayah -> quranSurah = surah; quranAyah = ayah; quranOrigin = "tajweed"; route = "quran" })
                 }

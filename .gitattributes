@@ -7,3 +7,5 @@ content/quran/sources/* -text
 app/src/main/assets/quran-index.json text eol=lf
 
 content/tajweed-media/*.html binary
+content/tajweed-examples/*.html binary
+content/tajweed-examples/playlist.json -text
