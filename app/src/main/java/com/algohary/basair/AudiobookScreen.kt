@@ -65,6 +65,7 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
     var connectionError by remember { mutableStateOf(false) }
     var tick by remember { mutableIntStateOf(0) }
     var showChapters by rememberSaveable { mutableStateOf(false) }
+    var bookmarkSeek by remember { mutableStateOf<Pair<String, Long>?>(null) }
     var wifiOnly by remember { mutableStateOf(preferences.getBoolean("wifiOnly", true)) }
     var downloading by remember { mutableStateOf<String?>(null) }
     var downloadedBytes by remember { mutableLongStateOf(0) }
@@ -97,6 +98,7 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
             selected.tracks.sortedBy { it.sequence }.forEach { chapter ->
                 TextButton(onClick = {
                     player?.pause()
+                    bookmarkSeek = null
                     store.save(chapter.id, store.position(chapter.id), store.duration(chapter.id), store.speed())
                     tick++; showChapters = false
                 }) { Text("${chapter.sequence}. " + if (english) chapter.englishTitle else chapter.title) }
@@ -107,7 +109,8 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
     val partialBytes = remember(track.id, storageVersion) { AudioDownloads.partialBytes(context, track) }
     val play: () -> Unit = {
         player?.let { control ->
-            if (control.currentMediaItem?.mediaId == track.id && !local) {
+            val explicitSeek = bookmarkSeek?.takeIf { it.first == track.id }?.second
+            if (control.currentMediaItem?.mediaId == track.id && !local && explicitSeek == null) {
                 if (control.playbackState == Player.STATE_ENDED) control.seekTo(0)
                 if (control.playbackState == Player.STATE_IDLE || control.playerError != null) control.prepare()
             } else {
@@ -117,11 +120,12 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
                 val resumeDuration = if (sameTrack) control.duration.takeIf { it > 0 } ?: store.duration(track.id) else store.duration(track.id)
                 val resumeSpeed = if (sameTrack) control.playbackParameters.speed else store.speed()
                 control.setMediaItems(ordered.map { audioMediaItem(it, selected) }, ordered.indexOfFirst { it.id == track.id },
-                    audioResumePosition(resume, resumeDuration))
+                    explicitSeek?.let { audioSeekPosition(it, resumeDuration) } ?: audioResumePosition(resume, resumeDuration))
                 control.setPlaybackSpeed(resumeSpeed); control.prepare()
             }
             control.repeatMode = if (repeat) Player.REPEAT_MODE_ONE else Player.REPEAT_MODE_OFF
             if (selected.kind == "recitation") control.setPlaybackSpeed(1f)
+            bookmarkSeek = null
             control.play()
         }
     }
@@ -137,7 +141,7 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
         } } }
         item { Text(stringResource(R.string.audio_results, results.size), color = Muted) }
         items(results, key = { it.id }) { recording ->
-            OutlinedCard(onClick = { selectedId = recording.id }, modifier = Modifier.fillMaxWidth()) {
+            OutlinedCard(onClick = { selectedId = recording.id; bookmarkSeek = null }, modifier = Modifier.fillMaxWidth()) {
                 Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
                     Text(recording.title, fontWeight = FontWeight.Bold)
                     if (english) Text(recording.englishTitle, style = MaterialTheme.typography.bodySmall)
@@ -171,6 +175,14 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
                         LinearProgressIndicator(Modifier.fillMaxWidth()); Text(stringResource(R.string.audio_buffering))
                     }
                     Text(stringResource(R.string.audio_position, audioTime(position), duration?.let(::audioTime) ?: "--:--:--"))
+                    AudioStudyControls(selected, track, position, player != null, active, tick) { mark ->
+                        player?.pause()
+                        AudioSleepStore(context).clear()
+                        bookmarkSeek = mark.trackId to mark.positionMs
+                        store.save(mark.trackId, mark.positionMs, store.duration(mark.trackId), store.speed())
+                        if (player?.currentMediaItem?.mediaId == mark.trackId) player.seekTo(mark.positionMs)
+                        tick++
+                    }
                     var seeking by remember(track.id) { mutableStateOf<Float?>(null) }
                     val seekLabel = stringResource(R.string.quality_audio_seek)
                     Slider(modifier = Modifier.semantics { contentDescription = seekLabel; stateDescription = audioTime((seeking ?: position.toFloat()).toLong()) },
@@ -186,7 +198,7 @@ internal fun AudiobookFeature(initialQuery: String, initialBook: String?, onBook
                         }
                         TextButton(onClick = { player?.seekForward() }, enabled = active && player?.isCurrentMediaItemSeekable == true, modifier = Modifier.weight(1f)) { Text(stringResource(R.string.audio_forward15)) }
                     }
-                    TextButton(onClick = { player?.pause(); player?.stop(); player?.clearMediaItems() }, enabled = currentId != null) { Text(stringResource(R.string.audio_stop)) }
+                    TextButton(onClick = { player?.pause(); player?.stop(); player?.clearMediaItems(); AudioSleepStore(context).clear() }, enabled = currentId != null) { Text(stringResource(R.string.audio_stop)) }
                     Row(Modifier.fillMaxWidth().toggleable(value = repeat, role = Role.Checkbox, onValueChange = { enabled ->
                             repeat = enabled; store.saveRepeat(track.id, enabled)
                             if (active) player?.repeatMode = if (enabled) Player.REPEAT_MODE_ONE else Player.REPEAT_MODE_OFF

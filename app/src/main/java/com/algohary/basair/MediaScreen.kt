@@ -40,7 +40,7 @@ internal data class MediaUiItem(
     val seriesId: String? = null, val episodeNumber: Int? = null,
     val topics: List<String> = emptyList(), val englishTopics: List<String> = emptyList(),
     val publishedHijriYear: Int? = null, val publishedDateLabel: String = "", val durationSeconds: Int? = null,
-    val sourceCheckedOn: String = "", val sourceReachable: Boolean? = null
+    val sourceCheckedOn: String = "", val sourceReachable: Boolean? = null, val sourceEpisodeNumber: Int? = null
 )
 internal data class MediaUiState(
     val scholars: List<MediaUiScholar> = emptyList(), val items: List<MediaUiItem> = emptyList(),
@@ -225,7 +225,8 @@ private fun MediaItemCard(item: MediaUiItem, state: MediaUiState, onAction: (Med
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text(mediaKindLabel(item.kind) + " · " + stringResource(if (item.format == "audio") R.string.media_audio else R.string.media_video), style = MaterialTheme.typography.labelMedium, color = Green)
             Text(item.title, modifier = Modifier.semantics { heading() }, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
-            item.episodeNumber?.let { Text(stringResource(R.string.study_episode, it), color = Muted) }
+            item.episodeNumber?.let { Text(if (item.sourceEpisodeNumber != null) stringResource(R.string.listen_series_order, it, item.sourceEpisodeNumber)
+                else stringResource(R.string.study_episode, it), color = Muted) }
             if (item.id in state.completedIds) Text(stringResource(R.string.book_study_completed), color = Green)
             item.seriesId?.let { id -> TextButton(onClick = { onAction(MediaAction.SeriesFilter(id)) }) {
                 Text(stringResource(R.string.study_open_series))

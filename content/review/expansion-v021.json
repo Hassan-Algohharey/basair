@@ -1,0 +1,78 @@
+{
+  "version": "0.21.0",
+  "checkedOn": "2026-10-25",
+  "newIds": [
+    "bin-baz-tahawi-source-1779",
+    "bin-baz-tahawi-source-1782",
+    "bin-baz-tahawi-source-1783",
+    "bin-baz-tahawi-source-1784",
+    "bin-baz-tahawi-source-1785",
+    "bin-baz-tahawi-source-1786",
+    "bin-baz-tahawi-source-1787",
+    "bin-baz-tahawi-source-1788",
+    "bin-baz-tahawi-source-1789",
+    "bin-baz-tahawi-source-1790",
+    "bin-baz-tahawi-source-1791",
+    "bin-baz-tahawi-source-3934",
+    "bin-baz-tahawi-source-1793",
+    "bin-baz-tahawi-source-1794",
+    "bin-baz-tahawi-source-1796",
+    "bin-baz-tahawi-source-1798",
+    "bin-baz-tahawi-source-1799",
+    "bin-baz-tahawi-source-1800",
+    "bin-baz-tahawi-source-1801",
+    "bin-baz-tahawi-source-1802",
+    "bin-baz-tahawi-source-1803",
+    "bin-baz-tahawi-source-1804",
+    "bin-baz-tahawi-source-1805",
+    "bin-baz-tahawi-source-1806",
+    "bin-baz-tahawi-source-1807",
+    "bin-baz-tahawi-source-1808",
+    "bin-baz-tahawi-source-1809",
+    "bin-baz-tahawi-source-1810",
+    "bin-baz-tahawi-source-1812"
+  ],
+  "sourceIndexPages": [
+    {
+      "url": "https://binbaz.org.sa/audios/series/51/%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9",
+      "checkedOn": "2026-10-25",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/series/51/%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9",
+      "contentType": "text/html; charset=UTF-8",
+      "contentRange": null,
+      "bytesRead": 92837,
+      "truncated": false,
+      "snapshotSha256": "52685447bb20cee6337d766c37de7de091588b09abf0b9146dd151338361727c",
+      "status": "reachable"
+    },
+    {
+      "url": "https://binbaz.org.sa/audios/series/51/%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9?page=2",
+      "checkedOn": "2026-10-25",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/series/51/%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9?page=2",
+      "contentType": "text/html; charset=UTF-8",
+      "contentRange": null,
+      "bytesRead": 94575,
+      "truncated": false,
+      "snapshotSha256": "04f0f35ef73f17272d0c08613f4db9410222abefecea5529dbd5e833e09a2dce",
+      "status": "reachable"
+    },
+    {
+      "url": "https://binbaz.org.sa/audios/series/51/%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9?page=3",
+      "checkedOn": "2026-10-25",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/series/51/%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9?page=3",
+      "contentType": "text/html; charset=UTF-8",
+      "contentRange": null,
+      "bytesRead": 78708,
+      "truncated": false,
+      "snapshotSha256": "49a0580e66aee9f21b823b42b3aad054f0f63ce512cd6fa30d13102d217be0cc",
+      "status": "reachable"
+    }
+  ],
+  "duplicateSourceNumbers": [
+    15
+  ],
+  "navigationCount": 32,
+  "scope": "Original source titles, audio presence and index coverage; no listening, doctrinal review or edition synchronization."
+}

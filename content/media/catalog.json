@@ -62,7 +62,8 @@
       "englishTopics": [
         "Creed",
         "Tahawiyyah"
-      ]
+      ],
+      "sourceEpisodeNumber": 1
     },
     {
       "id": "bin-baz-tahawi-03",
@@ -90,7 +91,8 @@
         "Creed",
         "Monotheism",
         "Tahawiyyah"
-      ]
+      ],
+      "sourceEpisodeNumber": 3
     },
     {
       "id": "bin-baz-tahawi-04",
@@ -116,7 +118,8 @@
       "englishTopics": [
         "Creed",
         "Tahawiyyah"
-      ]
+      ],
+      "sourceEpisodeNumber": 4
     },
     {
       "id": "bin-baz-heart",
@@ -2375,6 +2378,789 @@
       "verifiedOn": "2026-10-25",
       "durationSeconds": 59,
       "publishedDateLabel": "2024-03-07 (ميلادي / Gregorian)"
+    },
+    {
+      "id": "bin-baz-tahawi-source-1779",
+      "scholarId": "bin-baz",
+      "title": "02 وجوب هدم الأصنام",
+      "englishTitle": "Tahawiyyah commentary — index 2, source 2",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1779/02-%D9%88%D8%AC%D9%88%D8%A8-%D9%87%D8%AF%D9%85-%D8%A7%D9%84%D8%A7%D8%B5%D9%86%D8%A7%D9%85",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 2,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 2
+    },
+    {
+      "id": "bin-baz-tahawi-source-1782",
+      "scholarId": "bin-baz",
+      "title": "05 ولا شيء مثله، ولا شيء يعجزه",
+      "englishTitle": "Tahawiyyah commentary — index 5, source 5",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1782/05-%D9%88%D9%84%D8%A7-%D8%B4%D9%8A%D8%A1-%D9%85%D8%AB%D9%84%D9%87-%D9%88%D9%84%D8%A7-%D8%B4%D9%8A%D8%A1-%D9%8A%D8%B9%D8%AC%D8%B2%D9%87",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 5,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 5
+    },
+    {
+      "id": "bin-baz-tahawi-source-1783",
+      "scholarId": "bin-baz",
+      "title": "06 من أعظم نعم الله على خلقه إرسال الرُّسل إليهم",
+      "englishTitle": "Tahawiyyah commentary — index 6, source 6",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1783/06-%D9%85%D9%86-%D8%A7%D8%B9%D8%B8%D9%85-%D9%86%D8%B9%D9%85-%D8%A7%D9%84%D9%84%D9%87-%D8%B9%D9%84%D9%89-%D8%AE%D9%84%D9%82%D9%87-%D8%A7%D8%B1%D8%B3%D8%A7%D9%84-%D8%A7%D9%84%D8%B1%D8%B3%D9%84-%D8%A7%D9%84%D9%8A%D9%87%D9%85",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 6,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 6
+    },
+    {
+      "id": "bin-baz-tahawi-source-1784",
+      "scholarId": "bin-baz",
+      "title": "07 القرآن كلام الله منه بدا بلا كيفية قولاً",
+      "englishTitle": "Tahawiyyah commentary — index 7, source 7",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1784/07-%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D9%86-%D9%83%D9%84%D8%A7%D9%85-%D8%A7%D9%84%D9%84%D9%87-%D9%85%D9%86%D9%87-%D8%A8%D8%AF%D8%A7-%D8%A8%D9%84%D8%A7-%D9%83%D9%8A%D9%81%D9%8A%D8%A9-%D9%82%D9%88%D9%84%D8%A7",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 7,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 7
+    },
+    {
+      "id": "bin-baz-tahawi-source-1785",
+      "scholarId": "bin-baz",
+      "title": "08 الأحاديث الدَّالة على رؤية الله تعالى لأهل الجنة",
+      "englishTitle": "Tahawiyyah commentary — index 8, source 8",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1785/08-%D8%A7%D9%84%D8%A7%D8%AD%D8%A7%D8%AF%D9%8A%D8%AB-%D8%A7%D9%84%D8%AF%D8%A7%D9%84%D8%A9-%D8%B9%D9%84%D9%89-%D8%B1%D9%88%D9%8A%D8%A9-%D8%A7%D9%84%D9%84%D9%87-%D8%AA%D8%B9%D8%A7%D9%84%D9%89-%D9%84%D8%A7%D9%87%D9%84-%D8%A7%D9%84%D8%AC%D9%86%D8%A9",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 8,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 8
+    },
+    {
+      "id": "bin-baz-tahawi-source-1786",
+      "scholarId": "bin-baz",
+      "title": "09 تأويل المعتزلة نصوص الكتاب والسُّنَّة",
+      "englishTitle": "Tahawiyyah commentary — index 9, source 9",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1786/09-%D8%AA%D8%A7%D9%88%D9%8A%D9%84-%D8%A7%D9%84%D9%85%D8%B9%D8%AA%D8%B2%D9%84%D8%A9-%D9%86%D8%B5%D9%88%D8%B5-%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8-%D9%88%D8%A7%D9%84%D8%B3%D9%86%D8%A9",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 9,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 9
+    },
+    {
+      "id": "bin-baz-tahawi-source-1787",
+      "scholarId": "bin-baz",
+      "title": "10 الدليل على أنَّ الإسراء بجسده في اليقظة",
+      "englishTitle": "Tahawiyyah commentary — index 10, source 10",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1787/10-%D8%A7%D9%84%D8%AF%D9%84%D9%8A%D9%84-%D8%B9%D9%84%D9%89-%D8%A7%D9%86-%D8%A7%D9%84%D8%A7%D8%B3%D8%B1%D8%A7%D8%A1-%D8%A8%D8%AC%D8%B3%D8%AF%D9%87-%D9%81%D9%8A-%D8%A7%D9%84%D9%8A%D9%82%D8%B8%D8%A9",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 10,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 10
+    },
+    {
+      "id": "bin-baz-tahawi-source-1788",
+      "scholarId": "bin-baz",
+      "title": "11 شفاعة النبي عليه الصلاة والسلام في أهل الكبائر من أمته",
+      "englishTitle": "Tahawiyyah commentary — index 11, source 11",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1788/11-%D8%B4%D9%81%D8%A7%D8%B9%D8%A9-%D8%A7%D9%84%D9%86%D8%A8%D9%8A-%D8%B9%D9%84%D9%8A%D9%87-%D8%A7%D9%84%D8%B5%D9%84%D8%A7%D8%A9-%D9%88%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85-%D9%81%D9%8A-%D8%A7%D9%87%D9%84-%D8%A7%D9%84%D9%83%D8%A8%D8%A7%D9%89%D8%B1-%D9%85%D9%86-%D8%A7%D9%85%D8%AA%D9%87",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 11,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 11
+    },
+    {
+      "id": "bin-baz-tahawi-source-1789",
+      "scholarId": "bin-baz",
+      "title": "12 الله تعالى موصوف بأنه بكل شيء عليم أزلاً وأبداً",
+      "englishTitle": "Tahawiyyah commentary — index 12, source 12",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1789/12-%D8%A7%D9%84%D9%84%D9%87-%D8%AA%D8%B9%D8%A7%D9%84%D9%89-%D9%85%D9%88%D8%B5%D9%88%D9%81-%D8%A8%D8%A7%D9%86%D9%87-%D8%A8%D9%83%D9%84-%D8%B4%D9%8A%D8%A1-%D8%B9%D9%84%D9%8A%D9%85-%D8%A7%D8%B2%D9%84%D8%A7-%D9%88%D8%A7%D8%A8%D8%AF%D8%A7",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 12,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 12
+    },
+    {
+      "id": "bin-baz-tahawi-source-1790",
+      "scholarId": "bin-baz",
+      "title": "13 إن الله تعالى طوى علم القدر عن أنامه",
+      "englishTitle": "Tahawiyyah commentary — index 13, source 13",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1790/13-%D8%A7%D9%86-%D8%A7%D9%84%D9%84%D9%87-%D8%AA%D8%B9%D8%A7%D9%84%D9%89-%D8%B7%D9%88%D9%89-%D8%B9%D9%84%D9%85-%D8%A7%D9%84%D9%82%D8%AF%D8%B1-%D8%B9%D9%86-%D8%A7%D9%86%D8%A7%D9%85%D9%87",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 13,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 13
+    },
+    {
+      "id": "bin-baz-tahawi-source-1791",
+      "scholarId": "bin-baz",
+      "title": "14 الإيمان بالقدر",
+      "englishTitle": "Tahawiyyah commentary — index 14, source 14",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1791/14-%D8%A7%D9%84%D8%A7%D9%8A%D9%85%D8%A7%D9%86-%D8%A8%D8%A7%D9%84%D9%82%D8%AF%D8%B1",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 14,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 14
+    },
+    {
+      "id": "bin-baz-tahawi-source-3934",
+      "scholarId": "bin-baz",
+      "title": "15 الإيمان بعلو الله سبحانه",
+      "englishTitle": "Tahawiyyah commentary — index 15, source 15",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/3934/15-%D8%A7%D9%84%D8%A7%D9%8A%D9%85%D8%A7%D9%86-%D8%A8%D8%B9%D9%84%D9%88-%D8%A7%D9%84%D9%84%D9%87-%D8%B3%D8%A8%D8%AD%D8%A7%D9%86%D9%87",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 15,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 15
+    },
+    {
+      "id": "bin-baz-tahawi-source-1793",
+      "scholarId": "bin-baz",
+      "title": "15 أصول المعتزلة الفاسدة",
+      "englishTitle": "Tahawiyyah commentary — index 16, source 15",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1793/15-%D8%A7%D8%B5%D9%88%D9%84-%D8%A7%D9%84%D9%85%D8%B9%D8%AA%D8%B2%D9%84%D8%A9-%D8%A7%D9%84%D9%81%D8%A7%D8%B3%D8%AF%D8%A9",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 16,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 15
+    },
+    {
+      "id": "bin-baz-tahawi-source-1794",
+      "scholarId": "bin-baz",
+      "title": "16 لا نجادل في القرآن، ونشهد أنه كلام رب العالمين",
+      "englishTitle": "Tahawiyyah commentary — index 17, source 16",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1794/16-%D9%84%D8%A7-%D9%86%D8%AC%D8%A7%D8%AF%D9%84-%D9%81%D9%8A-%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D9%86-%D9%88%D9%86%D8%B4%D9%87%D8%AF-%D8%A7%D9%86%D9%87-%D9%83%D9%84%D8%A7%D9%85-%D8%B1%D8%A8-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A%D9%86",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 17,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 16
+    },
+    {
+      "id": "bin-baz-tahawi-source-1796",
+      "scholarId": "bin-baz",
+      "title": "17 لا نقول: لا يضر مع الإيمان ذنب لمن عمله",
+      "englishTitle": "Tahawiyyah commentary — index 18, source 17",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1796/17-%D9%84%D8%A7-%D9%86%D9%82%D9%88%D9%84-%D9%84%D8%A7-%D9%8A%D8%B6%D8%B1-%D9%85%D8%B9-%D8%A7%D9%84%D8%A7%D9%8A%D9%85%D8%A7%D9%86-%D8%B0%D9%86%D8%A8-%D9%84%D9%85%D9%86-%D8%B9%D9%85%D9%84%D9%87",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 18,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 17
+    },
+    {
+      "id": "bin-baz-tahawi-source-1798",
+      "scholarId": "bin-baz",
+      "title": "18 الإيمان: هو الإقرار باللسان، والتصديق بالجنان",
+      "englishTitle": "Tahawiyyah commentary — index 19, source 18",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1798/18-%D8%A7%D9%84%D8%A7%D9%8A%D9%85%D8%A7%D9%86-%D9%87%D9%88-%D8%A7%D9%84%D8%A7%D9%82%D8%B1%D8%A7%D8%B1-%D8%A8%D8%A7%D9%84%D9%84%D8%B3%D8%A7%D9%86-%D9%88%D8%A7%D9%84%D8%AA%D8%B5%D8%AF%D9%8A%D9%82-%D8%A8%D8%A7%D9%84%D8%AC%D9%86%D8%A7%D9%86",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 19,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 18
+    },
+    {
+      "id": "bin-baz-tahawi-source-1799",
+      "scholarId": "bin-baz",
+      "title": "19 الناس في مسمى الإسلام على ثلاثة أقوال",
+      "englishTitle": "Tahawiyyah commentary — index 20, source 19",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1799/19-%D8%A7%D9%84%D9%86%D8%A7%D8%B3-%D9%81%D9%8A-%D9%85%D8%B3%D9%85%D9%89-%D8%A7%D9%84%D8%A7%D8%B3%D9%84%D8%A7%D9%85-%D8%B9%D9%84%D9%89-%D8%AB%D9%84%D8%A7%D8%AB%D8%A9-%D8%A7%D9%82%D9%88%D8%A7%D9%84",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 20,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 19
+    },
+    {
+      "id": "bin-baz-tahawi-source-1800",
+      "scholarId": "bin-baz",
+      "title": "20 قوله صلى الله عليه وسلم: (يخرج من النار من كان في قلبه مثقال ذرة من إيمان)",
+      "englishTitle": "Tahawiyyah commentary — index 21, source 20",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1800/20-%D9%82%D9%88%D9%84%D9%87-%D8%B5%D9%84%D9%89-%D8%A7%D9%84%D9%84%D9%87-%D8%B9%D9%84%D9%8A%D9%87-%D9%88%D8%B3%D9%84%D9%85-%D9%8A%D8%AE%D8%B1%D8%AC-%D9%85%D9%86-%D8%A7%D9%84%D9%86%D8%A7%D8%B1-%D9%85%D9%86-%D9%83%D8%A7%D9%86-%D9%81%D9%8A-%D9%82%D9%84%D8%A8%D9%87-%D9%85%D8%AB%D9%82%D8%A7%D9%84-%D8%B0%D8%B1%D8%A9-%D9%85%D9%86-%D8%A7%D9%8A%D9%85%D8%A7%D9%86",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 21,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 20
+    },
+    {
+      "id": "bin-baz-tahawi-source-1801",
+      "scholarId": "bin-baz",
+      "title": "21 ماهي الكبائر",
+      "englishTitle": "Tahawiyyah commentary — index 22, source 21",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1801/21-%D9%85%D8%A7%D9%87%D9%8A-%D8%A7%D9%84%D9%83%D8%A8%D8%A7%D9%89%D8%B1",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 22,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 21
+    },
+    {
+      "id": "bin-baz-tahawi-source-1802",
+      "scholarId": "bin-baz",
+      "title": "22 نحب أهل العدل والأمانة، ونبغض أهل الجور والخيانة",
+      "englishTitle": "Tahawiyyah commentary — index 23, source 22",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1802/22-%D9%86%D8%AD%D8%A8-%D8%A7%D9%87%D9%84-%D8%A7%D9%84%D8%B9%D8%AF%D9%84-%D9%88%D8%A7%D9%84%D8%A7%D9%85%D8%A7%D9%86%D8%A9-%D9%88%D9%86%D8%A8%D8%BA%D8%B6-%D8%A7%D9%87%D9%84-%D8%A7%D9%84%D8%AC%D9%88%D8%B1-%D9%88%D8%A7%D9%84%D8%AE%D9%8A%D8%A7%D9%86%D8%A9",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 23,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 22
+    },
+    {
+      "id": "bin-baz-tahawi-source-1803",
+      "scholarId": "bin-baz",
+      "title": "23 ثبوت عذاب القبر ونعيمه",
+      "englishTitle": "Tahawiyyah commentary — index 24, source 23",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1803/23-%D8%AB%D8%A8%D9%88%D8%AA-%D8%B9%D8%B0%D8%A7%D8%A8-%D8%A7%D9%84%D9%82%D8%A8%D8%B1-%D9%88%D9%86%D8%B9%D9%8A%D9%85%D9%87",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 24,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 23
+    },
+    {
+      "id": "bin-baz-tahawi-source-1804",
+      "scholarId": "bin-baz",
+      "title": "24 من أهوال يوم القيامة",
+      "englishTitle": "Tahawiyyah commentary — index 25, source 24",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1804/24-%D9%85%D9%86-%D8%A7%D9%87%D9%88%D8%A7%D9%84-%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D9%82%D9%8A%D8%A7%D9%85%D8%A9",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 25,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 24
+    },
+    {
+      "id": "bin-baz-tahawi-source-1805",
+      "scholarId": "bin-baz",
+      "title": "25 النار تبقى أبد الآباد وأن أهلها مخلدون فيها لا تنقضي ولا تزول",
+      "englishTitle": "Tahawiyyah commentary — index 26, source 25",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1805/25-%D8%A7%D9%84%D9%86%D8%A7%D8%B1-%D8%AA%D8%A8%D9%82%D9%89-%D8%A7%D8%A8%D8%AF-%D8%A7%D9%84%D8%A7%D8%A8%D8%A7%D8%AF-%D9%88%D8%A7%D9%86-%D8%A7%D9%87%D9%84%D9%87%D8%A7-%D9%85%D8%AE%D9%84%D8%AF%D9%88%D9%86-%D9%81%D9%8A%D9%87%D8%A7-%D9%84%D8%A7-%D8%AA%D9%86%D9%82%D8%B6%D9%8A-%D9%88%D9%84%D8%A7-%D8%AA%D8%B2%D9%88%D9%84",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 26,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 25
+    },
+    {
+      "id": "bin-baz-tahawi-source-1806",
+      "scholarId": "bin-baz",
+      "title": "26 لم يكلف الله تعالى عباده إلَّا ما يطيقون، ولا يطيقون إلَّا ما كلفهم",
+      "englishTitle": "Tahawiyyah commentary — index 27, source 26",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1806/26-%D9%84%D9%85-%D9%8A%D9%83%D9%84%D9%81-%D8%A7%D9%84%D9%84%D9%87-%D8%AA%D8%B9%D8%A7%D9%84%D9%89-%D8%B9%D8%A8%D8%A7%D8%AF%D9%87-%D8%A7%D9%84%D8%A7-%D9%85%D8%A7-%D9%8A%D8%B7%D9%8A%D9%82%D9%88%D9%86-%D9%88%D9%84%D8%A7-%D9%8A%D8%B7%D9%8A%D9%82%D9%88%D9%86-%D8%A7%D9%84%D8%A7-%D9%85%D8%A7-%D9%83%D9%84%D9%81%D9%87%D9%85",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 27,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 26
+    },
+    {
+      "id": "bin-baz-tahawi-source-1807",
+      "scholarId": "bin-baz",
+      "title": "27 الله تعالى يستجيب الدعوات ويقضي الحاجات",
+      "englishTitle": "Tahawiyyah commentary — index 28, source 27",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1807/27-%D8%A7%D9%84%D9%84%D9%87-%D8%AA%D8%B9%D8%A7%D9%84%D9%89-%D9%8A%D8%B3%D8%AA%D8%AC%D9%8A%D8%A8-%D8%A7%D9%84%D8%AF%D8%B9%D9%88%D8%A7%D8%AA-%D9%88%D9%8A%D9%82%D8%B6%D9%8A-%D8%A7%D9%84%D8%AD%D8%A7%D8%AC%D8%A7%D8%AA",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 28,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 27
+    },
+    {
+      "id": "bin-baz-tahawi-source-1808",
+      "scholarId": "bin-baz",
+      "title": "28 إثبات الخلافة بعد رسول الله صلى الله عليه وسلم أولاً لأبي بكر الصديق رضي الله عنه، تفضيلاً له وتقديماً على جميع الأمة",
+      "englishTitle": "Tahawiyyah commentary — index 29, source 28",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1808/28-%D8%A7%D8%AB%D8%A8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AE%D9%84%D8%A7%D9%81%D8%A9-%D8%A8%D8%B9%D8%AF-%D8%B1%D8%B3%D9%88%D9%84-%D8%A7%D9%84%D9%84%D9%87-%D8%B5%D9%84%D9%89-%D8%A7%D9%84%D9%84%D9%87-%D8%B9%D9%84%D9%8A%D9%87-%D9%88%D8%B3%D9%84%D9%85-%D8%A7%D9%88%D9%84%D8%A7-%D9%84%D8%A7%D8%A8%D9%8A-%D8%A8%D9%83%D8%B1-%D8%A7%D9%84%D8%B5%D8%AF%D9%8A%D9%82-%D8%B1%D8%B6%D9%8A-%D8%A7%D9%84%D9%84%D9%87-%D8%B9%D9%86%D9%87-%D8%AA%D9%81%D8%B6%D9%8A%D9%84%D8%A7-%D9%84%D9%87-%D9%88%D8%AA%D9%82%D8%AF%D9%8A%D9%85%D8%A7-%D8%B9%D9%84%D9%89-%D8%AC%D9%85%D9%8A%D8%B9-%D8%A7%D9%84%D8%A7%D9%85%D8%A9",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 29,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 28
+    },
+    {
+      "id": "bin-baz-tahawi-source-1809",
+      "scholarId": "bin-baz",
+      "title": "29 متى يبرئ المؤمن من النفاق",
+      "englishTitle": "Tahawiyyah commentary — index 30, source 29",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1809/29-%D9%85%D8%AA%D9%89-%D9%8A%D8%A8%D8%B1%D9%89-%D8%A7%D9%84%D9%85%D9%88%D9%85%D9%86-%D9%85%D9%86-%D8%A7%D9%84%D9%86%D9%81%D8%A7%D9%82",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 30,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 29
+    },
+    {
+      "id": "bin-baz-tahawi-source-1810",
+      "scholarId": "bin-baz",
+      "title": "30 لا نصدِّق كاهناً ولا عرَّافاً ولا من يدَّعي شيئاً يخالف الكتاب والسُّنَّة وإجماع الأمة",
+      "englishTitle": "Tahawiyyah commentary — index 31, source 30",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1810/30-%D9%84%D8%A7-%D9%86%D8%B5%D8%AF%D9%82-%D9%83%D8%A7%D9%87%D9%86%D8%A7-%D9%88%D9%84%D8%A7-%D8%B9%D8%B1%D8%A7%D9%81%D8%A7-%D9%88%D9%84%D8%A7-%D9%85%D9%86-%D9%8A%D8%AF%D8%B9%D9%8A-%D8%B4%D9%8A%D9%89%D8%A7-%D9%8A%D8%AE%D8%A7%D9%84%D9%81-%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8-%D9%88%D8%A7%D9%84%D8%B3%D9%86%D8%A9-%D9%88%D8%A7%D8%AC%D9%85%D8%A7%D8%B9-%D8%A7%D9%84%D8%A7%D9%85%D8%A9",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 31,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 30
+    },
+    {
+      "id": "bin-baz-tahawi-source-1812",
+      "scholarId": "bin-baz",
+      "title": "31 أنواع الافتراق والاختلاف",
+      "englishTitle": "Tahawiyyah commentary — index 32, source 31",
+      "type": "lesson",
+      "mediaKind": "audio",
+      "topics": [
+        "العقيدة",
+        "الطحاوية"
+      ],
+      "url": "https://binbaz.org.sa/audios/1812/31-%D8%A7%D9%86%D9%88%D8%A7%D8%B9-%D8%A7%D9%84%D8%A7%D9%81%D8%AA%D8%B1%D8%A7%D9%82-%D9%88%D8%A7%D9%84%D8%A7%D8%AE%D8%AA%D9%84%D8%A7%D9%81",
+      "bookIds": [
+        "tahawiyyah"
+      ],
+      "sourceNote": "درس صوتي ضمن سلسلة شرح العقيدة الطحاوية بالموقع الرسمي؛ الربط بمتن الطحاوية موضوعي، ولا يعني تطابق الطبعة أو مواضع الصفحات. السلسلة تقرأ شرح ابن أبي العز.",
+      "englishSourceNote": "Audio lesson in the official Tahawiyyah commentary series, reading Ibn Abi al-Izz’s commentary. Linked to the underlying text, without matching an edition or page.",
+      "verifiedOn": "2026-10-25",
+      "seriesTitle": "شرح العقيدة الطحاوية",
+      "seriesId": "bin-baz-tahawi",
+      "episodeNumber": 32,
+      "englishTopics": [
+        "Creed",
+        "Tahawiyyah"
+      ],
+      "sourceEpisodeNumber": 31
     }
   ],
   "series": [
@@ -2387,10 +3173,10 @@
         "tahawiyyah"
       ],
       "sourceUrl": "https://binbaz.org.sa/audios/series/51/%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9",
-      "coverage": "partial",
-      "expectedEpisodes": null,
-      "coverageNote": "فهرسة جزئية: الدروس 1 و3 و4 فقط، بترقيم الموقع الأصلي. يقرأ الشرح كتاب ابن أبي العز؛ لا تطابق مثبتًا مع طبعة المكتبة أو صفحاتها.",
-      "englishCoverageNote": "Partial index: source-numbered lessons 1, 3 and 4 only. Reads Ibn Abi al-Izz’s commentary; no matching library edition or pages are asserted."
+      "coverage": "indexed",
+      "expectedEpisodes": 32,
+      "coverageNote": "فهرسة32 مادة من صفحات فهرس المصدر الثلاث. يحمل درسان مختلفان الرقم15 في الأصل؛ ترتيب التنقل1–32 مستقل عن رقم المصدر الظاهر بالعنوان. ليست مراجعة سماعية للاكتمال أو مطابقة لطبعة المكتبة.",
+      "englishCoverageNote": "All 32 items from the three source index pages. Two different lessons carry source number 15; navigation order 1–32 is separate from the source number in each title. Not a full listening review or an edition/page match."
     },
     {
       "id": "munajjid-nawawi",

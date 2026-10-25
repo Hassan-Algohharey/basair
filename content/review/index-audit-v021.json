@@ -1,0 +1,42 @@
+{
+  "version": "0.21.0",
+  "checkedOn": "2026-10-25",
+  "preservedOldIdsAndUrls": 88,
+  "mediaItems": 117,
+  "newItems": 29,
+  "series": [
+    {
+      "id": "bin-baz-tahawi",
+      "items": 32,
+      "coverage": "indexed"
+    },
+    {
+      "id": "munajjid-nawawi",
+      "items": 43,
+      "coverage": "indexed"
+    },
+    {
+      "id": "barrak-wasael",
+      "items": 7,
+      "coverage": "complete"
+    },
+    {
+      "id": "othman-tuhfat-atfal",
+      "items": 8,
+      "coverage": "partial"
+    },
+    {
+      "id": "othman-jazariyyah",
+      "items": 11,
+      "coverage": "partial"
+    }
+  ],
+  "books": 22,
+  "pages": 4398,
+  "chapterEntries": 58,
+  "datedItems": 82,
+  "durationItems": 20,
+  "combinedSameDayLinkChecks": 200,
+  "reachableCombinedLinks": 195,
+  "scope": "Combines same-day 0.20 checks with 0.21 additions/rechecks. Structural/source coverage only, not scholarly or listening review."
+}

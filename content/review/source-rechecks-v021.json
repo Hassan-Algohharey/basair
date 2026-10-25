@@ -1,0 +1,66 @@
+{
+  "version": "0.21.0",
+  "checkedOn": "2026-10-25",
+  "scope": "Previously rate-limited original files, bounded HTTP range; not whole-file verification",
+  "links": [
+    {
+      "url": "https://upload.wikimedia.org/wikisource/ar/2/28/%D9%85%D9%86%D9%87%D8%A7%D8%AC_%D8%A7%D9%84%D8%B7%D8%A7%D9%84%D8%A8%D9%8A%D9%86_%D9%88%D8%B9%D9%85%D8%AF%D8%A9_%D8%A7%D9%84%D9%85%D9%81%D8%AA%D9%8A%D9%86.pdf",
+      "checkedOn": "2026-10-25",
+      "httpStatus": 206,
+      "finalUrl": "https://upload.wikimedia.org/wikisource/ar/2/28/%D9%85%D9%86%D9%87%D8%A7%D8%AC_%D8%A7%D9%84%D8%B7%D8%A7%D9%84%D8%A8%D9%8A%D9%86_%D9%88%D8%B9%D9%85%D8%AF%D8%A9_%D8%A7%D9%84%D9%85%D9%81%D8%AA%D9%8A%D9%86.pdf",
+      "contentType": "application/pdf",
+      "contentRange": "bytes 0-262143/11877936",
+      "bytesRead": 262144,
+      "truncated": false,
+      "snapshotSha256": "f96fe2d39884c0d1f0ee4c507ef4a3f77523c4c35ce599d0f5f8907211ad5155",
+      "status": "reachable"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikisource/ar/6/67/%D9%86%D9%8A%D9%84_%D8%A7%D9%84%D9%85%D8%A2%D8%B1%D8%A8_%D8%A8%D8%B4%D8%B1%D8%AD_%D8%AF%D9%84%D9%8A%D9%84_%D8%A7%D9%84%D8%B7%D8%A7%D9%84%D8%A8.pdf",
+      "checkedOn": "2026-10-25",
+      "httpStatus": 206,
+      "finalUrl": "https://upload.wikimedia.org/wikisource/ar/6/67/%D9%86%D9%8A%D9%84_%D8%A7%D9%84%D9%85%D8%A2%D8%B1%D8%A8_%D8%A8%D8%B4%D8%B1%D8%AD_%D8%AF%D9%84%D9%8A%D9%84_%D8%A7%D9%84%D8%B7%D8%A7%D9%84%D8%A8.pdf",
+      "contentType": "application/pdf",
+      "contentRange": "bytes 0-262143/15832144",
+      "bytesRead": 262144,
+      "truncated": false,
+      "snapshotSha256": "160224e06802214cb541c56a62017c526fd7ad6f9edcd1723f298a62cf0f6108",
+      "status": "reachable"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikisource/ar/6/67/متن_الرسالة_لابن_أبي_زيد_القيرواني.pdf",
+      "checkedOn": "2026-10-25",
+      "status": "unverified",
+      "httpStatus": 429,
+      "error": "HTTPError"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikisource/ar/9/9a/صفة_الصفوة2.pdf",
+      "checkedOn": "2026-10-25",
+      "status": "unverified",
+      "httpStatus": 429,
+      "error": "HTTPError"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikisource/ar/9/9d/فتح_القريب_المجيب.pdf",
+      "checkedOn": "2026-10-25",
+      "status": "unverified",
+      "httpStatus": 429,
+      "error": "HTTPError"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikisource/ar/d/d9/%D9%85%D8%AE%D8%AA%D8%B5%D8%B1_%D8%AE%D9%84%D9%8A%D9%84.pdf",
+      "checkedOn": "2026-10-25",
+      "status": "unverified",
+      "httpStatus": 429,
+      "error": "HTTPError"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikisource/ar/e/e9/صفة_الصفوة1.pdf",
+      "checkedOn": "2026-10-25",
+      "status": "unverified",
+      "httpStatus": 429,
+      "error": "HTTPError"
+    }
+  ]
+}

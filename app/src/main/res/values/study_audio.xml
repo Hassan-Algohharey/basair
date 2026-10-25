@@ -1,0 +1,29 @@
+<resources>
+    <string name="listen_mark_editor_title">علامة صوتية شخصية</string>
+    <string name="listen_series_order">ترتيب الفهرس: %1$d · رقم المصدر: %2$d</string>
+    <string name="listen_timer">مؤقت إيقاف الاستماع</string>
+    <string name="listen_timer_off">لا يوجد مؤقت نشط</string>
+    <string name="listen_timer_left">الإيقاف بعد: %1$s</string>
+    <string name="listen_timer_end">الإيقاف عند نهاية الفصل الحالي</string>
+    <string name="listen_timer_minutes">عدد الدقائق من1 إلى180</string>
+    <string name="listen_timer_start">بدء المؤقت</string>
+    <string name="listen_timer_cancel">إلغاء المؤقت</string>
+    <string name="listen_timer_scope">يوقف التشغيل في الخلفية ويحفظ موضع الاستماع. الوقت يستمر أثناء الإيقاف المؤقت، ويُلغى عند إعادة تشغيل الخدمة. مؤقت نهاية الفصل يتطلب فتح الفصل في المشغل ويُلغى عند تغييره يدويًا.</string>
+    <string name="listen_timer_error">أدخل عددًا صحيحًا من1 إلى180، أو أعد المحاولة إن تعذر حفظ الإعداد.</string>
+    <string name="listen_add_mark">حفظ علامة صوتية هنا</string>
+    <string name="listen_marks">العلامات الصوتية لهذا العمل</string>
+    <string name="listen_no_marks">لا توجد علامات صوتية لهذا العمل</string>
+    <string name="listen_mark_title">اسم العلامة، حتى120 حرفًا</string>
+    <string name="listen_mark_note">ملاحظة شخصية اختيارية، حتى2000 حرف</string>
+    <string name="listen_mark_save">حفظ العلامة الصوتية</string>
+    <string name="listen_mark_edit">تعديل العلامة</string>
+    <string name="listen_mark_delete">حذف العلامة</string>
+    <string name="listen_mark_delete_confirm">حذف هذه العلامة الصوتية؟</string>
+    <string name="listen_mark_jump">الانتقال إلى الموضع</string>
+    <string name="listen_mark_scope">علامات شخصية محفوظة على هذا الهاتف. الانتقال يوقف الصوت ويجهز موضع الاستماع دون بدء التشغيل. الوقت داخل المثال يُحسب من بدايته.</string>
+    <string name="listen_mark_error">تعذر الحفظ. يلزم اسم صالح، وحد أقصى500 علامة. لم تُحذف علاماتك القديمة.</string>
+    <string name="listen_mark_discard">تجاهل التعديلات غير المحفوظة؟</string>
+    <string name="listen_mark_discard_yes">تجاهل التعديلات</string>
+    <string name="listen_mark_continue">متابعة التعديل</string>
+    <string name="listen_saved_at">الموضع: %1$s</string>
+</resources>

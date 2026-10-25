@@ -41,17 +41,27 @@ class AudioPlaybackService : MediaSessionService() {
     private var session: MediaSession? = null
     private lateinit var player: ExoPlayer
     private lateinit var progress: AudioProgressStore
+    private lateinit var sleep: AudioSleepStore
+    private var lastProgressAt = 0L
     private val handler = Handler(Looper.getMainLooper())
     private val progressTick = object : Runnable {
         override fun run() {
-            if (::player.isInitialized && player.isPlaying) persistCurrent()
-            handler.postDelayed(this, 2_000)
+            if (::player.isInitialized) {
+                val plan = sleep.plan()
+                player.pauseAtEndOfMediaItems = plan.endTrack != null
+                if (sleepExpired(plan, android.os.SystemClock.elapsedRealtime()) && sleep.clearIf(plan)) { player.pause(); persistCurrent() }
+                val now = android.os.SystemClock.elapsedRealtime()
+                if (player.isPlaying && now - lastProgressAt >= 2_000) { persistCurrent(); lastProgressAt = now }
+            }
+            handler.postDelayed(this, 500)
         }
     }
 
     override fun onCreate() {
         super.onCreate()
         progress = AudioProgressStore(this)
+        sleep = AudioSleepStore(this)
+        sleep.clear()
         player = ExoPlayer.Builder(this)
             .setAudioAttributes(AudioAttributes.Builder()
                 .setUsage(C.USAGE_MEDIA)
@@ -65,10 +75,27 @@ class AudioPlaybackService : MediaSessionService() {
         player.playbackParameters = PlaybackParameters(progress.speed())
         player.addListener(object : Player.Listener {
             override fun onMediaItemTransition(mediaItem: MediaItem?, reason: Int) {
+                val plan = sleep.plan()
+                val action = endTimerTransition(plan.endTrack, mediaItem?.mediaId, reason == Player.MEDIA_ITEM_TRANSITION_REASON_AUTO, reason == Player.MEDIA_ITEM_TRANSITION_REASON_REPEAT)
+                if (action.cancel && sleep.clearIf(plan)) {
+                    if (action.pause) player.pause()
+                    player.pauseAtEndOfMediaItems = false
+                }
                 player.repeatMode = if (mediaItem?.mediaId?.let(progress::repeat) == true) Player.REPEAT_MODE_ONE else Player.REPEAT_MODE_OFF
             }
 
+            override fun onPlayWhenReadyChanged(playWhenReady: Boolean, reason: Int) {
+                val plan = sleep.plan()
+                if (!playWhenReady && reason == Player.PLAY_WHEN_READY_CHANGE_REASON_END_OF_MEDIA_ITEM && plan.endTrack != null && sleep.clearIf(plan)) {
+                    player.pauseAtEndOfMediaItems = false; persistCurrent()
+                }
+            }
+
             override fun onEvents(player: Player, events: Player.Events) {
+                val plan = sleep.plan()
+                if (player.playbackState == Player.STATE_ENDED && plan.endTrack != null && sleep.clearIf(plan)) {
+                    player.pause(); this@AudioPlaybackService.player.pauseAtEndOfMediaItems = false
+                }
                 if (events.containsAny(Player.EVENT_IS_PLAYING_CHANGED, Player.EVENT_PLAYBACK_STATE_CHANGED,
                         Player.EVENT_PLAY_WHEN_READY_CHANGED, Player.EVENT_PLAYBACK_PARAMETERS_CHANGED,
                         Player.EVENT_MEDIA_ITEM_TRANSITION)) persistCurrent()
@@ -148,6 +175,7 @@ class AudioPlaybackService : MediaSessionService() {
 
     override fun onDestroy() {
         handler.removeCallbacks(progressTick)
+        if (::sleep.isInitialized) sleep.clear()
         persistCurrent()
         session?.release()
         session = null

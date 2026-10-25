@@ -55,7 +55,7 @@ class BatchDevelopmentTest {
     @Test fun publicationYearFilterCombinesWithoutGuessingUnknownDates() {
         val all = MediaUiState(items = MediaCatalog.items)
         assertEquals(43, filteredMediaItems(all.copy(yearFilter = 1435)).size)
-        assertEquals(26, filteredMediaItems(all.copy(yearFilter = 0)).size)
+        assertEquals(55, filteredMediaItems(all.copy(yearFilter = 0)).size)
         assertEquals(7, filteredMediaItems(all.copy(yearFilter = 1434)).size)
         assertEquals(43, filteredMediaItems(all.copy(yearFilter = 1435, scholarFilter = "almunajjid", seriesFilter = "munajjid-nawawi")).size)
         assertTrue(filteredMediaItems(all.copy(yearFilter = 1435, scholarFilter = "bin-baz")).isEmpty())

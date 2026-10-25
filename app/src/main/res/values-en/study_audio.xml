@@ -1,0 +1,29 @@
+<resources>
+    <string name="listen_mark_editor_title">Personal audio bookmark</string>
+    <string name="listen_series_order">Index order: %1$d · Source number: %2$d</string>
+    <string name="listen_timer">Sleep timer</string>
+    <string name="listen_timer_off">No active timer</string>
+    <string name="listen_timer_left">Pause in: %1$s</string>
+    <string name="listen_timer_end">Pause at the end of the current chapter</string>
+    <string name="listen_timer_minutes">Minutes, from 1 to 180</string>
+    <string name="listen_timer_start">Start timer</string>
+    <string name="listen_timer_cancel">Cancel timer</string>
+    <string name="listen_timer_scope">Pauses background playback and saves your position. Time continues while paused; restarting the service cancels the timer. The chapter-end timer requires a loaded chapter and is cancelled if you change it manually.</string>
+    <string name="listen_timer_error">Enter a whole number from 1 to 180, or retry if the setting could not be saved.</string>
+    <string name="listen_add_mark">Bookmark this listening position</string>
+    <string name="listen_marks">Audio bookmarks for this work</string>
+    <string name="listen_no_marks">No audio bookmarks for this work</string>
+    <string name="listen_mark_title">Bookmark name, up to 120 characters</string>
+    <string name="listen_mark_note">Optional personal note, up to 2000 characters</string>
+    <string name="listen_mark_save">Save audio bookmark</string>
+    <string name="listen_mark_edit">Edit bookmark</string>
+    <string name="listen_mark_delete">Delete bookmark</string>
+    <string name="listen_mark_delete_confirm">Delete this audio bookmark?</string>
+    <string name="listen_mark_jump">Go to this position</string>
+    <string name="listen_mark_scope">Personal bookmarks stored on this phone. Going to a position pauses audio and prepares the position without starting playback. Example times are relative to the clipped example.</string>
+    <string name="listen_mark_error">Could not save. A valid name is required, with a maximum of 500 bookmarks. Existing bookmarks were not removed.</string>
+    <string name="listen_mark_discard">Discard unsaved changes?</string>
+    <string name="listen_mark_discard_yes">Discard changes</string>
+    <string name="listen_mark_continue">Continue editing</string>
+    <string name="listen_saved_at">Position: %1$s</string>
+</resources>

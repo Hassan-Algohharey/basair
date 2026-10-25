@@ -6,7 +6,9 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parents[1]
 catalog = json.loads((ROOT / 'content/media/catalog.json').read_text(encoding='utf-8'))
 audit = json.loads((ROOT / 'content/media/audit.json').read_text(encoding='utf-8'))
-link_audit = json.loads((ROOT / 'content/media/link-audit-v020.json').read_text(encoding='utf-8'))
+link_audit_path = ROOT / 'content/media/link-audit-v021.json'
+if not link_audit_path.exists(): link_audit_path = ROOT / 'content/media/link-audit-v020.json'
+link_audit = json.loads(link_audit_path.read_text(encoding='utf-8'))
 scholars = catalog['scholars']
 items = catalog['items']
 series = catalog.get('series', [])
@@ -96,6 +98,7 @@ for index, line in enumerate(lines):
     if line.startswith('        MediaUiItem('):
         item_id = json.loads(line.split('MediaUiItem(', 1)[1].split(',', 1)[0])
         checked = next(r for r in link_audit['links'] if r.get('itemId') == item_id)
-        lines[index] = line[:-2] + ', sourceCheckedOn = ' + q(checked['checkedOn']) + ', sourceReachable = ' + str(checked['status'] == 'reachable').lower() + '),'
+        source_number = next(i.get('sourceEpisodeNumber') for i in items if i['id'] == item_id)
+        lines[index] = line[:-2] + ', sourceCheckedOn = ' + q(checked['checkedOn']) + ', sourceReachable = ' + str(checked['status'] == 'reachable').lower() + ', sourceEpisodeNumber = ' + str(source_number or 'null') + '),'
 (ROOT / 'app/src/main/java/com/algohary/basair/MediaData.kt').write_text('\n'.join(lines), encoding='utf-8')
 print(f'Validated {len(scholars)} scholars, {len(items)} media records, {len(series)} series and all linked book IDs.')

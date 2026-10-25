@@ -1303,6 +1303,383 @@
       "attributionEvidenceUrl": "https://t.me/s/Ahmed_Elaraby",
       "classificationEvidence": "منشور2304؛ عنوان النص ومشغل الفيديو ذي المدة0:59",
       "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1779",
+      "url": "https://binbaz.org.sa/audios/1779/02-%D9%88%D8%AC%D9%88%D8%A8-%D9%87%D8%AF%D9%85-%D8%A7%D9%84%D8%A7%D8%B5%D9%86%D8%A7%D9%85",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1779/02-%D9%88%D8%AC%D9%88%D8%A8-%D9%87%D8%AF%D9%85-%D8%A7%D9%84%D8%A7%D8%B5%D9%86%D8%A7%D9%85",
+      "pageSha256": "48881a53a820187d0fbed565986865af4875faa7bbe594dcda75b1ce79c2e38b",
+      "observedHeading": "02 وجوب هدم الأصنام",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1782",
+      "url": "https://binbaz.org.sa/audios/1782/05-%D9%88%D9%84%D8%A7-%D8%B4%D9%8A%D8%A1-%D9%85%D8%AB%D9%84%D9%87-%D9%88%D9%84%D8%A7-%D8%B4%D9%8A%D8%A1-%D9%8A%D8%B9%D8%AC%D8%B2%D9%87",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1782/05-%D9%88%D9%84%D8%A7-%D8%B4%D9%8A%D8%A1-%D9%85%D8%AB%D9%84%D9%87-%D9%88%D9%84%D8%A7-%D8%B4%D9%8A%D8%A1-%D9%8A%D8%B9%D8%AC%D8%B2%D9%87",
+      "pageSha256": "4b6d7531af0c8909ffc5339bccd2e4065b785408e58adde11d08ec390602395b",
+      "observedHeading": "05 ولا شيء مثله، ولا شيء يعجزه",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1783",
+      "url": "https://binbaz.org.sa/audios/1783/06-%D9%85%D9%86-%D8%A7%D8%B9%D8%B8%D9%85-%D9%86%D8%B9%D9%85-%D8%A7%D9%84%D9%84%D9%87-%D8%B9%D9%84%D9%89-%D8%AE%D9%84%D9%82%D9%87-%D8%A7%D8%B1%D8%B3%D8%A7%D9%84-%D8%A7%D9%84%D8%B1%D8%B3%D9%84-%D8%A7%D9%84%D9%8A%D9%87%D9%85",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1783/06-%D9%85%D9%86-%D8%A7%D8%B9%D8%B8%D9%85-%D9%86%D8%B9%D9%85-%D8%A7%D9%84%D9%84%D9%87-%D8%B9%D9%84%D9%89-%D8%AE%D9%84%D9%82%D9%87-%D8%A7%D8%B1%D8%B3%D8%A7%D9%84-%D8%A7%D9%84%D8%B1%D8%B3%D9%84-%D8%A7%D9%84%D9%8A%D9%87%D9%85",
+      "pageSha256": "718611ae0f658a91458add5c5b7a672bf4a9359d3d624e8d004851d37853c1be",
+      "observedHeading": "06 من أعظم نعم الله على خلقه إرسال الرُّسل إليهم",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1784",
+      "url": "https://binbaz.org.sa/audios/1784/07-%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D9%86-%D9%83%D9%84%D8%A7%D9%85-%D8%A7%D9%84%D9%84%D9%87-%D9%85%D9%86%D9%87-%D8%A8%D8%AF%D8%A7-%D8%A8%D9%84%D8%A7-%D9%83%D9%8A%D9%81%D9%8A%D8%A9-%D9%82%D9%88%D9%84%D8%A7",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1784/07-%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D9%86-%D9%83%D9%84%D8%A7%D9%85-%D8%A7%D9%84%D9%84%D9%87-%D9%85%D9%86%D9%87-%D8%A8%D8%AF%D8%A7-%D8%A8%D9%84%D8%A7-%D9%83%D9%8A%D9%81%D9%8A%D8%A9-%D9%82%D9%88%D9%84%D8%A7",
+      "pageSha256": "38d98cbb5224d6bdef1a9bcd1a82a0e85205ece8e501d8fde2e85b3477a89acd",
+      "observedHeading": "07 القرآن كلام الله منه بدا بلا كيفية قولاً",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1785",
+      "url": "https://binbaz.org.sa/audios/1785/08-%D8%A7%D9%84%D8%A7%D8%AD%D8%A7%D8%AF%D9%8A%D8%AB-%D8%A7%D9%84%D8%AF%D8%A7%D9%84%D8%A9-%D8%B9%D9%84%D9%89-%D8%B1%D9%88%D9%8A%D8%A9-%D8%A7%D9%84%D9%84%D9%87-%D8%AA%D8%B9%D8%A7%D9%84%D9%89-%D9%84%D8%A7%D9%87%D9%84-%D8%A7%D9%84%D8%AC%D9%86%D8%A9",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1785/08-%D8%A7%D9%84%D8%A7%D8%AD%D8%A7%D8%AF%D9%8A%D8%AB-%D8%A7%D9%84%D8%AF%D8%A7%D9%84%D8%A9-%D8%B9%D9%84%D9%89-%D8%B1%D9%88%D9%8A%D8%A9-%D8%A7%D9%84%D9%84%D9%87-%D8%AA%D8%B9%D8%A7%D9%84%D9%89-%D9%84%D8%A7%D9%87%D9%84-%D8%A7%D9%84%D8%AC%D9%86%D8%A9",
+      "pageSha256": "2008d6723544c610108441dcfb2f0dec6326dbbe4d823437d82f3f69523c3a8a",
+      "observedHeading": "08 الأحاديث الدَّالة على رؤية الله تعالى لأهل الجنة",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1786",
+      "url": "https://binbaz.org.sa/audios/1786/09-%D8%AA%D8%A7%D9%88%D9%8A%D9%84-%D8%A7%D9%84%D9%85%D8%B9%D8%AA%D8%B2%D9%84%D8%A9-%D9%86%D8%B5%D9%88%D8%B5-%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8-%D9%88%D8%A7%D9%84%D8%B3%D9%86%D8%A9",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1786/09-%D8%AA%D8%A7%D9%88%D9%8A%D9%84-%D8%A7%D9%84%D9%85%D8%B9%D8%AA%D8%B2%D9%84%D8%A9-%D9%86%D8%B5%D9%88%D8%B5-%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8-%D9%88%D8%A7%D9%84%D8%B3%D9%86%D8%A9",
+      "pageSha256": "43cf101f23de4938c46f7d9ac688e39f2d650545836273d2e3ff9fb5f3620e43",
+      "observedHeading": "09 تأويل المعتزلة نصوص الكتاب والسُّنَّة",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1787",
+      "url": "https://binbaz.org.sa/audios/1787/10-%D8%A7%D9%84%D8%AF%D9%84%D9%8A%D9%84-%D8%B9%D9%84%D9%89-%D8%A7%D9%86-%D8%A7%D9%84%D8%A7%D8%B3%D8%B1%D8%A7%D8%A1-%D8%A8%D8%AC%D8%B3%D8%AF%D9%87-%D9%81%D9%8A-%D8%A7%D9%84%D9%8A%D9%82%D8%B8%D8%A9",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1787/10-%D8%A7%D9%84%D8%AF%D9%84%D9%8A%D9%84-%D8%B9%D9%84%D9%89-%D8%A7%D9%86-%D8%A7%D9%84%D8%A7%D8%B3%D8%B1%D8%A7%D8%A1-%D8%A8%D8%AC%D8%B3%D8%AF%D9%87-%D9%81%D9%8A-%D8%A7%D9%84%D9%8A%D9%82%D8%B8%D8%A9",
+      "pageSha256": "3994a052e67bedb8a01732bf202953406639ac3b614f68f46bf0dd1bbe55e805",
+      "observedHeading": "10 الدليل على أنَّ الإسراء بجسده في اليقظة",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1788",
+      "url": "https://binbaz.org.sa/audios/1788/11-%D8%B4%D9%81%D8%A7%D8%B9%D8%A9-%D8%A7%D9%84%D9%86%D8%A8%D9%8A-%D8%B9%D9%84%D9%8A%D9%87-%D8%A7%D9%84%D8%B5%D9%84%D8%A7%D8%A9-%D9%88%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85-%D9%81%D9%8A-%D8%A7%D9%87%D9%84-%D8%A7%D9%84%D9%83%D8%A8%D8%A7%D9%89%D8%B1-%D9%85%D9%86-%D8%A7%D9%85%D8%AA%D9%87",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1788/11-%D8%B4%D9%81%D8%A7%D8%B9%D8%A9-%D8%A7%D9%84%D9%86%D8%A8%D9%8A-%D8%B9%D9%84%D9%8A%D9%87-%D8%A7%D9%84%D8%B5%D9%84%D8%A7%D8%A9-%D9%88%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85-%D9%81%D9%8A-%D8%A7%D9%87%D9%84-%D8%A7%D9%84%D9%83%D8%A8%D8%A7%D9%89%D8%B1-%D9%85%D9%86-%D8%A7%D9%85%D8%AA%D9%87",
+      "pageSha256": "d8918e016c62d9831147c1aae88606f2d15d04d19e306835d5f06ada0e004d2a",
+      "observedHeading": "11 شفاعة النبي عليه الصلاة والسلام في أهل الكبائر من أمته",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1789",
+      "url": "https://binbaz.org.sa/audios/1789/12-%D8%A7%D9%84%D9%84%D9%87-%D8%AA%D8%B9%D8%A7%D9%84%D9%89-%D9%85%D9%88%D8%B5%D9%88%D9%81-%D8%A8%D8%A7%D9%86%D9%87-%D8%A8%D9%83%D9%84-%D8%B4%D9%8A%D8%A1-%D8%B9%D9%84%D9%8A%D9%85-%D8%A7%D8%B2%D9%84%D8%A7-%D9%88%D8%A7%D8%A8%D8%AF%D8%A7",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1789/12-%D8%A7%D9%84%D9%84%D9%87-%D8%AA%D8%B9%D8%A7%D9%84%D9%89-%D9%85%D9%88%D8%B5%D9%88%D9%81-%D8%A8%D8%A7%D9%86%D9%87-%D8%A8%D9%83%D9%84-%D8%B4%D9%8A%D8%A1-%D8%B9%D9%84%D9%8A%D9%85-%D8%A7%D8%B2%D9%84%D8%A7-%D9%88%D8%A7%D8%A8%D8%AF%D8%A7",
+      "pageSha256": "e2ab854c7ff203d44c0564356f56bb1e3680dee9d6d213f454318ec608460738",
+      "observedHeading": "12 الله تعالى موصوف بأنه بكل شيء عليم أزلاً وأبداً",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1790",
+      "url": "https://binbaz.org.sa/audios/1790/13-%D8%A7%D9%86-%D8%A7%D9%84%D9%84%D9%87-%D8%AA%D8%B9%D8%A7%D9%84%D9%89-%D8%B7%D9%88%D9%89-%D8%B9%D9%84%D9%85-%D8%A7%D9%84%D9%82%D8%AF%D8%B1-%D8%B9%D9%86-%D8%A7%D9%86%D8%A7%D9%85%D9%87",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1790/13-%D8%A7%D9%86-%D8%A7%D9%84%D9%84%D9%87-%D8%AA%D8%B9%D8%A7%D9%84%D9%89-%D8%B7%D9%88%D9%89-%D8%B9%D9%84%D9%85-%D8%A7%D9%84%D9%82%D8%AF%D8%B1-%D8%B9%D9%86-%D8%A7%D9%86%D8%A7%D9%85%D9%87",
+      "pageSha256": "9b48e63bd3de751e8ce0c5c857bb65c6d23d98ef1f669a7a6a13cc0de212ee36",
+      "observedHeading": "13 إن الله تعالى طوى علم القدر عن أنامه",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1791",
+      "url": "https://binbaz.org.sa/audios/1791/14-%D8%A7%D9%84%D8%A7%D9%8A%D9%85%D8%A7%D9%86-%D8%A8%D8%A7%D9%84%D9%82%D8%AF%D8%B1",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1791/14-%D8%A7%D9%84%D8%A7%D9%8A%D9%85%D8%A7%D9%86-%D8%A8%D8%A7%D9%84%D9%82%D8%AF%D8%B1",
+      "pageSha256": "6751d372902d07ad099dbda28abacfbdb9f8dda7bc03052aa8bbb491ba1eb5b3",
+      "observedHeading": "14 الإيمان بالقدر",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-3934",
+      "url": "https://binbaz.org.sa/audios/3934/15-%D8%A7%D9%84%D8%A7%D9%8A%D9%85%D8%A7%D9%86-%D8%A8%D8%B9%D9%84%D9%88-%D8%A7%D9%84%D9%84%D9%87-%D8%B3%D8%A8%D8%AD%D8%A7%D9%86%D9%87",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/3934/15-%D8%A7%D9%84%D8%A7%D9%8A%D9%85%D8%A7%D9%86-%D8%A8%D8%B9%D9%84%D9%88-%D8%A7%D9%84%D9%84%D9%87-%D8%B3%D8%A8%D8%AD%D8%A7%D9%86%D9%87",
+      "pageSha256": "eafd1cd68ab7e571ee2a3b8370bedafc2eb1c1d572931c70d5a61b8a2fbbe579",
+      "observedHeading": "15 الإيمان بعلو الله سبحانه",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1793",
+      "url": "https://binbaz.org.sa/audios/1793/15-%D8%A7%D8%B5%D9%88%D9%84-%D8%A7%D9%84%D9%85%D8%B9%D8%AA%D8%B2%D9%84%D8%A9-%D8%A7%D9%84%D9%81%D8%A7%D8%B3%D8%AF%D8%A9",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1793/15-%D8%A7%D8%B5%D9%88%D9%84-%D8%A7%D9%84%D9%85%D8%B9%D8%AA%D8%B2%D9%84%D8%A9-%D8%A7%D9%84%D9%81%D8%A7%D8%B3%D8%AF%D8%A9",
+      "pageSha256": "a4292d1d71b369e28f7bd673c8ca0118b8c6a5e8356b75410e3385ceea926d67",
+      "observedHeading": "15 أصول المعتزلة الفاسدة",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1794",
+      "url": "https://binbaz.org.sa/audios/1794/16-%D9%84%D8%A7-%D9%86%D8%AC%D8%A7%D8%AF%D9%84-%D9%81%D9%8A-%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D9%86-%D9%88%D9%86%D8%B4%D9%87%D8%AF-%D8%A7%D9%86%D9%87-%D9%83%D9%84%D8%A7%D9%85-%D8%B1%D8%A8-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A%D9%86",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1794/16-%D9%84%D8%A7-%D9%86%D8%AC%D8%A7%D8%AF%D9%84-%D9%81%D9%8A-%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D9%86-%D9%88%D9%86%D8%B4%D9%87%D8%AF-%D8%A7%D9%86%D9%87-%D9%83%D9%84%D8%A7%D9%85-%D8%B1%D8%A8-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A%D9%86",
+      "pageSha256": "aa63c3b1f9409ac4e11977b4f3e86609e053442067b51ee8a57867b5f2e0ceef",
+      "observedHeading": "16 لا نجادل في القرآن، ونشهد أنه كلام رب العالمين",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1796",
+      "url": "https://binbaz.org.sa/audios/1796/17-%D9%84%D8%A7-%D9%86%D9%82%D9%88%D9%84-%D9%84%D8%A7-%D9%8A%D8%B6%D8%B1-%D9%85%D8%B9-%D8%A7%D9%84%D8%A7%D9%8A%D9%85%D8%A7%D9%86-%D8%B0%D9%86%D8%A8-%D9%84%D9%85%D9%86-%D8%B9%D9%85%D9%84%D9%87",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1796/17-%D9%84%D8%A7-%D9%86%D9%82%D9%88%D9%84-%D9%84%D8%A7-%D9%8A%D8%B6%D8%B1-%D9%85%D8%B9-%D8%A7%D9%84%D8%A7%D9%8A%D9%85%D8%A7%D9%86-%D8%B0%D9%86%D8%A8-%D9%84%D9%85%D9%86-%D8%B9%D9%85%D9%84%D9%87",
+      "pageSha256": "cd5bfa5e455fd1cf9008eaea7e3c4df2a39e2727cd989912e713a089b0d24f28",
+      "observedHeading": "17 لا نقول: لا يضر مع الإيمان ذنب لمن عمله",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1798",
+      "url": "https://binbaz.org.sa/audios/1798/18-%D8%A7%D9%84%D8%A7%D9%8A%D9%85%D8%A7%D9%86-%D9%87%D9%88-%D8%A7%D9%84%D8%A7%D9%82%D8%B1%D8%A7%D8%B1-%D8%A8%D8%A7%D9%84%D9%84%D8%B3%D8%A7%D9%86-%D9%88%D8%A7%D9%84%D8%AA%D8%B5%D8%AF%D9%8A%D9%82-%D8%A8%D8%A7%D9%84%D8%AC%D9%86%D8%A7%D9%86",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1798/18-%D8%A7%D9%84%D8%A7%D9%8A%D9%85%D8%A7%D9%86-%D9%87%D9%88-%D8%A7%D9%84%D8%A7%D9%82%D8%B1%D8%A7%D8%B1-%D8%A8%D8%A7%D9%84%D9%84%D8%B3%D8%A7%D9%86-%D9%88%D8%A7%D9%84%D8%AA%D8%B5%D8%AF%D9%8A%D9%82-%D8%A8%D8%A7%D9%84%D8%AC%D9%86%D8%A7%D9%86",
+      "pageSha256": "89e0ab7620854009f98d9f585c052130eea6970120c7d51c523d6fdead95d0fc",
+      "observedHeading": "18 الإيمان: هو الإقرار باللسان، والتصديق بالجنان",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1799",
+      "url": "https://binbaz.org.sa/audios/1799/19-%D8%A7%D9%84%D9%86%D8%A7%D8%B3-%D9%81%D9%8A-%D9%85%D8%B3%D9%85%D9%89-%D8%A7%D9%84%D8%A7%D8%B3%D9%84%D8%A7%D9%85-%D8%B9%D9%84%D9%89-%D8%AB%D9%84%D8%A7%D8%AB%D8%A9-%D8%A7%D9%82%D9%88%D8%A7%D9%84",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1799/19-%D8%A7%D9%84%D9%86%D8%A7%D8%B3-%D9%81%D9%8A-%D9%85%D8%B3%D9%85%D9%89-%D8%A7%D9%84%D8%A7%D8%B3%D9%84%D8%A7%D9%85-%D8%B9%D9%84%D9%89-%D8%AB%D9%84%D8%A7%D8%AB%D8%A9-%D8%A7%D9%82%D9%88%D8%A7%D9%84",
+      "pageSha256": "c9b95ab8dd9f7e6340569405c49732a01fc7d6c86e0de18a72761ec5ceea1d51",
+      "observedHeading": "19 الناس في مسمى الإسلام على ثلاثة أقوال",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1800",
+      "url": "https://binbaz.org.sa/audios/1800/20-%D9%82%D9%88%D9%84%D9%87-%D8%B5%D9%84%D9%89-%D8%A7%D9%84%D9%84%D9%87-%D8%B9%D9%84%D9%8A%D9%87-%D9%88%D8%B3%D9%84%D9%85-%D9%8A%D8%AE%D8%B1%D8%AC-%D9%85%D9%86-%D8%A7%D9%84%D9%86%D8%A7%D8%B1-%D9%85%D9%86-%D9%83%D8%A7%D9%86-%D9%81%D9%8A-%D9%82%D9%84%D8%A8%D9%87-%D9%85%D8%AB%D9%82%D8%A7%D9%84-%D8%B0%D8%B1%D8%A9-%D9%85%D9%86-%D8%A7%D9%8A%D9%85%D8%A7%D9%86",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1800/20-%D9%82%D9%88%D9%84%D9%87-%D8%B5%D9%84%D9%89-%D8%A7%D9%84%D9%84%D9%87-%D8%B9%D9%84%D9%8A%D9%87-%D9%88%D8%B3%D9%84%D9%85-%D9%8A%D8%AE%D8%B1%D8%AC-%D9%85%D9%86-%D8%A7%D9%84%D9%86%D8%A7%D8%B1-%D9%85%D9%86-%D9%83%D8%A7%D9%86-%D9%81%D9%8A-%D9%82%D9%84%D8%A8%D9%87-%D9%85%D8%AB%D9%82%D8%A7%D9%84-%D8%B0%D8%B1%D8%A9-%D9%85%D9%86-%D8%A7%D9%8A%D9%85%D8%A7%D9%86",
+      "pageSha256": "868a87d0105a620b44307c20d2491e565afba55ef7d6d35ab16fb71b15828d71",
+      "observedHeading": "20 قوله صلى الله عليه وسلم: (يخرج من النار من كان في قلبه مثقال ذرة من إيمان)",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1801",
+      "url": "https://binbaz.org.sa/audios/1801/21-%D9%85%D8%A7%D9%87%D9%8A-%D8%A7%D9%84%D9%83%D8%A8%D8%A7%D9%89%D8%B1",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1801/21-%D9%85%D8%A7%D9%87%D9%8A-%D8%A7%D9%84%D9%83%D8%A8%D8%A7%D9%89%D8%B1",
+      "pageSha256": "612810ba1b577e11d49859745ac630267eb6d5b683b83387166c03bcc7f22dde",
+      "observedHeading": "21 ماهي الكبائر",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1802",
+      "url": "https://binbaz.org.sa/audios/1802/22-%D9%86%D8%AD%D8%A8-%D8%A7%D9%87%D9%84-%D8%A7%D9%84%D8%B9%D8%AF%D9%84-%D9%88%D8%A7%D9%84%D8%A7%D9%85%D8%A7%D9%86%D8%A9-%D9%88%D9%86%D8%A8%D8%BA%D8%B6-%D8%A7%D9%87%D9%84-%D8%A7%D9%84%D8%AC%D9%88%D8%B1-%D9%88%D8%A7%D9%84%D8%AE%D9%8A%D8%A7%D9%86%D8%A9",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1802/22-%D9%86%D8%AD%D8%A8-%D8%A7%D9%87%D9%84-%D8%A7%D9%84%D8%B9%D8%AF%D9%84-%D9%88%D8%A7%D9%84%D8%A7%D9%85%D8%A7%D9%86%D8%A9-%D9%88%D9%86%D8%A8%D8%BA%D8%B6-%D8%A7%D9%87%D9%84-%D8%A7%D9%84%D8%AC%D9%88%D8%B1-%D9%88%D8%A7%D9%84%D8%AE%D9%8A%D8%A7%D9%86%D8%A9",
+      "pageSha256": "79ffda223a80ddffddb91927d2001c7eb38a07223391763be0f98a4043880795",
+      "observedHeading": "22 نحب أهل العدل والأمانة، ونبغض أهل الجور والخيانة",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1803",
+      "url": "https://binbaz.org.sa/audios/1803/23-%D8%AB%D8%A8%D9%88%D8%AA-%D8%B9%D8%B0%D8%A7%D8%A8-%D8%A7%D9%84%D9%82%D8%A8%D8%B1-%D9%88%D9%86%D8%B9%D9%8A%D9%85%D9%87",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1803/23-%D8%AB%D8%A8%D9%88%D8%AA-%D8%B9%D8%B0%D8%A7%D8%A8-%D8%A7%D9%84%D9%82%D8%A8%D8%B1-%D9%88%D9%86%D8%B9%D9%8A%D9%85%D9%87",
+      "pageSha256": "ac8d7c242be2d841f29ec70e866bcc8ab4a9238533049d68fbb96bf123cd511a",
+      "observedHeading": "23 ثبوت عذاب القبر ونعيمه",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1804",
+      "url": "https://binbaz.org.sa/audios/1804/24-%D9%85%D9%86-%D8%A7%D9%87%D9%88%D8%A7%D9%84-%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D9%82%D9%8A%D8%A7%D9%85%D8%A9",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1804/24-%D9%85%D9%86-%D8%A7%D9%87%D9%88%D8%A7%D9%84-%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D9%82%D9%8A%D8%A7%D9%85%D8%A9",
+      "pageSha256": "37c6c2d5c42155997618ca8664b90d9c66a36239e9c33498f98466c3605f15a6",
+      "observedHeading": "24 من أهوال يوم القيامة",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1805",
+      "url": "https://binbaz.org.sa/audios/1805/25-%D8%A7%D9%84%D9%86%D8%A7%D8%B1-%D8%AA%D8%A8%D9%82%D9%89-%D8%A7%D8%A8%D8%AF-%D8%A7%D9%84%D8%A7%D8%A8%D8%A7%D8%AF-%D9%88%D8%A7%D9%86-%D8%A7%D9%87%D9%84%D9%87%D8%A7-%D9%85%D8%AE%D9%84%D8%AF%D9%88%D9%86-%D9%81%D9%8A%D9%87%D8%A7-%D9%84%D8%A7-%D8%AA%D9%86%D9%82%D8%B6%D9%8A-%D9%88%D9%84%D8%A7-%D8%AA%D8%B2%D9%88%D9%84",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1805/25-%D8%A7%D9%84%D9%86%D8%A7%D8%B1-%D8%AA%D8%A8%D9%82%D9%89-%D8%A7%D8%A8%D8%AF-%D8%A7%D9%84%D8%A7%D8%A8%D8%A7%D8%AF-%D9%88%D8%A7%D9%86-%D8%A7%D9%87%D9%84%D9%87%D8%A7-%D9%85%D8%AE%D9%84%D8%AF%D9%88%D9%86-%D9%81%D9%8A%D9%87%D8%A7-%D9%84%D8%A7-%D8%AA%D9%86%D9%82%D8%B6%D9%8A-%D9%88%D9%84%D8%A7-%D8%AA%D8%B2%D9%88%D9%84",
+      "pageSha256": "65e0817325f01b0c5788fc77c696181048480455c2aca420f6b4099364629c82",
+      "observedHeading": "25 النار تبقى أبد الآباد وأن أهلها مخلدون فيها لا تنقضي ولا تزول",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1806",
+      "url": "https://binbaz.org.sa/audios/1806/26-%D9%84%D9%85-%D9%8A%D9%83%D9%84%D9%81-%D8%A7%D9%84%D9%84%D9%87-%D8%AA%D8%B9%D8%A7%D9%84%D9%89-%D8%B9%D8%A8%D8%A7%D8%AF%D9%87-%D8%A7%D9%84%D8%A7-%D9%85%D8%A7-%D9%8A%D8%B7%D9%8A%D9%82%D9%88%D9%86-%D9%88%D9%84%D8%A7-%D9%8A%D8%B7%D9%8A%D9%82%D9%88%D9%86-%D8%A7%D9%84%D8%A7-%D9%85%D8%A7-%D9%83%D9%84%D9%81%D9%87%D9%85",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1806/26-%D9%84%D9%85-%D9%8A%D9%83%D9%84%D9%81-%D8%A7%D9%84%D9%84%D9%87-%D8%AA%D8%B9%D8%A7%D9%84%D9%89-%D8%B9%D8%A8%D8%A7%D8%AF%D9%87-%D8%A7%D9%84%D8%A7-%D9%85%D8%A7-%D9%8A%D8%B7%D9%8A%D9%82%D9%88%D9%86-%D9%88%D9%84%D8%A7-%D9%8A%D8%B7%D9%8A%D9%82%D9%88%D9%86-%D8%A7%D9%84%D8%A7-%D9%85%D8%A7-%D9%83%D9%84%D9%81%D9%87%D9%85",
+      "pageSha256": "b52f6e5867ac1c0fa9a1133f11cd54209f96400ea963e2c3084b212479f01b67",
+      "observedHeading": "26 لم يكلف الله تعالى عباده إلَّا ما يطيقون، ولا يطيقون إلَّا ما كلفهم",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1807",
+      "url": "https://binbaz.org.sa/audios/1807/27-%D8%A7%D9%84%D9%84%D9%87-%D8%AA%D8%B9%D8%A7%D9%84%D9%89-%D9%8A%D8%B3%D8%AA%D8%AC%D9%8A%D8%A8-%D8%A7%D9%84%D8%AF%D8%B9%D9%88%D8%A7%D8%AA-%D9%88%D9%8A%D9%82%D8%B6%D9%8A-%D8%A7%D9%84%D8%AD%D8%A7%D8%AC%D8%A7%D8%AA",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1807/27-%D8%A7%D9%84%D9%84%D9%87-%D8%AA%D8%B9%D8%A7%D9%84%D9%89-%D9%8A%D8%B3%D8%AA%D8%AC%D9%8A%D8%A8-%D8%A7%D9%84%D8%AF%D8%B9%D9%88%D8%A7%D8%AA-%D9%88%D9%8A%D9%82%D8%B6%D9%8A-%D8%A7%D9%84%D8%AD%D8%A7%D8%AC%D8%A7%D8%AA",
+      "pageSha256": "cc78d5c2b749c43790383a05ed1663c742a86aaa4e1d6433a634a0b7f2d518f7",
+      "observedHeading": "27 الله تعالى يستجيب الدعوات ويقضي الحاجات",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1808",
+      "url": "https://binbaz.org.sa/audios/1808/28-%D8%A7%D8%AB%D8%A8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AE%D9%84%D8%A7%D9%81%D8%A9-%D8%A8%D8%B9%D8%AF-%D8%B1%D8%B3%D9%88%D9%84-%D8%A7%D9%84%D9%84%D9%87-%D8%B5%D9%84%D9%89-%D8%A7%D9%84%D9%84%D9%87-%D8%B9%D9%84%D9%8A%D9%87-%D9%88%D8%B3%D9%84%D9%85-%D8%A7%D9%88%D9%84%D8%A7-%D9%84%D8%A7%D8%A8%D9%8A-%D8%A8%D9%83%D8%B1-%D8%A7%D9%84%D8%B5%D8%AF%D9%8A%D9%82-%D8%B1%D8%B6%D9%8A-%D8%A7%D9%84%D9%84%D9%87-%D8%B9%D9%86%D9%87-%D8%AA%D9%81%D8%B6%D9%8A%D9%84%D8%A7-%D9%84%D9%87-%D9%88%D8%AA%D9%82%D8%AF%D9%8A%D9%85%D8%A7-%D8%B9%D9%84%D9%89-%D8%AC%D9%85%D9%8A%D8%B9-%D8%A7%D9%84%D8%A7%D9%85%D8%A9",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1808/28-%D8%A7%D8%AB%D8%A8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AE%D9%84%D8%A7%D9%81%D8%A9-%D8%A8%D8%B9%D8%AF-%D8%B1%D8%B3%D9%88%D9%84-%D8%A7%D9%84%D9%84%D9%87-%D8%B5%D9%84%D9%89-%D8%A7%D9%84%D9%84%D9%87-%D8%B9%D9%84%D9%8A%D9%87-%D9%88%D8%B3%D9%84%D9%85-%D8%A7%D9%88%D9%84%D8%A7-%D9%84%D8%A7%D8%A8%D9%8A-%D8%A8%D9%83%D8%B1-%D8%A7%D9%84%D8%B5%D8%AF%D9%8A%D9%82-%D8%B1%D8%B6%D9%8A-%D8%A7%D9%84%D9%84%D9%87-%D8%B9%D9%86%D9%87-%D8%AA%D9%81%D8%B6%D9%8A%D9%84%D8%A7-%D9%84%D9%87-%D9%88%D8%AA%D9%82%D8%AF%D9%8A%D9%85%D8%A7-%D8%B9%D9%84%D9%89-%D8%AC%D9%85%D9%8A%D8%B9-%D8%A7%D9%84%D8%A7%D9%85%D8%A9",
+      "pageSha256": "1cf5b2bf060beeb2e6e7ae6ff25692c99d5bbe8cf783a83577f4d46c40bb5fd8",
+      "observedHeading": "28 إثبات الخلافة بعد رسول الله صلى الله عليه وسلم أولاً لأبي بكر الصديق رضي الله عنه، تفضيلاً له وتقديماً على جميع الأمة",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1809",
+      "url": "https://binbaz.org.sa/audios/1809/29-%D9%85%D8%AA%D9%89-%D9%8A%D8%A8%D8%B1%D9%89-%D8%A7%D9%84%D9%85%D9%88%D9%85%D9%86-%D9%85%D9%86-%D8%A7%D9%84%D9%86%D9%81%D8%A7%D9%82",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1809/29-%D9%85%D8%AA%D9%89-%D9%8A%D8%A8%D8%B1%D9%89-%D8%A7%D9%84%D9%85%D9%88%D9%85%D9%86-%D9%85%D9%86-%D8%A7%D9%84%D9%86%D9%81%D8%A7%D9%82",
+      "pageSha256": "4cc5c16feb5775b74cc930b084a11347d3e1482727d780e55e79cef20efdb40e",
+      "observedHeading": "29 متى يبرئ المؤمن من النفاق",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1810",
+      "url": "https://binbaz.org.sa/audios/1810/30-%D9%84%D8%A7-%D9%86%D8%B5%D8%AF%D9%82-%D9%83%D8%A7%D9%87%D9%86%D8%A7-%D9%88%D9%84%D8%A7-%D8%B9%D8%B1%D8%A7%D9%81%D8%A7-%D9%88%D9%84%D8%A7-%D9%85%D9%86-%D9%8A%D8%AF%D8%B9%D9%8A-%D8%B4%D9%8A%D9%89%D8%A7-%D9%8A%D8%AE%D8%A7%D9%84%D9%81-%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8-%D9%88%D8%A7%D9%84%D8%B3%D9%86%D8%A9-%D9%88%D8%A7%D8%AC%D9%85%D8%A7%D8%B9-%D8%A7%D9%84%D8%A7%D9%85%D8%A9",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1810/30-%D9%84%D8%A7-%D9%86%D8%B5%D8%AF%D9%82-%D9%83%D8%A7%D9%87%D9%86%D8%A7-%D9%88%D9%84%D8%A7-%D8%B9%D8%B1%D8%A7%D9%81%D8%A7-%D9%88%D9%84%D8%A7-%D9%85%D9%86-%D9%8A%D8%AF%D8%B9%D9%8A-%D8%B4%D9%8A%D9%89%D8%A7-%D9%8A%D8%AE%D8%A7%D9%84%D9%81-%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8-%D9%88%D8%A7%D9%84%D8%B3%D9%86%D8%A9-%D9%88%D8%A7%D8%AC%D9%85%D8%A7%D8%B9-%D8%A7%D9%84%D8%A7%D9%85%D8%A9",
+      "pageSha256": "0a2d8e85d2c68bd4f512aa2f412c3161967f68d3c45140203574f6f01f5c816e",
+      "observedHeading": "30 لا نصدِّق كاهناً ولا عرَّافاً ولا من يدَّعي شيئاً يخالف الكتاب والسُّنَّة وإجماع الأمة",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
+    },
+    {
+      "itemId": "bin-baz-tahawi-source-1812",
+      "url": "https://binbaz.org.sa/audios/1812/31-%D8%A7%D9%86%D9%88%D8%A7%D8%B9-%D8%A7%D9%84%D8%A7%D9%81%D8%AA%D8%B1%D8%A7%D9%82-%D9%88%D8%A7%D9%84%D8%A7%D8%AE%D8%AA%D9%84%D8%A7%D9%81",
+      "httpStatus": 200,
+      "finalUrl": "https://binbaz.org.sa/audios/1812/31-%D8%A7%D9%86%D9%88%D8%A7%D8%B9-%D8%A7%D9%84%D8%A7%D9%81%D8%AA%D8%B1%D8%A7%D9%82-%D9%88%D8%A7%D9%84%D8%A7%D8%AE%D8%AA%D9%84%D8%A7%D9%81",
+      "pageSha256": "e7a12f3260c9571e3ad4d4b0dcb6ebc600b40f3121995d716a42eb0af50bff8e",
+      "observedHeading": "31 أنواع الافتراق والاختلاف",
+      "mediaElementPresent": true,
+      "embeddedMediaKinds": [
+        "audio"
+      ],
+      "reviewedOn": "2026-10-25"
     }
   ],
   "seriesEvidence": [
@@ -1312,15 +1689,118 @@
       "evidencePageUrl": "https://binbaz.org.sa/audios/series/51/%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9",
       "httpStatus": 200,
       "finalUrl": "https://binbaz.org.sa/audios/series/51/%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9",
-      "pageSha256": "30b3d0eda685acdfc062e535dd8bd75c78f8d416f115f2c199077bd76475e312",
+      "pageSha256": "52685447bb20cee6337d766c37de7de091588b09abf0b9146dd151338361727c",
       "catalogEpisodeNumbers": [
         1,
+        2,
         3,
-        4
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
       ],
-      "coverage": "partial",
-      "reviewedOn": "2026-10-24",
-      "evidenceNote": "فهرسة جزئية: الدروس 1 و3 و4 فقط، بترقيم الموقع الأصلي. يقرأ الشرح كتاب ابن أبي العز؛ لا تطابق مثبتًا مع طبعة المكتبة أو صفحاتها."
+      "coverage": "indexed",
+      "reviewedOn": "2026-10-25",
+      "evidenceNote": "فهرسة32 مادة من صفحات فهرس المصدر الثلاث. يحمل درسان مختلفان الرقم15 في الأصل؛ ترتيب التنقل1–32 مستقل عن رقم المصدر الظاهر بالعنوان. ليست مراجعة سماعية للاكتمال أو مطابقة لطبعة المكتبة.",
+      "indexPages": [
+        {
+          "url": "https://binbaz.org.sa/audios/series/51/%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9",
+          "checkedOn": "2026-10-25",
+          "httpStatus": 200,
+          "finalUrl": "https://binbaz.org.sa/audios/series/51/%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9",
+          "contentType": "text/html; charset=UTF-8",
+          "contentRange": null,
+          "bytesRead": 92837,
+          "truncated": false,
+          "snapshotSha256": "52685447bb20cee6337d766c37de7de091588b09abf0b9146dd151338361727c",
+          "status": "reachable"
+        },
+        {
+          "url": "https://binbaz.org.sa/audios/series/51/%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9?page=2",
+          "checkedOn": "2026-10-25",
+          "httpStatus": 200,
+          "finalUrl": "https://binbaz.org.sa/audios/series/51/%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9?page=2",
+          "contentType": "text/html; charset=UTF-8",
+          "contentRange": null,
+          "bytesRead": 94575,
+          "truncated": false,
+          "snapshotSha256": "04f0f35ef73f17272d0c08613f4db9410222abefecea5529dbd5e833e09a2dce",
+          "status": "reachable"
+        },
+        {
+          "url": "https://binbaz.org.sa/audios/series/51/%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9?page=3",
+          "checkedOn": "2026-10-25",
+          "httpStatus": 200,
+          "finalUrl": "https://binbaz.org.sa/audios/series/51/%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9?page=3",
+          "contentType": "text/html; charset=UTF-8",
+          "contentRange": null,
+          "bytesRead": 78708,
+          "truncated": false,
+          "snapshotSha256": "49a0580e66aee9f21b823b42b3aad054f0f63ce512cd6fa30d13102d217be0cc",
+          "status": "reachable"
+        }
+      ],
+      "listedEpisodeCount": 32,
+      "nextPage": null,
+      "sourceNumbering": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ]
     },
     {
       "seriesId": "munajjid-nawawi",
