@@ -1,0 +1,92 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "pages": {
+      "43941": {
+        "pageid": 43941,
+        "ns": 6,
+        "title": "ملف:مختصر خليل.pdf",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 19859931,
+            "width": 735,
+            "height": 1264,
+            "pagecount": 248,
+            "url": "https://upload.wikimedia.org/wikisource/ar/d/d9/%D9%85%D8%AE%D8%AA%D8%B5%D8%B1_%D8%AE%D9%84%D9%8A%D9%84.pdf?utm_source=ar.wikisource.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://ar.wikisource.org/wiki/%D9%85%D9%84%D9%81:%D9%85%D8%AE%D8%AA%D8%B5%D8%B1_%D8%AE%D9%84%D9%8A%D9%84.pdf",
+            "descriptionshorturl": "https://ar.wikisource.org/w/index.php?curid=43941",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-03-19 19:58:41",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "مختصر خليل",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "مختصر خليل:مطبوع|ملفات ملكية عامة قديمة|ملفات بلا اسم مؤلف قابل للقراءة الآلية|ملفات بلا مصدر قابل للقراءة الآلية|ملفات بلا وصف قابل للقراءة الآلية",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "revisions": [
+          {
+            "revid": 114697,
+            "parentid": 113076,
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "*": "[[مختصر خليل]]\n\nط باريس سنة 1272\n\n{{معق}}\n\n[[تصنيف:مختصر خليل:مطبوع]]"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

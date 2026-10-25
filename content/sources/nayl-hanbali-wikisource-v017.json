@@ -1,0 +1,92 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "pages": {
+      "51937": {
+        "pageid": 51937,
+        "ns": 6,
+        "title": "ملف:نيل المآرب بشرح دليل الطالب.pdf",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 15832144,
+            "width": 1275,
+            "height": 1604,
+            "pagecount": 323,
+            "url": "https://upload.wikimedia.org/wikisource/ar/6/67/%D9%86%D9%8A%D9%84_%D8%A7%D9%84%D9%85%D8%A2%D8%B1%D8%A8_%D8%A8%D8%B4%D8%B1%D8%AD_%D8%AF%D9%84%D9%8A%D9%84_%D8%A7%D9%84%D8%B7%D8%A7%D9%84%D8%A8.pdf?utm_source=ar.wikisource.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://ar.wikisource.org/wiki/%D9%85%D9%84%D9%81:%D9%86%D9%8A%D9%84_%D8%A7%D9%84%D9%85%D8%A2%D8%B1%D8%A8_%D8%A8%D8%B4%D8%B1%D8%AD_%D8%AF%D9%84%D9%8A%D9%84_%D8%A7%D9%84%D8%B7%D8%A7%D9%84%D8%A8.pdf",
+            "descriptionshorturl": "https://ar.wikisource.org/w/index.php?curid=51937",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-09-09 23:49:23",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "نيل المآرب بشرح دليل الطالب",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "ملفات ملكية عامة قديمة|ملفات بلا اسم مؤلف قابل للقراءة الآلية|ملفات بلا مصدر قابل للقراءة الآلية|ملفات بلا وصف قابل للقراءة الآلية|نيل المآرب بشرح دليل الطالب:مطبوع",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "revisions": [
+          {
+            "revid": 129392,
+            "parentid": 129391,
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "*": "[[نيل المآرب بشرح دليل الطالب]]\n[[مؤلف:عبد القادر بن عمر الشيباني|لعبد القادر بن عمر الشيباني]]\n\nالجزآن في ملف\n\nالمطبعة العامرة بمصر 1288\n\n{{معق}}\n\n[[تصنيف:نيل المآرب بشرح دليل الطالب:مطبوع]]"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
